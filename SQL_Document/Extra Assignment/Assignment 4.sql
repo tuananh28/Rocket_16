@@ -52,6 +52,18 @@ VALUES						(			1		,	'Java Web'	,	  '2020-05-01' 	 ),
                             (			10		,		'.NET'	,	  '2018-05-26'	 );
                             
 -- Question 3: Viết lệnh để lấy ra danh sách nhân viên (name) có skill Java
+SELECT Employee_Name
+FROM 	`Employee` E
+JOIN 	`Employee_Skill` ES
+ON 		E.Employee_Number = ES.Employee_Number
+WHERE	Skill_Code LIKE 'Java%';
 -- Question 4: Viết lệnh để lấy ra danh sách các phòng ban có >3 nhân viên
 -- Question 5: Viết lệnh để lấy ra danh sách nhân viên của mỗi văn phòng ban. 
 -- Question 6: Viết lệnh để lấy ra danh sách nhân viên có > 1 skills.
+SELECT E.Employee_Name, COUNT(ES.Skill_Code) AS " Skills "
+FROM `Employee` E
+JOIN `Employee_Skill` ES
+JOIN `Employee_Skill` ES
+ON 		E.Employee_Number = ES.Employee_Number
+GROUP BY ES.Employee_Number
+HAVING COUNT(ES.Skill_Code) > 1;
