@@ -1,5 +1,5 @@
 DROP DATABASE IF EXISTS `Testing_System_Assignment_2`;
-CREATE DATABASE IF NOT EXISTS `Testing_System_Assignment_2 `;
+CREATE DATABASE IF NOT EXISTS `Testing_System_Assignment_2`;
 USE `Testing_System_Assignment_1`;
 
 INSERT INTO `Department` (DepartmentName) 
@@ -94,7 +94,7 @@ VALUES
                     ('Câu hỏi Java	'		,		1	,	0	),
                     ('Câu hỏi .NET'			,		2	,	1	),
                     ('Câu hỏi SQL'			,		3	,	0	),
-                    ('Câu hỏi Ruby'			,		4	,	1	),
+                    ('Câu hỏi Ruby'			,		4	,	0	),
                     ('Câu hỏi Ruby'			,		4	,	0	),
                     ('Câu hỏi Postman'		,		5	,	0	),
                     ('Câu hỏi PHP'			,		6	,	1	);

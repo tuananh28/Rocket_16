@@ -6,7 +6,7 @@ CREATE TABLE `Trainee`(
 	TraineeID 			TINYINT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
     Full_Name 			VARCHAR(100) NOT NULL,
     Birth_Date 			DATETIME DEFAULT NOW(),
-    Gender 				ENUM('male', 'female', 'unknown') NOT NULL,
+    Gender 				ENUM('MALE', 'FEMALE', 'unknown') NOT NULL,
     ET_IQ 				TINYINT UNSIGNED CHECK (ET_IQ <= 20),
     ET_Gmath			TINYINT UNSIGNED CHECK (ET_Gmath <=20),
     ET_English 			TINYINT UNSIGNED CHECK (ET_English <= 50),

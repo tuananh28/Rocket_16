@@ -3,16 +3,16 @@ CREATE DATABASE `Manager_Fresher`;
 USE `Fresher`;
 
 INSERT INTO `Trainee` 	( 	  Full_Name	 	, 	Birth_Date,	Gender  ,ET_IQ	,ET_Gmath	,ET_English ,Training_Class ,Evaluation_Notes,		VTI_Account			    )
-VALUES					( 'Bùi Tuấn Anh' 	, '1999-11-28', 'Male'	, 18	,	15		,	42	 	,	'Rocket_16'	,  'Học tiếp'	 ,'tuananh.bui@lms.vti.edu.vn'  ),
-						( 'Bùi Thị Hoa Mai' , '1998-01-05', 'Female', 17	,	16		,	32	 	,	'Rocket_14'	,  'Học tiếp'	 ,'hoamai.bui@lms.vti.edu.vn'   ),
-                        ( 'Lê Văn Hải' 		, '1998-10-07', 'Male'	, 11	,	12		,	16	 	,   'Railway_11',  'Học lại'	 ,'vanhai.le@lms.vti.edu.vn'    ),
-                        ( 'Trần Văn Kiên' 	, '1999-05-05', 'Male'	, 17	,	16		,	44	 	,	'Rocket_16'	,  'Học tiếp'	 ,'vankien.tran@lms.vti.edu.vn' ),
-                        ( 'Nguyễn Hữu Hải'  , '1995-07-12', 'Male'  , 15	,	16		,	48	 	,	'Rocket_14' ,  'Học tiếp'	 ,'huuhai.nguyen@lms.vti.edu.vn'),
-                        ( 'Nguyễn Thị Hương', '1999-07-15', 'Female', 12	,	08		,	20	 	,	'Railway_16',  'Học lại'	 ,'huong.nguyen@lms.vti.edu.vn'	),
-                        ( 'Nguyễn Hà Lê'  	, '2002-12-12', 'Female', 10	,	12		,	38	 	,	'Railway_15',  'Học tiếp'	 ,'hale.nguyen@lms.vti.edu.vn'	),
+VALUES					( 'Bùi Tuấn Anh' 	, '1999-11-28', 'MALE'	, 18	,	15		,	42	 	,	'Rocket_16'	,  'Học tiếp'	 ,'tuananh.bui@lms.vti.edu.vn'  ),
+						( 'Bùi Thị Hoa Mai' , '1998-01-05', 'FEMALE', 17	,	16		,	32	 	,	'Rocket_14'	,  'Học tiếp'	 ,'hoamai.bui@lms.vti.edu.vn'   ),
+                        ( 'Lê Văn Hải' 		, '1998-10-07', 'MALE'	, 11	,	12		,	16	 	,   'Railway_11',  'Học lại'	 ,'vanhai.le@lms.vti.edu.vn'    ),
+                        ( 'Trần Văn Kiên' 	, '1999-05-05', 'MALE'	, 17	,	16		,	44	 	,	'Rocket_16'	,  'Học tiếp'	 ,'vankien.tran@lms.vti.edu.vn' ),
+                        ( 'Nguyễn Hữu Hải'  , '1995-07-12', 'MALE'  , 15	,	16		,	48	 	,	'Rocket_14' ,  'Học tiếp'	 ,'huuhai.nguyen@lms.vti.edu.vn'),
+                        ( 'Nguyễn Thị Hương', '1999-07-15', 'FEMALE', 12	,	08		,	20	 	,	'Railway_16',  'Học lại'	 ,'huong.nguyen@lms.vti.edu.vn'	),
+                        ( 'Nguyễn Hà Lê'  	, '2002-12-12', 'FEMALE', 10	,	12		,	38	 	,	'Railway_15',  'Học tiếp'	 ,'hale.nguyen@lms.vti.edu.vn'	),
                         ( 'Đào Đức Minh'  	, '2000-05-25','Unknown', 0		,	08		,	19	 	,	'Railway_15',  'Học tiếp'	 ,'ducminh.dao@lms.vti.edu.vn'	),
-                        ( 'Trần Thị Hoa'  	, '1998-08-12', 'Female', 15	,	16		,	38	 	,	'Rocket_15' ,  'Học tiếp'	 ,'hoa.tran@lms.vti.edu.vn'		),
-                        ( 'Trần Hoàng Nam'  , '1996-07-22', 'Male'  , 18	,	20		,	50	 	,	'Rocket_16' ,  'Học tiếp'	 ,'hoangnam.tran@lms.vti.edu.vn');
+                        ( 'Trần Thị Hoa'  	, '1998-08-12', 'FEMALE', 15	,	16		,	38	 	,	'Rocket_15' ,  'Học tiếp'	 ,'hoa.tran@lms.vti.edu.vn'		),
+                        ( 'Trần Hoàng Nam'  , '1996-07-22', 'MALE'  , 18	,	20		,	50	 	,	'Rocket_16' ,  'Học tiếp'	 ,'hoangnam.tran@lms.vti.edu.vn');
  SELECT * From trainee;
 
 INSERT INTO `Data Types1` 	( `Name`	, `Code`	,ModifiedDate )
@@ -79,6 +79,3 @@ WHERE 		TraineeID = 3;
 UPDATE `Trainee`
 SET 	Training_Class = 'Rocket_16'
 WHERE	TraineeID = 5 ;
-
-
-
