@@ -1,6 +1,5 @@
 DROP DATABASE IF EXISTS `Testing_System_Assignment_3`;
 CREATE DATABASE IF NOT EXISTS `Testing_System_Assignment_3`;
-USE `Testing_System_Assignment_1`;
 USE `Testing_System_Assignment_2`;
 
 -- Question 2: lấy ra tất cả các phòng ban
@@ -15,12 +14,12 @@ WHERE DepartmentName = "Sale";
 -- Question 4: lấy ra thông tin account có full name dài nhất
 SELECT *
 FROM `Account`
-WHERE length(FullName) = (SELECT MAX( length(FullName)) FROM `Account`);
+WHERE character_length(FullName) = (SELECT MAX( character_length(FullName)) FROM `Account`);
 
 -- Question 5: Lấy ra thông tin account có full name dài nhất và thuộc phòng ban có id = 3
 SELECT *
 FROM `Account`
-WHERE length(FullName) = ( SELECT MAX(length(FullName))FROM `Account` WHERE `DepartmentID` = 3);
+WHERE character_length(FullName) = (SELECT MAX(character_length(FullName))FROM `Account` WHERE `DepartmentID` = 3);
 
 -- Question 6: Lấy ra tên group đã tham gia trước ngày 2021-05-28
 SELECT GroupName
