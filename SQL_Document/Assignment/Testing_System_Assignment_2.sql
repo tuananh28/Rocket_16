@@ -1,19 +1,19 @@
 DROP DATABASE IF EXISTS `Testing_System_Assignment_2`;
-CREATE DATABASE IF NOT EXISTS `Testing_System_Assignment_2`;
+CREATE DATABASE IF NOT EXISTS `Testing_System_Assignment_2 `;
 USE `Testing_System_Assignment_1`;
 
 INSERT INTO `Department` (DepartmentName) 
 VALUE
 						('Marketing'	),
-						('Sale'		),
+						('Sale'			),
 						('Bảo vệ'		),
 						('Nhân sự'		),
-						('Kỹ thuật'	),
+						('Kỹ thuật'		),
 						('Tài chính'	),
-						('Phó giám đốc'),
-						('Giám đóc'	),
+						('Phó giám đốc'	),
+						('Giám đóc'		),
 						('Thư kí'		),
-						('Bán hàng'	);
+						('Bán hàng'		);
                         
 INSERT INTO `Position` (PositionName)
 VALUE
@@ -33,7 +33,7 @@ VALUES
                     ('lenguyen@gmail.com'	,'lenguyen'		,'Nguyễn Thị Lê'	,		2		,	2		,'2015-10-24'),
                     ('dangthao@gmail.com'	,'dangle'		,'Đặng Thị Thảo'	,		6		,	4		,'2014-05-11'),
                     ('khoile@gmail.com'		,'babycute'		,'Lê Hoàng Khôi'	,		1		,	1		,'2020-01-18'),
-                    ('dientran12@gmail.com'	,'dien18'		,'Trần Văn Diễn'	,		2		,	2		,'2020-11-27'),
+                    ('dientran112@gmail.com'	,'dien18'		,'Trần Văn Diễn'	,		2		,	2		,'2020-11-27'),
 					('hieubui@gmail.com'	,'hieuchoat'	,'Bùi Minh Hiếu'	,		2		,	1		,'2020-07-30');
  
 INSERT INTO `Group` (GroupName	, CreatorID	,CreateDate)
@@ -41,7 +41,10 @@ VALUES
 					('London'	,	1		,'2020-10-25'),
                     ('Seoul'	,	5		,'2021-05-28'),
                     ('Tokyo'	,	10		,'2020-04-12'),
-                    ('EngLand'	,	2		,'2020-01-06');
+                    ('EngLand'	,	2		,'2020-01-06'),
+                    ('Berlin'	,	4		,'2021-05-18'),
+                    ('Paris'	,	3		,'2019-02-27');
+                    
 
 INSERT INTO `GroupAccount`(GroupID, AccountID	, JoinDate)
 VALUES
