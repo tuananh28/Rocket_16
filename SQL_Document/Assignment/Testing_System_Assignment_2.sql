@@ -33,7 +33,7 @@ VALUES
                     ('lenguyen@gmail.com'	,'lenguyen'		,'Nguyễn Thị Lê'	,		2		,	2		,'2015-10-24'),
                     ('dangthao@gmail.com'	,'dangle'		,'Đặng Thị Thảo'	,		6		,	4		,'2014-05-11'),
                     ('khoile@gmail.com'		,'babycute'		,'Lê Hoàng Khôi'	,		1		,	1		,'2020-01-18'),
-                    ('dientran112@gmail.com'	,'dien18'		,'Trần Văn Diễn'	,		2		,	2		,'2020-11-27'),
+                    ('dientran112@gmail.com','dien18'		,'Trần Văn Diễn'	,		2		,	2		,'2020-11-27'),
 					('hieubui@gmail.com'	,'hieuchoat'	,'Bùi Minh Hiếu'	,		2		,	1		,'2020-07-30');
  
 INSERT INTO `Group` (GroupName	, CreatorID	,CreateDate)
@@ -46,7 +46,7 @@ VALUES
                     ('Paris'	,	3		,'2019-02-27');
                     
 
-INSERT INTO `GroupAccount`(GroupID, AccountID	, JoinDate)
+INSERT INTO `GroupAccount`(GroupID, AccountID, JoinDate)
 VALUES
 						
 						(	1	,	1		,'2020-05-23'),
@@ -65,7 +65,7 @@ VALUE
 						 (		'Essay'		),
                          ('Multiple-Choice'	);
 	
-INSERT INTO `CategoryQuestion` (	CategoryName	)
+INSERT INTO `CategoryQuestion`(	CategoryName	)
 VALUE
 							 (		'Java'		),
 							 (		'.NET'		),
@@ -96,8 +96,7 @@ VALUES
                     ('Câu hỏi SQL'			,		3	,	0	),
                     ('Câu hỏi Ruby'			,		4	,	0	),
                     ('Câu hỏi Ruby'			,		4	,	0	),
-                    ('Câu hỏi Postman'		,		5	,	0	),
-                    ('Câu hỏi PHP'			,		6	,	1	);
+                    ('Câu hỏi Postman'		,		5	,	0	);
                     
 INSERT INTO `Exam` (`code`	,		Title			,CategoryID , Duration	, CreatorID	,CreateDate)
 VALUES
