@@ -129,5 +129,5 @@ WHERE	GroupID NOT IN (SELECT GroupID
 SELECT	*
 FROM	`Question` Q
 LEFT JOIN	`Answer` A
-ON 		Q.QuestionID =  A.QuestionID
+USING 	(QuestionID)
 WHERE	A.QuestionID IS NULL;
