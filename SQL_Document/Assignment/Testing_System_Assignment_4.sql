@@ -6,8 +6,7 @@ USE `Testing_System_Assignment_2`;
 SELECT 		A.* , D.DepartmentName
 FROM 		`Account` A
 JOIN		`Department` D
-ON			A.DepartmentID = D.DepartmentID
-GROUP BY	D.DepartmentName;
+ON			A.DepartmentID = D.DepartmentID;
 -- Question 2: Viết lệnh để lấy ra thông tin các account được tạo sau ngày '2018-12-05'
 SELECT *
 FROM 	`Account`
