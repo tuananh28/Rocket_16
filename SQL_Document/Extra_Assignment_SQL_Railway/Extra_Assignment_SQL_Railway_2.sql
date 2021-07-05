@@ -182,11 +182,12 @@ SELECT  	TenThanhVienGiaoHang
 FROM		`THANHVIENGIAOHANG`
 WHERE		TenThanhVienGiaoHang LIKE "Tr%" and character_length(TenThanhVienGiaoHang) > 10; 
 -- Câu 4: Liệt kê những đơn hàng có NgayGiaoHang nằm trong năm 2020 và có khu vực giao hàng là “Khương Trung”
-SELECT *
-FROM 	`DONHANG_GIAOHANG` GH 
-JOIN 	`KHUVUC` KV
-ON 		GH.MaKhuVucGiaoHang = KV.MaKhuVuc
-WHERE 	GH.NgayGiaoHang < '2021-01-01' AND KV.TenKhuVuc = 'Khương Trung';
+SELECT 		*
+FROM 		`DONHANG_GIAOHANG` GH 
+JOIN 		`KHUVUC` KV
+ON 			GH.MaKhuVucGiaoHang = KV.MaKhuVuc
+GROUP BY	YEAR(2020)
+HAVING  	KV.TenKhuVuc = 'Khương Trung';
 /*Câu 5: Liệt kê MaDonHangGiaoHang, MaThanhVienGiaoHang, TenThanhVienGiaoHang,
 NgayGiaoHang, PhuongThucThanhToan của tất cả những đơn hàng có trạng thái là “Da giao
 hang”. Kết quả hiển thị được sắp xếp tăng dần theo NgayGiaoHang và giảm dần theo
