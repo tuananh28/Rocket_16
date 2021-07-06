@@ -23,7 +23,7 @@ DROP PROCEDURE IF EXISTS get_AccountOfGroup;
 DELIMITER $$
 CREATE PROCEDURE get_AccountOfGroup (IN in_GroupID TINYINT UNSIGNED)
 	BEGIN
-		SELECT 		GroupID, COUNT(AccountID) AS 'Số Lượng'
+		SELECT 		GroupID, COUNT(AccountID) AS 'So_luong'
 		FROM		`GroupAccount` 
 		WHERE		GroupID = in_GroupID
 		GROUP BY	GroupID;
@@ -108,7 +108,18 @@ positionID: sẽ có default là developer
 departmentID: sẽ được cho vào 1 phòng chờ
  Sau đó in ra kết quả tạo thành công */
  
- 
+DROP PROCEDURE IF EXISTS get_IFAccount;
+DELIMITER $$
+CREATE PROCEDURE get_IFAccount(IN in_FullName VARCHAR(50), in_Email VARCHAR(50))
+BEGIN
+	INSERT INTO `Account` (Email, Username, FullName, DepartmentID, PositionID)
+    VALUES (
+		in_email, SUBSTRING_INDEX(in_email, '@', 1), in_fullName, '9' , '1'
+    );
+    SELECT *
+    FROM `account` a ;
+END $$
+CALL testing_system_assignment_1.get_IFAccount('Le Tuan Anh', 'tuananh');
 /* Question 8: Viết 1 store cho phép người dùng nhập vào Essay hoặc Multiple-Choice
  để thống kê câu hỏi essay hoặc multiple-choice nào có content dài nhất */
  
@@ -183,7 +194,57 @@ BEGIN WORK;
 ROLLBACK;
 SELECT * FROM `Account`;
 -- Question 12: Viết store để in ra mỗi tháng có bao nhiêu câu hỏi được tạo trong năm nay
+DROP PROCEDURE IF EXISTS sp_CountQuesInMonth;
+DELIMITER $$
+CREATE PROCEDURE sp_CountQuesInMonth()
+BEGIN
+		SELECT EachMonthInYear.MONTH, COUNT(QuestionID) AS COUNT
+		FROM
+		(
+             SELECT 1 AS MONTH
+             UNION SELECT 2 AS MONTH
+             UNION SELECT 3 AS MONTH
+             UNION SELECT 4 AS MONTH
+             UNION SELECT 5 AS MONTH
+             UNION SELECT 6 AS MONTH
+             UNION SELECT 7 AS MONTH
+             UNION SELECT 8 AS MONTH
+             UNION SELECT 9 AS MONTH
+             UNION SELECT 10 AS MONTH
+             UNION SELECT 11 AS MONTH
+             UNION SELECT 12 AS MONTH
+        ) AS EachMonthInYear
+		LEFT JOIN Question ON EachMonthInYear.MONTH = MONTH(CreateDate)
+		GROUP BY EachMonthInYear.MONTH
+		ORDER BY EachMonthInYear.MONTH ASC;
+END$$
+DELIMITER ;
+
 /* Question 13: Viết store để in ra mỗi tháng có bao nhiêu câu hỏi được tạo trong 6 
  tháng gần đây nhất
  (Nếu tháng nào không có thì sẽ in ra là "không có câu hỏi nào trong 
 tháng") */
+DROP PROCEDURE IF EXISTS sp_CountQuesPrevious6Month;
+DELIMITER $$
+CREATE PROCEDURE sp_CountQuesPrevious6Month()
+BEGIN
+		SELECT Previous6Month.MONTH, COUNT(QuestionID) AS COUNT
+		FROM
+		(
+			SELECT MONTH(CURRENT_DATE - INTERVAL 5 MONTH) AS MONTH
+			UNION
+			SELECT MONTH(CURRENT_DATE - INTERVAL 4 MONTH) AS MONTH
+			UNION
+			SELECT MONTH(CURRENT_DATE - INTERVAL 3 MONTH) AS MONTH
+			UNION
+			SELECT MONTH(CURRENT_DATE - INTERVAL 2 MONTH) AS MONTH
+			UNION
+			SELECT MONTH(CURRENT_DATE - INTERVAL 1 MONTH) AS MONTH
+			UNION
+			SELECT MONTH(CURRENT_DATE - INTERVAL 0 MONTH) AS MONTH
+        ) AS Previous6Month
+		LEFT JOIN Question ON Previous6Month.MONTH = MONTH(CreateDate)
+		GROUP BY Previous6Month.MONTH
+		ORDER BY Previous6Month.MONTH ASC;
+END$$
+DELIMITER ;
