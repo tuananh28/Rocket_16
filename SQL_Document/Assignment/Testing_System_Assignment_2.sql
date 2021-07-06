@@ -83,8 +83,8 @@ VALUES
                         ('Câu hỏi SQL'		,	3		,	1	,	5		,'2020-05-25'),
                         ('Câu hỏi Ruby'		,	4		, 	1	,	7		,'2020-05-26'),
                         ('Câu hỏi Ruby'		,	4		, 	2	,	10		,'2020-05-27'),
-                        ('Câu hỏi Postman'	,	5		, 	1	,	9		,'2020-05-28'),
-                        ('Câu hỏi PHP'		,	6		, 	2	,	8		,'2020-05-28');
+                        ('Câu hỏi Postman'	,	5		, 	1	,	9		,'2021-05-28'),
+                        ('Câu hỏi PHP'		,	6		, 	2	,	8		,'2021-05-30');
  
 INSERT INTO `Answer` ( 		Content			,QuestionID	,isCorrect)
 VALUES					
