@@ -1,6 +1,6 @@
 DROP DATABASE IF EXISTS `Testing_System_Assignment_3`;
 CREATE DATABASE IF NOT EXISTS `Testing_System_Assignment_3`;
-USE `Testing_System_Assignment_2`;
+USE `Testing_System_Assignment_1`;
 
 -- Question 2: lấy ra tất cả các phòng ban
 SELECT *
@@ -9,7 +9,7 @@ FROM `department`;
 -- Question 3: lấy ra id của phòng ban "Sale"
 SELECT DepartmentID
 FROM `Department`
-WHERE DepartmentName = "Sale";
+WHERE DepartmentName = 'Sale';
 
 -- Question 4: lấy ra thông tin account có full name dài nhất
 SELECT *
@@ -24,7 +24,7 @@ WHERE character_length(FullName) = (SELECT MAX(character_length(FullName))FROM `
 -- Question 6: Lấy ra tên group đã tham gia trước ngày 2021-05-28
 SELECT GroupName
 FROM `Group`
-WHERE CreateDate < "2021-05-28";
+WHERE CreateDate < '2021-05-28';
 
 -- Question 7: Lấy ra ID của question có >= 4 câu trả lời
 
@@ -37,7 +37,7 @@ HAVING COUNT(AnswerID) >= 4;
 
 SELECT `Code`
 FROM `Exam`
-WHERE Duration >= 60 AND CreateDate < "2020-05-21";
+WHERE Duration >= 60 AND CreateDate < '2020-05-21';
 
 -- Question 9: Lấy ra 5 group được tạo gần đây nhất
 
@@ -47,7 +47,7 @@ ORDER BY CreateDate DESC
 LIMIT 5;
 
 -- Question 10: Đếm số nhân viên thuộc department có id = 2
-SELECT COUNT(AccountID) AS "Số Lượng"
+SELECT COUNT(AccountID) AS 'So_Luong'
 FROM `Account`
 WHERE DepartmentID = 2;
 
@@ -55,13 +55,13 @@ WHERE DepartmentID = 2;
 
 SELECT * 
 FROM `Account`
-WHERE FullName LIKE "Đ%o";
+WHERE FullName LIKE 'Đ%o';
 
 -- Question 12: Xóa tất cả các exam được tạo trước ngày 2020-05-19
 
 DELETE
 FROM `Exam`
-WHERE CreateDate < "2020-05-19";
+WHERE CreateDate < '2020-05-19';
 
 SELECT * 
 FROM `Exam`;
@@ -70,7 +70,7 @@ FROM `Exam`;
 
 DELETE
 FROM `Question`
-WHERE Content Like "Câu hỏi%";
+WHERE Content Like 'Câu hỏi%';
 
 SELECT * 
 FROM `question`;
@@ -78,7 +78,7 @@ FROM `question`;
 -- Question 14: Update thông tin của account có id = 5 thành tên "Nguyễn Bá Lộc" và email thành loc.nguyenba@vti.com.vn
 
 UPDATE `Account`
-SET FullName = "Nguyễn Bá Lộc" , Email = "loc.nguyenba@vti.com.vn"
+SET FullName = 'Nguyễn Bá Lộc', Email = 'loc.nguyenba@vti.com.vn'
 WHERE AccountID = 5;
 
 SELECT * 
