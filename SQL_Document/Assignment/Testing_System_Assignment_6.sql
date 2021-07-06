@@ -41,7 +41,7 @@ CREATE PROCEDURE get_TypeQuestion()
         WHERE 		MONTH(CreateDate) = MONTH(NOW());
     END$$
 DELIMITER ;
-
+CALL get_TypeQuestion;
 -- Question 4: Tạo store để trả ra id của type question có nhiều câu hỏi nhất
 DROP PROCEDURE IF EXISTS get_TypeQuestion_ID; 
 DELIMITER $$
