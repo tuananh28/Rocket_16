@@ -1,6 +1,6 @@
 DROP DATABASE IF EXISTS `Testing_System_Assignment_4`;
 CREATE DATABASE `Testing_System_Assignment_4`;
-USE `Testing_System_Assignment_2`;
+USE `Testing_System_Assignment_1`;
 
 -- Question 1: Viết lệnh để lấy ra danh sách nhân viên và thông tin phòng ban của họ
 SELECT 		A.* , D.DepartmentName
@@ -18,7 +18,7 @@ JOIN	`Position` P
 ON		A.PositionID = P.PositionID
 WHERE	P.PositionName = 'Dev';
 -- Question 4: Viết lệnh để lấy ra danh sách các phòng ban có >1 nhân viên
-SELECT 		D.DepartmentName, COUNT(A.DepartmentID) AS 'Số lượng' 
+SELECT 		D.DepartmentName, COUNT(A.DepartmentID) AS 'So_Luong'
 FROM 		`Account` A
 JOIN		`Department` D
 ON			A.DepartmentID = D.DepartmentID
@@ -38,7 +38,7 @@ HAVING		COUNT(EQ.QuestionID) = (SELECT MAX(COUNTQ)
 									ON			Q.QuestionID = EQ.QuestionID
 									GROUP BY	Q.Content)AS MAXcontent);
 -- Question 6: Thông kê mỗi category Question được sử dụng trong bao nhiêu Question
-SELECT 		CQ.*,COUNT(Q.CategoryID) AS 'Số lần'
+SELECT 		CQ.*,COUNT(Q.CategoryID) AS 'So_lan'
 FROM		`CategoryQuestion` CQ
 JOIN		`Question` Q
 ON			CQ.CategoryID = Q.CategoryID
@@ -111,7 +111,7 @@ ON		Q.QuestionID = A.QuestionID;
 
 -- Question 13: Lấy ra số lượng câu hỏi của mỗi loại tự luận hay trắc nghiệm
 
-SELECT 		TQ.*, COUNT(Q.TypeID) AS ' Số Lượng'
+SELECT 		TQ.*, COUNT(Q.TypeID) AS 'So_Luong'
 FROM		`TypeQuestion` TQ
 JOIN		`Question` Q
 ON 			TQ.TypeID = Q.TypeID
@@ -163,7 +163,7 @@ a) Lấy các group có lớn hơn 5 thành viên
 b) Lấy các group có nhỏ hơn 7 thành viên
 c) Ghép 2 kết quả từ câu a) và câu b)*/
 
-SELECT 	G.*,COUNT(GA.AccountID) AS ' Thành Viên '
+SELECT 	G.*,COUNT(GA.AccountID) AS 'Thanh_Vien'
 FROM	`Group` G
 JOIN	`GroupAccount` GA
 ON		G.GroupID = GA.GroupID
@@ -172,7 +172,7 @@ HAVING	COUNT(GA.AccountID) > 3
 
 UNION
 
-SELECT 	G.*,COUNT(GA.AccountID) AS ' Thành Viên '
+SELECT 	G.*,COUNT(GA.AccountID) AS 'Thanh_Vien'
 FROM	`Group` G
 JOIN	`GroupAccount` GA
 ON		G.GroupID = GA.GroupID
