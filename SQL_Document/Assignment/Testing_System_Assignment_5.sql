@@ -25,7 +25,7 @@ SELECT * FROM `DepartmentSale`;
 -- Question 2: Tạo view có chứa thông tin các account tham gia vào nhiều group nhất
 DROP VIEW IF EXISTS `MaxAccountOfGroup`;
 CREATE VIEW `MaxAccountOfGroup` AS
-SELECT		A.*,COUNT(GA.AccountID) AS 'Số Lượng Group'
+SELECT		A.*,COUNT(GA.AccountID) AS 'So_Luong'
 FROM 		`Account` A
 JOIN		`GroupAccount` GA
 USING		(AccountID)
@@ -41,7 +41,7 @@ HAVING		COUNT(GA.AccountID) = (SELECT MAX(COUNTA)
 
 WITH `MaxAccountOfGroup` AS
 (
-	SELECT		A.*,COUNT(GA.AccountID) AS 'Số Lượng Group'
+	SELECT		A.*,COUNT(GA.AccountID) AS 'So_Luong'
 	FROM 		`Account` A
 	JOIN		`GroupAccount` GA
 	USING		(AccountID)
@@ -75,7 +75,7 @@ DELETE FROM `DelContent300`;
 -- Question 4: Tạo view có chứa danh sách các phòng ban có nhiều nhân viên nhất
 
 CREATE OR REPLACE VIEW `MaxAccountOfDepartment` AS
-SELECT		D.*,COUNT(A.DepartmentID) AS 'Số Lượng'
+SELECT		D.*,COUNT(A.DepartmentID) AS 'So_Luong'
 FROM		`Department` D
 JOIN		`Account` A
 USING		(DepartmentID)
@@ -90,7 +90,7 @@ HAVING		COUNT(A.DepartmentID) = (SELECT MAX(COUNTD)
 
 WITH `MaxAccountOfDepartment` AS
 (
-	SELECT		D.*,COUNT(A.DepartmentID) AS 'Số Lượng'
+	SELECT		D.*,COUNT(A.DepartmentID) AS 'So_Luong'
 	FROM		`Department` D
 	JOIN		`Account` A
 	USING		(DepartmentID)
@@ -111,7 +111,7 @@ SELECT 	 	*
 FROM		`Question`
 WHERE		CreatorID IN (SELECT AccountID
 							FROM `Account`
-                            WHERE FullName LIKE "Nguyễn%");
+                            WHERE FullName LIKE 'Nguyễn%');
 -- Cách 2
 
 SELECT 		Q.*, A.FullName
