@@ -182,57 +182,31 @@ BEGIN WORK;
 ROLLBACK;
 SELECT * FROM `Account`;
 -- Question 12: Viết store để in ra mỗi tháng có bao nhiêu câu hỏi được tạo trong năm nay
-DROP PROCEDURE IF EXISTS sp_CountQuesInMonth;
+DROP PROCEDURE IF EXISTS CountQuesInMonth;
 DELIMITER $$
-CREATE PROCEDURE sp_CountQuesInMonth()
-BEGIN
-		SELECT EachMonthInYear.MONTH, COUNT(QuestionID) AS COUNT
-		FROM
-		(
-             SELECT 1 AS MONTH
-             UNION SELECT 2 AS MONTH
-             UNION SELECT 3 AS MONTH
-             UNION SELECT 4 AS MONTH
-             UNION SELECT 5 AS MONTH
-             UNION SELECT 6 AS MONTH
-             UNION SELECT 7 AS MONTH
-             UNION SELECT 8 AS MONTH
-             UNION SELECT 9 AS MONTH
-             UNION SELECT 10 AS MONTH
-             UNION SELECT 11 AS MONTH
-             UNION SELECT 12 AS MONTH
-        ) AS EachMonthInYear
-		LEFT JOIN Question ON EachMonthInYear.MONTH = MONTH(CreateDate)
-		GROUP BY EachMonthInYear.MONTH
-		ORDER BY EachMonthInYear.MONTH ASC;
-END$$
+CREATE PROCEDURE CountQuesInMonth()
+    BEGIN
+		SELECT  MONTHNAME(CreateDate) as 'Thang', COUNT(QuestionID) as 'So luong'
+		FROM   `Question`
+		WHERE   YEAR(CreateDate) = (year(now()))
+		GROUP BY MONTH(CreateDate);
+    END $$
 DELIMITER ;
 
+CALL  CountQuesInMonth();
 /* Question 13: Viết store để in ra mỗi tháng có bao nhiêu câu hỏi được tạo trong 6 
  tháng gần đây nhất
  (Nếu tháng nào không có thì sẽ in ra là "không có câu hỏi nào trong 
 tháng") */
-DROP PROCEDURE IF EXISTS sp_CountQuesPrevious6Month;
+DROP PROCEDURE IF EXISTS question_create_last_6_months;
 DELIMITER $$
-CREATE PROCEDURE sp_CountQuesPrevious6Month()
-BEGIN
-		SELECT Previous6Month.MONTH, COUNT(QuestionID) AS COUNT
-		FROM
-		(
-			SELECT MONTH(CURRENT_DATE - INTERVAL 5 MONTH) AS MONTH
-			UNION
-			SELECT MONTH(CURRENT_DATE - INTERVAL 4 MONTH) AS MONTH
-			UNION
-			SELECT MONTH(CURRENT_DATE - INTERVAL 3 MONTH) AS MONTH
-			UNION
-			SELECT MONTH(CURRENT_DATE - INTERVAL 2 MONTH) AS MONTH
-			UNION
-			SELECT MONTH(CURRENT_DATE - INTERVAL 1 MONTH) AS MONTH
-			UNION
-			SELECT MONTH(CURRENT_DATE - INTERVAL 0 MONTH) AS MONTH
-        ) AS Previous6Month
-		LEFT JOIN Question ON Previous6Month.MONTH = MONTH(CreateDate)
-		GROUP BY Previous6Month.MONTH
-		ORDER BY Previous6Month.MONTH ASC;
-END$$
+	CREATE PROCEDURE question_create_last_6_months()
+    BEGIN
+		SELECT  MONTHNAME(CreateDate) as 'Thang', COUNT(QuestionID) as 'So luong'
+		FROM    `Question`
+        WHERE   YEAR(Createdate) = (YEAR(NOW())) AND MONTH(Createdate) >= (MONTH(NOW())-6)
+		GROUP BY MONTH(Createdate);
+    END $$
 DELIMITER ;
+
+CALL  question_create_last_6_months();
