@@ -43,38 +43,26 @@ CREATE PROCEDURE get_TypeQuestion()
 DELIMITER ;
 CALL get_TypeQuestion;
 -- Question 4: Tạo store để trả ra id của type question có nhiều câu hỏi nhất
-DROP PROCEDURE IF EXISTS get_TypeQuestion_ID; 
+DROP PROCEDURE IF EXISTS get_TypeQuestion_ID;
 DELIMITER $$
-CREATE PROCEDURE get_TypeQuestion_ID()
-	BEGIN
-		    SELECT 		TQ.TypeID
-			FROM		`Question` Q
-            JOIN 		`TypeQuestion` TQ
-			GROUP BY 	Q.TypeID
-			HAVING		COUNT(Q.TypeID) = (SELECT MAX(COUNTQ)
-											FROM (SELECT	COUNT(TypeID) AS COUNTQ		
-													FROM		`Question` 
-													GROUP BY	TypeID) AS MaxTypeID);
-    END$$
+	CREATE PROCEDURE get_TypeQuestion_ID (OUT Type_id INT UNSIGNED)
+    BEGIN
+		SELECT TypeID INTO Type_ID
+        FROM QUESTION
+        GROUP BY TypeID
+        ORDER BY COUNT(QuestionID) DESC
+        LIMIT 1 ;
+    END $$
 DELIMITER ;
-
 -- Question 5: Sử dụng store ở question 4 để tìm ra tên của type question
 
-DROP PROCEDURE IF EXISTS get_TypeQuestion_Name; 
-DELIMITER $$
-CREATE PROCEDURE get_TypeQuestion_Name()
-	BEGIN
-		    SELECT 		TQ.TypeName
-			FROM		`Question` Q
-            JOIN 		`TypeQuestion` TQ
-			GROUP BY 	Q.TypeID
-			HAVING		COUNT(Q.TypeID) = (SELECT MAX(COUNTQ)
-											FROM (SELECT	COUNT(TypeID) AS COUNTQ		
-													FROM		`Question` 
-													GROUP BY	TypeID) AS MaxTypeID);
-    END$$
-DELIMITER ;
+set @typeid = 0 ;
+call get_TypeQuestion_ID(@typeid) ;
+select @typeid ;
 
+select typename
+from typequestion
+where typeid = @typeid ;
 /* Question 6: Viết 1 store cho phép người dùng nhập vào 1 chuỗi và trả về group có tên 
  chứa chuỗi của người dùng nhập vào hoặc trả về user có username chứa 
  chuỗi của người dùng nhập vào */
