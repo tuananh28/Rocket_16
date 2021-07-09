@@ -56,13 +56,13 @@ DELIMITER $$
 DELIMITER ;
 -- Question 5: Sử dụng store ở question 4 để tìm ra tên của type question
 
-set @typeid = 0 ;
-call get_TypeQuestion_ID(@typeid) ;
-select @typeid ;
+SET @typeid = 0 ;
+CALL get_TypeQuestion_ID(@typeid) ;
+SELECT @typeid ;
 
-select typename
-from typequestion
-where typeid = @typeid ;
+SELECT typename
+FROM typequestion
+WHERE typeid = @typeid ;
 /* Question 6: Viết 1 store cho phép người dùng nhập vào 1 chuỗi và trả về group có tên 
  chứa chuỗi của người dùng nhập vào hoặc trả về user có username chứa 
  chuỗi của người dùng nhập vào */
