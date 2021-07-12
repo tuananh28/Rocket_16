@@ -84,7 +84,6 @@ CREATE TRIGGER TG_Question4
         END IF;
     END $$
 DELIMITER ;
-
 /* Question 5: Tạo trigger không cho phép người dùng xóa tài khoản có email là
  admin@gmail.com (đây là tài khoản admin, không cho phép user xóa),
  còn lại các tài khoản khác thì sẽ cho phép xóa và sẽ xóa tất cả các thông
