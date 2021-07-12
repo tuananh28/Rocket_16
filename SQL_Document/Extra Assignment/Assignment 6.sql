@@ -19,7 +19,7 @@ CREATE TABLE IF NOT EXISTS `Employee`(
     EmployeeStatus          VARCHAR(100),
     SupervisorID            TINYINT UNSIGNED NOT NULL ,
     SocialSecurityNumber    INT UNSIGNED,
-    CONSTRAINT kp_SupervisorID FOREIGN KEY (SupervisorID) REFERENCES `Projects` (ManagerID)
+    CONSTRAINT kp_SupervisorID FOREIGN KEY (SupervisorID) REFERENCES `Projects` (ManagerID) ON DELETE CASCADE
 );
 CREATE TABLE IF NOT EXISTS `Project_Modules`(
     ModuleID                    TINYINT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
@@ -28,8 +28,8 @@ CREATE TABLE IF NOT EXISTS `Project_Modules`(
     ProjectModulesDate          DATETIME DEFAULT NOW(),
     ProjetcModulesCompleteOn    DATETIME DEFAULT NOW(),
     ProjectModulesDescription   VARCHAR(100),
-    CONSTRAINT kp_ProjectID FOREIGN KEY (ProjectID) REFERENCES `Projects` (ProjectID),
-    CONSTRAINT kp_EmployeeID_modules FOREIGN KEY (EmployeeID) REFERENCES `Employee`(EmployeeID)
+    CONSTRAINT kp_ProjectID FOREIGN KEY (ProjectID) REFERENCES `Projects` (ProjectID) ON DELETE CASCADE,
+    CONSTRAINT kp_EmployeeID_modules FOREIGN KEY (EmployeeID) REFERENCES `Employee`(EmployeeID)ON DELETE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS `Work_Done`
@@ -40,8 +40,8 @@ CREATE TABLE IF NOT EXISTS `Work_Done`
     WorkDoneDate        DATETIME DEFAULT NOW(),
     WorkDoneDescription VARCHAR(100),
     WorkDoneStatus      VARCHAR(50),
-    CONSTRAINT kp_EmployeeID_work FOREIGN KEY (EmployeeID) REFERENCES `Employee` (EmployeeID),
-    CONSTRAINT kp_ModuleID FOREIGN KEY (ModuleID) REFERENCES `Project_Modules` (ModuleID)
+    CONSTRAINT kp_EmployeeID_work FOREIGN KEY (EmployeeID) REFERENCES `Employee` (EmployeeID)ON DELETE CASCADE,
+    CONSTRAINT kp_ModuleID FOREIGN KEY (ModuleID) REFERENCES `Project_Modules` (ModuleID)ON DELETE CASCADE
 );
 
 INSERT INTO `Projects` (ManagerID,ProjectName, ProjectStartDate, ProjectDescription , ProjectDetail, ProjetcCompleteOn)
@@ -73,7 +73,56 @@ VALUES                        (    1    ,    7      ,      '2021-06-15' ,       
 INSERT INTO `Work_Done` (EmployeeID, ModuleID, WorkDoneDate, WorkDoneDescription, WorkDoneStatus)
 VALUES                  (     7    ,     1   , '2021-06-18',    'Đã xong'       ,   'Dự án A'   ),
                         (     7    ,     1   , '2021-06-22',    'Đã xong'       ,   'Dự án A'   ),
-                        (     1    ,     5   , '2021-02-15',    'Đã xong'       ,   'Dự án E'   ),
+                        (     2    ,     5   , '2021-02-15',    'Đã xong'       ,   'Dự án E'   ),
                         (     1    ,     5   , '2021-02-16',    'Đã xong'       ,   'Dự án E'   ),
                         (     1    ,     5   , '2021-02-17',    'Đã xong'       ,   'Dự án E'   );
 
+
+/* b) Viết stored procedure (không có parameter) để Remove tất cả thông tin
+project đã hoàn thành sau 3 tháng kể từ ngày hiện. In số lượng record đã
+remove từ các table liên quan trong khi removing (dùng lệnh print) */
+
+/*DROP PROCEDURE IF EXISTS Ques_b;
+DELIMITER //
+CREATE PROCEDURE Ques_b()
+    BEGIN
+        WITH `Project_3_Month` AS
+        (
+            SELECT  ProjectID
+            FROM    `Projects`
+            WHERE  MONTH(NOW()) - MONTH(ProjetcCompleteOn) >= 3
+        )
+        DELETE
+        FROM  `Projects`
+        WHERE ProjectID IN (SELECT * FROM `Project_3_Month`);
+    end //
+DELIMITER ;
+CALL Ques_b();*/
+-- c) Viết stored procedure (có parameter) để in ra các module đang được thực hiện
+
+DROP PROCEDURE IF EXISTS Ques_c;
+DELIMITER $$
+CREATE PROCEDURE  Ques_c( OUT id_module TINYINT)
+    BEGIN
+        SELECT ModuleID
+        FROM   `Project_Modules`
+        WHERE  ModuleID NOT IN (SELECT ModuleID FROM `Work_Done`);
+    end $$
+DELIMITER ;
+ CALL Ques_c(@idMol);
+
+/* d) Viết hàm (có parameter) trả về thông tin 1 nhân viên đã tham gia làm mặc
+dù không ai giao việc cho nhân viên đó (trong bảng Works) */
+
+DROP PROCEDURE IF EXISTS Ques_d;
+DELIMITER //
+CREATE PROCEDURE Ques_d(OUT Employ_id TINYINT)
+    BEGIN
+        SELECT EmployeeID INTO Employ_id
+        FROM   `work_done`
+        WHERE EmployeeID NOT IN (SELECT EmployeeID FROM Project_Modules)LIMIT 1;
+    end //
+DELIMITER ;
+set @Employ_id = 0;
+call assignment_6.Ques_d(@Employ_id);
+select @Employ_id;
