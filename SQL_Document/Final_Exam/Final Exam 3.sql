@@ -116,12 +116,14 @@ DELETE FROM `Location` WHERE location_id = 'HAN';
 select *from employee;
 
 -- Lay ten dat nuoc cua nhan vien neu nhan vien khong co contry se thanh vo gia cu
-    SELECT  country_id,country_name
-    FROM  `Country`
-    WHERE country_id IN (SELECT country_id
-                         FROM `location` L
-                         JOIN `employee` e on L.location_id = e.location_id
-                         GROUP BY e.location_id);
+CREATE OR REPLACE VIEW `EmployeeInfo`(id,name,country) AS
+SELECT E.employee_id,E.full_name, CASE WHEN country_name IS NULL THEN 'Vô Gia Cư' ELSE country_name END
+FROM   `Employee` E
+LEFT JOIN  `Location` L ON E.location_id = L.location_id
+LEFT JOIN   `Country` C on L.country_id = C.country_id
+group by E.location_id;
+
+SELECT * FROM `EmployeeInfo`;
 
 
 
