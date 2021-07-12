@@ -64,8 +64,7 @@ SELECT 	    CO.CarID,SUM(CO.Amount)
 FROM        `customer` C
 JOIN        `car_order` CO
 USING	    (CustomerID)
-WHERE       CO.Staus = '1'
 GROUP BY 	CO.CustomerID
-HAVING		SUM(CO.Amount) > 0
+HAVING		CO.Staus = '1' AND SUM(CO.Amount) > 0
 ORDER BY    CO.Amount ASC;
 

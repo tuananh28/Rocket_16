@@ -3,12 +3,15 @@
   <component name="SqlDialectMappings">
     <file url="file://$PROJECT_DIR$/SQL_Document/Assignment/Testing_System_Assignment_1.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/SQL_Document/Assignment/Testing_System_Assignment_2.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/SQL_Document/Assignment/Testing_System_Assignment_4.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/SQL_Document/Assignment/Testing_System_Assignment_5.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/SQL_Document/Assignment/Testing_System_Assignment_6.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/SQL_Document/Assignment/Testing_System_Assignment_7.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/SQL_Document/Extra Assignment/Assignment 2.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/SQL_Document/Extra Assignment/Assignment 6.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/SQL_Document/Extra Assignment/Assigntment 7.sql" dialect="MySQL" />
-    <file url="file://$PROJECT_DIR$/SQL_Document/Extra Assignment/Final Exam 3.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/SQL_Document/Final_Exam/Final Exam 2.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/SQL_Document/Final_Exam/Final Exam 3.sql" dialect="MySQL" />
   </component>
   <component name="SqlResolveMappings">
     <file url="file://$PROJECT_DIR$/SQL_Document/Assignment/Testing_System_Assignment_6.sql" scope="{&quot;node&quot;:{  &quot;@negative&quot;:&quot;1&quot;,  &quot;group&quot;:{   &quot;@kind&quot;:&quot;root&quot;,   &quot;node&quot;:{    &quot;@negative&quot;:&quot;1&quot;   }  } }}" />

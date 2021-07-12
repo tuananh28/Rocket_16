@@ -8,7 +8,7 @@ CREATE TABLE `Country`(
 );
 
 CREATE TABLE `Location`(
-    location_id     CHAR(10) PRIMARY KEY ,
+    location_id     CHAR(10)  PRIMARY KEY ,
     street_address  VARCHAR(100),
     postal_code     INT,
     country_id      CHAR(10) NOT NULL ,
@@ -19,7 +19,7 @@ CREATE TABLE `Employee`(
     employee_id TINYINT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
     full_name   VARCHAR(50),
     email       VARCHAR(50) UNIQUE KEY ,
-    location_id CHAR(10) NOT NULL ,
+    location_id CHAR(10) ,
     CONSTRAINT kp_location_id FOREIGN KEY (location_id) REFERENCES `Location`(location_id) ON DELETE CASCADE
 );
 
@@ -47,11 +47,10 @@ VALUES                 ('Bùi Tuấn Anh'	    , 'tuananh28@gmail.com'	 ,    'HAN
                        ('Nguyễn Hữu Bằng'   , 'banglang@gmail.com'	 ,    'SGN'   ),
                        ('Trần Tuấn Phương'  , 'biwhite@gmail.com'	 ,    'SGN'   ),
                        ('Nguyễn Thị Lê'     , 'lenguyen@gmail.com'	 ,    'MAN'   ),
-                       ('Đặng Thị Thảo'     , 'dangthao@gmail.com'	 ,    'MAN'   ),
+                       ('Đặng Thị Thảo'     , 'dangthao@gmail.com'	 ,     NULL   ),
                        ('Lê Hoàng Khôi'     , 'khoile@gmail.com'	 ,    'LON'   ),
                        ('Trần Văn Diễn'     , 'dientran112@gmail.com',    'HAN'   ),
                        ('Bùi Minh Hiếu'     , 'hieubui@gmail.com'	 ,    'BANG'  );
-
 
 -- 2. Viết lệnh để
 -- a) Lấy tất cả các nhân viên thuộc Việt nam
@@ -86,31 +85,45 @@ CREATE TRIGGER Ques_3
     BEFORE INSERT ON `Employee`
     FOR EACH ROW
     BEGIN
-        DECLARE var_CountEmployeeID TINYINT;
-        SELECT COUNT(employee_id) INTO var_CountEmployeeID
+        DECLARE var_CountLocation CHAR(10) ;
+        SELECT COUNT(location_id) INTO var_CountLocation
         FROM `Employee`
-        WHERE employee_id = NEW.employee_id;
-        IF(var_CountEmployeeID > 10) THEN
+        WHERE location_id = NEW.location_id;
+        IF(var_CountLocation > 10) THEN
             SIGNAL SQLSTATE '12345'
             SET MESSAGE_TEXT = 'Cannot insert any more';
         end if;
     end //
 DELIMITER ;
 INSERT INTO `Employee` (    full_name    ,        email        , location_id)
-VALUES                 ('Nguyễn Văn Linh','vanlinh12@gmail.com',   'BANG'   );
+VALUES                 ('Nguyễn Văn Linh','vanlinh13@gmail.com',   'BANG'   );
 SELECT * FROM Employee;
 /*4. Hãy cấu hình table sao cho khi xóa 1 location nào đó thì tất cả employee ở
 location đó sẽ có location_id = null*/
 DROP TRIGGER IF EXISTS Ques_4;
 DELIMITER //
 CREATE TRIGGER Ques_4
-    AFTER DELETE ON `Location`
+    BEFORE DELETE ON `Location`
     FOR EACH ROW
     BEGIN
         UPDATE  `Employee`
-        SET     OLD.location_id = NULL;
+        SET     location_id = NULL
+        WHERE   location_id = OLD.location_id;
     end //
 DELIMITER ;
-DELETE FROM `Location` WHERE location_id = 'BANG';
-select *from location;
+DELETE FROM `Location` WHERE location_id = 'HAN';
+
+select *from employee;
+
+-- Lay ten dat nuoc cua nhan vien neu nhan vien khong co contry se thanh vo gia cu
+    SELECT  country_id,country_name
+    FROM  `Country`
+    WHERE country_id IN (SELECT country_id
+                         FROM `location` L
+                         JOIN `employee` e on L.location_id = e.location_id
+                         GROUP BY e.location_id);
+
+
+
+
 
