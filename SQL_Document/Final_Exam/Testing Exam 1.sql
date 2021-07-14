@@ -29,7 +29,7 @@ CREATE TABLE CAR_ORDER(
     OrderDate       DATETIME DEFAULT NOW(),
     DeliveryDate    DATETIME DEFAULT NOW(),
     DeliveryAddress VARCHAR(50),
-    Staus           ENUM ('0','1','2') DEFAULT'0',-- 0: đã đặt hàng, 1: đã giao, 2: đã hủy
+    `Staus`           ENUM ('0','1','2') DEFAULT'0',-- 0: đã đặt hàng, 1: đã giao, 2: đã hủy
     Note            VARCHAR(50),
     CONSTRAINT kp_CustomerID FOREIGN KEY (CustomerID) REFERENCES `CUSTOMER`(CustomerID),
     CONSTRAINT kp_CarID FOREIGN KEY (CarID) REFERENCES `CAR`(CarID)
@@ -60,11 +60,28 @@ INSERT INTO `requirement_1`.`car_order` (`CustomerID`, `CarID`, `Amount`, `SaleP
 INSERT INTO `requirement_1`.`car_order` (`CustomerID`, `CarID`, `Amount`, `SalePrice`, `OrderDate`, `DeliveryDate`, `DeliveryAddress`, `Staus`, `Note`) VALUES ('1', '9', '2', '2500.00', '2020-01-06', '2020-01-28', 'Bắc Ninh', '0', 'Còn nợ');
 INSERT INTO `requirement_1`.`car_order` (`CustomerID`, `CarID`, `Amount`, `SalePrice`, `OrderDate`, `DeliveryDate`, `DeliveryAddress`, `Staus`, `Note`) VALUES ('2', '7', '2', '2000.00', '2020-01-06', '2020-01-28', 'Hà Nội', '2', 'Hủy Hàng');
 
-SELECT 	    CO.CarID,SUM(CO.Amount)
-FROM        `customer` C
-JOIN        `car_order` CO
-USING	    (CustomerID)
-GROUP BY 	CO.CustomerID
-HAVING		CO.Staus = '1' AND SUM(CO.Amount) > 0
-ORDER BY    CO.Amount ASC;
+/* 2. Viết lệnh lấy ra thông tin của khách hàng: tên, số lượng oto khách hàng đã
+mua và sắp sếp tăng dần theo số lượng oto đã mua. */
+
+SELECT		C.Name, t.NumberCars
+		FROM	    `CUSTOMER`	c
+		JOIN		(
+						-- SUBQUERY GET CUSTOMER ID bought AND number of cars
+						SELECT		co.CustomerID ,SUM(co.Amount) AS NumberCars
+						FROM		`CAR_ORDER`	co
+						WHERE		co.Staus = '1'
+						GROUP BY	co.CustomerID
+						HAVING		SUM(co.Amount) > 0
+					)	AS	t	ON c.CustomerID = t.CustomerID
+		ORDER BY t.NumberCars ASC;
+/* 3. Viết hàm (không có parameter) trả về tên hãng sản xuất đã bán được nhiều
+oto nhất trong năm nay.*/
+
+/* 4. Viết 1 thủ tục (không có parameter) để xóa các đơn hàng đã bị hủy của
+những năm trước. In ra số lượng bản ghi đã bị xóa.*/
+/* 5. Viết 1 thủ tục (có CustomerID parameter) để in ra thông tin của các đơn
+hàng đã đặt hàng bao gồm: tên của khách hàng, mã đơn hàng, số lượng oto
+và tên hãng sản xuất. */
+/* 6. Viết trigger để tránh trường hợp người dụng nhập thông tin không hợp lệ
+vào database (DeliveryDate < OrderDate + 15). */
 

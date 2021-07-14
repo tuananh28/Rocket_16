@@ -121,9 +121,27 @@ CREATE TRIGGER `Ques_4`
 DELIMITER ;
 INSERT INTO `SinhVien` (    HotenSV     , Namsinh, Quequan   )
 VALUES                 ( 'Bùi Tuấn Anh' , 1890   , 'Bắc Ninh');
+
+-- Cách 2
+DROP TRIGGER IF EXISTS Trg_InsertToSinhVien;
+DELIMITER $$
+CREATE TRIGGER Trg_InsertToSinhVien
+	BEFORE INSERT ON `SinhVien`
+    FOR EACH ROW
+    BEGIN
+        IF (NEW.NamSinh <= '1950')
+        THEN
+			SIGNAL SQLSTATE '12345'
+            SET MESSAGE_TEXT = 'Moi ban kiem tra lai nam sinh. ';
+		END IF;
+	END $$
+
+INSERT INTO `SinhVien` (HotenSV, NamSinh, QueQuan)
+VALUES ('Vũ Văn Bình', '1940', 'Hải Dương');
 /*5. Hãy cấu hình table sao cho khi xóa 1 sinh viên nào đó thì sẽ tất cả thông
 tin trong table HuongDan liên quan tới sinh viên đó sẽ bị xóa đi*/
 
+-- Cách 1
 DROP TRIGGER IF EXISTS Ques_5;
 DELIMITER //
 CREATE TRIGGER Ques_5
@@ -137,3 +155,12 @@ DELETE
 FROM `SinhVien`
 WHERE MaSV = 1;
 SELECT *FROM `SinhVien`;
+
+-- Cách 2
+ALTER TABLE HuongDan DROP FOREIGN KEY Kp_MaSV;
+ALTER TABLE HuongDan ADD CONSTRAINT fk_HuongDan_SinhVien FOREIGN KEY (MaSV) REFERENCES SinhVien(MaSV) ON DELETE CASCADE;
+
+DELETE FROM SinhVien
+WHERE MaSV = '5';
+
+select * FROM HuongDan
