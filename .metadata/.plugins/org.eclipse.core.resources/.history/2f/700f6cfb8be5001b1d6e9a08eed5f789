@@ -1,0 +1,14 @@
+import java.time.LocalDate;
+
+import com.vti.entity.Account;
+
+public class Question {
+    int QuestionID;
+    String Content;
+    CategoryQuestion categoryQuestion;
+    TypeQuestion typeQuestion;
+    Account CreatorID ;
+    Account account;
+    LocalDate CreateDate;
+    Exam [] exams;
+}

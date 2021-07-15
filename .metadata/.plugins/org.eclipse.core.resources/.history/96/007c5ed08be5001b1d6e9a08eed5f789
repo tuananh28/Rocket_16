@@ -1,0 +1,7 @@
+
+
+public class Snippet {
+	Department department = new Department();
+			System.out.println("ID : "+department);
+			System.out.println("Name : "+department);
+}

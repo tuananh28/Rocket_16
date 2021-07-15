@@ -1,0 +1,59 @@
+package com.vti.backend;
+
+import java.time.LocalDate;
+
+import com.vti.entity.Account;
+import com.vti.entity.Department;
+import com.vti.entity.Position;
+import com.vti.entity.PositionName;
+
+public class Ex1_Constructor {
+	public static void main(String[] args) {
+		//Question1();
+		Question2();
+		//Question3();
+	}
+
+	private static void Question1() {
+		// Tạo constructor cho department:
+		// a) không có parameters
+		Department department = new Department();
+		System.out.println(department.toString());
+		// b) Có 1 parameter là nameDepartment và default id của
+		// Department = 0
+		// Khởi tạo 1 Object với mỗi constructor ở trên
+		Department department1 = new Department(1,"IT");
+		System.out.println(department1.getDepartmentID());
+		System.out.println(department1.getDepartmentName());		
+	}
+
+	private static void Question2() {
+		// Tạo constructor cho Account: 
+		// a) Không có parameters
+		Account accounta = new Account();
+		System.out.println(accounta.toString());
+		// b) Có các parameter là id, Email, Username, FirstName, 
+		// LastName (với FullName = FirstName + LastName)
+		Account accountb = new Account(1,"tuananh@gmail.com","tuananh28","Bùi","Tuấn Anh");
+		System.out.println(accountb.toString());
+		// c) Có các parameter là id, Email, Username, FirstName, 
+		// LastName (với FullName = FirstName + LastName) và 
+		// Position của User, default createDate = now
+		//Position position1 = new Position(1,PositionName.DEV);
+		//Account accountc = new Account(2,"hoamai@gmail.com","hoamaizz","Bùi Thị","Hoa Mai",position1,LocalDate.now());
+		//System.out.println(accountc);
+		// d) Có các parameter là id, Email, Username, FirstName, 
+		//LastName (với FullName = FirstName + LastName) và 
+		//Position của User, createDate
+		//Position position2 = new Position(1,PositionName.TEST);
+		//Account accountd = new Account(3,"dien22@gmail.com","dienz","Nguyễn","Văn Diễn",position2,LocalDate.of(2020, 10, 05));
+		//System.out.println(accountd);
+		// Khởi tạo 1 Object với mỗi constructor ở trên
+		
+	}
+
+	private static void Question3() {
+		// TODO Auto-generated method stub
+		
+	}
+}

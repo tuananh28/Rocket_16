@@ -1,0 +1,24 @@
+package com.vti.backend;
+
+public class Ex1_Constructor {
+	public static void main(String[] args) {
+		Question1();
+		Question2();
+		Question3();
+	}
+
+	private static void Question1() {
+		
+		
+	}
+
+	private static void Question2() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private static void Question3() {
+		// TODO Auto-generated method stub
+		
+	}
+}

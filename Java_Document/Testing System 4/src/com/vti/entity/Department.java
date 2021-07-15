@@ -29,4 +29,9 @@ public class Department {
 		DepartmentName = departmentName;
 	}
 
+	@Override
+	public String toString() {
+		return " DepartmentID : " + DepartmentID + 
+				"\n DepartmentName : " + DepartmentName + "";
+	}
 }
