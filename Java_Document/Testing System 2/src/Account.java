@@ -8,5 +8,5 @@ public class Account {
     Department Department;
     Position Position;
     LocalDate CreateDate;
-    Group[] groups;
+	public Group[] groups;
 }
