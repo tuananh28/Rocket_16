@@ -114,7 +114,7 @@ public class Ex1_Flow_Control {
         người hóng chuyện, tham gia tất cả các group" */
 
         System.out.println("\n\t--- Question 2 ---");
-
+        
         if (account2.groups == null) {
             System.out.println("Nhân viên này không có group. ");
         } else {
