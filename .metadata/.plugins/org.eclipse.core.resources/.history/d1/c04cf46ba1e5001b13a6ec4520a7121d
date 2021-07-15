@@ -1,0 +1,8 @@
+package com.vti.frontend;
+
+public class Ex4_Encapsulation {
+	public static void main(String[] args) {
+		Ex4_Encapsulation ex4 =new Ex4_Encapsulation();
+		ex4.
+	}
+}

@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="java.time.LocalDate"/>
-    <fullyQualifiedTypeName name="java.lang.String"/>
     <fullyQualifiedTypeName name="com.vti.entity.Department"/>
+    <fullyQualifiedTypeName name="com.sun.org.apache.xerces.internal.util.EntityResolver2Wrapper"/>
+    <fullyQualifiedTypeName name="com.vti.entity.PositionName"/>
+    <fullyQualifiedTypeName name="com.vti.entity.Position"/>
+    <fullyQualifiedTypeName name="javax.swing.GroupLayout.Group"/>
+    <fullyQualifiedTypeName name="sun.security.krb5.internal.HostAddress"/>
+    <fullyQualifiedTypeName name="com.vti.entity.Group"/>
+    <fullyQualifiedTypeName name="java.time.LocalDate"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
+    <fullyQualifiedTypeName name="com.vti.entity.Account"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="com.vti.entity.Student"/>
+    <fullyQualifiedTypeName name="com.vti.frontend.Ex4_Encapsulation"/>
+    <fullyQualifiedTypeName name="com.vti.frontend.Frontend_Encapsulation"/>
+    <fullyQualifiedTypeName name="com.vti.backend.Ex4_Encapsulation"/>
+    <fullyQualifiedTypeName name="com.vti.backend.Ex1_Constructor"/>
 </qualifiedTypeNameHistroy>
