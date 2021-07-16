@@ -10,10 +10,25 @@
     <fullyQualifiedTypeName name="java.time.LocalDate"/>
     <fullyQualifiedTypeName name="java.util.Arrays"/>
     <fullyQualifiedTypeName name="com.vti.entity.Account"/>
-    <fullyQualifiedTypeName name="java.lang.String"/>
     <fullyQualifiedTypeName name="com.vti.entity.Student"/>
     <fullyQualifiedTypeName name="com.vti.frontend.Ex4_Encapsulation"/>
     <fullyQualifiedTypeName name="com.vti.frontend.Frontend_Encapsulation"/>
     <fullyQualifiedTypeName name="com.vti.backend.Ex4_Encapsulation"/>
     <fullyQualifiedTypeName name="com.vti.backend.Ex1_Constructor"/>
+    <fullyQualifiedTypeName name="com.vti.entity.GioiTinh"/>
+    <fullyQualifiedTypeName name="jdk.javadoc.internal.doclets.toolkit.util.DocFinder.Output"/>
+    <fullyQualifiedTypeName name="sun.net.www.content.text.plain"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="com.vti.entity.NhanVien"/>
+    <fullyQualifiedTypeName name="com.vti.entity.CongNhan"/>
+    <fullyQualifiedTypeName name="com.sun.tools.javac.parser.Scanner"/>
+    <fullyQualifiedTypeName name="com.sun.tools.sjavac.comp.dependencies.PublicApiCollector"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="com.vti.entity.KySu"/>
+    <fullyQualifiedTypeName name="com.vti.entity.CanBo.GioiTinh"/>
+    <fullyQualifiedTypeName name="com.vti.backend.QLCB"/>
+    <fullyQualifiedTypeName name="com.vti.entity.CanBo"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="java.lang.Override"/>
 </qualifiedTypeNameHistroy>

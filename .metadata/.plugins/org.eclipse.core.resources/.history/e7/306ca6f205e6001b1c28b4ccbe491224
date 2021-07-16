@@ -1,0 +1,69 @@
+package com.vti.entity;
+
+import java.util.Scanner;
+
+public class CanBo {
+	private String Hoten;
+	private int Tuoi;
+	private GioiTinh gioiTinh;
+	private String DiaChi;
+	private Scanner sc;
+	
+	public enum GioiTinh {
+		MALE, FEMALE, UNKNOWN
+	}
+	
+	public CanBo() {
+	
+
+	public String getHoten() {
+		return Hoten;
+	}
+
+	public void setHoten(String hoten) {
+		Hoten = hoten;
+	}
+
+	public int getTuoi() {
+		return Tuoi;
+	}
+
+	public void setTuoi(int tuoi) {
+		Tuoi = tuoi;
+	}
+
+	public GioiTinh getGioiTinh() {
+		return gioiTinh;
+	}
+
+	public void setGioiTinh(GioiTinh gioiTinh) {
+		this.gioiTinh = gioiTinh;
+	}
+
+	public String getDiaChi() {
+		return DiaChi;
+	}
+
+	public void setDiaChi(String diaChi) {
+		DiaChi = diaChi;
+	}
+	
+	public void Input() {
+		sc = new Scanner(System.in);
+		System.out.print("Họ tên : ");
+		Hoten = sc.nextLine();
+		System.out.print("Tuổi : ");
+		Tuoi = sc.nextInt();
+		System.out.print("Giới Tính");
+		setGioiTinh(gioiTinh);
+		System.out.print("Địa Chỉ : ");
+		DiaChi = sc.nextLine();
+	}
+	
+	public void Output() {
+		System.out.println("Họ tên : "+Hoten);
+		System.out.println("Tuổi : "+Tuoi);
+		System.out.println("Giới Tính"+gioiTinh);
+		System.out.println("Địa Chỉ : "+DiaChi);
+	}
+}

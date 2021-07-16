@@ -1,0 +1,26 @@
+package com.vti.entity;
+
+import java.util.Scanner;
+
+
+public class CongNhan extends CanBo{
+	int Level; // 1->10
+	
+	public int getLevel() {
+		return Level;
+	}
+
+	public void setLevel(int level) {
+		Level = level;
+	}
+	@Override
+	public void Input() {
+		System.out.print("Level : ");
+		Scanner sc = new Scanner(System.in);
+		Level = sc.nextInt();
+		sc.close();
+	}
+	public void Output() {
+		System.out.println("Level : "+Level);
+	}
+}

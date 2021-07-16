@@ -1,0 +1,48 @@
+package com.vti.entity;
+
+import java.util.Scanner;
+
+public class CanBo {
+	private String Hoten;
+	private byte Tuoi;
+	private String gioiTinh;
+	private String DiaChi;
+	private Scanner sc;
+
+	public CanBo() {
+	}
+
+	public String getHoten() {
+		return Hoten;
+	}
+
+	public int getTuoi() {
+		return Tuoi;
+	}
+
+	public String getDiaChi() {
+		return DiaChi;
+	}
+
+	public void Input() {
+		sc = new Scanner(System.in);
+		System.out.print("Họ tên : ");
+		Hoten = sc.nextLine();
+		System.out.print("Tuổi : ");
+		Tuoi = sc.nextByte();
+		System.out.print("Giới Tính : ");
+		gioiTinh = sc.nextLine();
+		sc.next();
+		System.out.print("Địa Chỉ : ");
+		DiaChi = sc.nextLine();
+		sc.next();
+	}
+
+	public void Output() {
+		System.out.println("Họ tên : " + Hoten);
+		System.out.println("Tuổi : " + Tuoi);
+		System.out.println("Giới Tính" + gioiTinh);
+		System.out.println("Địa Chỉ : " + DiaChi);
+	}
+
+}
