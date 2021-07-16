@@ -1,0 +1,7 @@
+package com.vti.backend;
+
+import com.vti.entity.Inheritance.HighSchoolStudent;
+
+public class Ex5_Ques3 {
+	
+}

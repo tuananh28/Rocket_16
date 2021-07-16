@@ -3,10 +3,10 @@ package com.vti.backend;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import com.vti.entity.CanBo;
-import com.vti.entity.CongNhan;
-import com.vti.entity.KySu;
-import com.vti.entity.NhanVien;
+import com.vti.entity.Inheritance.CanBo;
+import com.vti.entity.Inheritance.CongNhan;
+import com.vti.entity.Inheritance.KySu;
+import com.vti.entity.Inheritance.NhanVien;
 
 public class QLCB {
 	ArrayList<CanBo> list = new ArrayList<>();
