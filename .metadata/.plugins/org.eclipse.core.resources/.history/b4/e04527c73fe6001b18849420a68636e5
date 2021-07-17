@@ -18,8 +18,8 @@ public class QLTL {
 			System.out.println("\t 2.Tạp Chí");
 			System.out.println("\t 3.Báo");
 			System.out.println("\t 4.Quay lại ");
-			System.out.println("=========================");
-			System.out.print("Mời bạn đưa ra lựa chọn : ");
+			System.out.println("================");
+			System.out.println("Mời bạn đưa ra lựa chọn : ");
 			lc = scanner.nextInt();
 			switch (lc) {
 			case 1:
@@ -27,7 +27,7 @@ public class QLTL {
 				System.out.print("Số lượng cần thêm : ");
 				int a = scanner.nextInt();
 				for (int i = 0; i < a; i++) {
-					System.out.println("\nSách thứ "+(i+1));
+					System.out.println("Sách thứ "+(i+1));
 					Sach sach = new Sach();
 					sach.Input();
 					list.add(sach);					
@@ -38,7 +38,7 @@ public class QLTL {
 				System.out.print("Số lượng cần thêm : ");
 				int b = scanner.nextInt();
 				for (int i = 0; i < b; i++) {
-					System.out.println("\nTạp chí thứ "+(i+1));
+					System.out.println("Tạp chí thứ "+(i+1));
 					TapChi tapChi = new TapChi();
 					tapChi.Input();
 					list.add(tapChi);					
@@ -49,7 +49,7 @@ public class QLTL {
 				System.out.print("Số lượng cần thêm : ");
 				int c = scanner.nextInt();
 				for (int i = 0; i < c; i++) {
-					System.out.println("\nBáo thứ "+(i+1));
+					System.out.println("Báo thứ "+(i+1));
 					Bao bao = new Bao();
 					bao.Input();
 					list.add(bao);			
@@ -114,8 +114,6 @@ public class QLTL {
 		for (TaiLieu taiLieu : list) {
 			if (matailieu == taiLieu.getMaTaiLieu()) {
 				list.remove(taiLieu);
-				System.out.println("Mã tài liệu "+matailieu+" đã xóa");
-				taiLieu.Output();
 			}
 		}
 	}

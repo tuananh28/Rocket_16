@@ -6,3 +6,7 @@
 1626437200833	Convert local variable 'sc' to field
 1626438740473	Move compilation units
 1626439845954	Delete element
+1626440610062	Convert local variable 'scanner' to field
+1626440867969	Convert local variable 'scanner' to field
+1626441088371	Convert local variable 'scanner' to field
+1626441832373	Convert local variable 'scanner' to field

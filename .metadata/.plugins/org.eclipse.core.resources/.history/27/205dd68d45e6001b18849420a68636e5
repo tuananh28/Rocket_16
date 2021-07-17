@@ -1,0 +1,5 @@
+package com.vti.entity.Abstraction;
+
+public class Phone {
+
+}
