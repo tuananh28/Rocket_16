@@ -3,6 +3,7 @@
 	<item key="org.eclipse.jdt.ui.last.selected.jre.kind2" value="2"/>
 	<item key="org.eclipse.jdt.ui.last.selected.execution.enviroment" value="JavaSE-16"/>
 	<item key="org.eclipse.jdt.ui.last.external.project" value="D:\Rocket_16\Java_Document"/>
+	<item key="org.eclipse.jdt.ui.last.selected.create.moduleinfo" value="false"/>
 	<section name="JavaElementSearchActions">
 	</section>
 	<section name="OptionalMessageDialog.hide.">
@@ -104,5 +105,7 @@
 		<item key="updateTextualMatches" value="false"/>
 		<item key="updateQualifiedNames" value="false"/>
 		<item key="patterns" value="*"/>
+		<item key="updateSimilarElements" value="false"/>
+		<item key="updateSimilarElementsMatchStrategy" value="1"/>
 	</section>
 </section>

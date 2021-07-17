@@ -33,6 +33,8 @@ public class TuyenSinh implements ITuyenSinh {
 		for (ThiSinh thiSinh : list) {
 			if (thiSinh.getSbd().equals(id)) {
 				System.out.println(thiSinh);
+			} else if (id == null) {
+				System.out.println("Bạn chưa nhập thông tin Thí Sinh !");
 			} else
 				System.out.println("Số báo danh bạn tìm không có !");
 		}

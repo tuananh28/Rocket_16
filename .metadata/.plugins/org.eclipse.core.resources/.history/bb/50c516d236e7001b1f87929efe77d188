@@ -1,0 +1,62 @@
+package com.vti.backend;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import com.vti.entity.Polymorphism.Question1.Student;
+
+public class Ex2_Polymorphism {
+	ArrayList<Student> list = new ArrayList<Student>();
+	Student[] students = new Student[11];
+	Scanner scanner = new Scanner(System.in);
+
+	public void Question1() {
+		while (true) {
+			System.out.println("\t\t MENU \t\t");
+			System.out.println("\t 1.Tạo 10 học sinh, chia thành 3 nhóm.");
+			System.out.println("\t 2.Kêu gọi cả lớp điểm danh.");
+			System.out.println("\t 3.Gọi nhóm 1 đi học bài.");
+			System.out.println("\t 4.Gọi nhóm 2 đi dọn vệ sinh.");
+			System.out.println("\t 5.Thoát.");
+			System.out.println("\t\t\t ========= \t\t\t");
+			System.out.println("Mời bạn đưa ra lựa chọn");
+			int n = scanner.nextInt();
+			switch (n) {
+			case 1:
+				students[1] = new Student("Tuấn Anh", 1);
+				students[2] = new Student("Quang Anh", 1);
+				students[3] = new Student("Hoa Mai", 1);
+				students[4] = new Student("Chiến", 2);
+				students[5] = new Student("Hữu", 2);
+				students[6] = new Student("Hiền", 2);
+				students[7] = new Student("Bích", 3);
+				students[8] = new Student("Thủy", 3);
+				students[9] = new Student("Phương", 3);
+				students[10] = new Student("Nam", 3);
+				break;
+			case 2:
+				for (int i = 0; i < students.length; i++) {
+					students[i].DiemDanh();
+				}
+			case 3:
+				for (int i = 0; i < students.length; i++) {
+					if (students[i].getGroup() == 1) {
+						students[i].HocBai();
+					}
+				}
+			case 4:
+				for (int i = 0; i < students.length; i++) {
+					if (students[i].getGroup() == 2) {
+						students[i].DonVeSinh();
+					}
+				}
+			case 5:
+				System.out.println("Thoát chương trình !");
+				return;
+			default:
+				System.out.println("Bạn nhập sai, mời nhập lại : ");
+				break;
+			}
+		}
+	}
+}
