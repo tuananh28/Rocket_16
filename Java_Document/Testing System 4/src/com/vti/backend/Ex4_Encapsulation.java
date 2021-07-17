@@ -1,6 +1,6 @@
 package com.vti.backend;
 
-import com.vti.entity.Student;
+import com.vti.entity.Encapsulation.Student;
 
 public class Ex4_Encapsulation {
 

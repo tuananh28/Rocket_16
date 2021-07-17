@@ -2,11 +2,9 @@ package com.vti.backend;
 
 import java.util.Scanner;
 
-import org.w3c.dom.ls.LSOutput;
 
-import com.vti.entity.Abstraction.Contact;
-import com.vti.entity.Abstraction.Phone;
-import com.vti.entity.Abstraction.VietnamesePhone;
+import com.vti.entity.Abstraction.Question1.VietnamesePhone;
+
 
 public class Ex6_Abstraction {
 

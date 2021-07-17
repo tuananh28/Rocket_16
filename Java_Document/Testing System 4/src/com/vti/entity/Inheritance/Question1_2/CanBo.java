@@ -1,4 +1,4 @@
-package com.vti.entity.Inheritance;
+package com.vti.entity.Inheritance.Question1_2;
 
 import java.util.Scanner;
 

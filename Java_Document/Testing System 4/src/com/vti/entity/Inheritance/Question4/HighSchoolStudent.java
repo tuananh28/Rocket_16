@@ -1,4 +1,4 @@
-package com.vti.entity.Inheritance;
+package com.vti.entity.Inheritance.Question4;
 
 public class HighSchoolStudent extends Student{
 	String Clazz;

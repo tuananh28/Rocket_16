@@ -1,10 +1,11 @@
-package com.vti.entity.Inheritance;
+package com.vti.entity.Inheritance.Question1_2;
 
 import java.util.Scanner;
 
 public class KySu extends CanBo{
 
 	private String NganhDaoTao;
+	private Scanner scanner;
 	
 	public String getNganhDaoTao() {
 		return NganhDaoTao;
@@ -17,7 +18,7 @@ public class KySu extends CanBo{
 	public void Input() {
 		super.Input();
 		System.out.print("Ngành Đào Tạo : ");
-		Scanner scanner = new Scanner(System.in);
+		scanner = new Scanner(System.in);
 		NganhDaoTao = scanner.nextLine();
 	}
 	

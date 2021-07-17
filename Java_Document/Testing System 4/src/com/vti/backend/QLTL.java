@@ -3,10 +3,11 @@ package com.vti.backend;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import com.vti.entity.Inheritance.Bao;
-import com.vti.entity.Inheritance.Sach;
-import com.vti.entity.Inheritance.TaiLieu;
-import com.vti.entity.Inheritance.TapChi;
+import com.vti.entity.Inheritance.Question3.Bao;
+import com.vti.entity.Inheritance.Question3.Sach;
+import com.vti.entity.Inheritance.Question3.TaiLieu;
+import com.vti.entity.Inheritance.Question3.TapChi;
+
 public class QLTL {
 	ArrayList<TaiLieu> list = new ArrayList<>();
 	Scanner scanner = new Scanner(System.in);

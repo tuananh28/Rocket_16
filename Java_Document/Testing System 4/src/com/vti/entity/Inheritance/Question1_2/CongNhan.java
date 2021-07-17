@@ -1,10 +1,11 @@
-package com.vti.entity.Inheritance;
+package com.vti.entity.Inheritance.Question1_2;
 
 import java.util.Scanner;
 
 
 public class CongNhan extends CanBo{
 	int Level; // 1->10
+	private Scanner sc;
 	
 	public int getLevel() {
 		return Level;
@@ -15,7 +16,7 @@ public class CongNhan extends CanBo{
 	}
 	@Override
 	public void Input() {
-		Scanner sc = new Scanner(System.in);
+		sc = new Scanner(System.in);
 		super.Input();
 		System.out.print("Level : ");
 		Level = sc.nextInt();

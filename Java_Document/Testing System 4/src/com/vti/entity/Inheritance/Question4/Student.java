@@ -1,4 +1,4 @@
-package com.vti.entity.Inheritance;
+package com.vti.entity.Inheritance.Question4;
 
 public abstract class Student extends Person{
 	int ID;

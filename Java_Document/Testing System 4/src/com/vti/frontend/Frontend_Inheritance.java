@@ -5,15 +5,14 @@ import java.util.Scanner;
 import com.vti.backend.Ex5_Inheritance;
 import com.vti.backend.QLCB;
 import com.vti.backend.QLTL;
-import com.vti.entity.Inheritance.TaiLieu;
 
 public class Frontend_Inheritance {
 	private static Scanner scanner;
 
 	public static void main(String[] args) {
-		//QLCB();
-		//Ex5_Inheritance ex5 = new Ex5_Inheritance();
-		//ex5.Question3();
+		QLCB();
+		Ex5_Inheritance ex5 = new Ex5_Inheritance();
+		ex5.Question3();
 		QLTL();
 	}
 

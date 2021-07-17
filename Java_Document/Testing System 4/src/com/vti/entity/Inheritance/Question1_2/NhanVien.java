@@ -1,9 +1,10 @@
-package com.vti.entity.Inheritance;
+package com.vti.entity.Inheritance.Question1_2;
 
 import java.util.Scanner;
 
 public class NhanVien extends CanBo{
 	String CongViec;
+	private Scanner scanner;
 	
 	public String getCongViec() {
 		return CongViec;
@@ -16,7 +17,7 @@ public class NhanVien extends CanBo{
 	public void Input() {
 		super.Input();
 		System.out.print("Công Việc : ");
-		Scanner scanner = new Scanner(System.in);
+		scanner = new Scanner(System.in);
 		CongViec = scanner.nextLine();
 	}
 	public void Output() {

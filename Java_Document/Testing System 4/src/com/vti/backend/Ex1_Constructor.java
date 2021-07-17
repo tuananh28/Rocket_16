@@ -2,11 +2,11 @@ package com.vti.backend;
 
 import java.time.LocalDate;
 
-import com.vti.entity.Account;
-import com.vti.entity.Department;
-import com.vti.entity.Group;
-import com.vti.entity.Position;
-import com.vti.entity.PositionName;
+import com.vti.entity. Access_Modifier.Account;
+import com.vti.entity. Access_Modifier.Department;
+import com.vti.entity. Access_Modifier.Group;
+import com.vti.entity. Access_Modifier.Position;
+import com.vti.entity. Access_Modifier.PositionName;
 
 public class Ex1_Constructor {
 	

@@ -1,6 +1,5 @@
-package com.vti.entity.Inheritance;
+package com.vti.entity.Inheritance.Question3;
 
-import java.sql.Date;
 import java.util.Scanner;
 
 public class TapChi extends TaiLieu{

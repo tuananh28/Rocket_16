@@ -1,6 +1,6 @@
 package com.vti.backend;
 
-import com.vti.entity.Inheritance.HighSchoolStudent;
+import com.vti.entity.Inheritance.Question4.HighSchoolStudent;
 
 public class Ex5_Inheritance {
 	public void Question3() {

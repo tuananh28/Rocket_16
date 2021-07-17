@@ -1,4 +1,4 @@
-package com.vti.entity.Abstraction;
+package com.vti.entity.Abstraction.Question1;
 
 import java.util.ArrayList;
 
