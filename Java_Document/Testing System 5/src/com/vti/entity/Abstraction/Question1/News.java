@@ -66,8 +66,8 @@ public class News implements INews {
 		System.out.println("Title : " + Title);
 		System.out.println("PublishDate : " + PublishDate);
 		System.out.println("Author : " + Author);
-		System.out.println("Content" + Content);
-		System.out.println("AverageRate" + AverageRate);
+		System.out.println("Content : " + Content);
+		System.out.println("AverageRate : " + AverageRate);
 	}
 
 	@Override
