@@ -1,0 +1,14 @@
+package com.vti.backend;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import com.vti.entity.Abstraction.Question1.News;
+
+public class Ex1_Question1 {
+	ArrayList<News> list = new ArrayList<News>();
+	Scanner scanner = new Scanner(System.in);
+	public void Question1() {
+		
+	}
+}

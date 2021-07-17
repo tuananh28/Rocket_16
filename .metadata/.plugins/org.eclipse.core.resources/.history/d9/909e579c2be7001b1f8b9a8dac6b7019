@@ -1,0 +1,38 @@
+package com.vti.entity.Abstraction.Question2;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class TuyenSinh implements ITuyenSinh{
+	ArrayList<ThiSinh> list = new ArrayList<>();
+	Scanner scanner = new Scanner(System.in);
+	ThiSinh thiSinh = new ThiSinh();
+ 	@Override
+	public void Them() {
+		System.out.print("Số thí sinh cần thêm : ");
+		int n = scanner.nextInt();
+		for (int i = 0; i < n; i++) {
+			System.out.println("\nThí sinh thứ "+(i+1));			
+			thiSinh.Input();
+			list.add(thiSinh);
+		}		
+	}
+	@Override
+	public void HienThi() {
+		for (ThiSinh thiSinh : list) {
+			thiSinh.Output();
+		}
+	}
+
+	@Override
+	public void TimKiem() {
+		System.out.print("Nhập ID thí sinh cần tìm : ");
+		int id = scanner.nextInt();
+		for (ThiSinh thiSinh : list) {
+			if (thiSinh.getSbd().equals(id)) {
+				System.out.println(thiSinh);
+			}
+		}
+	}
+
+}

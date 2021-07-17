@@ -1,0 +1,66 @@
+package com.vti.backend;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Scanner;
+
+import com.vti.entity.Abstraction.Question1.News;
+
+public class Ex1_Abstraction {
+	ArrayList<News> list = new ArrayList<News>();
+	Scanner scanner = new Scanner(System.in);
+	public void Question1() {
+		int choose;
+		do {
+			System.out.println("===\t MENU \t===");
+			System.out.println("\t 1.Insert news.");
+			System.out.println("\t 2.View list news.");
+			System.out.println("\t 3.Average rate.");
+			System.out.println("\t 4.Exit.");
+			System.out.println("====================");
+			System.out.print("Mời bạn đưa ra lựa chọn : ");
+			choose = scanner.nextInt();
+			switch (choose) {
+			case 1:
+				System.out.print("Số lượng cần thêm : ");
+				int a = scanner.nextInt();
+				for(int i =0; i<a; i++){
+					System.out.println("News thứ "+(i+1));
+					System.out.print("Title : ");
+					String Title = scanner.next();
+					System.out.print("PublishDate : ");
+					String PublishDate = scanner.next();
+					System.out.print("Author : ");
+					String Author = scanner.next();
+					System.out.print("Content : ");
+					String Content = scanner.next();
+					
+					System.out.print("Đánh giá 1 : ");
+					int rate1 = scanner.nextInt();
+					System.out.print("Đánh giá 2 : ");
+					int rate2 = scanner.nextInt();
+					System.out.print("Đánh giá 3 : ");
+					int rate3 = scanner.nextInt();
+					int[]rates = {rate1,rate2,rate3};
+					News news = new News();
+					list.add(news);
+				}
+				break;
+			case 2:
+				for (News news : list) {
+					news.Display();
+				}
+			case 3:
+				System.out.println("Đánh giá trung bình Rate");
+				for (News news : list) {
+					System.out.println("Title : "+news.getTitle() + "RateAVG : "+news.Calculate());
+				}
+			case 4:
+				return;
+			default:
+				System.out.println("Bạn nhập sai, mời nhập lại : ");
+				break;
+			}
+		} while (choose != 4);
+	}
+}

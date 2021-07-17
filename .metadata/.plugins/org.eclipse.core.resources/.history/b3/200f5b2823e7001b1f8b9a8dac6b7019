@@ -1,0 +1,29 @@
+package com.vti.entity.Abstraction.Question2;
+
+import java.util.Scanner;
+
+public class ThiSinh {
+	private int Sbd;
+	private String Hoten;
+	private String Diachi;
+	private int Uutien;
+	private Scanner scanner;
+	
+	public void Input() {
+		System.out.print("Số báo danh : ");
+		Sbd = Integer.parseInt(scanner.nextLine());
+		System.out.print("Họ Tên : ");
+		Hoten = scanner.nextLine();
+		System.out.print("Địa chỉ : ");
+		Diachi = scanner.nextLine();
+		System.out.print("Mức ưu tiên : ");
+		Uutien = scanner.nextInt();
+	}
+	
+	public void Output() {
+		System.out.println("Số báo danh : "+Sbd);
+		System.out.println("Họ Tên : "+Hoten);
+		System.out.println("Địa chỉ : "+Diachi);
+		System.out.println("Mức ưu tiên : "+Uutien);
+	}
+}

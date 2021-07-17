@@ -1,0 +1,30 @@
+package com.vti.entity.Abstraction.Question2;
+
+public class TuyenSinh implements ITuyenSinh{
+	
+	
+	@Override
+	public void Them() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void HienThi() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void TimKiem() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void Thoat() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}
