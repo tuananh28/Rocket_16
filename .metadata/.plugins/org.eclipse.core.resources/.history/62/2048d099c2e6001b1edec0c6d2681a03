@@ -2,8 +2,6 @@ package com.vti.backend;
 
 import java.util.Scanner;
 
-import org.w3c.dom.ls.LSOutput;
-
 import com.vti.entity.Abstraction.Contact;
 import com.vti.entity.Abstraction.Phone;
 import com.vti.entity.Abstraction.VietnamesePhone;
@@ -22,7 +20,6 @@ public class Ex6_Abstraction {
 			System.out.println("\t  2. RemoveContact.");
 			System.out.println("\t  3. UpdateContact.");
 			System.out.println("\t  4. SreachContact.");
-			System.out.println("\t  5. PrintContact.");
 			System.out.println("===============================");
 			System.out.print("Đưa ra lựa chọn : ");
 			lc = scanner.nextInt();
@@ -53,7 +50,6 @@ public class Ex6_Abstraction {
 				vnPhone.searchContact(searchName);
 				break;
 			case 5:
-				vnPhone.printContact();
 				return;
 			default:
 				System.out.println("Bạn nhập sai,Mời nhập lại !");

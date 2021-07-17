@@ -6,6 +6,10 @@ public class VietnamesePhone extends Phone {
 
 	private ArrayList<Contact> contactsList = new ArrayList<>();
 
+	public VietnamesePhone() {
+		this.contactsList = contactsList;
+	}
+
 	@Override
 	public void insertContact(String name, String phone) {
 		// TODO Auto-generated method stub

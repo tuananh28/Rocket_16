@@ -36,17 +36,18 @@
     <fullyQualifiedTypeName name="java.time.Month"/>
     <fullyQualifiedTypeName name="java.sql.Date"/>
     <fullyQualifiedTypeName name="java.lang.Byte"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
-    <fullyQualifiedTypeName name="java.lang.System"/>
     <fullyQualifiedTypeName name="com.vti.entity.Inheritance.TapChi"/>
     <fullyQualifiedTypeName name="com.vti.entity.Inheritance.Bao"/>
     <fullyQualifiedTypeName name="sun.security.provider.JavaKeyStore.CaseExactJKS"/>
     <fullyQualifiedTypeName name="com.vti.entity.Inheritance.Sach"/>
     <fullyQualifiedTypeName name="com.vti.entity.Inheritance.TaiLieu"/>
-    <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="com.vti.backend.QLTL"/>
-    <fullyQualifiedTypeName name="java.lang.String"/>
     <fullyQualifiedTypeName name="com.vti.backend.Ex6_Abstraction"/>
-    <fullyQualifiedTypeName name="com.vti.entity.Abstraction.VietnamesePhone"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
     <fullyQualifiedTypeName name="com.vti.entity.Abstraction.Phone"/>
+    <fullyQualifiedTypeName name="com.vti.entity.Abstraction.Contact"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="com.vti.entity.Abstraction.VietnamesePhone"/>
 </qualifiedTypeNameHistroy>

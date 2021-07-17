@@ -1,10 +1,14 @@
-package com.vti.entity.Abstraction;
+package com.vti.entity;
 
 import java.util.ArrayList;
 
 public class VietnamesePhone extends Phone {
 
-	private ArrayList<Contact> contactsList = new ArrayList<>();
+	private ArrayList<Contact> contactsList;
+
+	public VietnamesePhone() {
+		this.contactsList = contactsList;
+	}
 
 	@Override
 	public void insertContact(String name, String phone) {
