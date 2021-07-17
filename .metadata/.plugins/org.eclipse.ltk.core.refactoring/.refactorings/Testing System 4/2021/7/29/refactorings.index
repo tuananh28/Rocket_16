@@ -21,3 +21,4 @@
 1626508422534	Encapsulate field 'ID'
 1626508431138	Encapsulate field 'HomeTown'
 1626508586676	Rename type 'Question1'
+1626531807897	Rename package 'com.vti.entity.Abstraction.Question2'

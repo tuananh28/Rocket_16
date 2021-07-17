@@ -1,0 +1,15 @@
+package com.vti.entity.Abstraction.Question2;
+
+public class Manager extends User{
+
+	public Manager(String Name, double Salary_Ratio) {
+		super(Name, Salary_Ratio);
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public Double CalculatePay() {
+		return Salary_Ratio * 520;
+	}
+
+}

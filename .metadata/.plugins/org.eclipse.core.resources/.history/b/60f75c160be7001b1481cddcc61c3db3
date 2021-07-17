@@ -75,23 +75,23 @@ public class Ex6_Abstraction {
 			case 1:
 				System.out.print("Tên nhân viên : ");
 				String eName = scanner.next();
-				System.out.print("Salary Ratio : ");
-				Double eSalary_Ratio = Double.parseDouble(scanner.nextLine());
+				System.out.println("Salary Ratio : ");
+				double eSalary_Ratio = scanner.nextDouble();
 				Employee employee = new Employee(eName, eSalary_Ratio);
 				employee.displayInfor();
 				break;
 			case 2:
 				System.out.print("Tên Quản lý : ");
-				String mName = scanner.nextLine();
-				System.out.print("Salary Ratio : ");
-				Double mSalary_Ratio = scanner.nextDouble();
+				String mName = scanner.next();
+				System.out.println("Salary Ratio : ");
+				double mSalary_Ratio = scanner.nextDouble();
 				Manager manager = new Manager(mName, mSalary_Ratio);
 				manager.displayInfor();
 			case 3:
 				System.out.print("Tên phục vụ : ");
-				String wName = scanner.nextLine();
-				System.out.print("Salary Ratio : ");
-				Double wSalary_Ratio = scanner.nextDouble();
+				String wName = scanner.next();
+				System.out.println("Salary Ratio : ");
+				double wSalary_Ratio = scanner.nextDouble();
 				Waiter waiter = new Waiter(wName, wSalary_Ratio);
 				waiter.displayInfor();
 			case 4:

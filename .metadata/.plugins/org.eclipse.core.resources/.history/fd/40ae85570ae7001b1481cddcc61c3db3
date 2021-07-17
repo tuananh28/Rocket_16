@@ -2,10 +2,9 @@ package com.vti.backend;
 
 import java.util.Scanner;
 
+
 import com.vti.entity.Abstraction.Question1.VietnamesePhone;
-import com.vti.entity.Abstraction.Question2_3.Employee;
-import com.vti.entity.Abstraction.Question2_3.Manager;
-import com.vti.entity.Abstraction.Question2_3.Waiter;
+
 
 public class Ex6_Abstraction {
 
@@ -56,48 +55,6 @@ public class Ex6_Abstraction {
 				return;
 			default:
 				System.out.println("Bạn nhập sai,Mời nhập lại !");
-				break;
-			}
-		}
-	}
-
-	public void Question2_3() {
-		while (true) {
-			System.out.println("============MENU===========");
-			System.out.println("\t 1.Add Employee.");
-			System.out.println("\t 2.Add Manager.");
-			System.out.println("\t 3.Add Waiter.");
-			System.out.println("\t 4.Exit.");
-			System.out.println("============================");
-			System.out.print("Mời bạn đưa ra lựa chọn : ");
-			int lc = scanner.nextInt();
-			switch (lc) {
-			case 1:
-				System.out.print("Tên nhân viên : ");
-				String eName = scanner.next();
-				System.out.print("Salary Ratio : ");
-				Double eSalary_Ratio = Double.parseDouble(scanner.nextLine());
-				Employee employee = new Employee(eName, eSalary_Ratio);
-				employee.displayInfor();
-				break;
-			case 2:
-				System.out.print("Tên Quản lý : ");
-				String mName = scanner.nextLine();
-				System.out.print("Salary Ratio : ");
-				Double mSalary_Ratio = scanner.nextDouble();
-				Manager manager = new Manager(mName, mSalary_Ratio);
-				manager.displayInfor();
-			case 3:
-				System.out.print("Tên phục vụ : ");
-				String wName = scanner.nextLine();
-				System.out.print("Salary Ratio : ");
-				Double wSalary_Ratio = scanner.nextDouble();
-				Waiter waiter = new Waiter(wName, wSalary_Ratio);
-				waiter.displayInfor();
-			case 4:
-				return;
-			default:
-				System.out.println("Bạn nhập sai, mời nhập lại !");
 				break;
 			}
 		}

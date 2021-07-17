@@ -6,7 +6,7 @@ public class Frontend_Abstraction {
 
 	public static void main(String[] args) {
 		Ex6_Abstraction ex6 = new Ex6_Abstraction();
-		//ex6.Question1();
+		ex6.Question1();
 		ex6.Question2_3();
 	}
 

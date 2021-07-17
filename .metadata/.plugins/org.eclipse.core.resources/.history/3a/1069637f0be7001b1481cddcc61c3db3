@@ -74,7 +74,7 @@ public class Ex6_Abstraction {
 			switch (lc) {
 			case 1:
 				System.out.print("Tên nhân viên : ");
-				String eName = scanner.next();
+				String eName = scanner.nextLine();
 				System.out.print("Salary Ratio : ");
 				Double eSalary_Ratio = Double.parseDouble(scanner.nextLine());
 				Employee employee = new Employee(eName, eSalary_Ratio);

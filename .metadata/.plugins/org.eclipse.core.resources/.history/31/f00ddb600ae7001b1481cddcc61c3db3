@@ -2,10 +2,13 @@ package com.vti.backend;
 
 import java.util.Scanner;
 
+import org.w3c.dom.ls.LSOutput;
+
 import com.vti.entity.Abstraction.Question1.VietnamesePhone;
-import com.vti.entity.Abstraction.Question2_3.Employee;
-import com.vti.entity.Abstraction.Question2_3.Manager;
-import com.vti.entity.Abstraction.Question2_3.Waiter;
+import com.vti.entity.Abstraction.Question2.Employee;
+
+import sun.security.provider.JavaKeyStore.CaseExactJKS;
+
 
 public class Ex6_Abstraction {
 
@@ -60,9 +63,9 @@ public class Ex6_Abstraction {
 			}
 		}
 	}
-
 	public void Question2_3() {
-		while (true) {
+		int lc;
+		do {
 			System.out.println("============MENU===========");
 			System.out.println("\t 1.Add Employee.");
 			System.out.println("\t 2.Add Manager.");
@@ -70,36 +73,54 @@ public class Ex6_Abstraction {
 			System.out.println("\t 4.Exit.");
 			System.out.println("============================");
 			System.out.print("Mời bạn đưa ra lựa chọn : ");
-			int lc = scanner.nextInt();
+			lc = scanner.nextInt();
 			switch (lc) {
 			case 1:
-				System.out.print("Tên nhân viên : ");
-				String eName = scanner.next();
-				System.out.print("Salary Ratio : ");
-				Double eSalary_Ratio = Double.parseDouble(scanner.nextLine());
-				Employee employee = new Employee(eName, eSalary_Ratio);
-				employee.displayInfor();
+				System.out.println("\t Employee \t");
+				System.out.print("Số lượng cần thêm : ");
+				int a = scanner.nextInt();
+				for (int i = 0; i < a; i++) {
+					System.out.println("Nhân viên thứ : "+(i+1));
+					System.out.print("Tên nhân viên : ");
+					String Name = scanner.next();
+					System.out.println("Salary Ratio : ");
+					double Salary_Ratio = scanner.nextDouble();
+					Employee employee = new Employee(Name, Salary_Ratio);
+					employee.displayInfor();
+				}
 				break;
 			case 2:
-				System.out.print("Tên Quản lý : ");
-				String mName = scanner.nextLine();
-				System.out.print("Salary Ratio : ");
-				Double mSalary_Ratio = scanner.nextDouble();
-				Manager manager = new Manager(mName, mSalary_Ratio);
-				manager.displayInfor();
+				System.out.println("\t Manager \t");
+				System.out.print("Số lượng cần thêm : ");
+				int b = scanner.nextInt();
+				for (int i = 0; i < b; i++) {
+					System.out.println("Quản lý thứ : "+(i+1));
+					System.out.print("Tên Quản lý : ");
+					String Name = scanner.next();
+					System.out.println("Salary Ratio : ");
+					double Salary_Ratio = scanner.nextDouble();
+					Employee employee = new Employee(Name, Salary_Ratio);
+					employee.displayInfor();
+				}
 			case 3:
-				System.out.print("Tên phục vụ : ");
-				String wName = scanner.nextLine();
-				System.out.print("Salary Ratio : ");
-				Double wSalary_Ratio = scanner.nextDouble();
-				Waiter waiter = new Waiter(wName, wSalary_Ratio);
-				waiter.displayInfor();
+				System.out.println("\t Waiter \t");
+				System.out.print("Số lượng cần thêm : ");
+				int c = scanner.nextInt();
+				for (int i = 0; i < c; i++) {
+					System.out.println("Phục vụ thứ : "+(i+1));
+					System.out.print("Tên phục vụ : ");
+					String Name = scanner.next();
+					System.out.println("Salary Ratio : ");
+					double Salary_Ratio = scanner.nextDouble();
+					Employee employee = new Employee(Name, Salary_Ratio);
+					employee.displayInfor();
+				}
 			case 4:
 				return;
 			default:
 				System.out.println("Bạn nhập sai, mời nhập lại !");
 				break;
 			}
-		}
+		}while(lc != 4);
 	}
 }
