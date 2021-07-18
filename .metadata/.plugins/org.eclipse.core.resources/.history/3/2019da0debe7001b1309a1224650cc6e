@@ -1,4 +1,4 @@
-
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.Scanner;
 
@@ -8,11 +8,11 @@ public class Ex5_Input_from_console {
 	public static void main(String[] args) {
 		// Question1();
 		// Question2();
-		// Question3();
-		// Question4();
-		// Question5();
-		// Question6();
-		// Question7();
+		//Question3();
+		//Question4();
+		//Question5();
+		//Question6();
+		//Question7();
 		Question8();
 		Question9();
 		Question10();
@@ -78,8 +78,7 @@ public class Ex5_Input_from_console {
 		System.out.println("\t --- Question 5 --- \t");
 		Account account = new Account();
 		System.out.print("AccountID : ");
-		account.AccountID = scanner.nextInt();
-		scanner.nextLine();
+		account.AccountID = Integer.parseInt(scanner.nextLine());
 		System.out.print("Email : ");
 		account.Email = scanner.nextLine();
 		System.out.print("FullName : ");
@@ -100,21 +99,21 @@ public class Ex5_Input_from_console {
 		case 3:
 			Position position3 = new Position();
 			position3.PositionName = PositionName.DEV;
-			account.Position = position3;
-			break;
+			account.Position = position3;			break;
 		case 4:
 			Position position4 = new Position();
 			position4.PositionName = PositionName.DEV;
-			account.Position = position4;
-			break;
+			account.Position = position4;			break;
 		default:
 			System.out.println("Bạn nhập sai rồi !");
 			break;
 		}
-		System.out.println("\nThông tin Account bạn vừa nhập là : " + "\n AccountID : " + account.AccountID
-				+ "\n Email : " + account.Email + "\n FullName : " + account.FullName + "\n Position : "
-				+ account.Position.PositionName);
-
+		System.out.println("\nThông tin Account bạn vừa nhập là : "
+		+"\n AccountID : " +account.AccountID
+		+"\n Email : "+account.Email
+		+"\n FullName : "+account.FullName
+		+"\n Position : "+account.Position.PositionName );
+		
 	}
 
 	private static void Question6() {
@@ -122,13 +121,13 @@ public class Ex5_Input_from_console {
 		System.out.println("\t --- Question 6 --- \t");
 		Department department = new Department();
 		System.out.print("DepartmentID : ");
-		department.DepartmentID = scanner.nextInt();
-		scanner.nextLine();
+		department.DepartmentID = Integer.parseInt(scanner.nextLine());
 		System.out.print("DepartmentName : ");
 		department.DepartmentName = scanner.nextLine();
-
-		System.out.println("\nDepartment vừa nhập là : " + "\n DepartmentID : " + department.DepartmentID
-				+ "\n DepartmentName : " + department.DepartmentName);
+		
+		System.out.println("\nDepartment vừa nhập là : "
+		+"\n DepartmentID : "+department.DepartmentID
+		+"\n DepartmentName : "+department.DepartmentName);
 	}
 
 	private static void Question7() {
@@ -136,9 +135,9 @@ public class Ex5_Input_from_console {
 		System.out.println("\t --- Question 7 --- \t");
 		System.out.print("Nhập vào số chẵn : ");
 		int n = scanner.nextInt();
-		if (n % 2 == 0) {
-			System.out.println("Số bạn vừa nhập là : " + n);
-		} else {
+		if (n%2 == 0) {
+			System.out.println("Số bạn vừa nhập là : "+n);
+		}else {
 			System.out.println("Bạn nhập sai rồi !");
 		}
 	}
@@ -151,25 +150,23 @@ public class Ex5_Input_from_console {
 		 * nhập vào 2 thì sẽ thực hiện chức năng tạo department Nếu người dùng nhập vào
 		 * số khác thì in ra text "Mời bạn nhập lại" và quay trở lại bước 1
 		 */
-		while (true) {
-			System.out.println("\t --- Question 8 --- \t");
-			System.out.println("\t\t--- Chương trình ---\t\t");
-			System.out.println("\t 1. Tạo Account ");
-			System.out.println("\t 2. Tạo Department ");
-			System.out.println("\t -------------- \t");
-			System.out.print("Mời bạn đưa ra lựa chọn : ");
-			int n = scanner.nextInt();
-			switch (n) {
-			case 1:
-				Question5();
-				break;
-			case 2:
-				Question6();
-				break;
-			default:
-				System.out.println("Mời bạn nhập lại : ");
-				break;
-			}
+		System.out.println("\t --- Question 8 --- \t");
+		System.out.println("\t\t--- Chương trình ---\t\t");
+		System.out.println("\t 1. Tạo Account ");
+		System.out.println("\t 2. Tạo Department ");
+		System.out.println("\t -------------- \t");
+		System.out.print("Mời bạn đưa ra lựa chọn : ");
+		int n = scanner.nextInt();
+		switch (n) {
+		case 1:
+			Question5();
+			break;
+		case 2:
+			Question6();
+			break;
+		default:
+			System.out.print("Mời bạn nhập lại : ");
+			break;
 		}
 	}
 

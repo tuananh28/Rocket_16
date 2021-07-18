@@ -1,4 +1,4 @@
-
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.Scanner;
 
@@ -167,8 +167,9 @@ public class Ex5_Input_from_console {
 				Question6();
 				break;
 			default:
-				System.out.println("Mời bạn nhập lại : ");
-				break;
+				System.out.print("Mời bạn nhập lại : ");
+				scanner.nextInt();
+				return;
 			}
 		}
 	}
