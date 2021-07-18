@@ -2,11 +2,10 @@
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.Locale;
 
+
 public class Ex3_Date_Format {
-	@SuppressWarnings("deprecation")
 	public static void main(String[] args) {
 
 		// Create group
@@ -119,7 +118,7 @@ public class Ex3_Date_Format {
 		Question question1 = new Question();
 		question1.categoryQuestion = category1;
 		question1.Content = "Dac diem chinh cua Java";
-		question1.CreateDate = new Date(2020, 1, 7);
+		question1.CreateDate = LocalDate.of(2020, 1, 7);
 		question1.CreatorID = account1;
 		question1.QuestionID = 1;
 		question1.typeQuestion = type1;
@@ -127,7 +126,7 @@ public class Ex3_Date_Format {
 		Question question2 = new Question();
 		question2.categoryQuestion = category1;
 		question2.Content = "Cac chuong trinh Java chu yeu";
-		question2.CreateDate = new Date(2020, 2, 8);
+		question2.CreateDate = LocalDate.of(2020, 2, 8);
 		question2.CreatorID = account1;
 		question2.QuestionID = 2;
 		question2.typeQuestion = type2;
@@ -135,7 +134,7 @@ public class Ex3_Date_Format {
 		Question question3 = new Question();
 		question3.categoryQuestion = category1;
 		question3.Content = "Quy tac thiet ke Database";
-		question3.CreateDate = new Date(2019, 2, 9);
+		question3.CreateDate = LocalDate.of(2019, 2, 9);
 		question3.CreatorID = account2;
 		question3.QuestionID = 3;
 		question3.typeQuestion = type1;
@@ -143,19 +142,19 @@ public class Ex3_Date_Format {
 		// Create exam
 		Exam exam1 = new Exam();
 		exam1.ExamID = 1;
-		exam1.Code = "JV01";
+		exam1.Code = "VTI01";
+		exam1.Title = "Title1";
 		exam1.CreatorID = account1;
 		exam1.Duration = 60;
-		exam1.CreateDate = new Date(2014, 02, 11);
-		exam1.Title = "Kien thuc co ban ve Java";
-
+		exam1.CreateDate = LocalDate.of(2014, 02, 11);
+		
 		Exam exam2 = new Exam();
-		exam2.Code = "DB01";
+		exam2.Code = "VTI02";
 		exam2.ExamID = 2;
 		exam2.CreatorID = account2;
 		exam2.Duration = 120;
-		exam2.CreateDate = new Date();
-		exam1.Title = "Kien thuc co ban ve Database";
+		exam2.CreateDate = LocalDate.now();
+		exam1.Title = "Title2";
 
 		// add question to exam
 		Question[] questionOfExam1 = { question1, question2 };
@@ -167,22 +166,22 @@ public class Ex3_Date_Format {
 		// Create Answer
 		Answer answer1 = new Answer();
 		answer1.AnswerID = 1;
-		answer1.Content = "JAVA la ngon ngu lap trinh pho bien nhat";
+		answer1.Content = "Content1";
 		answer1.isCorrect = true;
 		answer1.question = question1;
 
 		Answer answer2 = new Answer();
 		answer2.AnswerID = 2;
-		answer2.Content = "JAVA la ngon ngu lap trinh mat phi";
+		answer2.Content = "Content2";
 		answer2.isCorrect = false;
 		answer2.question = question1;
 
 		// Question 1: In ra thông tin Exam thứ 1 và property create date sẽ được format
-		// theo định
-		// dạng vietnamese
+		// theo định dạng vietnamese
+		
 		System.out.println("\t --- Question 1 --- \t");
 		Locale locale = new Locale("vi", "VN");
-		DateFormat dateformat = DateFormat.getDateInstance(DateFormat.DEFAULT, locale);
+		DateFormat dateformat =DateFormat.getDateInstance(DateFormat.DEFAULT,locale);
 		String date = dateformat.format(exam1.CreateDate);
 		System.out.println(exam1.Code + ": " + date);
 

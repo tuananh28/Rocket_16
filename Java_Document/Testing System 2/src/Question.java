@@ -1,5 +1,5 @@
 
-import java.util.Date;
+import java.time.LocalDate;
 
 
 public class Question {
@@ -9,6 +9,6 @@ public class Question {
     TypeQuestion typeQuestion;
     Account CreatorID ;
     Account account;
-    Date CreateDate;
+    LocalDate CreateDate;
     Exam [] exams;
 }

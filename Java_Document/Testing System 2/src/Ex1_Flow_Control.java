@@ -53,7 +53,7 @@ public class Ex1_Flow_Control {
         account1.Email = "An@gmail.com";
         account1.FullName = "Bùi Tuấn Anh";
         account1.Position = position1;
-        account1.Username = "an.nguyenvan";
+        account1.Username = "tuananh";
 
         Account account2 = new Account();
         account2.AccountID = 2;
@@ -62,16 +62,16 @@ public class Ex1_Flow_Control {
         account2.Email = "Linh@gmail.com";
         account2.FullName = "Nguyễn Thùy Linh";
         account2.Position = position3;
-        account2.Username = "Linh.nguyenhoai";
+        account2.Username = "thuylinh";
 
         Account account3 = new Account();
         account3.AccountID = 3;
         account3.CreateDate = LocalDate.of(2020, 3, 19);
         account3.Department = department2;
-        account3.Email = "ha@gmail.com";
-        account3.FullName = "Pham Hai Ha";
+        account3.Email = "hapham@gmail.com";
+        account3.FullName = "Phạm Thị Hà";
         account3.Position = position1;
-        account3.Username = "Ha.phamhai";
+        account3.Username = "phamha";
 
         Account account4 = new Account();
         account4.AccountID = 4;
