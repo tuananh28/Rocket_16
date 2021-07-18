@@ -185,17 +185,17 @@ public class Ex5_Input_from_console {
 		// Create group
 		Group group1 = new Group();
 		group1.GroupID = 1;
-		//group1.GroupName = "Java Fresher";
+		group1.GroupName = "Java Fresher";
 		group1.CreateDate = LocalDate.of(2020, 04, 21);
 
 		Group group2 = new Group();
 		group2.GroupID = 2;
-		//group2.GroupName = "DB Fresher";
+		group2.GroupName = "DB Fresher";
 		group2.CreateDate = LocalDate.of(2020, 05, 22);
 
 		Group group3 = new Group();
 		group3.GroupID = 3;
-		//group3.GroupName = "C++ Fresher";
+		group3.GroupName = "C++ Fresher";
 		group3.CreateDate = LocalDate.of(2020, 06, 23);
 
 		// Create account
@@ -231,7 +231,7 @@ public class Ex5_Input_from_console {
 			System.out.println("\t 5. Thêm Account vào Group ");
 			System.out.println("\t -------------- \t");
 			System.out.print("Mời bạn đưa ra lựa chọn : ");
-			int n = Integer.parseInt(scanner.nextLine());
+			int n = scanner.nextInt();
 			switch (n) {
 			case 1:
 				System.out.println("Danh sách các username trong hệ thống: ");
@@ -242,7 +242,6 @@ public class Ex5_Input_from_console {
 			case 2:
 				System.out.print("Bạn muốn nhập User cho Account nào : ");
 				int a = scanner.nextInt();
-				scanner.nextLine();
 				if (a == 1) {
 					System.out.print("Mời bạn nhập UserName cho Account 1 : ");
 					account1.Username = scanner.nextLine();
@@ -263,8 +262,9 @@ public class Ex5_Input_from_console {
 				}
 				break;
 			case 4:
+				System.out.println("Nhập tên cho các Group : ");
 				for (int i = 0; i < grArr.length; i++) {
-					System.out.println("Group thứ " + (i + 1));		
+					System.out.println("Group thứ " + (i + 1));
 					System.out.print("Group Name : ");
 					grArr[i].GroupName = scanner.nextLine();
 				}

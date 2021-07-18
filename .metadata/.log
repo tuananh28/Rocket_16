@@ -4682,3 +4682,13 @@ java.lang.NullPointerException: Cannot invoke "java.util.List.size()" because "t
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:654)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:591)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1462)
+
+!ENTRY org.eclipse.core.jobs 4 2 2021-07-19 00:57:35.184
+!MESSAGE An internal error occurred during: "org.eclipse.eclemma.internal.core.launching.AgentServer".
+!STACK 0
+java.lang.NullPointerException: Cannot invoke "org.eclipse.eclemma.internal.ui.EclEmmaUIPlugin.getPreferenceStore()" because the return value of "org.eclipse.eclemma.internal.ui.EclEmmaUIPlugin.getInstance()" is null
+	at org.eclipse.eclemma.internal.ui.UIPreferences.getPreferenceStore(UIPreferences.java:115)
+	at org.eclipse.eclemma.internal.ui.UIPreferences.access$0(UIPreferences.java:114)
+	at org.eclipse.eclemma.internal.ui.UIPreferences$1.getActivateNewSessions(UIPreferences.java:57)
+	at org.eclipse.eclemma.internal.core.launching.AgentServer.run(AgentServer.java:123)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)

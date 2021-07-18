@@ -13,7 +13,7 @@ public class Ex5_Input_from_console {
 		// Question5();
 		// Question6();
 		// Question7();
-		// Question8();
+		Question8();
 		Question9();
 		Question10();
 		Question11();
@@ -182,126 +182,7 @@ public class Ex5_Input_from_console {
 		 * vào username và tên của group người dùng vừa chọn, hãy thêm account vào group
 		 * đó .
 		 */
-		// Create group
-		Group group1 = new Group();
-		group1.GroupID = 1;
-		//group1.GroupName = "Java Fresher";
-		group1.CreateDate = LocalDate.of(2020, 04, 21);
-
-		Group group2 = new Group();
-		group2.GroupID = 2;
-		//group2.GroupName = "DB Fresher";
-		group2.CreateDate = LocalDate.of(2020, 05, 22);
-
-		Group group3 = new Group();
-		group3.GroupID = 3;
-		//group3.GroupName = "C++ Fresher";
-		group3.CreateDate = LocalDate.of(2020, 06, 23);
-
-		// Create account
-		Account account1 = new Account();
-		account1.AccountID = 1;
-		account1.CreateDate = LocalDate.of(2020, 3, 17);
-		account1.Email = "tuananh28@gmail.com";
-		account1.FullName = "Bùi Tuấn Anh";
-
-		Account account2 = new Account();
-		account2.AccountID = 2;
-		account2.CreateDate = LocalDate.of(2020, 1, 9);
-		account2.Email = "Linh22@gmail.com";
-		account2.FullName = "Nguyễn Thùy Linh";
-
-		Account account3 = new Account();
-		account3.AccountID = 3;
-		account3.CreateDate = LocalDate.of(2020, 3, 19);
-		account3.Email = "hapham@gmail.com";
-		account3.FullName = "Phạm Thị Hà";
-		// Array
-		Account[] accArr = { account1, account2, account3 };
-		Group[] grArr = { group1, group2, group3 };
-
-		// MAIN
 		System.out.println("\t --- Question 9 --- \t");
-		while (true) {
-			System.out.println("\t\t--- Chương trình ---\t\t");
-			System.out.println("\t 1. In ra User ");
-			System.out.println("\t 2. Nhập UserName cho Account ");
-			System.out.println("\t 3. In ra tên Group ");
-			System.out.println("\t 4. Nhập tên Group ");
-			System.out.println("\t 5. Thêm Account vào Group ");
-			System.out.println("\t -------------- \t");
-			System.out.print("Mời bạn đưa ra lựa chọn : ");
-			int n = Integer.parseInt(scanner.nextLine());
-			switch (n) {
-			case 1:
-				System.out.println("Danh sách các username trong hệ thống: ");
-				for (int i = 0; i < accArr.length; i++) {
-					System.out.println(accArr[i].Username);
-				}
-				break;
-			case 2:
-				System.out.print("Bạn muốn nhập User cho Account nào : ");
-				int a = scanner.nextInt();
-				scanner.nextLine();
-				if (a == 1) {
-					System.out.print("Mời bạn nhập UserName cho Account 1 : ");
-					account1.Username = scanner.nextLine();
-				}
-				if (a == 2) {
-					System.out.print("Mời bạn nhập UserName cho Account 2 : ");
-					account2.Username = scanner.nextLine();
-				}
-				if (a == 3) {
-					System.out.print("Mời bạn nhập UserName cho Account 3 : ");
-					account3.Username = scanner.nextLine();
-				}
-				break;
-			case 3:
-				System.out.println("Danh sách các group có trong hệ thống: ");
-				for (int i = 0; i < grArr.length; i++) {
-					System.out.println(grArr[i].GroupName);
-				}
-				break;
-			case 4:
-				for (int i = 0; i < grArr.length; i++) {
-					System.out.println("Group thứ " + (i + 1));		
-					System.out.print("Group Name : ");
-					grArr[i].GroupName = scanner.nextLine();
-				}
-				break;
-			case 5:
-				int indexAccount = -1;
-				for (int i = 0; i < accArr.length; i++) {
-					if (accArr[i].Username.equals(accArr)) {
-						indexAccount = i;
-					}
-				}
-
-				int indexGroup = -1;
-				for (int j = 0; j < grArr.length; j++) {
-					if (grArr[j].GroupName.equals(grArr)) {
-						indexGroup = j;
-					}
-				}
-
-				if (indexAccount < 0 || indexGroup < 0) {
-					System.out.println("Account hoặc Group không tồn tại. Mời bạn kiểm tra lại.");
-				} else {
-					for (int i = 0; i < accArr.length; i++) {
-						if (accArr[i].Username.equals(accArr)) {
-							Group[] grAdd = { grArr[indexGroup] };
-							accArr[i].groups = grAdd;
-							System.out.println("Bạn vừa add Group: " + accArr[indexAccount].groups[0].GroupName
-									+ " cho Account: " + accArr[indexAccount].Username);
-						}
-					}
-				}
-				break;
-			default:
-				System.out.println("Mời bạn nhập lại !");
-				break;
-			}
-		}
 	}
 
 	private static void Question10() {

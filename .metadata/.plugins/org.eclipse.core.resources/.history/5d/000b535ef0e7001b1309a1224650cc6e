@@ -50,16 +50,16 @@ public class Ex1_Flow_Control {
         account1.AccountID = 1;
         account1.CreateDate = LocalDate.of(2020, 3, 17);
         account1.Department = department1;
-        account1.Email = "tuananh28@gmail.com";
+        account1.Email = "An@gmail.com";
         account1.FullName = "Bùi Tuấn Anh";
         account1.Position = position1;
-        account1.Username = "tuananhbui";
+        account1.Username = "tuananh";
 
         Account account2 = new Account();
         account2.AccountID = 2;
         account2.CreateDate = LocalDate.of(2020, 1, 9);
         account2.Department = department1;
-        account2.Email = "Linh22@gmail.com";
+        account2.Email = "Linh@gmail.com";
         account2.FullName = "Nguyễn Thùy Linh";
         account2.Position = position3;
         account2.Username = "thuylinh";
