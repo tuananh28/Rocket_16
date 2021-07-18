@@ -1,0 +1,16 @@
+
+import java.time.LocalDate;
+import java.util.Date;
+
+
+public class Exam {
+    int ExamID;
+    String Code;
+    String Title;
+    CategoryQuestion categoryQuestion;
+    int Duration;
+    Account CreatorID ;
+    Account account;
+    LocalDate CreateDate;
+    Question[] questions;
+}

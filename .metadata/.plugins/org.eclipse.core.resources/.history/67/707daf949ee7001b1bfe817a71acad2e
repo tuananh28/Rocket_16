@@ -1,0 +1,47 @@
+
+public class Ex2_System_out_printf {
+
+	public static void main(String[] args) {
+		Question1();
+		Question2();
+		Question3();
+		Question4();
+		Question5();
+		Question6();
+
+	}
+
+	private static void Question1() {
+		int i = 5;
+		System.out.printf("%d %n", i);
+
+	}
+
+	private static void Question2() {
+		int i = 100000000;
+		System.out.printf("%,d %n", i);
+
+	}
+
+	private static void Question3() {
+		float i = 5.567098f;
+		System.out.printf("%4f", i);
+
+	}
+
+	private static void Question4() {
+		// TODO Auto-generated method stub
+
+	}
+
+	private static void Question5() {
+		// TODO Auto-generated method stub
+
+	}
+
+	private static void Question6() {
+		// TODO Auto-generated method stub
+
+	}
+
+}
