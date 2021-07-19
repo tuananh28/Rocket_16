@@ -9,8 +9,6 @@ import com.vti.entity.Polymorphism.Question2.Student_Q2;
 import com.vti.entity.Polymorphism.Question3.HinhChuNhat;
 import com.vti.entity.Polymorphism.Question3.HinhVuong;
 import com.vti.entity.Polymorphism.Question4.MyMath;
-import com.vti.entity.Polymorphism.Question5.DienThoaiCD;
-import com.vti.entity.Polymorphism.Question5.DienThoaiTM;
 
 public class Ex2_Polymorphism {
 	Random random = new Random();
@@ -194,29 +192,6 @@ public class Ex2_Polymorphism {
 			default:
 				System.out.println("Mời nhập lại !");
 				break;
-			}
-		}
-	}
-	public void Question5() {
-		while (true) {
-			System.out.println("\t\t --- Chương trình --- \t\t");
-			System.out.println("1. Điện thoại thông minh.");
-			System.out.println("2. Điện thoại cổ điển.");
-			System.out.println("\t\t -------------------- \t\t");
-			System.out.print("Giả sử bạn bị kẻ xấu tấn công, bạn muốn sử dụng điện thoại nào : ");
-			int lc = scanner.nextInt();
-			switch (lc) {
-				case 1:
-					DienThoaiTM dTm = new DienThoaiTM();
-					dTm.TanCong();
-					break;
-				case 2:
-					DienThoaiCD dCd = new DienThoaiCD();
-					dCd.TanCong();
-					break;	
-				default:
-					System.out.println("Mời nhập lại !");
-					break;
 			}
 		}
 	}

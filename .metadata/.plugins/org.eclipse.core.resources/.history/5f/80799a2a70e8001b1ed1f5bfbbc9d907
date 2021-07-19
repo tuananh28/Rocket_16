@@ -9,8 +9,6 @@ import com.vti.entity.Polymorphism.Question2.Student_Q2;
 import com.vti.entity.Polymorphism.Question3.HinhChuNhat;
 import com.vti.entity.Polymorphism.Question3.HinhVuong;
 import com.vti.entity.Polymorphism.Question4.MyMath;
-import com.vti.entity.Polymorphism.Question5.DienThoaiCD;
-import com.vti.entity.Polymorphism.Question5.DienThoaiTM;
 
 public class Ex2_Polymorphism {
 	Random random = new Random();
@@ -124,7 +122,7 @@ public class Ex2_Polymorphism {
 				HinhChuNhat hcn = new HinhChuNhat();
 				System.out.println("Khởi tạo hình chữ nhật ");
 				hcn.input();
-				System.out.println("Tính toán :  ");
+				System.out.println("Tính toán :  " );
 				hcn.output();
 				break;
 			case 2:
@@ -134,89 +132,65 @@ public class Ex2_Polymorphism {
 				System.out.println("Bạn vừa tạo thành công hình vuông có cạnh " + a);
 				System.out.println("Chu vi của hình vuông là: " + hv.tinhChuVi());
 				System.out.println("Diện tích của hình vuông là: " + hv.tinhDienTich());
-
+				
 				break;
 			default:
 				System.out.println("Mời bạn nhập lại");
 				break;
 			}
 		}
-	}
 
 	public void Question4() {
 		MyMath myMath = new MyMath();
 		while (true) {
-			System.out.println("\n\t\t --- Chương trình --- \t\t");
+			System.out.println("\t\t --- Chương trình --- \t\t");
 			System.out.println("\t 1. Tính tổng hai số kiểu int.");
 			System.out.println("\t 2. Tính tổng hai số kiểu float.");
 			System.out.println("\t 3. Tính tổng hai số kiểu byte.");
-			System.out.println("\t 4. Tính tổng hai số kiểu float và byte. // Nhập float trước");
-			System.out.println("\t 5. Tính tổng hai số kiểu float và in. // Nhập float trước");
+			System.out.println("\t 4. Tính tổng hai số kiểu byte và float.");
+			System.out.println("\t 5. Tính tổng hai số kiểu int và float.");
 			System.out.println("\t\t -------------------- \t\t");
 			System.out.print("Mời bạn nhập lựa chọn : ");
 			int lc = scanner.nextInt();
 			switch (lc) {
 			case 1:
-				System.out.print("Nhập vào số a : ");
+				System.out.println("Nhập vào số a : ");
 				int a1 = scanner.nextInt();
-				System.out.print("Nhập vào số b : ");
+				System.out.println("Nhập vào số b : ");
 				int b1 = scanner.nextInt();
-				System.out.print("Kết quả : " + myMath.getSum(a1, b1));
+				System.out.println("Kết quả" + myMath.getSum(a1, b1));
 				break;
 			case 2:
-				System.out.print("Nhập vào số a : ");
+				System.out.println("Nhập vào số a : ");
 				float a2 = scanner.nextFloat();
-				System.out.print("Nhập vào số b : ");
+				System.out.println("Nhập vào số b : ");
 				float b2 = scanner.nextFloat();
-				System.out.print("Kết quả : " + myMath.getSum(a2, b2));
+				System.out.println("Kết quả" + myMath.getSum(a2, b2));
 				break;
 			case 3:
-				System.out.print("Nhập vào số a : ");
+				System.out.println("Nhập vào số a : ");
 				byte a3 = scanner.nextByte();
-				System.out.print("Nhập vào số b : ");
+				System.out.println("Nhập vào số b : ");
 				byte b3 = scanner.nextByte();
-				System.out.print("Kết quả : " + myMath.getSum(a3, b3));
+				System.out.println("Kết quả" + myMath.getSum(a3, b3));
 				break;
 			case 4:
-				System.out.print("Nhập vào số a : ");
+				System.out.println("Nhập vào số a : ");
 				float a4 = scanner.nextFloat();
-				System.out.print("Nhập vào số b : ");
+				System.out.println("Nhập vào số b : ");
 				byte b4 = scanner.nextByte();
-				System.out.print("Kết quả : " + myMath.getSum(a4, b4));
+				System.out.println("Kết quả" + myMath.getSum(a4, b4));
 				break;
 			case 5:
-				System.out.print("Nhập vào số a : ");
+				System.out.println("Nhập vào số a : ");
 				float a5 = scanner.nextFloat();
-				System.out.print("Nhập vào số b : ");
+				System.out.println("Nhập vào số b : ");
 				int b5 = scanner.nextInt();
-				System.out.print("Kết quả : " + myMath.getSum(a5, b5));
+				System.out.println("Kết quả" + myMath.getSum(a5, b5));
 				break;
 			default:
 				System.out.println("Mời nhập lại !");
 				break;
-			}
-		}
-	}
-	public void Question5() {
-		while (true) {
-			System.out.println("\t\t --- Chương trình --- \t\t");
-			System.out.println("1. Điện thoại thông minh.");
-			System.out.println("2. Điện thoại cổ điển.");
-			System.out.println("\t\t -------------------- \t\t");
-			System.out.print("Giả sử bạn bị kẻ xấu tấn công, bạn muốn sử dụng điện thoại nào : ");
-			int lc = scanner.nextInt();
-			switch (lc) {
-				case 1:
-					DienThoaiTM dTm = new DienThoaiTM();
-					dTm.TanCong();
-					break;
-				case 2:
-					DienThoaiCD dCd = new DienThoaiCD();
-					dCd.TanCong();
-					break;	
-				default:
-					System.out.println("Mời nhập lại !");
-					break;
 			}
 		}
 	}

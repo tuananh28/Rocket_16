@@ -76,7 +76,7 @@ public class Person {
 			this.gender = Gender.UNKNOWN;
 		}
 		
-		System.out.print("Ngày sinh : // Nhập đúng định dạng 'yyyy-MM-dd'");
+		System.out.print("Ngày sinh : ");
 		this.birthday = LocalDate.parse(scanner.nextLine());
 		System.out.print("Địa chỉ : ");
 		this.Address = scanner.nextLine();	

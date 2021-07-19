@@ -1,20 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="com.vti.backend.Ex5_Inheritance"/>
-    <fullyQualifiedTypeName name="java.time.Month"/>
-    <fullyQualifiedTypeName name="java.sql.Date"/>
-    <fullyQualifiedTypeName name="java.lang.Byte"/>
-    <fullyQualifiedTypeName name="com.vti.entity.Inheritance.TapChi"/>
-    <fullyQualifiedTypeName name="com.vti.entity.Inheritance.Bao"/>
-    <fullyQualifiedTypeName name="com.vti.entity.Inheritance.Sach"/>
-    <fullyQualifiedTypeName name="com.vti.entity.Inheritance.TaiLieu"/>
-    <fullyQualifiedTypeName name="com.vti.backend.QLTL"/>
-    <fullyQualifiedTypeName name="com.vti.entity.Abstraction.Phone"/>
-    <fullyQualifiedTypeName name="com.vti.entity.Abstraction.Contact"/>
-    <fullyQualifiedTypeName name="com.vti.entity.Abstraction.VietnamesePhone"/>
-    <fullyQualifiedTypeName name="com.vti.entity.Abstraction.Question2.User"/>
-    <fullyQualifiedTypeName name="com.vti.entity.Abstraction.Question2.Employee"/>
-    <fullyQualifiedTypeName name="sun.security.provider.JavaKeyStore.CaseExactJKS"/>
     <fullyQualifiedTypeName name="com.vti.backend.Ex6_Abstraction"/>
     <fullyQualifiedTypeName name="com.vti.entity.Abstraction.Question2_3.Manager"/>
     <fullyQualifiedTypeName name="com.vti.entity.Abstraction.Question2_3.Waiter"/>
@@ -31,8 +16,6 @@
     <fullyQualifiedTypeName name="com.sun.tools.classfile.Annotation.element_value_pair"/>
     <fullyQualifiedTypeName name="com.vti.entity.Polymorphism.Question1.IStudent"/>
     <fullyQualifiedTypeName name="com.vti.backend.Ex2_Polymorphism"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
-    <fullyQualifiedTypeName name="com.vti.entity.Polymorphism.Question1.Student"/>
     <fullyQualifiedTypeName name="java.time.LocalDateTime"/>
     <fullyQualifiedTypeName name="java.lang.NegativeArraySizeException"/>
     <fullyQualifiedTypeName name="TypeName"/>
@@ -45,12 +28,9 @@
     <fullyQualifiedTypeName name="java.text.DateFormat"/>
     <fullyQualifiedTypeName name="org.w3c.dom.ls.LSOutput"/>
     <fullyQualifiedTypeName name="Question"/>
-    <fullyQualifiedTypeName name="java.lang.System"/>
     <fullyQualifiedTypeName name="Account"/>
     <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
     <fullyQualifiedTypeName name="java.util.Locale"/>
-    <fullyQualifiedTypeName name="java.lang.String"/>
-    <fullyQualifiedTypeName name="java.time.LocalDate"/>
     <fullyQualifiedTypeName name="java.time.ZoneId"/>
     <fullyQualifiedTypeName name="java.time.ZonedDateTime"/>
     <fullyQualifiedTypeName name="java.util.Date"/>
@@ -58,6 +38,26 @@
     <fullyQualifiedTypeName name="Exam"/>
     <fullyQualifiedTypeName name="PositionName"/>
     <fullyQualifiedTypeName name="Department"/>
-    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="sun.reflect.generics.repository.GenericDeclRepository"/>
     <fullyQualifiedTypeName name="java.lang.Integer"/>
+    <fullyQualifiedTypeName name="com.vti.entity.Polymorphism.Question2.Person.Gender"/>
+    <fullyQualifiedTypeName name="java.time.LocalDate"/>
+    <fullyQualifiedTypeName name="com.vti.entity.Polymorphism.Question2.Person"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="com.vti.entity.Polymorphism.Question1.Student"/>
+    <fullyQualifiedTypeName name="com.vti.entity.Polymorphism.Question2.Student"/>
+    <fullyQualifiedTypeName name="com.vti.entity.Polymorphism.Question2.Student_Q2"/>
+    <fullyQualifiedTypeName name="java.lang.Float"/>
+    <fullyQualifiedTypeName name="com.vti.entity.Polymorphism.Question3.HinhChuNhat"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="com.vti.entity.Polymorphism.Question3.HinhVuong"/>
+    <fullyQualifiedTypeName name="com.sun.org.apache.xml.internal.security.signature.ObjectContainer"/>
+    <fullyQualifiedTypeName name="com.vti.entity.Polymorphism.Question4.MyMath"/>
+    <fullyQualifiedTypeName name="java.lang.Byte"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="com.vti.entity.Polymorphism.Question5.VuKhi"/>
+    <fullyQualifiedTypeName name="com.vti.entity.Polymorphism.Question5.Dienthoai"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="com.vti.entity.Polymorphism.Question5.DienThoaiTM"/>
+    <fullyQualifiedTypeName name="com.vti.entity.Polymorphism.Question5.DienThoaiCD"/>
 </qualifiedTypeNameHistroy>
