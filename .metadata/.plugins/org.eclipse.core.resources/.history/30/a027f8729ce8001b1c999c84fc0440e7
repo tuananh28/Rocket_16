@@ -1,0 +1,15 @@
+package com.vti.entity.Static;
+import com.vti.ultis.ScannerUltis;
+public class Student {
+	private int ID;
+	private String Name;
+	public static String college = "Đại học Bách Khoa";
+	private static int dem = 0;
+
+	public Student() {
+		super();
+		ID = ++dem;
+		System.out.print("Nhập vào tên sinh viên : ");
+		this.Name = ScannerUltis.inputString();
+	}
+}
