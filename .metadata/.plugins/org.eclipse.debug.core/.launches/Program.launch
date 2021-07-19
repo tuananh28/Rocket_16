@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
     <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
-        <listEntry value="/Testing System 6/src/com/vti/frontend/Program.java"/>
+        <listEntry value="/Testing System 7/src/com/vti/frontend/Program.java"/>
     </listAttribute>
     <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
         <listEntry value="1"/>
@@ -12,5 +12,5 @@
     <booleanAttribute key="org.eclipse.jdt.launching.ATTR_USE_CLASSPATH_ONLY_JAR" value="false"/>
     <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="com.vti.frontend.Program"/>
     <stringAttribute key="org.eclipse.jdt.launching.MODULE_NAME" value="Testing System 6"/>
-    <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="Testing System 6"/>
+    <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="Testing System 7"/>
 </launchConfiguration>
