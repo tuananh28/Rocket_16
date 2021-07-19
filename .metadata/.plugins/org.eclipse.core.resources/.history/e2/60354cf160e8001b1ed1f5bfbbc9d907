@@ -62,8 +62,8 @@ public class Person {
 	
 	public void inputInfo() {
 		System.out.print("Họ tên : ");
-		this.Name = scanner.nextLine();
-		System.out.print("Giới Tính : \n 1.Nam \n 2.Nữ  \n 3.Khác \nNhập lựa chọn : ");
+		Name = scanner.nextLine();
+		System.out.print("Giới Tính : \n 1.Nam \n 2.Nữ  \n3.Khác");
 		int n = Integer.parseInt(scanner.nextLine());
 		switch (n) {
 		case 1:
@@ -77,13 +77,13 @@ public class Person {
 		}
 		
 		System.out.print("Ngày sinh : ");
-		this.birthday = LocalDate.parse(scanner.nextLine());
+		birthday = LocalDate.parse(scanner.nextLine());
 		System.out.print("Địa chỉ : ");
-		this.Address = scanner.nextLine();	
+		Address = scanner.nextLine();	
 	}
 	
 	public void showInfo() {
-		System.out.println("\nHọ tên : "+Name);
+		System.out.println("Họ tên : "+Name);
 		System.out.println("Giới Tính : "+gender);
 		System.out.println("Ngày sinh : "+birthday);
 		System.out.println("Địa chỉ : "+Address);

@@ -92,12 +92,12 @@ public class Ex2_Polymorphism {
 				break;
 			case 2:
 				for (Student_Q2 student_Q2 : list) {
-					student_Q2.showInfo();
 					if (student_Q2.getAVGMark() >= 8.0) {
 						System.out.println("Sinh viên này đạt học bổng !");
 					} else {
 						System.out.println("Không đạt !");
 					}
+					student_Q2.showInfo();
 				}
 			default:
 				System.out.println("Mời bạn nhập lại");

@@ -75,6 +75,7 @@ public class Ex2_Polymorphism {
 			System.out.println("\t\t --- Chương trình --- \t\t");
 			System.out.println("1. Nhập thông tin.");
 			System.out.println("2. Hiển thị thông tin.");
+			System.out.println("3. Xét Học Bổng.");
 			System.out.println("\t\t -------------------- \t\t");
 			System.out.print("Mời bạn nhập lựa chọn : ");
 			int lc = scanner.nextInt();
@@ -84,7 +85,7 @@ public class Ex2_Polymorphism {
 				System.out.print("Số sinh viên cần thêm : ");
 				int n = scanner.nextInt();
 				for (int i = 0; i < n; i++) {
-					System.out.println("\nSinh viên thứ " + (i + 1));
+					System.out.println("Sinh viên thứ " + (i + 1));
 					Student_Q2 student = new Student_Q2();
 					student.inputInfo();
 					list.add(student);
@@ -93,6 +94,9 @@ public class Ex2_Polymorphism {
 			case 2:
 				for (Student_Q2 student_Q2 : list) {
 					student_Q2.showInfo();
+				}
+			case 3:
+				for (Student_Q2 student_Q2 : list) {
 					if (student_Q2.getAVGMark() >= 8.0) {
 						System.out.println("Sinh viên này đạt học bổng !");
 					} else {

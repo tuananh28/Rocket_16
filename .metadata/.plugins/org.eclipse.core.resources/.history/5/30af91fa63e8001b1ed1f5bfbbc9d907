@@ -83,7 +83,7 @@ public class Person {
 	}
 	
 	public void showInfo() {
-		System.out.println("\nHọ tên : "+Name);
+		System.out.println("Họ tên : "+Name);
 		System.out.println("Giới Tính : "+gender);
 		System.out.println("Ngày sinh : "+birthday);
 		System.out.println("Địa chỉ : "+Address);
