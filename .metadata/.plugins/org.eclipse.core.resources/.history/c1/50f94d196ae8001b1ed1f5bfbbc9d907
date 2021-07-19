@@ -6,8 +6,6 @@ import java.util.Scanner;
 
 import com.vti.entity.Polymorphism.Question1.Student;
 import com.vti.entity.Polymorphism.Question2.Student_Q2;
-import com.vti.entity.Polymorphism.Question3.HinhChuNhat;
-import com.vti.entity.Polymorphism.Question3.HinhVuong;
 
 public class Ex2_Polymorphism {
 	Random random = new Random();
@@ -101,37 +99,6 @@ public class Ex2_Polymorphism {
 						System.out.println("Không đạt !");
 					}
 				}
-			default:
-				System.out.println("Mời bạn nhập lại");
-				break;
-			}
-		}
-	}
-	public void Question3() {
-		while (true) {
-			System.out.println("\t\t --- Chương trình --- \t\t");
-			System.out.println("1. Hình Chữ Nhật.");
-			System.out.println("2. Hình Vuông.");
-			System.out.println("\t\t -------------------- \t\t");
-			System.out.print("Mời bạn nhập lựa chọn : ");
-			int lc = scanner.nextInt();
-			switch (lc) {
-			case 1:
-				HinhChuNhat hcn = new HinhChuNhat();
-				System.out.println("Khởi tạo hình chữ nhật ");
-				hcn.input();
-				System.out.println("Tính toán :  " );
-				hcn.output();
-				break;
-			case 2:
-				System.out.println("Nhập vào cạnh của hình vuông: ");
-				Float a = scanner.nextFloat();
-				HinhVuong hv = new HinhVuong(a);
-				System.out.println("Bạn vừa tạo thành công hình vuông có cạnh " + a);
-				System.out.println("Chu vi của hình vuông là: " + hv.tinhChuVi());
-				System.out.println("Diện tích của hình vuông là: " + hv.tinhDienTich());
-				
-				break;
 			default:
 				System.out.println("Mời bạn nhập lại");
 				break;

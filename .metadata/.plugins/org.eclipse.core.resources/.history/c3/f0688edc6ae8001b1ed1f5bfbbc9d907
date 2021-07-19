@@ -1,0 +1,24 @@
+package com.vti.entity.Polymorphism.Question3;
+
+public class HinhVuong extends HinhChuNhat {
+
+	public HinhVuong(Float canha, Float canhb) {
+		super(canha, canha);
+		// TODO Auto-generated constructor stub
+	}
+
+	public HinhVuong(Float a) {
+		// TODO Auto-generated constructor stub
+	}
+
+	public Float tinhChuViHV() {
+		return getCanha() * getCanha() * getCanha() * getCanha();
+	}
+	public Float tinhDienTichHV() {
+		return getCanha()* getCanha();
+	}
+	public void output() {
+		System.out.println("Chu vi Hình Vuông = "+tinhChuViHV());
+		System.out.println("Diện tích Hình Vuông  = "+tinhDienTichHV());
+	}
+}

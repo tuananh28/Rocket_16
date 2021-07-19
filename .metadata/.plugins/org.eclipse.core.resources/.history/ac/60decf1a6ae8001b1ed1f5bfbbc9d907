@@ -1,0 +1,16 @@
+package com.vti.entity.Polymorphism.Question3;
+
+public class HinhVuong extends HinhChuNhat {
+
+	public HinhVuong(Float canha, Float canhb) {
+		super(canha, canha);
+		// TODO Auto-generated constructor stub
+	}
+
+	public Float tinhChuVi() {
+		return getCanha() * getCanha() * getCanha() * getCanha();
+	}
+	public Float tinhDienTich() {
+		return getCanha()* getCanha();
+	}
+}

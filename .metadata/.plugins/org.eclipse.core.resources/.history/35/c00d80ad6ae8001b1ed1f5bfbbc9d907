@@ -124,13 +124,11 @@ public class Ex2_Polymorphism {
 				hcn.output();
 				break;
 			case 2:
-				System.out.println("Nhập vào cạnh của hình vuông: ");
-				Float a = scanner.nextFloat();
-				HinhVuong hv = new HinhVuong(a);
-				System.out.println("Bạn vừa tạo thành công hình vuông có cạnh " + a);
-				System.out.println("Chu vi của hình vuông là: " + hv.tinhChuVi());
-				System.out.println("Diện tích của hình vuông là: " + hv.tinhDienTich());
-				
+				HinhVuong hv = new HinhVuong();
+				System.out.println("Khởi tạo hình vuông ");
+				hv.input();
+				System.out.println("Tính toán :  " );
+				hv.output();
 				break;
 			default:
 				System.out.println("Mời bạn nhập lại");

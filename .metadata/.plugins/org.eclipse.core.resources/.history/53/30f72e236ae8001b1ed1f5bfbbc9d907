@@ -6,7 +6,6 @@ public class Frontend_Polymorphism {
 	public static void main(String[] args) {
 		Ex2_Polymorphism ex2 = new Ex2_Polymorphism();
 		//ex2.Question1();
-	//	ex2.Question2();
-		ex2.Question3();
+		ex2.Question2();
 	}
 }
