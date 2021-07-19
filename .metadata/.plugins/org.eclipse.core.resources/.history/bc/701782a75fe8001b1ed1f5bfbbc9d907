@@ -87,5 +87,11 @@ public class Person {
 		System.out.println("Giới Tính : "+gender);
 		System.out.println("Ngày sinh : "+birthday);
 		System.out.println("Địa chỉ : "+Address);
-	}	
+	}
+
+	public void showInfo() {
+		// TODO Auto-generated method stub
+		
+	}
+	
 }

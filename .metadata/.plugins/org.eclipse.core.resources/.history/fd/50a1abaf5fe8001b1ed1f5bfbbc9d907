@@ -5,8 +5,10 @@ import java.util.Random;
 import java.util.Scanner;
 
 import com.vti.entity.Polymorphism.Question1.Student;
+
 public class Ex2_Polymorphism {
 	Random random = new Random();
+	ArrayList<Student> list = new ArrayList<Student>();
 	Scanner scanner = new Scanner(System.in);
 
 	public void Question1() {
@@ -62,34 +64,6 @@ public class Ex2_Polymorphism {
 				return;
 			default:
 				System.out.println("Bạn nhập sai, mời nhập lại : ");
-				break;
-			}
-		}
-	}
-	public void Question2() {
-		ArrayList<com.vti.entity.Polymorphism.Question2.Student> list = new ArrayList<>();
-		com.vti.entity.Polymorphism.Question2.Student student = new com.vti.entity.Polymorphism.Question2.Student();
-		while (true) {
-			System.out.println("\t\t --- Chương trình --- \t\t");
-			System.out.println("1. Nhập thông tin.");
-			System.out.println("2. Hiển thị thông tin.");
-			System.out.println("3. Xét Học Bổng.");
-			System.out.println("\t\t -------------------- \t\t");
-			System.out.print("Mời bạn nhập lựa chọn : ");
-			int lc = scanner.nextInt();
-			switch (lc) {
-			case 1:
-				System.out.println("\t --- InputInfo --- \t");
-				System.out.print("Số sinh viên cần thêm : ");
-				int n = scanner.nextInt();
-				for (int i = 0; i < n; i++) {
-					System.out.println("Sinh viên thứ "+(i+1));
-					student.inputInfo();
-					list.add(student);
-				}
-				break;
-
-			default:
 				break;
 			}
 		}

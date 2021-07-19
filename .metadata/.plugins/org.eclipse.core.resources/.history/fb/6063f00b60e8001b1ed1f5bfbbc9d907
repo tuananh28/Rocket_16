@@ -67,7 +67,7 @@ public class Ex2_Polymorphism {
 		}
 	}
 	public void Question2() {
-		ArrayList<com.vti.entity.Polymorphism.Question2.Student> list = new ArrayList<>();
+		ArrayList<Student> list = new ArrayList<Student>();
 		com.vti.entity.Polymorphism.Question2.Student student = new com.vti.entity.Polymorphism.Question2.Student();
 		while (true) {
 			System.out.println("\t\t --- Chương trình --- \t\t");
