@@ -126,7 +126,7 @@ public class Ex1_Static {
 
 	public void Question7() {
 		try {
-			for (int i = 0; i < 5; i++) {
+			for (int i = 0; i < 6; i++) {
 				Student student = new Student();
 				student.toString();
 			}
@@ -140,26 +140,36 @@ public class Ex1_Static {
 			System.out.println("Chỉ được phép tối đa 7 user");
 		}
 	}
+
 	public void Question8() throws Exception {
 		System.out.println("Tạo 4 Hình Chữ Nhật");
 		HinhChuNhat[] hcns = new HinhChuNhat[4];
 		for (int i = 0; i < hcns.length; i++) {
-			System.out.println(" Hình thứ "+(i+1));
+			System.out.println(" Hình thứ " + (i + 1));
 			System.out.print("Cạnh a : ");
 			float a = ScannerUltis.inputFloat();
-			System.out.println("Cạnh b : ");
+			System.out.print("Cạnh b : ");
 			float b = ScannerUltis.inputFloat();
 			HinhChuNhat hcn = new HinhChuNhat(a, b);
 			hcns[i] = hcn;
+			System.out.println("Chu vi HCN là : " + hcn.tinhChuVi(a, b));
+			System.out.println("Diện tích HCN là : " + hcn.tinhDientich(a, b));
 		}
+		
+		//Hình tròn 1		
 		System.out.println(" Hình tròn thứ 1 ");
 		System.out.print("Nhập bán kinh : ");
 		float r1 = ScannerUltis.inputFloat();
 		HinhTron hinhTron1 = new HinhTron(r1, r1);
+		System.out.println("Chu vi Hình Tròn = " + hinhTron1.tinhChuVi(r1, r1));
+		System.out.println("Diện tích Hình Tròn = " + hinhTron1.tinhDientich(r1, r1));
 		
+		//Hình tròn 2
 		System.out.println("Hình tròn thứ 2 ");
 		System.out.println("Nhập bán kính : ");
 		float r2 = ScannerUltis.inputFloat();
 		HinhTron hinhTron2 = new HinhTron(r2, r2);
+		System.out.println("Chu vi Hình Tròn = " + hinhTron2.tinhChuVi(r2, r2));
+		System.out.println("Diện tích Hình Tròn = " + hinhTron2.tinhDientich(r2, r2));
 	}
 }
