@@ -30,4 +30,14 @@ public class Student {
 		public static void setCollege(String college) {
 			Student.college = college;
 		}
+
+		public String getName() {
+			return Name;
+		}
+
+		public void setName(String name) {
+			Name = name;
+		}
+	
+		
 }
