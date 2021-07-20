@@ -1,20 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="com.vti.entity.Abstraction.Question2.ThiSinh"/>
-    <fullyQualifiedTypeName name="com.vti.entity.Abstraction.Question2.TuyenSinh"/>
-    <fullyQualifiedTypeName name="com.vti.entity.Abstraction.Question2.Khoi"/>
-    <fullyQualifiedTypeName name="java.lang.Override"/>
-    <fullyQualifiedTypeName name="com.sun.tools.classfile.Annotation.element_value_pair"/>
-    <fullyQualifiedTypeName name="com.vti.entity.Polymorphism.Question1.IStudent"/>
-    <fullyQualifiedTypeName name="com.vti.backend.Ex2_Polymorphism"/>
-    <fullyQualifiedTypeName name="java.time.LocalDateTime"/>
-    <fullyQualifiedTypeName name="java.lang.NegativeArraySizeException"/>
-    <fullyQualifiedTypeName name="TypeName"/>
-    <fullyQualifiedTypeName name="java.time.Duration"/>
-    <fullyQualifiedTypeName name="java.util.Calendar"/>
-    <fullyQualifiedTypeName name="java.util.Random"/>
-    <fullyQualifiedTypeName name="com.sun.org.apache.xpath.internal.operations.String"/>
-    <fullyQualifiedTypeName name="com.sun.org.apache.bcel.internal.generic.IF_ACMPEQ"/>
     <fullyQualifiedTypeName name="com.sun.org.apache.bcel.internal.generic.NEW"/>
     <fullyQualifiedTypeName name="java.text.DateFormat"/>
     <fullyQualifiedTypeName name="org.w3c.dom.ls.LSOutput"/>
@@ -49,15 +34,30 @@
     <fullyQualifiedTypeName name="com.vti.entity.Polymorphism.Question5.DienThoaiCD"/>
     <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="java.lang.System"/>
-    <fullyQualifiedTypeName name="com.vti.ultis.ScannerUltis"/>
     <fullyQualifiedTypeName name="com.vti.entity.Static.MyMath"/>
     <fullyQualifiedTypeName name="com.vti.backend.Ex1_Static"/>
     <fullyQualifiedTypeName name="com.vti.entity.Static.PrimaryStudent"/>
-    <fullyQualifiedTypeName name="java.lang.String"/>
-    <fullyQualifiedTypeName name="com.vti.entity.Static.SecondaryStudent"/>
     <fullyQualifiedTypeName name="com.vti.entity.Static.Student"/>
     <fullyQualifiedTypeName name="java.lang.Float"/>
-    <fullyQualifiedTypeName name="java.lang.Exception"/>
     <fullyQualifiedTypeName name="com.vti.entity.Static.Configs"/>
     <fullyQualifiedTypeName name="com.vti.entity.Static.HinhHoc"/>
+    <fullyQualifiedTypeName name="com.vti.entity.Static.HinhChuNhat"/>
+    <fullyQualifiedTypeName name="com.vti.entity.Static.HinhTron"/>
+    <fullyQualifiedTypeName name="com.vti.entity.Final.MyMath"/>
+    <fullyQualifiedTypeName name="com.vti.entity.Static.SecondaryStudent"/>
+    <fullyQualifiedTypeName name="com.vti.entity.Final.SecondaryStudent"/>
+    <fullyQualifiedTypeName name="com.vti.entity.Final.PrimaryStudent"/>
+    <fullyQualifiedTypeName name="sun.security.provider.JavaKeyStore.CaseExactJKS"/>
+    <fullyQualifiedTypeName name="java.awt.Menu"/>
+    <fullyQualifiedTypeName name="com.vti.backend.Ex3_File"/>
+    <fullyQualifiedTypeName name="javax.management.Query"/>
+    <fullyQualifiedTypeName name="java.lang.Exception"/>
+    <fullyQualifiedTypeName name="com.vti.backend.Ex4_IO_Stream"/>
+    <fullyQualifiedTypeName name="com.vti.entity.File.MyClass"/>
+    <fullyQualifiedTypeName name="com.vti.entity.Final.Student"/>
+    <fullyQualifiedTypeName name="com.vti.backend.Ex2_Final"/>
+    <fullyQualifiedTypeName name="com.vti.ultis.FileUltis"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="com.vti.ultis.ScannerUltis"/>
+    <fullyQualifiedTypeName name="com.vti.ultis.IOManager"/>
 </qualifiedTypeNameHistroy>
