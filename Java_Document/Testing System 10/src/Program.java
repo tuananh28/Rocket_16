@@ -6,6 +6,11 @@ import java.sql.SQLException;
 public class Program {
 	public static void main(String[] args)throws SQLException,ClassNotFoundException{
 		Connection connection = getJDBCConnection();
+		if (connection != null) {
+			System.out.println("Connect success");
+		}else {
+			System.out.println("False");
+		}
 	}
 	public static Connection getJDBCConnection() {
 		
