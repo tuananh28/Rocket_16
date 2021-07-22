@@ -1,9 +1,6 @@
   
 package ultis;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -13,19 +10,15 @@ import java.sql.Statement;
 import java.util.Properties;
 
 public class jdbcUltis {
-	private Properties property;
 	private Connection connection;
+	private Properties properties;
 
-	public jdbcUltis() throws FileNotFoundException, IOException {
-		property = new Properties();
-		property.load(new FileInputStream("C:\\Users\\Admin\\eclipse-workspace\\OnTap3\\src\\com\\vti\\resources\\database.properties"));
-	}
 
 	public void connnectionTestting() throws ClassNotFoundException, SQLException {
-		String url = property.getProperty("url");
-		String Username = property.getProperty("username");
-		String password = property.getProperty("password");
-		String dirver = property.getProperty("driver");
+		String url = properties.getProperty("url");
+		String Username = properties.getProperty("username");
+		String password = properties.getProperty("password");
+		String dirver = properties.getProperty("driver");
 		
 		Class.forName(dirver);
 		connection = DriverManager.getConnection(url, Username, password);
@@ -33,10 +26,10 @@ public class jdbcUltis {
 	}
 
 	public Connection getConnection() throws ClassNotFoundException, SQLException {
-		String url = property.getProperty("url");
-		String Username = property.getProperty("username");
-		String password = property.getProperty("password");
-		String dirver = property.getProperty("driver");
+		String url = properties.getProperty("url");
+		String Username = properties.getProperty("username");
+		String password = properties.getProperty("password");
+		String dirver = properties.getProperty("driver");
 		Class.forName(dirver);
 		connection = DriverManager.getConnection(url, Username, password);
 		return connection;
@@ -45,6 +38,8 @@ public class jdbcUltis {
 	public void disConnection() throws SQLException {
 		connection.close();
 	}
+	
+
 
 	public ResultSet executeQuery(String sql) throws ClassNotFoundException, SQLException {
 		Connection connnection = getConnection();

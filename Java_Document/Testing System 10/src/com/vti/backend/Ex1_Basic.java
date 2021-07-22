@@ -1,30 +1,103 @@
 package com.vti.backend;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Properties;
+
+import ultis.ScannerUltis;
 
 public class Ex1_Basic {
 
-	public void Question1() throws SQLException, ClassNotFoundException {
-		final String url = "jdbc:mysql://localhost:3306/testingsystem?autoReconnect=true&useSSL=false&characterEncoding=UTF-8";
-		final String username = "root";
-		final String password = "vaythoi";
+	private Properties properties;
+	private Connection connection;
 
-		Class.forName("com.mysql.cj.jdbc.Driver");
+	public Ex1_Basic() throws FileNotFoundException, IOException {
+		properties = new Properties();
+		properties.load(
+				new FileInputStream("D:\\Rocket_16\\Java_Document\\Testing System 10\\resource\\database.properties"));
 
-		Connection connection = DriverManager.getConnection(url, username, password);
-		System.out.println("Connect Success !");
+		properties.load(
+				new FileInputStream("D:\\Rocket_16\\Java_Document\\Testing System 10\\resource\\message.properties"));
+	}
 
-		String sql = "SELECT id, username, email FROM `User` ";
+	public void Question1() throws IOException, ClassNotFoundException, SQLException {
+		// Tạo connection tới database Testing System
+		// In ra "Connect success!" khi kết nối thành công.
+		String url = properties.getProperty("url");
+		String username = properties.getProperty("username");
+		String password = properties.getProperty("password");
+
+		// Register the drive class with DriveManager
+		Class.forName(properties.getProperty("driver"));
+
+		// Step 2: Get a Database Connection
+		connection = DriverManager.getConnection(url, username, password);
+
+		System.out.println(properties.getProperty("connect.success"));
+	}
+
+	public void Question2() throws SQLException, ClassNotFoundException, IOException {
+		// Tạo method để in ra các thông tin của position gồm có id, name
+		String sql = "SELECT * FROM position";
 		Statement statement = connection.createStatement();
-		ResultSet resultSet = statement.executeQuery(sql);
-		while (resultSet.next()) {
-			System.out.println(resultSet.getInt("id"));
-			System.out.println(resultSet.getString("username"));
-			System.out.println(resultSet.getString("email"));
+		ResultSet posResult = statement.executeQuery(sql);
+		System.out.println("Thông tin Position đang có trên hệ thống: ");
+		String leftAlignFormat = "| %-6d | %-21s |%n";
+		System.out.format("+--------+-----------------------+%n");
+		System.out.format("| ID 	 | PositionName 	 |%n");
+		System.out.format("+--------+-----------------------+%n");
+		while (posResult.next()) {
+			System.out.format(leftAlignFormat, posResult.getInt(1), posResult.getString(2));
+		}
+		System.out.format("+--------+-----------------------+%n");
+	}
+
+	public void Question3() throws SQLException, ClassNotFoundException, IOException {
+		// Tạo method để tạo position, user sẽ nhập vào name và id.
+		String sql = "INSERT INTO `Position` (PositionName)" + "VALUE (?)";
+		PreparedStatement preparableStatement = connection.prepareStatement(sql);
+		System.out.print("Input name : ");
+		String PositonName = ScannerUltis.inputString();
+		preparableStatement.setString(1, PositonName);
+		int effectedRecordAmount = preparableStatement.executeUpdate();
+		if (effectedRecordAmount == 1) {
+			System.out.println(properties.getProperty("position.insert.complete"));
+		} else {
+			System.out.println(properties.getProperty("position.insert.false  "));
+		}
+	}
+
+	public void Question4() throws SQLException, ClassNotFoundException, IOException {
+		// Tạo method để update tên của position gồm có id = 5 thành "Developer".
+		String sql = "UPDATE `position` SET PositionName = 'Dev' WHERE PositionID = 5";
+		Statement statement = connection.createStatement();
+		int effectedRecordAmount = statement.executeUpdate(sql);
+		if (effectedRecordAmount == 1) {
+			System.out.println(properties.getProperty("position.update.complete"));
+		} else {
+			System.out.println(properties.getProperty("position.update.fales"));
+		}
+	}
+
+	public void Question5() throws SQLException, ClassNotFoundException, IOException {
+		// Tạo method để delete của position theo id và user sẽ nhập vào id
+		String sql = "DELETE FROM `Position` WHERE PositionID = ?";
+		PreparedStatement pStatement = connection.prepareStatement(sql);
+		System.out.print("Nhập PositionID cần xóa : ");
+		int ID = ScannerUltis.inputInt();
+		pStatement.setInt(1, ID);
+		int effectedRecordAmount = pStatement.executeUpdate();
+		if (effectedRecordAmount == 1) {
+			System.out.println(properties.getProperty("position.delete.complete"));
+		} else {
+			System.out.println(properties.getProperty("position.delete.false"));
 		}
 	}
 }
