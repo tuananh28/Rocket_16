@@ -114,3 +114,4 @@ DROP TABLE IF EXISTS `TypeQuestion`;
     QuestionID 		TINYINT UNSIGNED NOT NULL,
     PRIMARY KEY(ExamID, QuestionID)
  );
+ 

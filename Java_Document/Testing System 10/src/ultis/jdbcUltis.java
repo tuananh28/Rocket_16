@@ -10,8 +10,8 @@ import java.sql.Statement;
 import java.util.Properties;
 
 public class jdbcUltis {
-	private Connection connection;
 	private Properties properties;
+	private Connection connection;
 
 
 	public void connnectionTestting() throws ClassNotFoundException, SQLException {
@@ -38,8 +38,6 @@ public class jdbcUltis {
 	public void disConnection() throws SQLException {
 		connection.close();
 	}
-	
-
 
 	public ResultSet executeQuery(String sql) throws ClassNotFoundException, SQLException {
 		Connection connnection = getConnection();

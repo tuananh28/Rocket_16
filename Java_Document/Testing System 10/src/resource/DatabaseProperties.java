@@ -1,4 +1,4 @@
-package ultis.properties;
+package resource;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -7,8 +7,7 @@ import java.util.Properties;
 
 public class DatabaseProperties {
 
-	public static final String RESOURCE_FOLDER_URL = "D:\\Rocket_16\\Java_Document\\Testing System 10\\resource\\database.properties";
-
+	public static final String RESOURCE_FOLDER_URL = "D:\\Rocket_16\\Java_Document\\Testing System 10\\src\\resource";
 	private Properties properties;
 
 	public DatabaseProperties() throws FileNotFoundException, IOException {

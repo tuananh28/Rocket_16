@@ -17,7 +17,7 @@ CREATE TABLE `Department`(
 DROP TABLE IF EXISTS `Position`;
 CREATE TABLE `Position`(
 	PositionID 		TINYINT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-    PositionName 	ENUM('Dev', 'Test', 'Scrum Master', 'PM')  NOT NULL
+    PositionName 	ENUM('Dev', 'Test', 'Scrum Master', 'PM') UNIQUE KEY NOT NULL
     
 );
 
@@ -131,6 +131,7 @@ INSERT INTO `Position` (PositionName)
 VALUE
 						('Dev'),
                         ('Test'),
+                        ('Scrum Master'),
                         ('PM');
 
 INSERT INTO `Account`(Email					,UserName		,FullName			,DepartmentID 	,PositionID	,CreateDate)

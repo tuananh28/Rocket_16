@@ -20,11 +20,8 @@ public class Ex1_Basic {
 
 	public Ex1_Basic() throws FileNotFoundException, IOException {
 		properties = new Properties();
-		properties.load(
-				new FileInputStream("D:\\Rocket_16\\Java_Document\\Testing System 10\\resource\\database.properties"));
-
-		properties.load(
-				new FileInputStream("D:\\Rocket_16\\Java_Document\\Testing System 10\\resource\\message.properties"));
+		properties.load(new FileInputStream(
+				"D:\\Rocket_16\\Java_Document\\Testing System 10\\src\\resource\\database.properties"));
 	}
 
 	public void Question1() throws IOException, ClassNotFoundException, SQLException {
@@ -40,7 +37,7 @@ public class Ex1_Basic {
 		// Step 2: Get a Database Connection
 		connection = DriverManager.getConnection(url, username, password);
 
-		System.out.println(properties.getProperty("connect.success"));
+		System.out.println("Connect Success !!");
 	}
 
 	public void Question2() throws SQLException, ClassNotFoundException, IOException {
@@ -68,9 +65,9 @@ public class Ex1_Basic {
 		preparableStatement.setString(1, PositonName);
 		int effectedRecordAmount = preparableStatement.executeUpdate();
 		if (effectedRecordAmount == 1) {
-			System.out.println(properties.getProperty("position.insert.complete"));
+			System.out.println("Insert Complete !!");
 		} else {
-			System.out.println(properties.getProperty("position.insert.false  "));
+			System.out.println("Insert False !!");
 		}
 	}
 
@@ -80,9 +77,9 @@ public class Ex1_Basic {
 		Statement statement = connection.createStatement();
 		int effectedRecordAmount = statement.executeUpdate(sql);
 		if (effectedRecordAmount == 1) {
-			System.out.println(properties.getProperty("position.update.complete"));
+			System.out.println("Update Complete !!");
 		} else {
-			System.out.println(properties.getProperty("position.update.fales"));
+			System.out.println("Update False !!");
 		}
 	}
 
@@ -95,9 +92,9 @@ public class Ex1_Basic {
 		pStatement.setInt(1, ID);
 		int effectedRecordAmount = pStatement.executeUpdate();
 		if (effectedRecordAmount == 1) {
-			System.out.println(properties.getProperty("position.delete.complete"));
+			System.out.println("Delete Complete !!");
 		} else {
-			System.out.println(properties.getProperty("position.delete.false"));
+			System.out.println("Delete False");
 		}
 	}
 }
