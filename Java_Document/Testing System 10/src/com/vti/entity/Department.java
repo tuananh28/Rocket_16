@@ -18,7 +18,7 @@ public class Department {
 	}
 	@Override
 	public String toString() {
-		return "Department [id=" + id + ", Name=" + Name + "]";
+		return "Department \nDepartmentID : " + id + "\nDepartmentName : " + Name + "";
 	}
 	
 	

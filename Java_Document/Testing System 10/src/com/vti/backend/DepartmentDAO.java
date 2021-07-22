@@ -22,7 +22,7 @@ public class DepartmentDAO {
 
 	public List<Department> getDepartments()
 			throws FileNotFoundException, ClassNotFoundException, SQLException, IOException {
-		// Tạo method để lấy ra danh sách tất cả các Department
+			// Tạo method để lấy ra danh sách tất cả các Department
 
 			List<Department> departments = new ArrayList<>();
 

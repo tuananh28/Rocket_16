@@ -1,6 +1,9 @@
   
 package ultis;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -13,7 +16,11 @@ public class jdbcUltis {
 	private Properties properties;
 	private Connection connection;
 
-
+	public jdbcUltis() throws FileNotFoundException, IOException {
+		properties = new Properties();
+		properties.load(new FileInputStream(
+				"D:\\Rocket_16\\Java_Document\\Testing System 10\\src\\resource\\database.properties"));
+	}
 	public void connnectionTestting() throws ClassNotFoundException, SQLException {
 		String url = properties.getProperty("url");
 		String Username = properties.getProperty("username");
