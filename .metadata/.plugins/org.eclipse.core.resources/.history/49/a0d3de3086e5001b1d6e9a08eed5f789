@@ -1,6 +1,0 @@
-package com.vti.entity;
-
-public class Snippet {
-	Question1();
-}
-

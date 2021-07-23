@@ -227,3 +227,19 @@ VALUE
 						(	4	,	4),
 						(	5	,	5),
 						(	6	,	6);
+                        
+		
+-- create procedure
+DROP PROCEDURE IF EXISTS sp_delete_department;
+DELIMITER $$
+	CREATE PROCEDURE sp_delete_department (IN in_DepartmentID TINYINT UNSIGNED)
+	BEGIN
+		DELETE 
+        FROM 	`Account` 
+        WHERE 	DepartmentID = in_DepartmentID;
+    
+		DELETE 
+        FROM 	Department 
+        WHERE 	DepartmentID = in_DepartmentID;
+	END$$
+DELIMITER ;
