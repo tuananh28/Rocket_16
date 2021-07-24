@@ -1,5 +1,0 @@
-package com.vti.entity.Abstraction;
-
-public abstract class VietnamesePhone {
-
-}

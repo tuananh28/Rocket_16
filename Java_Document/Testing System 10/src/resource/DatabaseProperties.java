@@ -7,7 +7,7 @@ import java.util.Properties;
 
 public class DatabaseProperties {
 
-	public static final String RESOURCE_FOLDER_URL = "D:\\Rocket_16\\Java_Document\\Testing System 10\\src\\resource";
+	public static final String RESOURCE_FOLDER_URL = "D:\\\\Rocket_16\\Java_Document\\Testing System 10\\src\\resource";
 	private Properties properties;
 
 	public DatabaseProperties() throws FileNotFoundException, IOException {
