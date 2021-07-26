@@ -1,0 +1,7 @@
+package com.vti.backend.datalayer;
+
+import junit.framework.TestCase;
+
+public class AccountRepositoryTest extends TestCase {
+
+}

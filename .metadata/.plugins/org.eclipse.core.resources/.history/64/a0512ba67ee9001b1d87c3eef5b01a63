@@ -1,0 +1,9 @@
+package com.vti.entity.Final;
+
+public class PrimaryStudent extends Student{
+	public PrimaryStudent(int ID, String Name) {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+}

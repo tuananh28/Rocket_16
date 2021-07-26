@@ -1,0 +1,73 @@
+package com.vti.backend;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.sql.SQLException;
+import java.util.List;
+
+import com.vti.entity.Department;
+
+import ultis.ScannerUltis;
+
+public class Ex2_CRUD {
+	DepartmentDAO DAO;
+
+	public void Quesiton1() throws FileNotFoundException, ClassNotFoundException, SQLException, IOException {
+		List<Department> list = DAO.getDepartments();
+		for (Department department : list) {
+			System.out.println(department);
+		}
+	}
+
+	public void Question2() throws ClassNotFoundException, FileNotFoundException, SQLException, IOException, Exception {
+		System.out.println("Tìm thông thin phòng có ID = 5");
+		Department department = DAO.getDepByID(5);
+		if (department == null) {
+			System.out.println("Không tồn tại phòng ban này");
+		}
+	}
+
+	public void Question3() throws ClassNotFoundException, FileNotFoundException, SQLException, IOException, Exception {
+		System.out.println("Tìm kiếm phòng theo ID");
+		System.out.print("Nhập ID cần tìm : ");
+		int id = ScannerUltis.inputIntPositive();
+		Department department = DAO.getDepByID(id);
+		System.out.println(department);
+	}
+
+	public void Question4() throws FileNotFoundException, ClassNotFoundException, SQLException, IOException {
+		System.out.println("Kiểm tra phòng ban có tồn tại không ?");
+		System.out.print("Nhập tên phòng ban : ");
+		String name = ScannerUltis.inputString();
+		Boolean check = DAO.isDepNameExsist(name);
+		if (check) {
+			System.out.println("Tên đã có trên hệ thống");
+			Quesiton1();
+		} else {
+			System.out.println("Tên chưa có trên hệ thống");
+		}
+	}
+
+	public void Question5() throws ClassNotFoundException, SQLException, FileNotFoundException, IOException {
+		String newNameDep = getNewName();
+		if (DAO.CreateDep(newNameDep)) {
+			System.out.println("Tạo thành công.");
+			Quesiton1();
+		} else {
+			System.out.println("Đã có lỗi xảy ra");
+		}
+	}
+
+	private String getNewName() throws ClassNotFoundException, SQLException {
+		while (true) {
+			System.out.println("Nhập vào tên phòng cần tạo: ");
+			String newName = ScannerUltis.inputString();
+			if (DAO.isDepNameExsist(newName)) {
+				System.out.println("Đã có phòng trên hệ thống");
+			} else {
+				return newName;
+			}
+		}
+	}
+
+}

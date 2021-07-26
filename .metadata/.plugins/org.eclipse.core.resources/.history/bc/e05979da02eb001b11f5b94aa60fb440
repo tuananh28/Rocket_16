@@ -1,0 +1,73 @@
+package com.vti.backend;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+import com.vti.entity.Department;
+
+import ultis.jdbcUltis;
+import ultis.properties.MessageProperties;
+
+
+public class DepartmentDAO {
+	private jdbcUltis jdbc;
+	private MessageProperties messageProperties;
+	public DepartmentDAO() throws SQLException, FileNotFoundException, IOException{
+		jdbc = new jdbcUltis();
+		messageProperties = new MessageProperties();
+	}
+	
+	public List<Department> getDepartments() throws FileNotFoundException, ClassNotFoundException,SQLException,IOException{
+		//Tạo method để lấy ra danh sách tất cả các Department
+		List<Department> departments = new ArrayList<>();
+
+		// Step 2: get connection
+		Connection connection = jdbc.connect();
+
+		// Step 3: Create a statement object
+		Statement statement = connection.createStatement();
+
+		// Step 4: execute query
+		String sql = "SELECT * FROM Department";
+		ResultSet resultSet = statement.executeQuery(sql);
+
+		// Step 5: handling result set
+		while (resultSet.next()) {
+			Department department = new Department();
+			department.setId(resultSet.getInt("DepartmentId"));
+			department.setName(resultSet.getString("DepartmentName"));
+
+			departments.add(department);
+		}
+
+		// disconnect
+		jdbc.disConnection();
+
+		return departments;
+	}
+	public Department getDepByID(int id) throws Exception{
+		//Tạo method để lấy ra Department có id = 5
+		Connection connection = jdbc.connect();
+		String sql = "SELECT * FROM Department WHERE DepartmentID = ?";
+		PreparedStatement pStatement = connection.prepareStatement(sql);
+		pStatement.setInt(1, id);
+		ResultSet resultSet = pStatement.executeQuery();
+		if (resultSet.next()) {
+			Department department = new Department();
+			department.setId(resultSet.getInt("DepartmentID"));
+			department.setName(resultSet.getString("DepartmentName"));
+			jdbc.disConnection();
+			return department;
+		}else {
+			jdbc.disConnection();
+			throw new Exception(messageProperties.getProperty("department.getDepartmentByID.cannotFindDepartmentById")+id);
+		}
+	}
+	
+}

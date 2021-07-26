@@ -1,0 +1,55 @@
+package com.vti.backend;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+import com.vti.entity.Department;
+
+import ultis.jdbcUltis;
+
+
+public class DepartmentDAO {
+	private jdbcUltis jdbc;
+	public DepartmentDAO() throws SQLException, FileNotFoundException, IOException{
+		jdbc = new jdbcUltis();
+	}
+	
+	public List<Department> getDepartments() throws FileNotFoundException, ClassNotFoundException,SQLException,IOException{
+		//Tạo method để lấy ra danh sách tất cả các Department
+		List<Department> departments = new ArrayList<>();
+		String sql = "SELECT * FROM Department";
+		ResultSet resultSet = jdbc.executeQuery(sql);
+		while (resultSet.next()) {
+			Department department = new Department();
+			department.setId(resultSet.getInt("DepartmentId"));
+			department.setName(resultSet.getString("DepartmentName"));
+			departments.add(department);
+		}
+
+		// disconnect
+		jdbc.disConnection();
+
+		return departments;
+	}
+	public Department getDepByID(int id) throws Exception,ClassNotFoundException{
+		//Tạo method để lấy ra Department có id = 5
+		String sql = "SELECT * FROM Department WHERE DepartmentID = ?";
+		PreparedStatement pStatement = jdbc.createPrepareStatement(sql);
+		pStatement.setInt(1, id);
+		ResultSet resultSet = pStatement.executeQuery();
+		if (resultSet.next()) {
+			Department department = new Department();
+			resultSet.getInt("DepartmentID");
+			resultSet.getString("DepartmentName");
+			jdbc.disConnection();
+			return department;
+		}else {
+			System.out.println("Không tìm thấy id " +id);
+		}
+	}
+	
+}

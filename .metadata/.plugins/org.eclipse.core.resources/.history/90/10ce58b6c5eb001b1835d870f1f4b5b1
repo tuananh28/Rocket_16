@@ -1,0 +1,15 @@
+package com.vti.backend.datalayer;
+
+import java.util.List;
+
+import com.vti.entity.Department;
+
+public interface IDepartmentRepository {
+	public List<Department> getDepartments();
+	public Department getDepByID(int id);
+	public boolean isDepIDExist (int id);
+	public boolean isDepNameExist(String name);
+	public boolean createDep(String name);
+	public boolean updateDep(int id, String name);
+	public boolean delDepByID(int id);
+}

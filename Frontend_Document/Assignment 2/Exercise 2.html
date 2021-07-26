@@ -69,9 +69,85 @@
         height: 100px;
         background-color: rgb(189, 179, 179);
     }
-    .Ques1_bai4{
-        background-image: url("./img/backgroundhoa.jpg");
-        background-size: cover;
+
+    .Ques1_bai4 {
+        margin-top: 30px;
+        margin-left: 35%;
+        margin-right: 35%;
+        border: 0;
+        padding: 50px;
+        background-image: url("img/backgroundhoa.jpg");
+        background-size: 100%;
+    }
+
+    .Ques1_bai5 {
+        margin-top: 30px;
+        margin-left: 35%;
+        margin-right: 35%;
+        padding: 20px;
+        background-image: url("img/Menu.jpg");
+        background-size: 92%;
+    }
+
+    .Ques1_bai5 h2 {
+        margin-top: 90px;
+        text-align: center;
+        color: saddlebrown;
+    }
+
+    .Ques1_bai5 table {
+        margin-left: 100px;
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        text-align: left;
+        padding: 10px;
+    }
+
+    .Ques1_bai5 th {
+        background-color: saddlebrown;
+    }
+
+    .Ques1_bai5 tr:nth-child(even) {
+        background-color: rgb(212, 167, 135);
+    }
+
+    .Ques1_bai6 {
+        margin-top: 20px;
+        margin-left: 30%;
+    }
+
+    .Ques1_bai6 table {
+        border: 1px solid red;
+        border-collapse: collapse;
+        border: rgb(255, 0, 119);
+    }
+
+    .Ques1_bai6 th {
+        background-color: red;
+    }
+
+    .Ques1_bai7 {
+        margin-top: 20px;
+        margin-left: 35%;
+    }
+
+    .Ques1_bai7 table {
+        background-color: springgreen;
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+
+    .scroll {
+        width: 110px;
+        height: 110px;
+        overflow: scroll;
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    .scroll select {
+        padding: 10px;
+        margin: -5px -20px -5px -5px;
     }
 </style>
 
@@ -131,9 +207,9 @@
         </div>
     </div>
     <div class="Ques1_bai4">
-        <h2>Công ty Hoa tươi Nhân Ái</h2>
+        <h2 style="color:rgb(158, 42, 110); text-align: right;">Công ty Hoa tươi Nhân Ái</h2>
         <ol>
-            <li style="background-color: rgb(250, 62, 172);">Giới thiệu:</li>
+            <li><mark style="background-color: rgb(250, 62, 172);">Giới thiệu:</mark></li>
             <ul>
                 <li>Thành lập ngày 25/05/2007</li>
                 <li>Chuyên cung cấp các loại hoa tươi</li>
@@ -141,16 +217,161 @@
                 <li>Nhận kết giỏ hóa theo yêu cầu của khách hàng</li>
             </ul>
             <hr width="350px">
-            <li style="background-color: rgb(250, 62, 172);">Liên hệ:</li>
+            <li><mark style="background-color: rgb(250, 62, 172);">Liên hệ:</mark></li>
             <ul>
                 <li>Điện thoại: 0987654321</li>
                 <li>Địa chỉ: 227 Nguyễn Văn Cừ- Long Biên- Hà Nội</li>
             </ul>
         </ol>
+        <footer style="color: rgb(230, 107, 230); text-align: center;">
+            &copy;Copyright: <a href=""><b style="color: blue;">Trung Tâm Tin Học-Đại Học Khoa Học Tự Nhiên Hà
+                    Nội</b></a>
+        </footer>
+    </div>
+    <div class="Ques1_bai5">
+        <h2>Món ngon Hà Nội</h2>
+        <table border="2">
+            <tr>
+                <th>STT</th>
+                <th>Tên Món Ăn</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Bánh cuốn Cao Bằng</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Xôi Hà Nội</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Bún Đậu Mắm Tôm</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Bún chả</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Nem nướng Nha Trang</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Bánh mì</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Nước mía</td>
+            </tr>
+        </table>
+    </div>
+    <div class="Ques1_bai6">
+        <h3 style="color: red; padding-left: 160px;">Chương trình học - ngành lập trình</h3>
+        <table border="1">
+            <tr>
+                <th rowspan="2">Nhóm học phần</th>
+                <th rowspan="2">Môn học</th>
+                <th colspan="2">Số tiết</th>
+            </tr>
+            <tr>
+                <th>Lý thuyết</th>
+                <th>Thực hành</th>
+            </tr>
+            <tr>
+                <td rowspan="6" style="text-align: center; color: red;"><b>I<br> Tin học văn phòng</b></td>
+                <td>Hệ điều hành windows</td>
+                <td>3</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>Sử dụng internet</td>
+                <td>3</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>Soạn thảo văn bản với MS Word</td>
+                <td>24</td>
+                <td>40</td>
+            </tr>
+            <tr>
+                <td>Tạo bài trình diễn với MS Power Point</td>
+                <td>9</td>
+                <td>15</td>
+            </tr>
+            <tr>
+                <td>Xử lý số liệu với MS Execel</td>
+                <td>24</td>
+                <td>40</td>
+            </tr>
+            <tr>
+                <td>Tạo trang web với Ms Fontpage</td>
+                <td>9</td>
+                <td>15</td>
+            </tr>
+            <tr>
+                <td rowspan="2" style="text-align: center;color: red;"><b> I <br>Kỹ thuật lập trình (VB.NET)</b> </td>
+                <td>Nhập môn lập trình</td>
+                <td>36</td>
+                <td>60</td>
+            </tr>
+            <tr>
+                <td>Kỹ Thuật lập trình</td>
+                <td>36</td>
+                <td>60</td>
+            </tr>
+
+        </table>
+    </div>
+    <div class="Ques1_bai7">
+        <h2>Phiếu đăng ký tham gia chương trình khyến mãi</h2>
+        <table border="1" style="width: 500px;">
+            <tr>
+                <td>Họ và tên</td>
+                <td><input type="text" placeholder="Nhập họ tên"></td>
+            </tr>
+            <tr>
+                <td>Địa chỉ</td>
+                <td><input type="text" placeholder="Nhập địa chỉ"></td>
+            </tr>
+            <tr>
+                <td>Điện thoại</td>
+                <td><input type="text" placeholder="Nhập số điện thoại"></td>
+            </tr>
+            <tr>
+                <td>Giới tính</td>
+                <td><input type="radio">Nam
+                    <input type="radio">Nữ
+                </td>
+            </tr>
+            <tr>
+                <td>Nghề nghiệp</td>
+                <td><select>
+                        <option>Giáo viên</option>
+                        <option>Sinh Viên</option>
+                        </section>
+                </td>
+            </tr>
+            <tr>
+                <td>Chọn sản phẩm tham gia</td>
+
+                <td>
+                    <div class="scroll">
+                        Kem đánh răng <br>
+                        Bột giặt <br>
+                        Dầu gội đầu <br>
+                        Sữa tắm <br>
+                        </select>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Số người tham gia dự đoán</td>
+                <td><input type="text" placeholder="250000"></td>
+            </tr>
+            <tr style="text-align: center;">
+                <td colspan="2"><button type="submit">Đồng ý </button></td>
+            </tr>
+        </table>
     </div>
 </body>
-<footer style="color: rgb(230, 107, 230);">
-    &copy;Copyright: <a href=""><b style="color: blue;">Trung Tâm Tin Học-Đại Học Khoa Học Tự Nhiên Hà Nội</b></a>
-</footer>
-
 </html>
