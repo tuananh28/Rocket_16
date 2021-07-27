@@ -12338,3 +12338,32 @@ user global configuration and to define the default location to store repositori
 not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
 EGit might behave differently since they see different configuration options.
 This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.wst.sse.ui 4 4 2021-07-27 15:39:31.374
+!MESSAGE Exceptions occurred while formatting documents
+!SUBENTRY 1 org.eclipse.wst.sse.ui 4 4 2021-07-27 15:39:31.374
+!MESSAGE Exception occurred while formatting document /Java_Document
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException(/Java_Document)[372]: java.lang.Exception: Project 'Java_Document' is not open.
+	at org.eclipse.core.internal.resources.ResourceException.provideStackTrace(ResourceException.java:42)
+	at org.eclipse.core.internal.resources.ResourceException.<init>(ResourceException.java:38)
+	at org.eclipse.core.internal.resources.Project.checkAccessible(Project.java:148)
+	at org.eclipse.core.internal.resources.Container.members(Container.java:244)
+	at org.eclipse.core.internal.resources.Container.members(Container.java:231)
+	at org.eclipse.wst.sse.ui.internal.handlers.FormatHandler.format(FormatHandler.java:234)
+	at org.eclipse.wst.sse.ui.internal.handlers.FormatHandler.process(FormatHandler.java:276)
+	at org.eclipse.wst.sse.ui.internal.handlers.FormatHandler$FormatJob.run(FormatHandler.java:133)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SUBENTRY 2 org.eclipse.core.resources 4 372 2021-07-27 15:39:31.375
+!MESSAGE Project 'Java_Document' is not open.
+!STACK 0
+java.lang.Exception: Project 'Java_Document' is not open.
+	at org.eclipse.core.internal.resources.ResourceException.provideStackTrace(ResourceException.java:42)
+	at org.eclipse.core.internal.resources.ResourceException.<init>(ResourceException.java:38)
+	at org.eclipse.core.internal.resources.Project.checkAccessible(Project.java:148)
+	at org.eclipse.core.internal.resources.Container.members(Container.java:244)
+	at org.eclipse.core.internal.resources.Container.members(Container.java:231)
+	at org.eclipse.wst.sse.ui.internal.handlers.FormatHandler.format(FormatHandler.java:234)
+	at org.eclipse.wst.sse.ui.internal.handlers.FormatHandler.process(FormatHandler.java:276)
+	at org.eclipse.wst.sse.ui.internal.handlers.FormatHandler$FormatJob.run(FormatHandler.java:133)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
