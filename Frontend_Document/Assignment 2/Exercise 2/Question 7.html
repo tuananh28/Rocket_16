@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 2</title>
+    <style>
+        .Ques1_bai7 {
+            margin-top: 20px;
+            margin-left: 35%;
+        }
+
+        .Ques1_bai7 table {
+            background-color: springgreen;
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        .scroll {
+            width: 110px;
+            height: 110px;
+            overflow: scroll;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .scroll select {
+            padding: 10px;
+            margin: -5px -20px -5px -5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="Ques1_bai7">
+        <h2>Phiếu đăng ký tham gia chương trình khyến mãi</h2>
+        <table border="1" style="width: 500px;">
+            <tr>
+                <td>Họ và tên</td>
+                <td><input type="text" placeholder="Nhập họ tên"></td>
+            </tr>
+            <tr>
+                <td>Địa chỉ</td>
+                <td><input type="text" placeholder="Nhập địa chỉ"></td>
+            </tr>
+            <tr>
+                <td>Điện thoại</td>
+                <td><input type="text" placeholder="Nhập số điện thoại"></td>
+            </tr>
+            <tr>
+                <td>Giới tính</td>
+                <td><input type="radio">Nam
+                    <input type="radio">Nữ
+                </td>
+            </tr>
+            <tr>
+                <td>Nghề nghiệp</td>
+                <td><select>
+                        <option>Giáo viên</option>
+                        <option>Sinh Viên</option>
+                        </section>
+                </td>
+            </tr>
+            <tr>
+                <td>Chọn sản phẩm tham gia</td>
+                <td>
+                    <div class="scroll">
+                        Kem đánh răng <br>
+                        Bột giặt <br>
+                        Dầu gội đầu <br>
+                        Sữa tắm <br>
+                        </select>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Số người tham gia dự đoán</td>
+                <td><input type="text" placeholder="250000"></td>
+            </tr>
+            <tr style="text-align: center;">
+                <td colspan="2"><button type="submit">Đồng ý </button></td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>

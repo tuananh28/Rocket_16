@@ -1,0 +1,48 @@
+*{
+    color: white;
+    margin: 0;
+}
+.header{
+    height: 120px;
+    background-color: yellow;
+}
+.sidebar{
+    width:20%;
+    height:520px;
+    background:#cf9;
+    float: left;
+}
+.content{
+    width: 80%;
+    height:520px;
+    background:#ffa;
+    float: left;
+}
+.Nav{
+    height: 40px;
+    background-color: green;
+}
+.Section{
+    height: 240px;
+    width: 80%;
+    background-color: blue;
+    float: left;
+   
+}
+.Artilce{
+    height: 240px;
+    width: 80%;
+    background-color: black;
+    float: right;
+}
+.Aside{
+    float: right;
+    height: 480px;
+    width: 20%;
+    background-color: gray;
+}
+.footer{
+    background-color: orange;
+    height: 110px;
+    clear: both;
+}
