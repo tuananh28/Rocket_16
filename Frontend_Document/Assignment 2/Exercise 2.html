@@ -6,151 +6,150 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercise 2</title>
+    <style>
+        .Ques1_bai1 h1 {
+            text-align: center;
+        }
+    
+        .Ques1_bai1 p {
+            text-align: center;
+        }
+    
+        .Ques1_bai2 {
+            box-sizing: border-box;
+            border: 1px;
+            padding: 50px;
+            text-align: center;
+        }
+    
+        .Ques1_bai2 h2 {
+            color: green;
+        }
+    
+        .Ques1_bai2 p b u {
+            margin-right: 30%;
+            color: blue;
+        }
+    
+        .Ques1_bai2 h4 {
+            margin-right: 14.5%;
+        }
+    
+        .me {
+            margin-left: 35%;
+            width: 400px;
+            height: 20px;
+            background-color: rgb(230, 167, 200);
+        }
+    
+        .tho {
+            margin-left: 35%;
+            background-color: #ffffcc;
+            width: 300px;
+            height: 250px;
+            padding: 50px;
+        }
+    
+        .Ques1_bai3 h2 {
+            color: seagreen;
+        }
+    
+        .Ques1_bai3 p {
+            margin-left: 35%;
+        }
+    
+        .Ques1_bai3 font {
+            color: red;
+        }
+    
+        .congthuc {
+            margin-left: 35%;
+            width: 420px;
+            height: 100px;
+            background-color: rgb(189, 179, 179);
+        }
+    
+        .Ques1_bai4 {
+            margin-top: 30px;
+            margin-left: 35%;
+            margin-right: 35%;
+            border: 0;
+            padding: 50px;
+            background-image: url("img/backgroundhoa.jpg");
+            background-size: 100%;
+        }
+    
+        .Ques1_bai5 {
+            margin-top: 30px;
+            margin-left: 35%;
+            margin-right: 35%;
+            padding: 20px;
+            background-image: url("img/Menu.jpg");
+            background-size: 92%;
+        }
+    
+        .Ques1_bai5 h2 {
+            margin-top: 90px;
+            text-align: center;
+            color: saddlebrown;
+        }
+    
+        .Ques1_bai5 table {
+            margin-left: 100px;
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            text-align: left;
+            padding: 10px;
+        }
+    
+        .Ques1_bai5 th {
+            background-color: saddlebrown;
+        }
+    
+        .Ques1_bai5 tr:nth-child(even) {
+            background-color: rgb(212, 167, 135);
+        }
+    
+        .Ques1_bai6 {
+            margin-top: 20px;
+            margin-left: 30%;
+        }
+    
+        .Ques1_bai6 table {
+            border: 1px solid red;
+            border-collapse: collapse;
+            border: rgb(255, 0, 119);
+        }
+    
+        .Ques1_bai6 th {
+            background-color: red;
+        }
+    
+        .Ques1_bai7 {
+            margin-top: 20px;
+            margin-left: 35%;
+        }
+    
+        .Ques1_bai7 table {
+            background-color: springgreen;
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    
+        .scroll {
+            width: 110px;
+            height: 110px;
+            overflow: scroll;
+            display: inline-block;
+            vertical-align: top;
+        }
+    
+        .scroll select {
+            padding: 10px;
+            margin: -5px -20px -5px -5px;
+        }
+    </style>
 </head>
-<style>
-    .Ques1_bai1 h1 {
-        text-align: center;
-    }
-
-    .Ques1_bai1 p {
-        text-align: center;
-    }
-
-    .Ques1_bai2 {
-        box-sizing: border-box;
-        border: 1px;
-        padding: 50px;
-        text-align: center;
-    }
-
-    .Ques1_bai2 h2 {
-        color: green;
-    }
-
-    .Ques1_bai2 p b u {
-        margin-right: 30%;
-        color: blue;
-    }
-
-    .Ques1_bai2 h4 {
-        margin-right: 14.5%;
-    }
-
-    .me {
-        margin-left: 35%;
-        width: 400px;
-        height: 20px;
-        background-color: rgb(230, 167, 200);
-    }
-
-    .tho {
-        margin-left: 35%;
-        background-color: #ffffcc;
-        width: 300px;
-        height: 250px;
-        padding: 50px;
-    }
-
-    .Ques1_bai3 h2 {
-        color: seagreen;
-    }
-
-    .Ques1_bai3 p {
-        margin-left: 35%;
-    }
-
-    .Ques1_bai3 font {
-        color: red;
-    }
-
-    .congthuc {
-        margin-left: 35%;
-        width: 420px;
-        height: 100px;
-        background-color: rgb(189, 179, 179);
-    }
-
-    .Ques1_bai4 {
-        margin-top: 30px;
-        margin-left: 35%;
-        margin-right: 35%;
-        border: 0;
-        padding: 50px;
-        background-image: url("img/backgroundhoa.jpg");
-        background-size: 100%;
-    }
-
-    .Ques1_bai5 {
-        margin-top: 30px;
-        margin-left: 35%;
-        margin-right: 35%;
-        padding: 20px;
-        background-image: url("img/Menu.jpg");
-        background-size: 92%;
-    }
-
-    .Ques1_bai5 h2 {
-        margin-top: 90px;
-        text-align: center;
-        color: saddlebrown;
-    }
-
-    .Ques1_bai5 table {
-        margin-left: 100px;
-        font-family: arial, sans-serif;
-        border-collapse: collapse;
-        text-align: left;
-        padding: 10px;
-    }
-
-    .Ques1_bai5 th {
-        background-color: saddlebrown;
-    }
-
-    .Ques1_bai5 tr:nth-child(even) {
-        background-color: rgb(212, 167, 135);
-    }
-
-    .Ques1_bai6 {
-        margin-top: 20px;
-        margin-left: 30%;
-    }
-
-    .Ques1_bai6 table {
-        border: 1px solid red;
-        border-collapse: collapse;
-        border: rgb(255, 0, 119);
-    }
-
-    .Ques1_bai6 th {
-        background-color: red;
-    }
-
-    .Ques1_bai7 {
-        margin-top: 20px;
-        margin-left: 35%;
-    }
-
-    .Ques1_bai7 table {
-        background-color: springgreen;
-        border: 1px solid black;
-        border-collapse: collapse;
-    }
-
-    .scroll {
-        width: 110px;
-        height: 110px;
-        overflow: scroll;
-        display: inline-block;
-        vertical-align: top;
-    }
-
-    .scroll select {
-        padding: 10px;
-        margin: -5px -20px -5px -5px;
-    }
-</style>
-
 <body>
     <dfn><Strong>Question 1</Strong></dfn>
     <div class="Ques1_bai1">
