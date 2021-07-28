@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        function HienThi() {
+            var name = document.getElementById("FullName").value;
+            var phone = document.getElementById("Phone").value;
+            var radio = document.getElementsByName("gender");
+            for (var i = 0; i < radio.length; i++) {
+                if (radio[i].checked === true) {
+                    // alert("Họ tên : " + name + "\nSố điện thoại : " + phone + "\nGiới tính : " + radio[i].value);
+                    var radioResult = radio[i].value;
+                }
+            }
+            var checkbox = document.getElementsByName("hobbies");
+            var chechboxResult ="";
+            // Lặp qua từng checkbox để lấy giá trị
+            for (var i = 0; i < checkbox.length; i++) {
+                if (checkbox[i].checked === true) {
+                    chechboxResult += ' [' + checkbox[i].value + ']';
+                }
+            }
+            // In ra kết quả
+            alert("Họ tên : " + name + "\nSố điện thoại : " + phone + "\nGiới tính : " + radioResult + "\nSở thích : " + chechboxResult);
+        }
+    </script>
+</head>
+<style>
+    body {
+        margin-top: 15px;
+        margin-left: 350px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    table {
+        border-collapse: collapse;
+    }
+
+    button {
+        margin-left: 100px;
+        margin-top: 15px;
+    }
+</style>
+
+<body>
+    <form>
+        <table border="2">
+            <tr>
+                <td>Họ tên</td>
+                <td><input type="text" placeholder="Họ và tên" id="FullName"></td>
+            </tr>
+            <tr>
+                <td>Số điện thoại</td>
+                <td><input type="text" placeholder="Số điện thoại" id="Phone"></td>
+            </tr>
+            <tr>
+                <td>Giới tính</td>
+                <td id="rdo">
+                    <input type="radio" name="gender" value="Nam">Nam</input>
+                    <input type="radio" name="gender" value="Nữ">Nữ</input>
+                </td>
+            </tr>
+            <tr>
+                <td>Sở thích</td>
+                <td>
+                    <input type="checkbox" name="hobbies" value="Nghe nhạc">Nghe nhạc <br>
+                    <input type="checkbox" name="hobbies" value="Bóng đá">Bóng đá <br>
+                    <input type="checkbox" name="hobbies" value="Du lịch">Du lịch <br>
+                    <input type="checkbox" name="hobbies" value="Đọc sách">Đọc sách <br>
+                </td>
+            </tr>
+        </table>
+        <button value="submit" onclick="HienThi()">Hiển thị</button>
+    </form>
+</body>
+
+</html>
