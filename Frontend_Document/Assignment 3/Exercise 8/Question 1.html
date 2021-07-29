@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        padding: 15px;
+        margin: 15px;
+    }
+
+    input {
+        margin: 15px;
+    }
+
+    button {
+        margin: 5px;
+    }
+</style>
+
+<body>
+    <script>
+        function Cong() {
+            var number1 = document.getElementById("number1").value;
+            var number2 = document.getElementById("number2").value;
+            var tong = (parseFloat(number1) + parseFloat(number2));
+            var ketqua = document.getElementById("ketqua");
+            ketqua.value = tong;
+        }
+        function Tru() {
+            var number1 = document.getElementById("number1").value;
+            var number2 = document.getElementById("number2").value;
+            var tru = (parseFloat(number1) - parseFloat(number2));
+            var ketqua = document.getElementById("ketqua");
+            ketqua.value = tru;
+        }
+        function Nhan() {
+            var number1 = document.getElementById("number1").value;
+            var number2 = document.getElementById("number2").value;
+            var nhan = (parseFloat(number1) * parseFloat(number2));
+            var ketqua = document.getElementById("ketqua");
+            ketqua.value = nhan;
+        }
+        function Chia() {
+            var number1 = document.getElementById("number1").value;
+            var number2 = document.getElementById("number2").value;
+            var chia = (parseFloat(number1) / parseFloat(number2));
+            var ketqua = document.getElementById("ketqua");
+            if (number2 = 0) {
+                ketqua.value = false;
+            } else {
+                ketqua.value = chia;
+            }
+        }
+        function Du() {
+            var number1 = document.getElementById("number1").value;
+            var number2 = document.getElementById("number2").value;
+            var du = (parseFloat(number1) % parseFloat(number2));
+            var ketqua = document.getElementById("ketqua");
+            if (number2 = 0) {
+                ketqua.value = false;
+            } else {
+                ketqua.value = du;
+            }
+        }
+    </script>
+    <label>Number 1</label>
+    <input type="text" id="number1"><br>
+    <label>Number 2</label>
+    <input type="text" id="number2"><br>
+    <button value="submit" onclick="Cong()">Cộng</button>
+    <button value="submit" onclick="Tru()">Trừ</button>
+    <button value="submit" onclick="Nhan()">Nhân</button>
+    <button value="submit" onclick="Chia()">Chia</button>
+    <button value="submit" onclick="Du()">%</button><br>
+    <label>Kết quả</label>
+    <input type="text" id="ketqua">
+</body>
+
+</html>

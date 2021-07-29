@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    table {
+        border-collapse: collapse;
+        margin: 100px;
+    }
+
+    button {
+        margin-left: 100px;
+    }
+
+    td {
+        padding: 5px;
+    }
+</style>
+
+<body>
+    <script>
+        function TinhToan() {
+            var cd1 = document.getElementById("cd1").value;
+            var cd2 = document.getElementById("cd2").value;
+            // Chu vi
+            Tinh1 = ((parseFloat(cd1) + parseFloat(cd2)) * 2);
+            var chuvi = document.getElementById("chuvi");
+            chuvi.value = Tinh1;
+            // Diện tích
+            Tinh2 = (parseFloat(cd1) * parseFloat(cd2));
+            var dientich = document.getElementById("dientich"); 
+            dientich.value = Tinh2;
+        }
+    </script>
+    <table border="2">
+        <tr>
+            <td>Nhập độ dài thứ nhất</td>
+            <td><input type="text" id="cd1" placeholder="Chiều dài 1"></td>
+        </tr>
+        <tr>
+            <td>Nhập độ dài thứ hai</td>
+            <td><input type="text" id="cd2" placeholder="Chiều dài 2"></td>
+        </tr>
+        <tr>
+            <td colspan="2"><button value="submit" onclick="TinhToan()">Tính toán</button></td>
+        </tr>
+        <tr>
+            <td>Chu vi</td>
+            <td><input type="text" id="chuvi" placeholder="Chi vi"></td>
+        </tr>
+        <tr>
+            <td>Diện tích</td>
+            <td><input type="text" id="dientich" placeholder="Diện Tích"></td>
+        </tr>
+    </table>
+</body>
+
+</html>

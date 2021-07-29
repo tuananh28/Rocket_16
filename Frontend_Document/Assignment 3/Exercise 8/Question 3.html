@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    table {
+        border-collapse: collapse;
+        margin-left: 400px;
+    }
+
+    button {
+        margin-left: 50px;
+    }
+
+    td {
+        width: 100px;
+        padding: 5px;
+    }
+
+    input {
+        width: 300px;
+    }
+
+    textarea {
+        width: 350px;
+        height: 100px;
+    }
+</style>
+
+<body>
+    <script>
+        function GPTB2() {
+            var a = document.getElementById("a").value;
+            var b = document.getElementById("b").value;
+            var c = document.getElementById("c").value;
+            var ketqua = document.getElementById("ketqua");
+            if (a == 0) {
+                if (b == 0) {
+                    if (c == 0) {
+                        ketqua.value = "Phương trình vô số nghiệm";
+                    }
+                    else {
+                        ketqua.value = "Phương trình vô nghiệm";
+                    }
+                }
+                else {
+                    ketqua.value = "Phương trình có nghiệm duy nhất : x = " + (-c / b);
+                }
+            } else {
+                var delta = b * b - 4 * a * c;
+                if (delta > 0) {
+                    var x1 = (-b + Math.sqrt(delta)) / (2 * a);
+                    var x2 = (-b - Math.sqrt(delta)) / (2 * a);
+                    ketqua.value = " Phương trình có 2 nghiệm phân biệt x1 = " + x1 + " và x2 = " + x2;
+                } else if (delta == 0) {
+                    var kep = -b / 2 * a;
+                    ketqua.value = "Phương trình có nghiệm kép x1 = x2 = " + kep;
+                } else {
+                    ketqua.value = "Phương trình vô nghiệm";
+                }
+            }
+        }
+    </script>
+    <Table border="2">
+        <tr>
+            <td>Nhập a</td>
+            <td><input type="text" id="a" placeholder="Nhập a"></td>
+        </tr>
+        <tr>
+            <td>Nhập b</td>
+            <td><input type="text" id="b" placeholder="Nhập b"></td>
+        </tr>
+        <tr>
+            <td>Nhập c</td>
+            <td><input type="text" id="c" placeholder="Nhập c"></td>
+        </tr>
+        <tr>
+            <td colspan="2"><button value="submit" onclick="GPTB2()">Giải phương trình</button></td>
+        </tr>
+        <tr>
+            <td>Kết quả</td>
+            <td><textarea type="text" id="ketqua" placeholder="Kết quả"></textarea></td>
+        </tr>
+    </Table>
+</body>
+
+</html>

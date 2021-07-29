@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        "use strict";
+        function tinh() // Hàm tính
+        {    
+            //Lấy thông tin từ người dùng
+            var a = parseFloat(prompt("Nhập số thứ nhất"));
+            var b = parseFloat(prompt("Nhập số thứ 2"));
+            // Tính tổng
+            var tong = a + b;
+            // Tính hiệu
+            var hieu = a - b;
+            // Tính tích
+            var tich = a * b;
+            // Tính thương
+            var thuong = a / b;
+            // Chia lấy dư 
+            var chiadu = a % b;
+            if ( b = 0) {
+                document.write("Tổng hai số " + a + " + " + b + " = " + tong);document.write("<br>");
+                document.write("Hiệu hai số " + a + " - " + b + " = " + hieu);document.write("<br>");
+                document.write("Tích hai số " + a + " * " + b + " = " + tich);document.write("<br>");
+                document.write("Thương hai số : Result is undefined");document.write("<br>");
+                document.write("Chia lấy dư hai số : Result is undefined");
+            } else {
+                //In ra màn hình
+                document.write("Tổng hai số " + a + " + " + b + " = " + tong);document.write("<br>");
+                document.write("Hiệu hai số " + a + " - " + b + " = " + hieu);document.write("<br>");
+                document.write("Tích hai số " + a + " * " + b + " = " + tich);document.write("<br>");
+                document.write("Thương hai số " + a + " / " + b + " = " + thuong);document.write("<br>");
+                document.write("Chia lấy dư hai số " + a + " % " + b + " = " + chiadu);
+            }
+
+        }
+        // Gọi hàm tính
+        tinh();
+    </script>
+</body>
+
+</html>

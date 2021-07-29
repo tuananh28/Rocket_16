@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        margin-left: 400px;
+        padding: 5px;
+    }
+</style>
+
+<body>
+    <script>
+        function GiaiThua() {
+            var num = document.getElementById("num").value;
+            if (1 > num || num > 50) {
+                alert("Mời bạn nhập lại");
+            }
+            else {
+                var giaithua = 1;
+                for (var i = 1; i <= num; i++) {
+                    giaithua *= i;
+                }
+                alert("Giai thừa = " + giaithua);
+            }
+        }
+    </script>
+    <input type="text" id="num" placeholder="Nhập trong khoảng 1 - 50">
+    <button value="submit" onclick="GiaiThua()">Giai Thừa</button>
+</body>
+
+</html>
