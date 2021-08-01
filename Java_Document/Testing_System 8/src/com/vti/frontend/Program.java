@@ -4,6 +4,7 @@ import com.vti.backend.Ex1_Collection;
 
 public class Program {
 	public static void main(String[] args) {
-		Ex1_Collection.Question1();
+		//Ex1_Collection.Question1();
+		Ex1_Collection.Question2();
 	}
 }

@@ -2,14 +2,19 @@ package com.vti.backend;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
+import java.util.Set;
+import java.util.Stack;
 
 import com.vti.entity.Student;
 import com.vti.ultis.ScannerUltis;
 
 public class Ex1_Collection {
 	// List chiếm ít ô nhớ hơn ArrayList Nếu không quan tâm tới thuộc tính của nó
-	private List<Student> list;
+	private static List<Student> list;
 
 	public Ex1_Collection() {
 		list = new ArrayList<Student>();
@@ -31,7 +36,6 @@ public class Ex1_Collection {
 	}
 
 	public static void Question1() {
-		Ex1_Collection ex1 = new Ex1_Collection();
 		int lc;
 		while (true) {
 			System.out.println("\t\t --- MENU --- \t\t");
@@ -51,33 +55,33 @@ public class Ex1_Collection {
 			lc = ScannerUltis.inputInt();
 			switch (lc) {
 			case 1:
-				System.out.println("Tổng số phần tử của Student là : " + ex1.list.size());
+				System.out.println("Tổng số phần tử của Student là : " + list.size());
 				break;
 			case 2:
-				System.out.println("Phần tử thứ 4 của student là : " + ex1.list.get(3));
+				System.out.println("Phần tử thứ 4 của student là : " + list.get(3));
 				break;
 			case 3:
-				System.out.println("Phần tử đầu là : " + ex1.list.get(0));
-				System.out.println("Phần tử cuối là : " + ex1.list.get(ex1.list.size() - 1));
+				System.out.println("Phần tử đầu là : " + list.get(0));
+				System.out.println("Phần tử cuối là : " + list.get(list.size() - 1));
 				break;
 			case 4:
 				System.out.println("Nhập thông tin Student cần thêm : ");
 				String name = ScannerUltis.inputString();
-				ex1.list.add(0, new Student(name));
+				list.add(0, new Student(name));
 				break;
 			case 5:
 				System.out.println("Nhập thông tin Student cần thêm : ");
 				String name2 = ScannerUltis.inputString();
-				ex1.list.add(new Student(name2));
+				list.add(new Student(name2));
 				break;
 			case 6:
-				Collections.reverse(ex1.list);
+				Collections.reverse(list);
 				System.out.println("Đã đảo ngược vị trí phần tử");
 				break;
 			case 7:
 				System.out.print("Nhập ID Student cần tìm : ");
 				int n = ScannerUltis.inputInt();
-				for (Student student : ex1.list) {
+				for (Student student : list) {
 					if (n == student.getID()) {
 						System.out.println(student);
 					}
@@ -86,7 +90,7 @@ public class Ex1_Collection {
 			case 8:
 				System.out.print("Nhập tên Student cần tìm : ");
 				String name3 = ScannerUltis.inputString();
-				for (Student student : ex1.list) {
+				for (Student student : list) {
 					if (student.getName().equalsIgnoreCase(name3)) {
 						System.out.println(student);
 					}
@@ -94,16 +98,16 @@ public class Ex1_Collection {
 				break;
 			case 9:
 				System.out.println("Các sinh viên trùng tên: ");
-				for (int i = 0; i < ex1.list.size(); i++) {
-					for (int j = i + 1; j < ex1.list.size(); j++) {
-						if (ex1.list.get(i).getName().equals(ex1.list.get(j).getName())) {
-							System.out.println(ex1.list.get(i).toString());
+				for (int i = 0; i < list.size(); i++) {
+					for (int j = i + 1; j < list.size(); j++) {
+						if (list.get(i).getName().equals(list.get(j).getName())) {
+							System.out.println(list.get(i).toString());
 						}
 					}
 				}
 				break;
 			case 10:
-				for (Student student : ex1.list) {
+				for (Student student : list) {
 					if (student.getID() == 2) {
 						student.setName(null);
 						System.out.println("Đã thay đổi tên phần tử thứ 2");
@@ -113,12 +117,12 @@ public class Ex1_Collection {
 			case 11:
 //				System.out.println("Nhập vào ID của student cần xóa:");
 //				int id = ScannerUltis.inputIntPositive();
-				ex1.list.removeIf(student -> student.getID() == 5);
+				list.removeIf(student -> student.getID() == 5);
 				System.out.println("Đã xóa Student id = 5");
 				break;
 			case 12:
 				List<Student> arrayCop = new ArrayList<Student>();
-				arrayCop.addAll(ex1.list);
+				arrayCop.addAll(list);
 				System.out.println("In phần tử trong ArrayCop : ");
 				for (Student student : arrayCop) {
 					System.out.println(student);
@@ -129,5 +133,56 @@ public class Ex1_Collection {
 				return;
 			}
 		}
+	}
+
+	public static void Question2() {
+		int lc;
+		while (true) {
+			System.out.println("\t\t --- MENU --- \t\t");
+			System.out.println("1.Tạo 1 method để in ra thứ tự tới của các học sinh theo thứ tự từ \r\n"
+					+ "muộn nhất tới sớm nhất (gợi ý dùng Stack)");
+			System.out.println("2.Tạo 1 method để in ra thứ tự tới của các học sinh theo thứ tự \r\n"
+					+ "sớm nhất tới muộn nhất (gợi ý dùng Queue)");
+			System.out.print("Nhập lựa chọn của bạn : ");
+			lc = ScannerUltis.inputInt();
+			switch (lc) {
+			case 1:
+				Stack<Student> students = new Stack<Student>();
+				students.push(new Student("Nguyễn Văn A"));
+				students.push(new Student("Trần Văn Nam"));
+				students.push(new Student("Nguyễn Văn Huyên"));
+				students.push(new Student("Nguyễn Văn Nam"));
+
+				System.out.println("Thứ tự sinh viên theo thứ tự từ sớm nhất đến muộn nhất dùng Stack: ");
+				// Sử dụng pop để lấy Data Element trong stack
+				System.out.println(students.pop());
+				System.out.println(students.pop());
+				System.out.println(students.pop());
+				System.out.println(students.pop());
+				break;
+			case 2:
+				Queue<Student> student = new LinkedList<>();
+				student.add(new Student("Nguyễn Văn A"));
+				student.add(new Student("Trần Văn Nam"));
+				student.add(new Student("Nguyễn Văn Huyên"));
+				student.add(new Student("Nguyễn Văn Nam"));
+
+				System.out.println("Thứ tự sinh viên theo thứ tự từ muộn nhất đến sớm nhất dùng Queue: ");
+				// Sử dụng poll để lấy Data Element trong stack
+				System.out.println(student.poll());
+				System.out.println(student.poll());
+				System.out.println(student.poll());
+				System.out.println(student.poll());
+				break;
+			default:
+				System.out.println("Mời nhập lại");
+				break;
+			}
+		}
+	}
+	public static void Question3() {
+		Set<Student> students = new HashSet<Student>();
+		
+		
 	}
 }
