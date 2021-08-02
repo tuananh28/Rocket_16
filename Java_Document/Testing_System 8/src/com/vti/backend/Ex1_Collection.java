@@ -243,7 +243,7 @@ public class Ex1_Collection {
 			case 3:
 				Iterator<Student> iterator2 = ex1.studentSET.iterator();
 				System.out.println("Phần tử đầu tiên của Student là : " + iterator2.next());
-				for (int i = 0; i < ex1.studentSET.size() - 5; i++) {
+				for (int i = 0; i < ex1.studentSET.size()  - 5; i++) {
 					iterator2.next();
 				}
 				System.out.println("Phần tử cuối của Student là : " + iterator2.next());
