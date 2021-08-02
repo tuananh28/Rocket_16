@@ -1,0 +1,8 @@
+package com.vti.frontend;
+
+public class Ex1_Collection {
+	public static void main(String[] args) {
+		com.vti.backend.Ex1_Collection  ex1_Collection = new com.vti.backend.Ex1_Collection();
+		ex1_Collection.Question1();
+	}
+}

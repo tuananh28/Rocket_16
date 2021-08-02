@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy package &apos;com.vti.ultis&apos; to &apos;Testing_System 8/src&apos;&#x0D;&#x0A;- Original project: &apos;Testing System 7&apos;&#x0D;&#x0A;- Destination element: &apos;Testing_System 8/src&apos;&#x0D;&#x0A;- Original element: &apos;Testing System 7/src/com.vti.ultis&apos;" description="Copy package" destination="=Testing_System 8/src" element1="/src&lt;com.vti.ultis" flags="589830" fragments="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1627825942524" version="1.0"/>
+</session>
