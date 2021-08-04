@@ -10,7 +10,6 @@
     <persistedState key="workingSets" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;workingSets/>"/>
     <persistedState key="aggregateWorkingSetId" value="Aggregate for window 1627887561045"/>
     <tags>topLevel</tags>
-    <tags>shellMinimized</tags>
     <children xsi:type="basic:PartSashContainer" xmi:id="_68EC8vNqEeuHceFxWZ9mzA" selectedElement="_68EC8_NqEeuHceFxWZ9mzA" horizontal="true">
       <children xsi:type="advanced:PerspectiveStack" xmi:id="_68EC8_NqEeuHceFxWZ9mzA" elementId="org.eclipse.ui.ide.perspectivestack" containerData="7500" selectedElement="_JebC4vOcEeurNd7YZGTsbA">
         <children xsi:type="advanced:Perspective" xmi:id="_68EC9PNqEeuHceFxWZ9mzA" elementId="org.eclipse.jst.j2ee.J2EEPerspective" selectedElement="_68EC9fNqEeuHceFxWZ9mzA" label="Java EE" iconURI="platform:/plugin/org.eclipse.jst.j2ee.ui/icons/full/cview16/j2ee_perspective.gif">
@@ -365,8 +364,8 @@
       <children xsi:type="basic:PartStack" xmi:id="_68Eq5fNqEeuHceFxWZ9mzA" elementId="org.eclipse.e4.primaryDataStack" selectedElement="_jlbAoPT_EeuSbYhAJgjnWA">
         <tags>org.eclipse.e4.primaryDataStack</tags>
         <tags>EditorStack</tags>
-        <tags>active</tags>
         <tags>noFocus</tags>
+        <tags>active</tags>
         <children xsi:type="basic:Part" xmi:id="_68Eq5vNqEeuHceFxWZ9mzA" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="Ex1_Static.java" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/obj16/jcu_obj.png" closeable="true">
           <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;Ex1_Static.java&quot; partName=&quot;Ex1_Static.java&quot; title=&quot;Ex1_Static.java&quot; tooltip=&quot;Testing System 7/src/com/vti/backend/Ex1_Static.java&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/Testing System 7/src/com/vti/backend/Ex1_Static.java&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;270&quot; selectionTopPixel=&quot;0&quot;/>&#xD;&#xA;&lt;/editor>"/>
           <tags>Editor</tags>
@@ -506,7 +505,7 @@
           <tags>org.eclipse.jdt.ui.CompilationUnitEditor</tags>
         </children>
         <children xsi:type="basic:Part" xmi:id="_jlbAoPT_EeuSbYhAJgjnWA" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="Ex3_Generic.java" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/obj16/jcu_obj.png" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;Ex3_Generic.java&quot; partName=&quot;Ex3_Generic.java&quot; title=&quot;Ex3_Generic.java&quot; tooltip=&quot;Testing_System 8/src/com/vti/backend/Ex3_Generic.java&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/Testing_System 8/src/com/vti/backend/Ex3_Generic.java&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;2879&quot; selectionTopPixel=&quot;1244&quot;/>&#xD;&#xA;&lt;/editor>"/>
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;Ex3_Generic.java&quot; partName=&quot;Ex3_Generic.java&quot; title=&quot;Ex3_Generic.java&quot; tooltip=&quot;Testing_System 8/src/com/vti/backend/Ex3_Generic.java&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/Testing_System 8/src/com/vti/backend/Ex3_Generic.java&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;2222&quot; selectionTopPixel=&quot;802&quot;/>&#xD;&#xA;&lt;/editor>"/>
           <tags>Editor</tags>
           <tags>removeOnHide</tags>
           <tags>org.eclipse.jdt.ui.CompilationUnitEditor</tags>
@@ -750,7 +749,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_68FSPvNqEeuHceFxWZ9mzA" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_BU4Il_T_EeuSbYhAJgjnWA" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_68HxzPNqEeuHceFxWZ9mzA"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_wD7ZoPUIEeut8cbHspGbXg" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_68HxzPNqEeuHceFxWZ9mzA"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_68FSS_NqEeuHceFxWZ9mzA" elementId="group.edit" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -790,7 +789,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_68FSr_NqEeuHceFxWZ9mzA" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_BU4IpPT_EeuSbYhAJgjnWA" elementId="org.eclipse.ui.window.pinEditor" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_68Hxc_NqEeuHceFxWZ9mzA"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_wEASIPUIEeut8cbHspGbXg" elementId="org.eclipse.ui.window.pinEditor" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_68Hxc_NqEeuHceFxWZ9mzA"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_68FSu_NqEeuHceFxWZ9mzA" elementId="group.editor" toBeRendered="false">
         <tags>toolbarSeparator</tags>
