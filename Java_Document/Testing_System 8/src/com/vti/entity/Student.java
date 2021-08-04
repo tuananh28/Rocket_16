@@ -1,6 +1,6 @@
 package com.vti.entity;
 
-public class Student {
+public class Student implements Comparable<Student>{
 	private int ID;
 	private String Name;
 	private static int dem = 0;
@@ -30,6 +30,12 @@ public class Student {
 	@Override
 	public String toString() {
 		return "Student [ID=" + ID + ", Name=" + Name + "]";
+	}
+
+	@Override
+	public int compareTo(Student o) {
+		// TODO Auto-generated method stub
+		return this.Name.compareTo(o.getName());
 	}
 
 }

@@ -2,10 +2,13 @@ package com.vti.backend;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Queue;
 import java.util.Set;
 import java.util.Stack;
@@ -22,9 +25,9 @@ public class Ex1_Collection {
 	public Ex1_Collection() {
 		list = new ArrayList<Student>();
 		studentSET = new HashSet<Student>();
-
-		// initStudentList();
-		// --------SET----------------------------------
+		// ---------LIST---------------------------------//
+		 initStudentList();
+		// ---------SET----------------------------------//
 		initStudentSET();
 	}
 
@@ -44,6 +47,14 @@ public class Ex1_Collection {
 			System.out.println(list.get(i).getID());
 			System.out.println(list.get(i).getName());
 		}
+	}
+
+	public void initStudentSET() {
+		studentSET.add(new Student("Bùi Tuấn Anh"));
+		studentSET.add(new Student("Bùi Tuấn Anh"));
+		studentSET.add(new Student("Bùi Thị Hoa Mai"));
+		studentSET.add(new Student("Nguyễn Tuấn Long"));
+		studentSET.add(new Student("Đào Ngọc Linh"));
 	}
 
 	public static void Question1() {
@@ -194,21 +205,6 @@ public class Ex1_Collection {
 		}
 	}
 
-	public void initStudentSET() {
-		studentSET.add(new Student("Bùi Tuấn Anh"));
-		studentSET.add(new Student("Bùi Thị Hoa Mai"));
-		studentSET.add(new Student("Nguyễn Tuấn Long"));
-		studentSET.add(new Student("Đào Ngọc Linh"));
-		studentSET.add(new Student("Đào Ngọc Linh"));
-	}
-
-	public void printStudent() {
-		Iterator<Student> studentIterator = studentSET.iterator();
-		while (studentIterator.hasNext()) {
-			System.out.println(studentIterator.next());
-		}
-	}
-
 	public static void Question3() {
 		Ex1_Collection ex1 = new Ex1_Collection();
 		int choose;
@@ -224,50 +220,164 @@ public class Ex1_Collection {
 			System.out.println("\t 8.Tạo 1 method tìm kiếm student theo name.");
 			System.out.println("\t 9.Tạo 1 method để in ra các student có trùng tên.");
 			System.out.println("\t 10.Xóa name của student có id = 2.");
-			System.out.println("\t 11.Delete student có id = 5.");
-			System.out.println(
-					"\t 12.Tạo 1 ArrayList tên là studentCopies và add tất cả students vào studentCopies.");
+			System.out.println("\t 11.Delete student có id = 3.");
+			System.out.println("\t 12.Tạo 1 ArrayList tên là studentCopies và add tất cả students vào studentCopies.");
 			System.out.print(" Mời bạn đưa ra lựa chọn : ");
 			choose = ScannerUltis.inputInt();
 			switch (choose) {
 			case 1:
 				System.out.println("Tổng số phần tử của studnet trong SET là : " + ex1.studentSET.size());
+				Iterator<Student> iterators = ex1.studentSET.iterator();
+				for (int i = 0; i < ex1.studentSET.size(); i++) {
+					System.out.println(iterators.next());
+				}
 				break;
 			case 2:
 				Iterator<Student> iterator = ex1.studentSET.iterator();
-				for (int i = 0; i < 4; i++) {
+				for (int i = 0; i < 2; i++) {
 					iterator.next();
 				}
 				System.out.println("Student thứ 4 là : " + iterator.next());
 				break;
 			case 3:
-				Iterator<Student> iterator2 = ex1.studentSET.iterator();
-				System.out.println("Phần tử đầu tiên của Student là : " + iterator2.next());
-				for (int i = 0; i < ex1.studentSET.size()  - 5; i++) {
-					iterator2.next();
+				Iterator<Student> iterator1 = ex1.studentSET.iterator();
+				System.out.println("Phần tử đầu tiên của Student là : " + iterator1.next());
+				for (int i = 0; i < ex1.studentSET.size() - 2; i++) {
+					iterator1.next();
 				}
-				System.out.println("Phần tử cuối của Student là : " + iterator2.next());
+				System.out.println("Phần tử cuối của Student là : " + iterator1.next());
+				break;
+			case 4:
+//				System.out.println("Nhập thông tin Student cần thêm : ");
+//				String name = ScannerUltis.inputString();
+//				ex1.studentSET.add(new Student(name));
+//				Iterator<Student> iterator2 = ex1.studentSET.iterator();
+//				for (int i = 0; i < ex1.studentSET.size(); i++) {	
+//					System.out.println(iterator2.next());
+//				}
+				break;
+			case 5:
+				ex1.studentSET.add(new Student("Lê Hải Anh"));
+				System.out.println("Danh sách trong SET là : ");
+				Iterator<Student> iterator3 = ex1.studentSET.iterator();
+				for (int i = 0; i < ex1.studentSET.size(); i++) {
+					System.out.println(iterator3.next());
+				}
+				break;
+			case 6:
+				// Chưa làm
+				break;
+			case 7:
+				System.out.print("Nhập id student cần tìm kiếm : ");
+				int id = ScannerUltis.inputInt();
+				Iterator<Student> iterator4 = ex1.studentSET.iterator();
+				for (int i = 0; i < ex1.studentSET.size(); i++) {
+					Student studentFind = iterator4.next();
+					if (studentFind.getID() == id) {
+						System.out.println(studentFind);
+					}
+				}
+				break;
+			case 8:
+				System.out.print("Nhập tên student cần tìm kiếm : ");
+				String name1 = ScannerUltis.inputString();
+				Iterator<Student> iterator5 = ex1.studentSET.iterator();
+				for (int i = 0; i < ex1.studentSET.size(); i++) {
+					Student FindStudent = iterator5.next();
+					if (FindStudent.getName().equalsIgnoreCase(name1)) {
+						System.out.println(FindStudent);
+					}
+				}
+				break;
+			case 9:
+				List<Student> students = new ArrayList<Student>();
+				Collections.sort(students);
+				for (Student student : students) {
+					System.out.println(student);
+				}
+				break;
+			case 10:
+				System.out.print("Nhập id của student cần xóa tên : ");
+				int id2 = ScannerUltis.inputInt();
+				Iterator<Student> iterator6 = ex1.studentSET.iterator();
+				for (int i = 0; i < ex1.studentSET.size(); i++) {
+					Student idDel = iterator6.next();
+					if (idDel.getID() == id2) {
+						idDel.setName(null);
+					}
+					System.out.println(idDel);
+				}
+				break;
+			case 11:
+				ex1.studentSET.removeIf(student -> student.getID() == 3);
+				System.out.println("Student có id = 3 đã xóa");
+//				Iterator<Student> iterator7 = ex1.studentSET.iterator();
+//				for (int i = 0; i < ex1.studentSET.size(); i++) {
+//					System.out.println(iterator7.next());
+//				}
+				for (Student student : ex1.studentSET) {
+					System.out.println(student);
+				}
+				break;
+			case 12:
+				Set<Student> studentCopySet = new HashSet<Student>();
+				studentCopySet.addAll(studentCopySet);
+				System.out.println("Coppy thành công !");
+				System.out.println("Danh sách phần tử trong StudentCopySet : ");
+				Iterator<Student> iterator8 = ex1.studentSET.iterator();
+				for (int i = 0; i < ex1.studentSET.size(); i++) {
+					System.out.println(iterator8.next());
+				}
+				break;
+			default:
+				System.out.println("Mời Nhập lại :");
+			}
+		}
+	}
+	public static void Question6() {
+		Map<Integer, String>stuMap = new HashMap<Integer, String>();
+		int dem = 0;
+		while (true) {
+			System.out.println("\t\t --- MENU --- \t\t");
+			System.out.println("\t 1.Khởi tạo student Question 6");
+			System.out.println("\t 2.In ra các key của students");
+			System.out.println("\t 3.In ra value của students");
+			System.out.println("\t 4.In ra danh sách students được sắp xếp theo tên của student");
+			System.out.println("\t 5.Chuyển đổi map students sang set");
+			System.out.print("Mời bạn nhập lựa chọn : ");
+			int lc = ScannerUltis.inputInt();
+			switch (lc) {
+			case 1:
+				System.out.print("Nhập số sinh viên muốn tạo : ");
+				int num = ScannerUltis.inputInt();
+				for (int i = 0; i < num; i++) {
+					System.out.println("Nhập thông tin sinh viên thứ "+(i+1));
+					System.out.print("Họ và tên : ");
+					String name = ScannerUltis.inputString();
+					stuMap.put(dem++, name);
+				}
+				System.out.println("Danh sách sinh viên trong MAP : ");
+				for (Entry<Integer, String> mapStu : stuMap.entrySet()) {
+					System.out.println("ID : "+mapStu.getKey());
+					System.out.println("Name : "+mapStu.getValue());	
+				}
+				break;
+			case 2:
+				for(Entry<Integer, String>student : stuMap.entrySet()) {
+					System.out.println(student.getKey());
+				}
+				break;
+			case 3:
+				for(Entry<Integer, String>student : stuMap.entrySet()) {
+					System.out.println(student.getValue());
+				}
 				break;
 			case 4:
 				break;
 			case 5:
 				break;
-			case 6:
-				break;
-			case 7:
-				break;
-			case 8:
-				break;
-			case 9:
-				break;
-			case 10:
-				break;
-			case 11:
-				break;
-			case 12:
-				break;
 			default:
-				System.out.println("Mời Nhập lại :");
+				System.err.println("Mời nhập lại : ");
 			}
 		}
 	}

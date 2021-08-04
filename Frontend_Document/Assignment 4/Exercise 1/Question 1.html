@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Import Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <P>If you click on the "Hide" button, I will disappear</P>
+    <button class="hide">Hide</button>
+    <button class="show">Show</button>
+</body>
+<Script>
+    $(document).ready(function () {
+        $(".hide").click(function () {
+            $("p").hide();
+        });
+        $(".show").click(function () {
+            $("p").show();
+        });
+    });
+</Script>
+
+</html>
