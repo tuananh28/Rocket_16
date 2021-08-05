@@ -9,7 +9,7 @@ public class Program {
 	public static void main(String[] args) throws Exception {
 		Ex1_Basic ex1 = new Ex1_Basic();
 		ex1.Question1();
-		// ex1.Question2();
+		 ex1.Question2();
 		// ex1.Question3();
 		// ex1.Question4();
 		// ex1.Question5();
