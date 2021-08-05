@@ -19,7 +19,7 @@ public class jdbcUltis {
 	public jdbcUltis() throws FileNotFoundException, IOException {
 		properties = new Properties();
 		properties.load(new FileInputStream(
-		"D:\\Rocket_16\\Java_Document\\Final Test\\src\\main\\java\\com\\vti\\resources\\database.properties"));
+		"D:\\Rocket_16\\Java_Document\\Final_Test\\src\\com\\vti\\resources\\database.properties"));
 	}
 	public void connnectionTestting() throws ClassNotFoundException, SQLException {
 		String url = properties.getProperty("url");

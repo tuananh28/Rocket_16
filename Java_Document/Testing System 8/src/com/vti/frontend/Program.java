@@ -6,12 +6,12 @@ import com.vti.backend.Ex3_Generic;
 
 public class Program {
 	public static void main(String[] args) {
-		//Ex1_Collection.Question1();
+		Ex1_Collection.Question1();
 		//Ex1_Collection.Question2();
 		//Ex1_Collection.Question3();
 		//Ex1_Collection.Question6();
 		
-		//Ex2_Comparing.Question1();
+		Ex2_Comparing.Question1();
 		
 		Ex3_Generic ex3 = new Ex3_Generic();
 		//ex3.Question1();
