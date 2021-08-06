@@ -18,27 +18,26 @@ public class jdbcUltis {
 
 	public jdbcUltis() throws FileNotFoundException, IOException {
 		properties = new Properties();
-		properties.load(new FileInputStream(
-		"D:\\Rocket_16\\Java_Document\\Testing_System_11\\src\\main\\java\\com\\vti\\resources\\database.properties"));
+		properties.load(new FileInputStream("D:\\Rocket_16\\Java_Document\\Testing_System_11\\src\\main\\java\\resources\\database.properties"));
 	}
 	public void connnectionTestting() throws ClassNotFoundException, SQLException {
 		String url = properties.getProperty("url");
-		String Username = properties.getProperty("username");
+		String username = properties.getProperty("username");
 		String password = properties.getProperty("password");
 		String dirver = properties.getProperty("driver");
 		
 		Class.forName(dirver);
-		connection = DriverManager.getConnection(url, Username, password);
+		connection = DriverManager.getConnection(url, username, password);
 		System.out.println("Connect Success");
 	}
 
 	public Connection getConnection() throws ClassNotFoundException, SQLException {
 		String url = properties.getProperty("url");
-		String Username = properties.getProperty("username");
+		String username = properties.getProperty("username");
 		String password = properties.getProperty("password");
 		String dirver = properties.getProperty("driver");
 		Class.forName(dirver);
-		connection = DriverManager.getConnection(url, Username, password);
+		connection = DriverManager.getConnection(url, username, password);
 		return connection;
 	}
 

@@ -7,6 +7,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.vti.entity.Account;
@@ -20,18 +21,19 @@ public class AccountRepository implements IAccountRepository {
 		jdbc = new jdbcUltis();
 	}
 	public List<Account> getListAccounts() throws SQLException, IOException, ClassNotFoundException {
+		List<Account> accounts = new ArrayList<Account>();
 		Connection connection = jdbc.getConnection();
 		@SuppressWarnings("unused")
 		Statement statement = connection.createStatement();
 		String sql = "SELECT * FROM `Account` ORDER BY AccountID";
 		ResultSet resultSet = jdbc.executeQuery(sql);
 		while (resultSet.next()) {
-			@SuppressWarnings("unused")
 			Account account = new Account(resultSet.getInt("AccountId"), resultSet.getString("Email"),
 					resultSet.getString("Username"), resultSet.getString("Fullname"));
+			accounts.add(account);
 		}
 		jdbc.disConnection();
-		return getListAccounts();
+		return accounts;
 	}
 	public Account getAccountByID(int id) throws Exception {
 		Connection connection = jdbc.getConnection();
