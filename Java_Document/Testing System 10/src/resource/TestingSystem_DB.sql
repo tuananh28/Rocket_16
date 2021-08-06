@@ -34,6 +34,7 @@ DROP TABLE IF EXISTS `Account`;
 	CONSTRAINT kp_DepartmentID FOREIGN KEY (DepartmentID) REFERENCES Department (DepartmentID) ON DELETE CASCADE ON UPDATE CASCADE
  );
  
+ -- ALTER TABLE `account` DROP CONSTRAINT kp_DepartmentID;
  -- Table Group
  DROP TABLE IF EXISTS `Group`;
  CREATE TABLE `Group`(

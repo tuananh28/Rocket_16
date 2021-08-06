@@ -87,7 +87,7 @@ public class AccountRepository implements IAccountRepository {
 			throws ClassNotFoundException, SQLException {
 		Connection connection = jdbc.getConnection();
 		String sql = "INSERT INTO `Account` (Email, UserName, FullName) "
-				+ "VALUES 				( (?) , 	(?) ,	(?)	  ) ";
+					+ "VALUES 				( (?) , 	(?) ,	(?)	  ) ";
 		PreparedStatement preparedStatement = connection.prepareStatement(sql);
 		preparedStatement.setString(1, Email);
 		preparedStatement.setString(2, Username);
@@ -113,10 +113,10 @@ public class AccountRepository implements IAccountRepository {
 		int result = preparedStatement.executeUpdate();
 		if (result == 1) {
 			jdbc.disConnection();
-			System.out.println("Create Complete !!");
+			System.out.println("Update Success !!");
 		} else {
 			jdbc.disConnection();
-			System.out.println("Create False !!!");
+			System.out.println("Update False !!!");
 		}
 			
 	}
@@ -129,10 +129,10 @@ public class AccountRepository implements IAccountRepository {
 		int result = preparedStatement.executeUpdate();
 		if (result == 1) {
 			jdbc.disConnection();
-			System.out.println("Create Complete !!");
+			System.out.println("Delete Success !!");
 		} else {
 			jdbc.disConnection();
-			System.out.println("Create False !!!");
+			System.out.println("Delete False !!!");
 		}
 	}
 }
