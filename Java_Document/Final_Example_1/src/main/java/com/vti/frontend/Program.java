@@ -25,7 +25,7 @@ public class Program {
 				accountFuntion.getListMemberByProjectID();
 				break;
 			case 3:
-				accountFuntion.getListManagerInProject();
+				accountFuntion.getListManagersInProject();
 				break;
 			case 4:
 				return;

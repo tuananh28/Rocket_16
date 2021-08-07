@@ -45,9 +45,10 @@ public class AccountFuntion {
 		}
 		System.out.format("+-----------------------------------------------------+%n");
 	}
-	public void getListManagerInProject() {
+	public void getListManagersInProject() throws ClassNotFoundException, SQLException {
 		List<Account> list = new ArrayList<Account>();
-		System.out.println("---| Danh sách Manager trong ");
+		list = accountController.getListManagersInProject();
+		System.out.println("\t  	---| Danh sách Manager |--- ");
 		String leftAlignFormat = "| %-2d | %-23s | %-20s |%n";
 		System.out.format("+-----------------------------------------------------+%n");
 		System.out.format("| ID |           Email         |       FullName       |%n");

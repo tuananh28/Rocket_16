@@ -1,6 +1,6 @@
-DROP DATABASE IF EXISTS Test_Example_1;
-CREATE DATABASE Test_Example_1;
-USE  Test_Example_1;
+DROP DATABASE IF EXISTS Final_Example_1;
+CREATE DATABASE Final_Example_1;
+USE  Final_Example_1;
 
 CREATE TABLE `Account`(
     AccountID   TINYINT UNSIGNED AUTO_INCREMENT PRIMARY KEY ,
@@ -55,4 +55,3 @@ VALUES                          (   1     ,     1    ),
                                 (   8     ,     1    ),
                                 (   2     ,     8    ),
                                 (   1     ,     7    );
-SELECT AccountID, Email, FullName FROM `Account` WHERE Category = 'MANAGER';
