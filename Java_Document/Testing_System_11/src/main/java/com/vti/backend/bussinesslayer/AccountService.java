@@ -1,4 +1,4 @@
-package com.vti.backend.businesslayer;
+package com.vti.backend.bussinesslayer;
 
 import java.io.IOException;
 import java.sql.SQLException;

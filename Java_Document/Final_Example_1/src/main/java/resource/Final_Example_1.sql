@@ -25,15 +25,15 @@ CREATE TABLE `AccountProject`(
 );
 
 INSERT INTO `Account` (     FullName        ,       Email           , Password , ExpInYear , ProSkill  , Category )
-VALUES                (   'Bùi Tuấn Anh'    , 'tuananh@gmail.com'   , '123456' ,       5   ,   'DEV'   , 'MANAGER'),
-                      (  'Bùi Thị Hoa Mai'  , 'hoamai@gmail.com'    , '050198' ,       5   ,   'TEST'  , 'MANAGER'),
-                      (  'Nguyễn Hoàng Anh' , 'hoanganh@gmail.com'  , '111199' ,       1   ,   'SQL'   ,'EMPLOYEE'),
-                      (    'Nguyễn Hữ Tùng' , 'huutung@gmail.com'   , '123456' ,      NULL ,   'TEST'  ,'EMPLOYEE'),
-                      (    'Lê Thúy Quỳnh'  , 'thuyquynh@gmail.com' , '123456' ,       1   ,   'JAVA'  ,    NULL  ),
-                      (    'Đào Tuấn Minh'  , 'tuanminh@gmail.com'  , '123456' ,      NULL ,   'JAVA'  ,    NULL  ),
-                      (    'Nguyễn Thị Linh', 'linhnguyen@gmail.com', '123456' ,       5   ,   'JAVA'  ,'EMPLOYEE'),
-                      (  'Trương Hoàng Minh', 'hoangminh@gmail.com' , '123456' ,       5   ,   'SQL'   ,'EMPLOYEE'),
-                      (    'Nguyễn Đào Lực' , 'daoluc@gmail.com'    , '123456' ,       5   ,   'TEST'  ,'EMPLOYEE');
+VALUES                (   'Bùi Tuấn Anh'    , 'tuananh@gmail.com'   , '1234567',       5   ,   'DEV'   , 'MANAGER'),
+                      (  'Bùi Thị Hoa Mai'  , 'hoamai@gmail.com'    , '0501998',       5   ,   'TEST'  , 'MANAGER'),
+                      (  'Nguyễn Hoàng Anh' , 'hoanganh@gmail.com'  , '1111999',       1   ,   'SQL'   ,'EMPLOYEE'),
+                      (    'Nguyễn Hữ Tùng' , 'huutung@gmail.com'   , '1234567',      NULL ,   'TEST'  ,'EMPLOYEE'),
+                      (    'Lê Thúy Quỳnh'  , 'thuyquynh@gmail.com' , '1234567',       1   ,   'JAVA'  ,    NULL  ),
+                      (    'Đào Tuấn Minh'  , 'tuanminh@gmail.com'  , '1234567',      NULL ,   'JAVA'  ,    NULL  ),
+                      (    'Nguyễn Thị Linh', 'linhnguyen@gmail.com', '1234567',       5   ,   'JAVA'  ,'EMPLOYEE'),
+                      (  'Trương Hoàng Minh', 'hoangminh@gmail.com' , '1234567',       5   ,   'SQL'   ,'EMPLOYEE'),
+                      (    'Nguyễn Đào Lực' , 'daoluc@gmail.com'    , '1234567',       5   ,   'TEST'  ,'EMPLOYEE');
 
 INSERT INTO `Project`   (ProjectName    , TeamSize)
 VALUES                  ('Project DEV'  ,     1   ),
@@ -55,3 +55,4 @@ VALUES                          (   1     ,     1    ),
                                 (   8     ,     1    ),
                                 (   2     ,     8    ),
                                 (   1     ,     7    );
+SELECT AccountID, Email, FullName FROM `Account` WHERE Category = 'MANAGER';

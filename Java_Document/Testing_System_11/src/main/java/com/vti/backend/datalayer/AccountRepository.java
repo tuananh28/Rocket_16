@@ -20,6 +20,7 @@ public class AccountRepository implements IAccountRepository {
 	public AccountRepository() throws FileNotFoundException, IOException {
 		jdbc = new jdbcUltis();
 	}
+
 	public List<Account> getListAccounts() throws SQLException, IOException, ClassNotFoundException {
 		List<Account> accounts = new ArrayList<Account>();
 		Connection connection = jdbc.getConnection();
@@ -35,6 +36,7 @@ public class AccountRepository implements IAccountRepository {
 		jdbc.disConnection();
 		return accounts;
 	}
+
 	public Account getAccountByID(int id) throws Exception {
 		Connection connection = jdbc.getConnection();
 		String sql = "SELECT * FROM `Account` WHERE AccountID = ?";
@@ -87,7 +89,7 @@ public class AccountRepository implements IAccountRepository {
 			throws ClassNotFoundException, SQLException {
 		Connection connection = jdbc.getConnection();
 		String sql = "INSERT INTO `Account` (Email, UserName, FullName) "
-					+ "VALUES 				( (?) , 	(?) ,	(?)	  ) ";
+				+ "VALUES 				( (?) , 	(?) ,	(?)	  ) ";
 		PreparedStatement preparedStatement = connection.prepareStatement(sql);
 		preparedStatement.setString(1, Email);
 		preparedStatement.setString(2, Username);
@@ -109,7 +111,7 @@ public class AccountRepository implements IAccountRepository {
 		PreparedStatement preparedStatement = connection.prepareStatement(sql);
 		preparedStatement.setString(1, username);
 		preparedStatement.setInt(2, id);
-		
+
 		int result = preparedStatement.executeUpdate();
 		if (result == 1) {
 			jdbc.disConnection();
@@ -118,7 +120,7 @@ public class AccountRepository implements IAccountRepository {
 			jdbc.disConnection();
 			System.out.println("Update False !!!");
 		}
-			
+
 	}
 
 	public void deleteAccount(int id) throws Exception {
