@@ -20,5 +20,10 @@ public class FresherCandidate extends Candidate{
 	public void setGraduationRank(GraduationRank graduationRank) {
 		this.graduationRank = graduationRank;
 	}
+
+	@Override
+	public String toString() {
+		return "FresherCandidate [graduationRank=" + graduationRank + "]";
+	}
 	
 }

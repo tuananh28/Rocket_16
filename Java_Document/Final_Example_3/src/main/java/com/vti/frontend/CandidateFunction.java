@@ -95,11 +95,10 @@ public class CandidateFunction {
 
 	private GraduationRank getGraduationRank() {
 		while (true) {
-			System.out.println("\t\t --- GraduationRank --- \t\t");
-			System.out.println("\t 1.EXCELLENCE");
-			System.out.println("\t 2.GOOD");
-			System.out.println("\t 3.FAIR");
-			System.out.println("\t 4.POOR");
+			System.out.println("\n"+"1.EXCELLENCE");
+			System.out.println("2.GOOD");
+			System.out.println("3.FAIR");
+			System.out.println("4.POOR");
 			System.out.print("Mời bạn chọn GraduationRank : ");
 			int n = ScannerUltis.inputInt();
 			switch (n) {
@@ -120,11 +119,10 @@ public class CandidateFunction {
 
 	private ProSkill getProSkill() {
 		while (true) {
-			System.out.println("\t\t --- ProSkill --- \t\t");
-			System.out.println("\t 1.DEV");
-			System.out.println("\t 2.TEST");
-			System.out.println("\t 3.JAVA");
-			System.out.println("\t 4.SQL");
+			System.out.println("\n"+"1.DEV");
+			System.out.println("2.TEST");
+			System.out.println("3.JAVA");
+			System.out.println("4.SQL");
 			System.out.print("Mời bạn chọn ProSkill : ");
 			int n = ScannerUltis.inputInt();
 			switch (n) {

@@ -27,3 +27,4 @@ VALUES                  ( 'Tuấn Anh',   'Bùi'   ,'0868102848','tuananh@gmail.
                         (   'Linh'  ,   'Nguyễn','0586265962','nguyenlinh@gmail.com', '123456' ,      2     ,   'SQL'  ,      'GOOD'    , 'EXPERIENCECANDIDATE' ),
                         ( 'Tuấn Anh',   'Mai'   ,'0689232695','anhmai@gmail.com'    , '123456' ,      1     ,   'SQL'  ,      'FAIR'    , 'FRESHERCANDIDATE'    );
 
+SELECT * from Candidate

@@ -59,10 +59,8 @@ public class CandidateRepository implements ICandidateRepository {
 		preparedStatement.setInt(5, expInYear);
 		preparedStatement.setString(6, proSkill.toString());
 		if (preparedStatement.executeUpdate() == 1) {
-			jdbc.disConnection();
 			return true;
 		}else {
-			jdbc.disConnection();
 			return false;
 		}
 	}

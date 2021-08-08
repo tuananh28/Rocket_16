@@ -24,5 +24,9 @@ public class ExperienceCandidate extends Candidate{
 	public void setProSkill(ProSkill proSkill) {
 		this.proSkill = proSkill;
 	}
+	@Override
+	public String toString() {
+		return "ExperienceCandidate [ExpInYear=" + ExpInYear + ", proSkill=" + proSkill + "]";
+	}
 	
 }
