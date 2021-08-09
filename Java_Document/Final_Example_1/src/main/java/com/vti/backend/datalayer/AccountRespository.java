@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,8 +23,10 @@ public class AccountRespository implements IAccountRespository {
 	public List<Account> getListEmployeeInProject(int id) throws SQLException, ClassNotFoundException {
 		// TODO Auto-generated method stub
 		String sql = "SELECT ap.ProjectID, p.ProjectName, p.TeamSize, ap.AccountID, a.Email, a.FullName, a.ExpInYear, a.ProSkill, a.Category\r\n"
-				+ "FROM AccountProject ap\r\n" + "INNER JOIN `Account` a ON ap.AccountID = a.AccountID\r\n"
-				+ "INNER JOIN Project p ON ap.ProjectID = p.ProjectID\r\n" + "WHERE ap.ProjectID = (?);";
+				+ "FROM AccountProject ap\r\n" 
+				+ "INNER JOIN `Account` a ON ap.AccountID = a.AccountID\r\n"
+				+ "INNER JOIN Project p ON ap.ProjectID = p.ProjectID\r\n" 
+				+ "WHERE ap.ProjectID = (?);";
 		List<Account> listAccounts = new ArrayList<Account>();
 		PreparedStatement preparedStatement = jdbc.createPrepareStatement(sql);
 		preparedStatement.setInt(1, id);

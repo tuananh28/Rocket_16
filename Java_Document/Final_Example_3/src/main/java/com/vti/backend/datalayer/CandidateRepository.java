@@ -50,7 +50,7 @@ public class CandidateRepository implements ICandidateRepository {
 	public boolean createExperienceCandidate(String firstName, String lastName, String phone, String email,
 			 int expInYear, ProSkill proSkill) throws ClassNotFoundException, SQLException {
 		String sql = "INSERT INTO `Candidate` (FirstName,LastName,Phone,Email,Password,ExpInYear,ProSkill,	 	Category   	)"
-					+"VALUES				  ( 	(?) ,   (?)  , (?) , (?) ,'123456', (?)     ,  (?)   ,'EXPERIENCECANDIDATE'";
+					+"VALUES				  ( 	(?) ,   (?)  , (?) , (?) ,'123456', (?)     ,  (?)   ,'EXPERIENCECANDIDATE');";
 		PreparedStatement preparedStatement = jdbc.createPrepareStatement(sql);
 		preparedStatement.setString(1, firstName);
 		preparedStatement.setString(2, lastName);

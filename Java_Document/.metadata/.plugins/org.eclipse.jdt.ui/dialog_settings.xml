@@ -6,6 +6,8 @@
 	<section name="JavaElementSearchActions">
 	</section>
 	<section name="completion_proposal_size">
+		<item key="size.x" value="539"/>
+		<item key="size.y" value="316"/>
 	</section>
 	<section name="quick_assist_proposal_size">
 		<item key="size.x" value="538"/>
@@ -110,5 +112,7 @@
 		<item key="expanded0" value="true"/>
 		<item key="expanded1" value="false"/>
 		<item key="expanded2" value="false"/>
+	</section>
+	<section name="OccurrencesSearchResultPage">
 	</section>
 </section>
