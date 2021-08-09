@@ -15,6 +15,11 @@ public class Employee extends User{
 	public void setProSkill(ProSkill proSkill) {
 		this.proSkill = proSkill;
 	}
+	@Override
+	public String toString() {
+		return "Employee [ UserID =" + getUserID() + ", FullName =" + getFullName()
+				+ ", Email =" + getEmail() + ", Role =" + getRole() + ", ProSkill=" + proSkill + "]";
+	}
 	
 	
 }

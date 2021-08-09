@@ -11,9 +11,10 @@ public class Program {
 	public static void main(String[] args) throws FileNotFoundException, IOException, ClassNotFoundException, SQLException {
 		UserFunction userFunction = new UserFunction();
 		while (true) {
+			
 			System.out.println("\t\t --- MENU --- \t\t");
-			System.out.println("1. Login Admin And Create User");
-			System.out.println("2. Login User");
+			System.out.println("1. Login ");
+			System.out.println("2. Create User");
 			System.out.println("3. Get List User");
 			System.out.println("4. Get User By ID");
 			System.out.println("5. Delete User By ID");
@@ -22,10 +23,10 @@ public class Program {
 			int lc = ScannerUltis.inputInt();
 			switch (lc) {
 			case 1:
-				userFunction.getLoginAdmin();
+				userFunction.Login();
 				break;
 			case 2:
-				userFunction.getLoginUser();
+				userFunction.getCreateUser();
 				break;
 			case 3:
 				userFunction.getListUser();

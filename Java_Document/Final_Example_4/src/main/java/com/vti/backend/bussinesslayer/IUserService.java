@@ -9,16 +9,14 @@ import com.vti.entity.Employee.ProSkill;
 public interface IUserService {
 	public boolean isEmailExist(String email) throws ClassNotFoundException, SQLException;
 
-	public boolean isLoginAdmin(String email, String password) throws SQLException, ClassNotFoundException;
-
-	public boolean isLoginEmployee(String email, String password) throws ClassNotFoundException, SQLException;
+	public void Login(String email, String password) throws SQLException, ClassNotFoundException;
 
 	public List<User> getListUser() throws ClassNotFoundException, SQLException;
 
-	public List<User> getUserByID(int id) throws ClassNotFoundException, SQLException;
+	public List<User> getListUserByID(int id) throws ClassNotFoundException, SQLException;
 
-	public boolean deleteUserByID(int id) throws ClassNotFoundException, SQLException;
+	public int deleteUserByID(int id) throws ClassNotFoundException, SQLException;
 
-	public boolean createEmployee(String fullName, String email, ProSkill proskill)
+	public String createEmployee(String fullName, String email, ProSkill proskill)
 			throws ClassNotFoundException, SQLException;
 }

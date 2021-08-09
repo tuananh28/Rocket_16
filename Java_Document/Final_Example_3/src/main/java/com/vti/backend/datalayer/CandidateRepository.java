@@ -68,7 +68,7 @@ public class CandidateRepository implements ICandidateRepository {
 	public boolean createFresherCandidate(String firstName, String lastName, String phone, String email,
 			GraduationRank graduationRank) throws ClassNotFoundException, SQLException {
 		String sql = "INSERT INTO `Candidate` (FirstName,LastName,Phone,Email,Password,GraduationRank,  	 Category    )"
-					+"VALUES				  ( 	(?) ,   (?)  , (?) , (?) ,'123456', 	(?)		 , 'FRESHERCANDIDATE'";
+					+"VALUES				  ( 	(?) ,   (?)  , (?) , (?) ,'123456', 	(?)		 , 'FRESHERCANDIDATE')";
 		PreparedStatement preparedStatement = jdbc.createPrepareStatement(sql);
 		preparedStatement.setString(1, firstName);
 		preparedStatement.setString(2, lastName);

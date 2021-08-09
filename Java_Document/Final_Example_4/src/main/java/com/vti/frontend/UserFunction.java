@@ -19,13 +19,20 @@ public class UserFunction {
 		userController = new UserController();
 	}
 
-	public void getLoginAdmin() throws ClassNotFoundException, SQLException {
-		System.out.print("Mời bạn nhập Email : ");
-		String emailAD = ScannerUltis.inputEmail();
-		System.out.print("Mời bạn nhập Password : ");
-		String passwordAD = ScannerUltis.inputPassword();
-		if (userController.isLoginAdmin(emailAD, passwordAD)) {
-			System.out.println("Xin chào Admin , chúc bạn ngày mới tốt lành !");
+	public void Login() {
+		System.out.println("Nhập Email: ");
+		String userNameString = ScannerUltis.inputString();
+		System.out.println("Nhập Password: ");
+		String passwString = ScannerUltis.inputString();
+
+		userController.Login(userNameString, passwString);
+
+	}
+
+	public void getCreateUser() throws ClassNotFoundException, SQLException {
+		List<User> uList = new ArrayList<User>();
+		uList = userController.getListUser();
+		if (uList != null) {
 			System.out.println("-- Thêm thông tin User ---");
 			System.out.print("FullName : ");
 			String newName = ScannerUltis.inputString();
@@ -36,11 +43,7 @@ public class UserFunction {
 			}
 			System.out.println("ProSkill : ");
 			ProSkill proSkill = getProSkill();
-			if (userController.createEmployee(newName, newEmail, proSkill)) {
-				System.out.println("Create Success !!");
-			} else {
-				System.out.println("Create False !!");
-			}
+			userController.createEmployee(newName, newEmail, proSkill);
 		}
 	}
 
@@ -68,51 +71,36 @@ public class UserFunction {
 		}
 	}
 
-	public void getLoginUser() throws ClassNotFoundException, SQLException {
-		System.out.print("Mời bạn nhập Email : ");
-		String emailAD = ScannerUltis.inputEmail();
-		System.out.print("Mời bạn nhập Password : ");
-		String passwordAD = ScannerUltis.inputPassword();
-		if (userController.isLoginAdmin(emailAD, passwordAD)) {
-			System.out.println("Xin chào bạn " + emailAD + ", chúc bạn ngày mới tốt lành !");
-		}
-	}
 	public void getListUser() throws ClassNotFoundException, SQLException {
-		List<User> list = new ArrayList<User>();
-		list = userController.getListUser();
-		System.out.println("---------------------| Danh sách User |--------------------");
-		String leftAlignFormat = "| %-2d | %-23s | %-26s | %-15s |%n";
-		System.out.format("+---------------------------------------------------------------------------+%n");
-		System.out.format("| ID |         FullName        |           Email            |	  Role	   |%n");
-		System.out.format("+---------------------------------------------------------------------------+%n");
-		for (User user : list) {
-			System.out.format(leftAlignFormat, user.getUserID(), user.getFullName(), user.getEmail(), user.getRole());
+		List<User> uList = new ArrayList<User>();
+		uList = userController.getListUser();
+		if (uList != null) {
+			System.out.printf("%-15s %-25s %-25s\n", "ID", "Fullname", "Email");
+			for (User user : uList) {
+				System.out.printf("%-15s %-25s %-25s\n", user.getUserID(), user.getFullName(), user.getEmail());
+			}
 		}
-		System.out.format("+---------------------------------------------------------------------------+%n");
 	}
+
 	public void getUserByID() throws ClassNotFoundException, SQLException {
-		System.out.print("Nhập ID User bạn cần tìm : ");
-		int id = ScannerUltis.inputInt();
-		List<User> list = new ArrayList<User>();
-		list = userController.getUserByID(id);
-		System.out.println("---------------------| Danh sách User |--------------------");
-		String leftAlignFormat = "| %-2d | %-23s | %-26s | %-15s |%n";
-		System.out.format("+---------------------------------------------------------------------------+%n");
-		System.out.format("| ID |         FullName        |           Email            |	  Role	   |%n");
-		System.out.format("+---------------------------------------------------------------------------+%n");
-		for (User user : list) {
-			System.out.format(leftAlignFormat, user.getUserID(), user.getFullName(), user.getEmail(), user.getRole());
+		System.out.print("Mời bạn nhập UserID : ");
+		int id = ScannerUltis.inputIntPositive();
+		List<User> listUser = new ArrayList<User>();
+		listUser = userController.getListUserByID(id);
+		System.out.printf("%-15s %-25s %-25s\n", "ID", "Fullname", "Email");
+		for (User user : listUser) {
+			System.out.printf("%-15s %-25s %-25s\n", user.getUserID(), user.getFullName(), user.getEmail());
 		}
-		System.out.format("+---------------------------------------------------------------------------+%n");
 	}
+
 	public void getDeleteUserByID() throws ClassNotFoundException, SQLException {
-		System.out.print("Nhập ID User bạn cần xóa : ");
-		int id = ScannerUltis.inputInt();
-		if (userController.deleteUserByID(id)) {
-			System.out.println("Delete Success!!");
-		} else {
-			System.out.println("Delete False !!");
+		List<User> uList = new ArrayList<User>();
+		uList = userController.getListUser();
+		if (uList != null) {
+			System.out.println("Mời bạn nhập UserID cần xóa: ");
+			int id = ScannerUltis.inputIntPositive();
+			userController.deleteUserByID(id);
+
 		}
-		
 	}
 }

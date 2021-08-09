@@ -18,30 +18,26 @@ public class UserController implements IUserController{
 		// TODO Auto-generated method stub
 		return userService.isEmailExist(email);
 	}
-	public boolean isLoginAdmin(String email, String password) throws SQLException, ClassNotFoundException {
-		// TODO Auto-generated method stub
-		return userService.isLoginAdmin(email, password);
-	}
-	public boolean isLoginEmployee(String email, String password) throws ClassNotFoundException, SQLException {
-		// TODO Auto-generated method stub
-		return userService.isLoginEmployee(email, password);
-	}
 	public List<User> getListUser() throws ClassNotFoundException, SQLException {
 		// TODO Auto-generated method stub
 		return userService.getListUser();
 	}
-	public List<User> getUserByID(int id) throws ClassNotFoundException, SQLException {
+	public List<User> getListUserByID(int id) throws ClassNotFoundException, SQLException {
 		// TODO Auto-generated method stub
-		return userService.getUserByID(id);
+		return userService.getListUserByID(id);
 	}
-	public boolean deleteUserByID(int id) throws ClassNotFoundException, SQLException {
+	public int deleteUserByID(int id) throws ClassNotFoundException, SQLException {
 		// TODO Auto-generated method stub
 		return userService.deleteUserByID(id);
 	}
-	public boolean createEmployee(String fullName, String email, ProSkill proskill)
+	public String createEmployee(String fullName, String email, ProSkill proskill)
 			throws ClassNotFoundException, SQLException {
 		// TODO Auto-generated method stub
 		return userService.createEmployee(fullName, email, proskill);
+	}
+	public void Login(String userNameString, String passwString) {
+		// TODO Auto-generated method stub
+		userService.Login(userNameString, passwString);
 	}
 	
 }

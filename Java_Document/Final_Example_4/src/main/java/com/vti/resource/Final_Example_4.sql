@@ -22,3 +22,4 @@ VALUES              (   'Bùi Tuấn Anh'    , 'tuananh@gmail.com'   , 'Tuananh2
                     (    'Nguyễn Thị Linh', 'linhnguyen@gmail.com', '123456'   ,       5   ,   'JAVA'  ,'EMPLOYEE'),
                     (  'Trương Hoàng Minh', 'hoangminh@gmail.com' , '123456'   ,       5   ,   'SQL'   ,'EMPLOYEE'),
                     (    'Nguyễn Đào Lực' , 'daoluc@gmail.com'    , '123456'   ,       5   ,   'TEST'  ,'EMPLOYEE');
+select * from User

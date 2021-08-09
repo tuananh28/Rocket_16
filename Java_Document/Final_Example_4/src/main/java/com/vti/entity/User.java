@@ -22,6 +22,13 @@ public class User {
 	public User() {
 		// TODO Auto-generated constructor stub
 	}
+	public int getUserID() {
+		return UserID;
+	}
+
+	public void setUserID(int userID) {
+		UserID = userID;
+	}
 
 	public String getFullName() {
 		return FullName;
@@ -55,12 +62,10 @@ public class User {
 		this.role = role;
 	}
 
-	public int getUserID() {
-		return UserID;
-	}
-
-	public void setUserID(int userID) {
-		UserID = userID;
-	}
+	@Override
+	public String toString() {
+		return "User [UserID=" + UserID + ", FullName=" + FullName + ", Email=" + Email + ", Password=" + Password
+				+ ", role=" + role + "]";
+	}	
 	
 }

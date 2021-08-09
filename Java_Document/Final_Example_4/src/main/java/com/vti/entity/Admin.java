@@ -15,5 +15,12 @@ public class Admin extends User{
 	public void setExpInYear(int expInYear) {
 		ExpInYear = expInYear;
 	}
+
+	@Override
+	public String toString() {
+		return "Admin [ UserID =" + getUserID() + ",FullName =" + getFullName() + ", Email =" + getEmail() + ", Role =" + getRole() + ", ExpInYear = "+ ExpInYear + "]";
+	}
+
+	
 	
 }
