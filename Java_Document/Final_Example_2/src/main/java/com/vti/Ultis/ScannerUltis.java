@@ -86,7 +86,7 @@ public class ScannerUltis {
 		while (true) {
 			String email = ScannerUltis.inputString();
 			if (email == null || !email.contains("@")) {
-				System.out.print("Nhập lại: ");
+				System.out.println("Vui lòng nhập đúng định dạng abc@name ");
 			} else {
 				return email;
 			}
@@ -108,7 +108,7 @@ public class ScannerUltis {
 		while (true) {
 			String password = ScannerUltis.inputString();
 			if (password.length() < 6 || password.length() > 12) {
-				System.out.print("Nhập lại: ");
+				System.err.println("Mật khẩu phải có 6 ký tự trở lên và có ít nhất 1 chữ in Hoa. ");
 				continue;
 			}
 

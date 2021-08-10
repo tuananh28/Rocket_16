@@ -10,6 +10,7 @@ import com.vti.entity.Account;
 
 public class AccountController implements IAccountController{
 	AccountService accountService;
+	 private Account currUser;
 	public AccountController() throws FileNotFoundException, IOException {
 		// TODO Auto-generated constructor stub
 		accountService =  new AccountService();
@@ -38,5 +39,17 @@ public class AccountController implements IAccountController{
 		// TODO Auto-generated method stub
 		return accountService.getListMemberByProjectName(projectName);
 	}
+	public boolean deleteAccountByAdmin(int id) throws ClassNotFoundException, SQLException {
+		// TODO Auto-generated method stub
+		return accountService.deleteAccountByAdmin(id);
+	}
+	public boolean updateAccountByAdmin(String email, String password) throws ClassNotFoundException, SQLException {
+		// TODO Auto-generated method stub
+		return accountService.updateAccountByAdmin(email, password);
+	}
+	public Account logout(){
+        currUser = null;
+        return currUser;
+    }
 
 }

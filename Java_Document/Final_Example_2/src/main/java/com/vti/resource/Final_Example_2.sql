@@ -26,15 +26,15 @@ CREATE TABLE `AccountProject`(
 );
 
 INSERT INTO `Account` (     FullName        ,       Email           , Password , ExpInYear , ProSkill  , Category , Role  )
-VALUES                (   'Bùi Tuấn Anh'    , 'tuananh@gmail.com'   , '123456',       5   ,   'DEV'   , 'MANAGER','ADMIN'),
-                      (  'Bùi Thị Hoa Mai'  , 'hoamai@gmail.com'    , '050198',       5   ,   'TEST'  , 'MANAGER','ADMIN'),
-                      (  'Nguyễn Hoàng Anh' , 'hoanganh@gmail.com'  , '111199',       1   ,   'SQL'   ,'EMPLOYEE', 'USER'),
-                      (    'Nguyễn Hữ Tùng' , 'huutung@gmail.com'   , '123456',      NULL ,   'TEST'  ,'EMPLOYEE', 'USER'),
-                      (    'Lê Thúy Quỳnh'  , 'thuyquynh@gmail.com' , '123456',       1   ,   'JAVA'  ,'EMPLOYEE', 'USER'),
-                      (    'Đào Tuấn Minh'  , 'tuanminh@gmail.com'  , '123456',      NULL ,   'JAVA'  ,'EMPLOYEE', 'USER'),
-                      (    'Nguyễn Thị Linh', 'linhnguyen@gmail.com', '123456',       5   ,   'JAVA'  ,'EMPLOYEE', 'USER'),
-                      (  'Trương Hoàng Minh', 'hoangminh@gmail.com' , '123456',       5   ,   'SQL'   ,'EMPLOYEE', 'USER'),
-                      (    'Nguyễn Đào Lực' , 'daoluc@gmail.com'    , '123456',       5   ,   'TEST'  ,'EMPLOYEE', 'USER');
+VALUES                (   'Bùi Tuấn Anh'    , 'tuananh@gmail.com'   , 'Tuananh',       5   ,   'DEV'   , 'MANAGER','ADMIN'),
+                      (  'Bùi Thị Hoa Mai'  , 'hoamai@gmail.com'    , 'Hoamai' ,       5   ,   'TEST'  , 'MANAGER','ADMIN'),
+                      (  'Nguyễn Hoàng Anh' , 'hoanganh@gmail.com'  , '111199' ,       1   ,   'SQL'   ,'EMPLOYEE', 'USER'),
+                      (    'Nguyễn Hữ Tùng' , 'huutung@gmail.com'   , '123456' ,      NULL ,   'TEST'  ,'EMPLOYEE', 'USER'),
+                      (    'Lê Thúy Quỳnh'  , 'thuyquynh@gmail.com' , '123456' ,       1   ,   'JAVA'  ,'EMPLOYEE', 'USER'),
+                      (    'Đào Tuấn Minh'  , 'tuanminh@gmail.com'  , '123456' ,      NULL ,   'JAVA'  ,'EMPLOYEE', 'USER'),
+                      (    'Nguyễn Thị Linh', 'linhnguyen@gmail.com', '123456' ,       5   ,   'JAVA'  ,'EMPLOYEE', 'USER'),
+                      (  'Trương Hoàng Minh', 'hoangminh@gmail.com' , '123456' ,       5   ,   'SQL'   ,'EMPLOYEE', 'USER'),
+                      (    'Nguyễn Đào Lực' , 'daoluc@gmail.com'    , 'Daoluc' ,       5   ,   'TEST'  ,'EMPLOYEE', 'USER');
 
 INSERT INTO `Project`   (ProjectName    , TeamSize)
 VALUES                  ('Project DEV'  ,     1   ),

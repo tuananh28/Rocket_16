@@ -10,9 +10,13 @@ public interface IAccountController {
 
 	public boolean isLoginAdmin(String email, String password) throws ClassNotFoundException, SQLException;
 
+	public boolean isLoginUser(String email, String password) throws ClassNotFoundException, SQLException;
+
 	public boolean createAccountByAdmin(String fullName, String email) throws ClassNotFoundException, SQLException;
 
-	public boolean isLoginUser(String email, String password) throws ClassNotFoundException, SQLException;
+	public boolean deleteAccountByAdmin(int id) throws ClassNotFoundException, SQLException;
+
+	public boolean updateAccountByAdmin(String email, String password) throws ClassNotFoundException, SQLException;
 
 	public List<Account> getListMemberByProjectName(String projectName) throws ClassNotFoundException, SQLException;
 }

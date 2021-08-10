@@ -38,5 +38,13 @@ public class AccountService implements IAccountService{
 		// TODO Auto-generated method stub
 		return accountResponsitory.getListMemberByProjectName(projectName);
 	}
+	public boolean deleteAccountByAdmin(int id) throws ClassNotFoundException, SQLException {
+		// TODO Auto-generated method stub
+		return accountResponsitory.deleteAccountByAdmin(id);
+	}
+	public boolean updateAccountByAdmin(String email, String password) throws ClassNotFoundException, SQLException {
+		// TODO Auto-generated method stub
+		return accountResponsitory.updateAccountByAdmin(email, password);
+	}
 	
 }

@@ -65,7 +65,7 @@ public class AccountResponsitory implements IAccountResponsitory {
 	}
 
 	public boolean isLoginUser(String email, String password) throws ClassNotFoundException, SQLException {
-		String sql = "SELECT * FROM `Account` WHERE Email = (?) AND Password = (?)";
+		String sql = "SELECT * FROM `Account` WHERE (Email = (?) AND Password = (?) AND Role = 'USER')";
 		PreparedStatement preparedStatement = jdbc.createPrepareStatement(sql);
 		preparedStatement.setString(1, email);
 		preparedStatement.setString(2, password);
@@ -97,6 +97,29 @@ public class AccountResponsitory implements IAccountResponsitory {
 			listAccounts.add(account);
 		}
 		return listAccounts;
+	}
+
+	public boolean deleteAccountByAdmin(int id) throws ClassNotFoundException, SQLException {
+		String sql = "DELETE FROM `Account` WHERE AcountID = (?)";
+		PreparedStatement preparedStatement = jdbc.createPrepareStatement(sql);
+		preparedStatement.setInt(1, id);
+		if (preparedStatement.executeUpdate() == 1) {
+			return true;
+		}else {
+			return false;
+		}
+	}
+
+	public boolean updateAccountByAdmin(String email, String password) throws ClassNotFoundException, SQLException {
+		String sql = "UPDATE `Account` SET Password = (?) WHERE Email = (?)";
+		PreparedStatement preparedStatement = jdbc.createPrepareStatement(sql);
+		preparedStatement.setString(1, password);
+		preparedStatement.setString(2, email);
+		if (preparedStatement.executeUpdate() == 1) {
+			return true;
+		}else {
+			return false;
+		}
 	}
 
 }
