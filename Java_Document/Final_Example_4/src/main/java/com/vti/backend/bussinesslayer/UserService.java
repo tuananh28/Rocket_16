@@ -70,21 +70,13 @@ public class UserService implements IUserService {
 		}
 	}
 
-	public void Login(String email, String password) {
+	public void Login(String email, String password) throws ClassNotFoundException, SQLException {
 
 		userAdminLogin = false;
 		userLogin = false;
 
 		String user = "";
-		try {
-			user = userRepository.Login(email, password);
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		user = userRepository.Login(email, password);
 
 		if ("ADMIN".equals(user)) {
 			userAdminLogin = true;

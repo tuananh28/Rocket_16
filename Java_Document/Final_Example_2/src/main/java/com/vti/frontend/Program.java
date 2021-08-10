@@ -17,8 +17,7 @@ public class Program {
 			System.out.format("+---------------------------------------------+%n");
 			System.out.format(leftAlignFormat, "1. Login Admin ");
 			System.out.format(leftAlignFormat, "2. Login User ");
-			System.out.format(leftAlignFormat, "3. Get List Account By ProjectName ");
-			System.out.format(leftAlignFormat, "4. Exit ");
+			System.out.format(leftAlignFormat, "3. Exit ");
 			System.out.format("+---------------------------------------------+%n");
 			System.out.print("Mời bạn chọn chức năng: ");
 			int lc = ScannerUltis.inputInt();
@@ -30,9 +29,6 @@ public class Program {
 				accountFunction.getLogin();;
 				break;
 			case 3:
-				accountFunction.getListMemberByProjectName();
-				break;
-			case 4:
 				return;
 			default:
 				System.out.println("Không có lựa chọn này. Mời bạn nhập lại: ");

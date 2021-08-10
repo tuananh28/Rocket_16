@@ -19,12 +19,11 @@ public class UserFunction {
 		userController = new UserController();
 	}
 
-	public void Login() {
+	public void Login() throws ClassNotFoundException, SQLException {
 		System.out.println("Nhập Email: ");
-		String userNameString = ScannerUltis.inputString();
+		String userNameString = ScannerUltis.inputEmail();
 		System.out.println("Nhập Password: ");
-		String passwString = ScannerUltis.inputString();
-
+		String passwString = ScannerUltis.inputPassword();
 		userController.Login(userNameString, passwString);
 
 	}
@@ -40,6 +39,7 @@ public class UserFunction {
 			String newEmail = ScannerUltis.inputEmail();
 			if (userController.isEmailExist(newEmail)) {
 				System.err.println("Email này đã tồn tại !");
+				return;
 			}
 			System.out.println("ProSkill : ");
 			ProSkill proSkill = getProSkill();

@@ -35,7 +35,7 @@ public class UserController implements IUserController{
 		// TODO Auto-generated method stub
 		return userService.createEmployee(fullName, email, proskill);
 	}
-	public void Login(String userNameString, String passwString) {
+	public void Login(String userNameString, String passwString) throws ClassNotFoundException, SQLException {
 		// TODO Auto-generated method stub
 		userService.Login(userNameString, passwString);
 	}

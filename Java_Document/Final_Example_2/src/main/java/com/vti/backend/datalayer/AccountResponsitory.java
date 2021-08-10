@@ -51,7 +51,7 @@ public class AccountResponsitory implements IAccountResponsitory {
 
 	public boolean createAccountByAdmin(String fullName, String email) throws ClassNotFoundException, SQLException {
 		String sql = "INSERT INTO `Account` (FullName, Email,  Password	 ,   Role  )"
-					+ "VALUES 				( 	(?)	 ,	 (?), ('1234567'), ('USER'))";
+					+ "VALUES 				( 	(?)	 ,	 (?), ('123456'), ('USER'))";
 		PreparedStatement preparedStatement = jdbc.createPrepareStatement(sql);
 		preparedStatement.setString(1, fullName);
 		preparedStatement.setString(2, email);
@@ -81,7 +81,7 @@ public class AccountResponsitory implements IAccountResponsitory {
 
 	public List<Account> getListMemberByProjectName(String projectName) throws ClassNotFoundException, SQLException {
 		List<Account> listAccounts = new ArrayList<Account>();
-		String sql = "SELECT A.Email, A.FullName,A.Category\r\n"
+		String sql = "SELECT  A.AccountID, A.Email, A.FullName\r\n"
 				+ "FROM `Account` A\r\n"
 				+ "JOIN `AccountProject` AP USING (AccountID)\r\n"
 				+ "JOIN `Project` P USING (ProjectID)\r\n"
@@ -91,10 +91,9 @@ public class AccountResponsitory implements IAccountResponsitory {
 		ResultSet resultSet = preparedStatement.executeQuery();
 		while (resultSet.next()) {
 			Account account = new Account();
-			System.out.println();
-			System.out.println(resultSet.getString("Email"));
-			System.out.println(resultSet.getString("FullName"));
-			System.out.println(resultSet.getString("Category"));
+			account.setAccountID(resultSet.getInt("AccountID"));
+			account.setFullName(resultSet.getString("FullName"));
+			account.setEmail(resultSet.getString("Email"));
 			listAccounts.add(account);
 		}
 		return listAccounts;
