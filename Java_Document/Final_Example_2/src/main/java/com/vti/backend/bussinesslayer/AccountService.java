@@ -19,9 +19,9 @@ public class AccountService implements IAccountService{
 		return accountResponsitory.isEmailIfExists(email);
 	}
 
-	public boolean isLoginAdmin(String email, String password) throws ClassNotFoundException, SQLException {
+	public boolean isLogin(String email, String password) throws ClassNotFoundException, SQLException {
 		// TODO Auto-generated method stub
-		return accountResponsitory.isLoginAdmin(email, password);
+		return accountResponsitory.isLogin(email, password);
 	}
 
 	public boolean createAccountByAdmin(String fullName, String email) throws ClassNotFoundException, SQLException {
@@ -29,10 +29,10 @@ public class AccountService implements IAccountService{
 		return accountResponsitory.createAccountByAdmin(fullName, email);
 	}
 
-	public boolean isLoginUser(String email, String password) throws ClassNotFoundException, SQLException {
-		// TODO Auto-generated method stub
-		return accountResponsitory.isLoginUser(email, password);
-	}
+//	public boolean isLoginUser(String email, String password) throws ClassNotFoundException, SQLException {
+//		// TODO Auto-generated method stub
+//		return accountResponsitory.isLoginUser(email, password);
+//	}
 
 	public List<Account> getListMemberByProjectName(String projectName) throws ClassNotFoundException, SQLException {
 		// TODO Auto-generated method stub
@@ -42,9 +42,13 @@ public class AccountService implements IAccountService{
 		// TODO Auto-generated method stub
 		return accountResponsitory.deleteAccountByAdmin(id);
 	}
-	public boolean updateAccountByAdmin(String email, String password) throws ClassNotFoundException, SQLException {
+	public boolean updateAccount(String email,String password) throws ClassNotFoundException, SQLException {
 		// TODO Auto-generated method stub
-		return accountResponsitory.updateAccountByAdmin(email, password);
+		return accountResponsitory.updateAccount(email,password);
+	}
+	public int getAccountMode() {
+		// TODO Auto-generated method stub
+		return AccountResponsitory.accountMode;
 	}
 	
 }

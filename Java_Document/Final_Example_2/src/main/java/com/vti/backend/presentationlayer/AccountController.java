@@ -11,18 +11,25 @@ import com.vti.entity.Account;
 public class AccountController implements IAccountController{
 	AccountService accountService;
 	 private Account currUser;
-	public AccountController() throws FileNotFoundException, IOException {
+	 Iview iview;
+	public AccountController(Iview iview) throws FileNotFoundException, IOException {
 		// TODO Auto-generated constructor stub
 		accountService =  new AccountService();
+		this.iview = iview;
 	}
 	public boolean isEmailIfExists(String email) throws ClassNotFoundException, SQLException {
 		// TODO Auto-generated method stub
 		return accountService.isEmailIfExists(email);
 	}
 
-	public boolean isLoginAdmin(String email, String password) throws ClassNotFoundException, SQLException {
-		// TODO Auto-generated method stub
-		return accountService.isLoginAdmin(email, password);
+	public boolean isLogin(String email, String password) throws ClassNotFoundException, SQLException, FileNotFoundException, IOException {
+		if (!accountService.isLogin(email, password)) {
+			System.out.println("Tài khoản hoặc mật khẩu sai !");
+			return false;
+		}
+		// login success
+		getAccountMode();
+		return accountService.isLogin(email, password);
 	}
 
 	public boolean createAccountByAdmin(String fullName, String email) throws ClassNotFoundException, SQLException {
@@ -30,10 +37,10 @@ public class AccountController implements IAccountController{
 		return accountService.createAccountByAdmin(fullName, email);
 	}
 
-	public boolean isLoginUser(String email, String password) throws ClassNotFoundException, SQLException {
-		// TODO Auto-generated method stub
-		return accountService.isLoginUser(email, password);
-	}
+//	public boolean isLoginUser(String email, String password) throws ClassNotFoundException, SQLException {
+//		// TODO Auto-generated method stub
+//		return accountService.isLoginUser(email, password);
+//	}
 
 	public List<Account> getListMemberByProjectName(String projectName) throws ClassNotFoundException, SQLException {
 		// TODO Auto-generated method stub
@@ -43,13 +50,19 @@ public class AccountController implements IAccountController{
 		// TODO Auto-generated method stub
 		return accountService.deleteAccountByAdmin(id);
 	}
-	public boolean updateAccountByAdmin(String email, String password) throws ClassNotFoundException, SQLException {
+	public boolean updateAccount(String email,String password) throws ClassNotFoundException, SQLException {
 		// TODO Auto-generated method stub
-		return accountService.updateAccountByAdmin(email, password);
+		return accountService.updateAccount(email,password);
 	}
 	public Account logout(){
         currUser = null;
         return currUser;
     }
-
+	public void getAccountMode() throws FileNotFoundException, ClassNotFoundException, IOException, SQLException {
+		if(accountService.getAccountMode()==1) {
+			iview.getLoginAdmin();
+		}else {
+			iview.getLoginUser();
+		}	
+	}
 }

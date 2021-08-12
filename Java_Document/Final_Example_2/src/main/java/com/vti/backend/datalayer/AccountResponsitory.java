@@ -13,7 +13,7 @@ import com.vti.entity.Account;
 
 public class AccountResponsitory implements IAccountResponsitory {
 	private jdbcUltis jdbc;
-
+	public static int accountMode = 0;
 	public AccountResponsitory() throws FileNotFoundException, IOException {
 		// TODO Auto-generated constructor stub
 		jdbc = new jdbcUltis();
@@ -26,27 +26,25 @@ public class AccountResponsitory implements IAccountResponsitory {
 		preparedStatement.setString(1, email);
 		ResultSet resultSet = preparedStatement.executeQuery();
 		if (resultSet.next()) {
-			jdbc.disConnection();
 			return true;
 		} else {
-			jdbc.disConnection();
 			return false;
 		}
 	}
 
-	public boolean isLoginAdmin(String email, String password) throws ClassNotFoundException, SQLException {
-		String sql = "SELECT * FROM `Account` WHERE (Email = (?) AND Password = (?) AND Role = 'ADMIN')";
+	public boolean isLogin(String email, String password) throws ClassNotFoundException, SQLException {
+		String sql = "SELECT * FROM `Account` WHERE (Email = (?) AND Password = (?))";
 		PreparedStatement preparedStatement = jdbc.createPrepareStatement(sql);
 		preparedStatement.setString(1, email);
 		preparedStatement.setString(2, password);
 		ResultSet resultSet = preparedStatement.executeQuery();
-		if (resultSet.next()) {
-			jdbc.disConnection();
+		if (resultSet.next() == true) {
+			if (resultSet.getString("Role").equals("ADMIN")) {
+				accountMode = 1;
+			}
 			return true;
-		} else {
-			jdbc.disConnection();
-			return false;
 		}
+		return false;
 	}
 
 	public boolean createAccountByAdmin(String fullName, String email) throws ClassNotFoundException, SQLException {
@@ -56,28 +54,26 @@ public class AccountResponsitory implements IAccountResponsitory {
 		preparedStatement.setString(1, fullName);
 		preparedStatement.setString(2, email);
 		if (preparedStatement.executeUpdate() == 1) {
-			jdbc.disConnection();
 			return true;
 		} else {
-			jdbc.disConnection();
 			return false;
 		}
 	}
 
-	public boolean isLoginUser(String email, String password) throws ClassNotFoundException, SQLException {
-		String sql = "SELECT * FROM `Account` WHERE (Email = (?) AND Password = (?) AND Role = 'USER')";
-		PreparedStatement preparedStatement = jdbc.createPrepareStatement(sql);
-		preparedStatement.setString(1, email);
-		preparedStatement.setString(2, password);
-		ResultSet resultSet = preparedStatement.executeQuery();
-		if (resultSet.next()) {
-			jdbc.disConnection();
-			return true;
-		}else {
-			jdbc.disConnection();
-			return false;
-		}
-	}
+//	public boolean isLoginUser(String email, String password) throws ClassNotFoundException, SQLException {
+//		String sql = "SELECT * FROM `Account` WHERE (Email = (?) AND Password = (?) AND Role = 'USER')";
+//		PreparedStatement preparedStatement = jdbc.createPrepareStatement(sql);
+//		preparedStatement.setString(1, email);
+//		preparedStatement.setString(2, password);
+//		ResultSet resultSet = preparedStatement.executeQuery();
+//		if (resultSet.next()) {
+//			jdbc.disConnection();
+//			return true;
+//		}else {
+//			jdbc.disConnection();
+//			return false;
+//		}
+//	}
 
 	public List<Account> getListMemberByProjectName(String projectName) throws ClassNotFoundException, SQLException {
 		List<Account> listAccounts = new ArrayList<Account>();
@@ -100,7 +96,7 @@ public class AccountResponsitory implements IAccountResponsitory {
 	}
 
 	public boolean deleteAccountByAdmin(int id) throws ClassNotFoundException, SQLException {
-		String sql = "DELETE FROM `Account` WHERE AcountID = (?)";
+		String sql = "DELETE FROM `Account` WHERE AccountID = (?)";
 		PreparedStatement preparedStatement = jdbc.createPrepareStatement(sql);
 		preparedStatement.setInt(1, id);
 		if (preparedStatement.executeUpdate() == 1) {
@@ -110,7 +106,7 @@ public class AccountResponsitory implements IAccountResponsitory {
 		}
 	}
 
-	public boolean updateAccountByAdmin(String email, String password) throws ClassNotFoundException, SQLException {
+	public boolean updateAccount(String email,String password) throws ClassNotFoundException, SQLException {
 		String sql = "UPDATE `Account` SET Password = (?) WHERE Email = (?)";
 		PreparedStatement preparedStatement = jdbc.createPrepareStatement(sql);
 		preparedStatement.setString(1, password);
