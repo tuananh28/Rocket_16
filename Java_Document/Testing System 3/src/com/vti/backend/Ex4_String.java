@@ -4,9 +4,10 @@ import java.util.Scanner;
 
 public class Ex4_String {
 	public static Scanner scanner = new Scanner(System.in);
-
+	static int x =1 ;
+		
 	public static void main(String[] args) {
-		Question1();
+		//Question1();
 		// Question2();
 		// Question3();
 		// Question4();
@@ -22,6 +23,11 @@ public class Ex4_String {
 		// Question14();
 		// Question15();
 		// Question16();
+		Question17();
+	}
+
+	private static void Question17() {
+		
 	}
 
 	public static void Question1() {
@@ -297,5 +303,4 @@ public class Ex4_String {
 			System.out.println(str.substring(i, i + n));
 		}
 	}
-
 }

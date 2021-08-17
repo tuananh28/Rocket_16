@@ -1,0 +1,21 @@
+package com.vti.backend.businesslayer;
+
+import java.sql.SQLException;
+
+import com.vti.backend.datalayer.Reponsitory;
+
+public class Service implements IService{
+	Reponsitory reponsitory;
+	public Service() {
+		// TODO Auto-generated constructor stub
+		reponsitory = new Reponsitory();
+	}
+	public int getAccountMode() {
+		// TODO Auto-generated method stub
+		return reponsitory.accountMode;
+	}
+	public boolean isLogin(String email, String password) throws ClassNotFoundException, SQLException {
+		// TODO Auto-generated method stub
+		return false;
+	}
+}

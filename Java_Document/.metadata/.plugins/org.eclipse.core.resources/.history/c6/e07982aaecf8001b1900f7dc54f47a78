@@ -1,0 +1,17 @@
+package com.vti.backend.datalayer;
+
+import java.sql.SQLException;
+import java.util.List;
+
+import com.vti.entity.Employee.ProSkill;
+import com.vti.entity.User;
+
+public interface IUserRepository {
+	public boolean isEmailExist (String email) throws ClassNotFoundException, SQLException;
+	public boolean isLoginAdmin (String email, String password);
+	public boolean isLoginEmployee (String email, String password);
+	public List<User> getListUser();
+	public List<User> getUserByID(int id);
+	public boolean deleteUserByID (int id);
+	public boolean createEmployee (String fullName, String email, ProSkill proskill);
+}

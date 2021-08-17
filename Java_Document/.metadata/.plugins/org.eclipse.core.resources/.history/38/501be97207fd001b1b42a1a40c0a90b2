@@ -1,0 +1,8 @@
+package com.vti.backend.businesslayer;
+
+import java.sql.SQLException;
+
+public interface IService {
+	public int getAccountMode();
+	public boolean isLogin(String email, String password) throws ClassNotFoundException, SQLException;
+}

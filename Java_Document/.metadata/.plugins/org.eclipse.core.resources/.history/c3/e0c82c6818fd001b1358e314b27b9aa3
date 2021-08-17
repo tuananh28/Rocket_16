@@ -1,0 +1,24 @@
+package com.vti.entity;
+
+import javax.sound.midi.spi.MidiDeviceProvider;
+
+public class MD5 {
+	private static String pass;
+
+	//để sử dụng MD5 bạn phải khai báo sử dụng thư viện này
+	//đây là hàm để mã hóa
+	public static String toMD5(String pass)
+	        {
+	            MD5.pass = pass;
+				MidiDeviceProvider myMD5 = new MidiDeviceProvider();
+	            byte[] myPass = System.Text.Encoding.UTF8.GetBytes(pass);
+	            myPass = myMD5.ComputeHash(myPass);
+
+	            StringBuilder s = new StringBuilder();
+	            foreach (byte p in myPass)
+	            {
+	                s.Append(p.ToString("x").ToLower());
+	            }
+	            return s.ToString();
+	        }
+}

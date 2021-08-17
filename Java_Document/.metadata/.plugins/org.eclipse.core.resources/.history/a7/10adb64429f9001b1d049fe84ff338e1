@@ -1,0 +1,6 @@
+package com.vti.entity;
+
+public class UserInfo {
+	public final static String U_ADMIN = "admin";
+	public final static String PW_ADMIN = "admin";
+}

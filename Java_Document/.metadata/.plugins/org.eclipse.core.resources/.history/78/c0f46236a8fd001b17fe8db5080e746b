@@ -1,0 +1,9 @@
+package com.vti.backend;
+
+import java.io.*;
+class Nav{
+public enum Direction { NORTH, SOUTH, EAST, WEST }
+}
+public class Sprite{
+// TODO
+}

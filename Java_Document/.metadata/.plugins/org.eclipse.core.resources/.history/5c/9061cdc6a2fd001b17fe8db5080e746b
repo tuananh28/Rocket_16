@@ -1,0 +1,18 @@
+package com.vti.backend.businesslayer;
+
+import java.sql.SQLException;
+import java.util.List;
+
+import com.vti.entity.User;
+
+public interface IService {
+	public int getAccountMode();
+
+	public boolean isEmailIfExists(String email) throws ClassNotFoundException, SQLException;
+
+	public List<User> getListMemberByProjectID(int projectID) throws ClassNotFoundException, SQLException;
+
+	public List<User> getListManagersInProject() throws ClassNotFoundException, SQLException;
+
+	public boolean isLogin(String email, String password) throws ClassNotFoundException, SQLException;
+}

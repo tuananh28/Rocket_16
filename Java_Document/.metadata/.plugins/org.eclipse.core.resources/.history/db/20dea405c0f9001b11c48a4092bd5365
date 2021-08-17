@@ -1,0 +1,14 @@
+package com.vti.resource;
+
+public class Snippet {
+	new ArrayList<Account>();
+			System.out.println("-- Project Name ---");
+			System.out.println("1. Project DEV");
+			System.out.println("2. Project TEST");
+			System.out.println("3. Project JAVA");
+			System.out.println("4. Project SQL");
+			System.out.println("Bạn đang cần tìm người ở dự nào ? Bạn vui lòng nhập đầy đủ tên 1 trong 4 Project trên nhé !");
+			String name = ScannerUltis.inputString();
+			accountController.getListMemberByProjectName(name);
+}
+

@@ -1,0 +1,9 @@
+package com.vti.backend.presentationlayer;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.sql.SQLException;
+
+public interface IController {
+	public void getAccountMode() throws FileNotFoundException, ClassNotFoundException, IOException, SQLException;
+}

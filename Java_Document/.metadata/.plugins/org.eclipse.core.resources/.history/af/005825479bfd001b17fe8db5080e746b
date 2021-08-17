@@ -1,0 +1,31 @@
+package com.vti.backend.datalayer;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import com.vti.utils.jdbcUltis;
+
+public class Reponsitory implements IReponsitory{
+	jdbcUltis jdbc;
+	public static int accountMode = 0;
+	public Reponsitory() throws FileNotFoundException, IOException {
+		jdbc = new jdbcUltis();
+	}
+	public boolean isLogin(String email, String password) throws ClassNotFoundException, SQLException {
+		String sql = "SELECT * FROM `Account` WHERE (Email = (?) AND Password = (?))";
+		PreparedStatement preparedStatement = jdbc.createPrepareStatement(sql);
+		preparedStatement.setString(1, email);
+		preparedStatement.setString(2, password);
+		ResultSet resultSet = preparedStatement.executeQuery();
+		if (resultSet.next() == true) {
+			if (resultSet.getString("Role").equals("ADMIN")) {
+				accountMode = 1;
+			}
+			return true;
+		}
+		return false;
+	}
+}

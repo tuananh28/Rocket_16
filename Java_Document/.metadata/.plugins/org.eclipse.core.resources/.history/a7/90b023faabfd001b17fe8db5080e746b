@@ -1,0 +1,8 @@
+package com.vti.backend;
+public class OuterClass {
+public static class InnerClass {
+public static void foo() {
+	OuterClass.InnerClass m = new OuterClass.InnerClass();
+}
+}
+}

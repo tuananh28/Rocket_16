@@ -1,0 +1,5 @@
+package com.vti.backend.presentationlayer;
+
+public interface Iview {
+	public void getLoginAdmin();
+}

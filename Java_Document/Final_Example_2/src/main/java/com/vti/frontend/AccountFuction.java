@@ -13,8 +13,9 @@ import com.vti.entity.Account;
 
 public class AccountFuction implements Iview {
 	AccountController accountController;
-	public  String Email;
-	public  String Password;
+	public String Email;
+	public String Password;
+
 	public AccountFuction() throws FileNotFoundException, IOException, ClassNotFoundException, SQLException {
 		// TODO Auto-generated constructor stub
 		accountController = new AccountController(this);
@@ -25,7 +26,7 @@ public class AccountFuction implements Iview {
 		Email = ScannerUltis.inputEmail();
 		System.out.print("Mời bạn nhập Password : ");
 		Password = ScannerUltis.inputPassword();
-		accountController.isLogin(Email, Password) ;		
+		accountController.isLogin(Email, Password);
 	}
 
 	public void getLoginAdmin() throws ClassNotFoundException, SQLException {
@@ -60,13 +61,7 @@ public class AccountFuction implements Iview {
 					return;
 				}
 			case 2:
-				System.out.println("-- Project Name ---");
-				System.out.println("1. Project DEV");
-				System.out.println("2. Project TEST");
-				System.out.println("3. Project JAVA");
-				System.out.println("4. Project SQL");
-				System.out.println(
-						"Bạn đang cần tìm người ở dự nào ? Bạn vui lòng nhập đầy đủ tên 1 trong 4 Project trên nhé !");
+				System.out.print("Nhập tên Project : ");
 				String name = ScannerUltis.inputString();
 				List<Account> accounts = new ArrayList<Account>();
 				accounts = accountController.getListMemberByProjectName(name);
@@ -92,11 +87,11 @@ public class AccountFuction implements Iview {
 				while (true) {
 					System.out.print("Nhập Password mới : ");
 					String passwordNew = ScannerUltis.inputPassword();
+					passwordNew = ScannerUltis.toMD5(passwordNew);
 					if (passwordNew.equals(Password)) {
 						System.out.println("Nhập mật khẩu khác ban đầu mới được bạn nhé !");
 						continue;
-					}
-					else if (accountController.updateAccount(Email,passwordNew)) {
+					} else if (accountController.updateAccount(Email, passwordNew)) {
 						System.out.println("Cập nhật Password mới thành Công !!");
 						accountController.logout();
 						System.out.println("Mời bạn đăng nhập lại .");
@@ -133,12 +128,12 @@ public class AccountFuction implements Iview {
 			case 2:
 				while (true) {
 					System.out.print("Nhập Password mới : ");
-					String passwordNew = ScannerUltis.inputPassword();
+					String passwordNew = ScannerUltis.inputPassword();	
+					passwordNew = ScannerUltis.toMD5(passwordNew);
 					if (passwordNew.equals(Password)) {
 						System.out.println("Nhập mật khẩu khác ban đầu mới được bạn nhé !");
 						continue;
-					}
-					else if (accountController.updateAccount(Email,passwordNew)) {
+					} else if (accountController.updateAccount(Email, passwordNew)) {
 						System.out.println("Cập nhật Password mới thành Công !!");
 						accountController.logout();
 						System.out.println("Mời bạn đăng nhập lại .");

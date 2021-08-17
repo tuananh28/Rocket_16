@@ -1,0 +1,26 @@
+package com.vti.backend.businesslayer;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.sql.SQLException;
+
+import com.vti.backend.datalayer.Reponsitory;
+
+public class Service implements IService {
+	Reponsitory reponsitory;
+
+	public Service() throws FileNotFoundException, IOException {
+		// TODO Auto-generated constructor stub
+		reponsitory = new Reponsitory();
+	}
+
+	public int getAccountMode() {
+		// TODO Auto-generated method stub
+		return Reponsitory.accountMode;
+	}
+
+	public boolean isLogin(String email, String password) throws ClassNotFoundException, SQLException {
+		// TODO Auto-generated method stub
+		return reponsitory.isLogin(email, password);
+	}
+}

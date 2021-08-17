@@ -74,5 +74,4 @@ public class Ex4_Random_Number {
 		int number = random.nextInt(999);
 		System.out.println(number);
 	}
-
 }
