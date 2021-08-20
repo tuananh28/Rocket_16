@@ -1,0 +1,5 @@
+package com.vti.entity.enumerate;
+
+public enum SalaryName {
+
+}

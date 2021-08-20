@@ -1,0 +1,98 @@
+package com.vti.frontend;
+
+import java.util.List;
+
+import com.vti.reponsitory.GroupRepository;
+import com.vti.utils.ScannerUltis;
+
+import entity.Group;
+
+public class Program {
+
+	public static void main(String[] args) {
+		GroupRepository repository = new GroupRepository();
+		while (true) {
+			System.out.println("\t\t --- MENU --- \t\t");
+			System.out.println("1. Get All Groups");
+			System.out.println("2. Get Groups By ID");
+			System.out.println("3. Get Groups By Name");
+			System.out.println("4. Create Groups");
+			System.out.println("5. Update Groups 1");
+			System.out.println("6. Update Groups 2");
+			System.out.println("7  Delete Groups");
+			System.out.println("8. Check Groups Exist By ID");
+			System.out.println("9. Check Groups Exist By Name");
+			System.out.println("10. Exit");
+			System.out.print("Mời nhập lựa chọn : ");
+			int n = ScannerUltis.inputInt();
+			switch (n) {
+			case 1:
+				System.out.println("***********GET ALL GROUPS***********");
+
+				List<Group> Groups = repository.getAllGroups();
+
+				for (Group Group : Groups) {
+					System.out.println(Group);
+				}
+				break;
+			case 2:
+				System.out.println("\n\n***********GET GROUPS BY ID***********");
+				
+				Group GroupById = repository.getGroupByID((short) 2);
+				System.out.println(GroupById);
+			
+				break;
+			case 3:
+				System.out.println("\n\n***********GET GROUPS BY NAME***********");
+
+				Group GroupByName = repository.getGroupByName("Marketting");
+				System.out.println(GroupByName);
+				break;
+			case 4:
+				System.out.println("\n\n***********CREATE GROUPS***********");
+
+				Group GroupCreate = new Group();
+				GroupCreate.setName("waiting");
+				repository.createGroup(GroupCreate);
+				System.out.println("Create Success !");
+				break;
+			case 5:
+				System.out.println("\n\n***********UPDATE GROUPS 1***********");
+
+				repository.updateGroup((short) 3, "Security");
+				System.out.println("Update Success !");
+				break;
+			case 6:
+				System.out.println("\n\n***********UPDATE GROUPS 2***********");
+
+				Group GroupUpdate = new Group();
+				GroupUpdate.setId((short) 2);
+				GroupUpdate.setName("Security2");
+				repository.updateGroup(GroupUpdate);
+				System.out.println("Update Success !");
+				break;
+			case 7:
+				System.out.println("\n\n***********DELETE GROUPS***********");
+				repository.deleteGroup((short) 2);
+				System.out.println("Delete Success !");
+				break;
+			case 8:
+				System.out.println("***********CHECK GROUPS EXISTS BY ID***********");
+				System.out.println(repository.isGroupExistsByID((short) 1));
+				break;
+			case 9:
+				System.out.println("***********CHECK GROUPS EXISTS BY NAME***********");
+				System.out.println(repository.isGroupExistsByName("Security"));
+				break;
+			case 10:
+				System.exit(n);
+				break;
+
+			default:
+				System.err.println("Nhập lại !");
+				break;
+			}
+		}
+
+	}
+}

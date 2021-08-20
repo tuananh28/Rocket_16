@@ -1,0 +1,6 @@
+package snippet;
+
+public class Snippet {
+	  private static final SessionFactory sessionFactory = buildSessionFactory();
+}
+

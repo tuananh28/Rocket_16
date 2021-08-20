@@ -1,0 +1,83 @@
+package com.vti.entity;
+
+import java.io.Serializable;
+import javax.persistence.*;
+import java.util.List;
+
+
+/**
+ * The persistent class for the department database table.
+ * 
+ */
+@Entity
+@Table(name="department")
+@NamedQuery(name="Department.findAll", query="SELECT d FROM Department d")
+public class Department implements Serializable {
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(unique=true, nullable=false)
+	private byte departmentID;
+
+	@Column(nullable=false, length=30)
+	private String departmentName;
+
+	//bi-directional many-to-one association to Account
+	@OneToMany(mappedBy="department")
+	private List<Account> accounts;
+
+	//bi-directional one-to-one association to Detaildepartment
+	@OneToOne(mappedBy="department")
+	private Detaildepartment detaildepartment;
+
+	public Department() {
+	}
+
+	public byte getDepartmentID() {
+		return this.departmentID;
+	}
+
+	public void setDepartmentID(byte departmentID) {
+		this.departmentID = departmentID;
+	}
+
+	public String getDepartmentName() {
+		return this.departmentName;
+	}
+
+	public void setDepartmentName(String departmentName) {
+		this.departmentName = departmentName;
+	}
+
+	public List<Account> getAccounts() {
+		return this.accounts;
+	}
+
+	public void setAccounts(List<Account> accounts) {
+		this.accounts = accounts;
+	}
+
+	public Account addAccount(Account account) {
+		getAccounts().add(account);
+		account.setDepartment(this);
+
+		return account;
+	}
+
+	public Account removeAccount(Account account) {
+		getAccounts().remove(account);
+		account.setDepartment(null);
+
+		return account;
+	}
+
+	public Detaildepartment getDetaildepartment() {
+		return this.detaildepartment;
+	}
+
+	public void setDetaildepartment(Detaildepartment detaildepartment) {
+		this.detaildepartment = detaildepartment;
+	}
+
+}

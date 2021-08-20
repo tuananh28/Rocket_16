@@ -1,8 +1,0 @@
-package com.vti.backend.datalayer;
-
-import java.sql.SQLException;
-
-public interface IReponsitory {
-	
-	public boolean isLogin(String email, String password) throws ClassNotFoundException, SQLException;
-}

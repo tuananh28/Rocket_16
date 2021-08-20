@@ -1,0 +1,32 @@
+package com.vti.entity;
+
+import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Embedded;
+import javax.persistence.EmbeddedId;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import org.hibernate.annotations.CreationTimestamp;
+
+import com.vti.entity.primarykey.GroupAccountKey;
+
+@Entity
+@Table(name = "GroupAccount")
+public class GroupAccount {
+	
+	@EmbeddedId
+	private GroupAccountKey id;
+
+	private Account account;
+	
+	private Group group;
+	
+	@Column(name = "JoinDate")
+	@Temporal(TemporalType.TIMESTAMP)
+	@CreationTimestamp
+	private Date joinDate;
+}

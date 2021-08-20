@@ -1,0 +1,134 @@
+package com.vti.entity;
+
+import java.io.Serializable;
+import javax.persistence.*;
+import java.util.Date;
+import java.util.List;
+
+
+/**
+ * The persistent class for the question database table.
+ * 
+ */
+@Entity
+@Table(name="question")
+@NamedQuery(name="Question.findAll", query="SELECT q FROM Question q")
+public class Question implements Serializable {
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(unique=true, nullable=false)
+	private byte questionID;
+
+	@Column(nullable=false, length=100)
+	private String content;
+
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date createDate;
+
+	//bi-directional many-to-one association to Answer
+	@OneToMany(mappedBy="question")
+	private List<Answer> answers;
+
+	//bi-directional many-to-many association to Exam
+	@ManyToMany(mappedBy="questions")
+	private List<Exam> exams;
+
+	//bi-directional many-to-one association to Categoryquestion
+	@ManyToOne
+	@JoinColumn(name="CategoryID", nullable=false)
+	private Categoryquestion categoryquestion;
+
+	//bi-directional many-to-one association to Typequestion
+	@ManyToOne
+	@JoinColumn(name="TypeID", nullable=false)
+	private Typequestion typequestion;
+
+	//bi-directional many-to-one association to Account
+	@ManyToOne
+	@JoinColumn(name="CreatorID", nullable=false)
+	private Account account;
+
+	public Question() {
+	}
+
+	public byte getQuestionID() {
+		return this.questionID;
+	}
+
+	public void setQuestionID(byte questionID) {
+		this.questionID = questionID;
+	}
+
+	public String getContent() {
+		return this.content;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
+	}
+
+	public Date getCreateDate() {
+		return this.createDate;
+	}
+
+	public void setCreateDate(Date createDate) {
+		this.createDate = createDate;
+	}
+
+	public List<Answer> getAnswers() {
+		return this.answers;
+	}
+
+	public void setAnswers(List<Answer> answers) {
+		this.answers = answers;
+	}
+
+	public Answer addAnswer(Answer answer) {
+		getAnswers().add(answer);
+		answer.setQuestion(this);
+
+		return answer;
+	}
+
+	public Answer removeAnswer(Answer answer) {
+		getAnswers().remove(answer);
+		answer.setQuestion(null);
+
+		return answer;
+	}
+
+	public List<Exam> getExams() {
+		return this.exams;
+	}
+
+	public void setExams(List<Exam> exams) {
+		this.exams = exams;
+	}
+
+	public Categoryquestion getCategoryquestion() {
+		return this.categoryquestion;
+	}
+
+	public void setCategoryquestion(Categoryquestion categoryquestion) {
+		this.categoryquestion = categoryquestion;
+	}
+
+	public Typequestion getTypequestion() {
+		return this.typequestion;
+	}
+
+	public void setTypequestion(Typequestion typequestion) {
+		this.typequestion = typequestion;
+	}
+
+	public Account getAccount() {
+		return this.account;
+	}
+
+	public void setAccount(Account account) {
+		this.account = account;
+	}
+
+}

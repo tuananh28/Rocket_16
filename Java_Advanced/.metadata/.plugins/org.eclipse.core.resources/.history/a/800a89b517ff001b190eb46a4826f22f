@@ -1,0 +1,77 @@
+package com.vti.entity;
+
+import java.io.Serializable;
+import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.persistence.UniqueConstraint;
+
+import org.hibernate.annotations.CreationTimestamp;
+
+@Entity
+@Table(name = "Group", catalog = "Testing_System_4" , uniqueConstraints = @UniqueConstraint(columnNames = {"name","create_date"}))
+public class Group implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+
+	@Column(name = "GroupID")
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private short GroupID;
+
+	@Column(name = "GroupName", length = 50, nullable = false, unique = true)
+	private String GroupName;
+	
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name = "CreateDate ")
+	@CreationTimestamp // defaul now()
+	private Date CreateDate;
+	
+	public Group() {
+	}
+
+	public short getGroupID() {
+		return GroupID;
+	}
+
+	public void setGroupID(short groupID) {
+		GroupID = groupID;
+	}
+
+	public String getGroupName() {
+		return GroupName;
+	}
+
+	public void setGroupName(String groupName) {
+		GroupName = groupName;
+	}
+
+	public Date getCreateDate() {
+		return CreateDate;
+	}
+
+	public void setCreateDate(Date createDate) {
+		CreateDate = createDate;
+	}
+
+	@Override
+	public String toString() {
+		return "Group [GroupID=" + GroupID + ", GroupName=" + GroupName + ", CreateDate=" + CreateDate + "]";
+	}
+
+	
+
+	/*
+	 * @see java.lang.Object#toString()
+	 */
+	
+
+}
+

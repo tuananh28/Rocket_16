@@ -1,5 +1,0 @@
-package com.vti.backend.businesslayer;
-
-public class Service implements IService{
-
-}

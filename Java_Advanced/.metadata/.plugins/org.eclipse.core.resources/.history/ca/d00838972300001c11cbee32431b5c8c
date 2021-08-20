@@ -1,0 +1,5 @@
+package com.vti.entity.primarykey;
+
+public class GroupAccount {
+
+}

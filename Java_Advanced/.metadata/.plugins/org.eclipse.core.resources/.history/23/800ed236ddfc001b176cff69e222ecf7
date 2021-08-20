@@ -1,0 +1,27 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="ketqua.jsp">
+		<table>
+			<tr>
+				<th><input type="text" name="num1">Số a
+			</tr>
+			<tr>
+				<th><input type="text" name="num2">Số b
+			</tr>
+			<tr>
+				<td><button type="submit" name="cong">+</button>
+				<td><button type="submit" name="tru">-</button>
+				<td><button type="submit" name="nhan">*</button>
+				<td><button type="submit" name="chia">/</button>
+			<tr>
+		</table>
+	</form>
+</body>
+</html>

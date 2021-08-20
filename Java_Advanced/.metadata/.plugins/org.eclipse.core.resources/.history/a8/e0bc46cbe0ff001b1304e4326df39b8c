@@ -1,0 +1,52 @@
+package com.vti.entity;
+
+import java.io.Serializable;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.Table;
+
+import net.bytebuddy.implementation.bind.annotation.Super;
+
+@Entity
+@Table(name = "DetailDepartment", catalog = "Testing_System_5")
+@PrimaryKeyJoinColumn(name = "DepartmentID")
+public class DetailDepartment extends Department implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+	
+	@Column(name = "AddressID")
+	private short addressId;
+	
+	
+	@Column(name = "EmulationPoint")
+	private short emulationPoint;
+	
+	public DetailDepartment() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public short getAddressId() {
+		return addressId;
+	}
+
+	public void setAddressId(short addressId) {
+		this.addressId = addressId;
+	}
+
+	public short getEmulationPoint() {
+		return emulationPoint;
+	}
+
+	public void setEmulationPoint(short emulationPoint) {
+		this.emulationPoint = emulationPoint;
+	}
+
+	@Override
+	public String toString() {
+		System.out.println(super.toString());
+		return "DetailDepartment [addressId=" + addressId + ", emulationPoint=" + emulationPoint + "]";
+	}
+	
+}

@@ -1,0 +1,51 @@
+package com.vti.test;
+
+import java.util.List;
+
+import com.vti.entity.Group;
+import com.vti.entity.Position;
+import com.vti.repository.GroupRepository;
+import com.vti.repository.PositionRepository;
+import com.vti.utils.ScannerUltis;
+
+public class PositionProgram {
+
+	public static void main(String[] args) {
+		PositionRepository repository = new PositionRepository();
+		while (true) {
+			System.out.println("\t\t --- MENU --- \t\t");
+			System.out.println("1. Get All Groups");
+			System.out.println("2. Create Groups");
+			System.out.println("3. Exit");
+			System.out.print("Mời nhập lựa chọn : ");
+			int n = ScannerUltis.inputInt();
+			switch (n) {
+			case 1:
+				System.out.println("***********GET ALL POSITIONS***********");
+
+				List<Position> positions = repository.getAllPositions();
+
+				for (Position position : positions) {
+					System.out.println(position);
+				}
+				break;
+			case 2:
+				System.out.println("\n\n***********CREATE POSITIONS***********");
+
+				Group GroupCreate = new Group();
+				GroupCreate.setName("waiting");
+				repository.createPosition(null);
+				System.out.println("Create Success !");
+				break;
+			case 3:
+				System.exit(n);
+				break;
+
+			default:
+				System.err.println("Nhập lại !");
+				break;
+			}
+		}
+
+	}
+}
