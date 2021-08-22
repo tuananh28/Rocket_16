@@ -2,7 +2,6 @@
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="com.vti.reponsitory.DepartmentReponsitory"/>
     <fullyQualifiedTypeName name="java.lang.Short"/>
-    <fullyQualifiedTypeName name="org.hibernate.cfg.Configuration"/>
     <fullyQualifiedTypeName name="org.hibernate.SessionFactory"/>
     <fullyQualifiedTypeName name="org.hibernate.service.ServiceRegistry"/>
     <fullyQualifiedTypeName name="java.sql.Date"/>
@@ -22,7 +21,6 @@
     <fullyQualifiedTypeName name="com.vti.repository.SalaryRepository"/>
     <fullyQualifiedTypeName name="com.vti.entity.enumerate.SalaryName"/>
     <fullyQualifiedTypeName name="java.io.Serializable"/>
-    <fullyQualifiedTypeName name="javax.persistence.Entity"/>
     <fullyQualifiedTypeName name="javax.persistence.Table"/>
     <fullyQualifiedTypeName name="javax.persistence.Id"/>
     <fullyQualifiedTypeName name="javax.persistence.GeneratedValue"/>
@@ -60,4 +58,6 @@
     <fullyQualifiedTypeName name="org.springframework.web.servlet.config.annotation.CorsRegistry"/>
     <fullyQualifiedTypeName name="org.springframework.web.servlet.config.annotation.WebMvcConfigurer"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.CrossOrigin"/>
+    <fullyQualifiedTypeName name="javax.persistence.Entity"/>
+    <fullyQualifiedTypeName name="org.hibernate.cfg.Configuration"/>
 </qualifiedTypeNameHistroy>
