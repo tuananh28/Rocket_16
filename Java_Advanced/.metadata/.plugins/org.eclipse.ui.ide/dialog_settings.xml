@@ -51,6 +51,8 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="D:\Rocket_16\Java_Advanced\Testing_Assingment_7"/>
+			<item value="D:\Rocket_16\Java_Advanced\Testing_Assignment_7"/>
 			<item value="D:\Rocket_16\Java_Advanced\Testing_Assignment_6"/>
 			<item value="C:\Users\Admin\OneDrive\Desktop\3Layer"/>
 		</list>

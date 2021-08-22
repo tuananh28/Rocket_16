@@ -1,12 +1,12 @@
 eclipse.preferences.version=1
-org.springframework.ide.eclipse.boot.wizard.PopularityTracker.web=3
-org.springframework.ide.eclipse.boot.wizard.PreferredSelections.artifactId=Tesing_Assignment_6
+org.springframework.ide.eclipse.boot.wizard.PopularityTracker.web=4
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.artifactId=Tesing_Assignment_7
 org.springframework.ide.eclipse.boot.wizard.PreferredSelections.bootVersion=2.5.4
 org.springframework.ide.eclipse.boot.wizard.PreferredSelections.description=Demo project for Spring Boot
 org.springframework.ide.eclipse.boot.wizard.PreferredSelections.groupId=com.example
-org.springframework.ide.eclipse.boot.wizard.PreferredSelections.javaVersion=1.8
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.javaVersion=16
 org.springframework.ide.eclipse.boot.wizard.PreferredSelections.language=java
-org.springframework.ide.eclipse.boot.wizard.PreferredSelections.name=Tesing_Assignment_6
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.name=Tesing_Assignment_7
 org.springframework.ide.eclipse.boot.wizard.PreferredSelections.packageName=com.vti.entity
 org.springframework.ide.eclipse.boot.wizard.PreferredSelections.packaging=jar
 org.springframework.ide.eclipse.boot.wizard.PreferredSelections.type=MAVEN
