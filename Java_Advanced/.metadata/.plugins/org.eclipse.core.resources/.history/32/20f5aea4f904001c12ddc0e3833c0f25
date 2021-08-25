@@ -1,0 +1,10 @@
+package com.vti.entity;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "Account", catalog = "Testing_System_8")
+public class Account {
+	
+}

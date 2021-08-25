@@ -1,0 +1,5 @@
+package com.vti.service;
+
+public abstract class IDepartmentService {
+
+}
