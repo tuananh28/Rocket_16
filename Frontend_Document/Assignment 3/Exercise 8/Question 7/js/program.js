@@ -31,6 +31,7 @@ function initEmployee() {
     }
 }
 
+
 function initTable() {
     setTimeout(function name(params) {
         $("tbody").empty();

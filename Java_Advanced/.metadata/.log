@@ -1,340 +1,490 @@
-!SESSION 2021-08-22 15:04:56.009 -----------------------------------------------
+!SESSION 2021-08-24 23:31:33.716 -----------------------------------------------
 eclipse.buildId=4.11.1.202108151956
 java.version=16.0.2
 java.vendor=Oracle Corporation
 BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
-Framework arguments:  -product org.springframework.boot.ide.branding.sts4 -product org.springframework.boot.ide.branding.sts4
-Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.springframework.boot.ide.branding.sts4 -data file:/D:/Rocket_16/Java_Advanced/ -product org.springframework.boot.ide.branding.sts4
+Framework arguments:  -product org.springframework.boot.ide.branding.sts4
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.springframework.boot.ide.branding.sts4
 
 This is a continuation of log file D:\Rocket_16\Java_Advanced\.metadata\.bak_0.log
-Created Time: 2021-08-22 15:04:59.462
+Created Time: 2021-08-24 23:31:58.636
 
-!ENTRY org.eclipse.core.runtime 4 0 2021-08-22 15:04:59.462
-!MESSAGE Invalid input url:platform:/plugin/org.eclipse.jpt.jpa.ui/$nl$/images/views/jpa-perspective.gif
-!STACK 0
-java.io.IOException: Unable to resolve plug-in "org.eclipse.jpt.jpa.ui".
-	at org.eclipse.core.internal.runtime.PlatformURLPluginConnection.parse(PlatformURLPluginConnection.java:64)
-	at org.eclipse.core.internal.runtime.FindSupport.find(FindSupport.java:293)
-	at org.eclipse.core.runtime.FileLocator.find(FileLocator.java:206)
-	at org.eclipse.jface.resource.URLImageDescriptor.getStream(URLImageDescriptor.java:166)
-	at org.eclipse.jface.resource.URLImageDescriptor.getImageData(URLImageDescriptor.java:134)
-	at org.eclipse.jface.resource.URLImageDescriptor.access$3(URLImageDescriptor.java:132)
-	at org.eclipse.jface.resource.URLImageDescriptor$URLImageDataProvider.getImageData(URLImageDescriptor.java:78)
-	at org.eclipse.swt.internal.DPIUtil.validateAndGetImageDataAtZoom(DPIUtil.java:404)
-	at org.eclipse.swt.graphics.Image.<init>(Image.java:732)
-	at org.eclipse.jface.resource.URLImageDescriptor.createImage(URLImageDescriptor.java:282)
-	at org.eclipse.jface.resource.ImageDescriptor.createImage(ImageDescriptor.java:287)
-	at org.eclipse.e4.ui.workbench.addons.perspectiveswitcher.PerspectiveSwitcher.addPerspectiveItem(PerspectiveSwitcher.java:510)
-	at org.eclipse.e4.ui.workbench.addons.perspectiveswitcher.PerspectiveSwitcher.createWidget(PerspectiveSwitcher.java:321)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
-	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:58)
-	at org.eclipse.e4.core.internal.di.InjectorImpl.processAnnotated(InjectorImpl.java:999)
-	at org.eclipse.e4.core.internal.di.InjectorImpl.internalInject(InjectorImpl.java:140)
-	at org.eclipse.e4.core.internal.di.InjectorImpl.internalMake(InjectorImpl.java:405)
-	at org.eclipse.e4.core.internal.di.InjectorImpl.make(InjectorImpl.java:346)
-	at org.eclipse.e4.core.contexts.ContextInjectionFactory.make(ContextInjectionFactory.java:227)
-	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.createFromBundle(ReflectionContributionFactory.java:94)
-	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.doCreate(ReflectionContributionFactory.java:60)
-	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.create(ReflectionContributionFactory.java:37)
-	at org.eclipse.e4.ui.workbench.renderers.swt.ToolControlRenderer.createWidget(ToolControlRenderer.java:129)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createWidget(PartRenderingEngine.java:999)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:659)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:765)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:730)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:714)
-	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:71)
-	at org.eclipse.e4.ui.workbench.renderers.swt.TrimBarRenderer.processContents(TrimBarRenderer.java:109)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:673)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:765)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:730)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:714)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.subscribeTopicToBeRendered(PartRenderingEngine.java:161)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
-	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:58)
-	at org.eclipse.e4.core.di.internal.extensions.EventObjectSupplier$DIEventHandler.handleEvent(EventObjectSupplier.java:92)
-	at org.eclipse.equinox.internal.event.EventHandlerWrapper.handleEvent(EventHandlerWrapper.java:205)
-	at org.eclipse.equinox.internal.event.EventHandlerTracker.dispatchEvent(EventHandlerTracker.java:203)
-	at org.eclipse.equinox.internal.event.EventHandlerTracker.dispatchEvent(EventHandlerTracker.java:1)
-	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
-	at org.eclipse.osgi.framework.eventmgr.ListenerQueue.dispatchEventSynchronous(ListenerQueue.java:151)
-	at org.eclipse.equinox.internal.event.EventAdminImpl.dispatchEvent(EventAdminImpl.java:133)
-	at org.eclipse.equinox.internal.event.EventAdminImpl.sendEvent(EventAdminImpl.java:75)
-	at org.eclipse.equinox.internal.event.EventComponent.sendEvent(EventComponent.java:44)
-	at org.eclipse.e4.ui.services.internal.events.EventBroker.send(EventBroker.java:55)
-	at org.eclipse.e4.ui.internal.workbench.UIEventPublisher.notifyChanged(UIEventPublisher.java:63)
-	at org.eclipse.emf.common.notify.impl.BasicNotifierImpl.eNotify(BasicNotifierImpl.java:424)
-	at org.eclipse.e4.ui.model.application.ui.impl.UIElementImpl.setToBeRendered(UIElementImpl.java:314)
-	at org.eclipse.ui.internal.CoolBarToTrimManager.update(CoolBarToTrimManager.java:612)
-	at org.eclipse.ui.internal.WorkbenchWindow.updateActionBars(WorkbenchWindow.java:2491)
-	at org.eclipse.ui.internal.WorkbenchWindow.largeUpdateEnd(WorkbenchWindow.java:2544)
-	at org.eclipse.ui.internal.Workbench.largeUpdateEnd(Workbench.java:3293)
-	at org.eclipse.ui.internal.WorkbenchWindow.fillActionBars(WorkbenchWindow.java:2737)
-	at org.eclipse.ui.internal.WorkbenchWindow.setup(WorkbenchWindow.java:831)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
-	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:58)
-	at org.eclipse.e4.core.internal.di.InjectorImpl.processAnnotated(InjectorImpl.java:999)
-	at org.eclipse.e4.core.internal.di.InjectorImpl.internalInject(InjectorImpl.java:140)
-	at org.eclipse.e4.core.internal.di.InjectorImpl.inject(InjectorImpl.java:96)
-	at org.eclipse.e4.core.contexts.ContextInjectionFactory.inject(ContextInjectionFactory.java:83)
-	at org.eclipse.ui.internal.Workbench.createWorkbenchWindow(Workbench.java:1469)
-	at org.eclipse.ui.internal.Workbench.openWorkbenchWindow(Workbench.java:2472)
-	at org.eclipse.ui.internal.Workbench.getWorkbenchPage(Workbench.java:1943)
-	at org.eclipse.ui.internal.Workbench.setReference(Workbench.java:1988)
-	at org.eclipse.ui.internal.Workbench.lambda$10(Workbench.java:1879)
-	at org.eclipse.e4.ui.services.internal.events.UIEventHandler.lambda$0(UIEventHandler.java:38)
-	at org.eclipse.swt.widgets.Synchronizer.syncExec(Synchronizer.java:236)
-	at org.eclipse.ui.internal.UISynchronizer.syncExec(UISynchronizer.java:133)
-	at org.eclipse.swt.widgets.Display.syncExec(Display.java:4742)
-	at org.eclipse.e4.ui.workbench.swt.DisplayUISynchronize.syncExec(DisplayUISynchronize.java:34)
-	at org.eclipse.e4.ui.services.internal.events.UIEventHandler.handleEvent(UIEventHandler.java:38)
-	at org.eclipse.equinox.internal.event.EventHandlerWrapper.handleEvent(EventHandlerWrapper.java:205)
-	at org.eclipse.equinox.internal.event.EventHandlerTracker.dispatchEvent(EventHandlerTracker.java:203)
-	at org.eclipse.equinox.internal.event.EventHandlerTracker.dispatchEvent(EventHandlerTracker.java:1)
-	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
-	at org.eclipse.osgi.framework.eventmgr.ListenerQueue.dispatchEventSynchronous(ListenerQueue.java:151)
-	at org.eclipse.equinox.internal.event.EventAdminImpl.dispatchEvent(EventAdminImpl.java:133)
-	at org.eclipse.equinox.internal.event.EventAdminImpl.sendEvent(EventAdminImpl.java:75)
-	at org.eclipse.equinox.internal.event.EventComponent.sendEvent(EventComponent.java:44)
-	at org.eclipse.e4.ui.services.internal.events.EventBroker.send(EventBroker.java:55)
-	at org.eclipse.e4.ui.internal.workbench.UIEventPublisher.notifyChanged(UIEventPublisher.java:63)
-	at org.eclipse.emf.common.notify.impl.BasicNotifierImpl.eNotify(BasicNotifierImpl.java:424)
-	at org.eclipse.e4.ui.model.application.ui.basic.impl.PartImpl.setContext(PartImpl.java:469)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:634)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$1.run(PartRenderingEngine.java:544)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:528)
-	at org.eclipse.e4.ui.workbench.renderers.swt.ElementReferenceRenderer.createWidget(ElementReferenceRenderer.java:73)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createWidget(PartRenderingEngine.java:999)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:659)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:765)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:730)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:714)
-	at org.eclipse.e4.ui.workbench.renderers.swt.StackRenderer.showTab(StackRenderer.java:1209)
-	at org.eclipse.e4.ui.workbench.renderers.swt.LazyStackRenderer.postProcess(LazyStackRenderer.java:116)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:677)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:765)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:730)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:714)
-	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:71)
-	at org.eclipse.e4.ui.workbench.renderers.swt.SashRenderer.processContents(SashRenderer.java:150)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:673)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:765)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:730)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:714)
-	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:71)
-	at org.eclipse.e4.ui.workbench.renderers.swt.PerspectiveRenderer.processContents(PerspectiveRenderer.java:51)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:673)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:765)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:730)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:714)
-	at org.eclipse.e4.ui.workbench.renderers.swt.PerspectiveStackRenderer.showTab(PerspectiveStackRenderer.java:82)
-	at org.eclipse.e4.ui.workbench.renderers.swt.LazyStackRenderer.postProcess(LazyStackRenderer.java:116)
-	at org.eclipse.e4.ui.workbench.renderers.swt.PerspectiveStackRenderer.postProcess(PerspectiveStackRenderer.java:64)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:677)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:765)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:730)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:714)
-	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:71)
-	at org.eclipse.e4.ui.workbench.renderers.swt.SashRenderer.processContents(SashRenderer.java:150)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:673)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:765)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:730)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:714)
-	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:71)
-	at org.eclipse.e4.ui.workbench.renderers.swt.WBWRenderer.processContents(WBWRenderer.java:666)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:673)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:765)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:730)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:714)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1083)
-	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
-	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
-	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
-	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
-	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
-	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
-	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
-	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
-	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:654)
-	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:591)
-	at org.eclipse.equinox.launcher.Main.run(Main.java:1462)
-
-!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-22 15:05:02.594
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:31:58.636
 !MESSAGE Entering DelegatingStreamConnectionProvider()
 
-!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-22 15:05:02.595
-!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@34c5368d[org.springframework.tooling.boot.ls:1.27.0.202108151936(id=559)]
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:31:58.636
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@60bb563b[org.springframework.tooling.boot.ls:1.27.0.202108151936(id=559)]
 
-!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-22 15:05:02.597
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:31:58.661
 !MESSAGE SpringBootLanguageServer exists!
 
-!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-22 15:05:02.636
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:31:59.046
 !MESSAGE Instantiating ReusableClasspathListenerHandler
 
-!ENTRY org.eclipse.egit.ui 2 0 2021-08-22 15:05:03.615
+!ENTRY org.eclipse.egit.ui 2 0 2021-08-24 23:32:01.691
 !MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
 user global configuration and to define the default location to store repositories: 'C:\Users\Admin'. If this is
 not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
 EGit might behave differently since they see different configuration options.
 This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
 
-!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-22 15:05:06.898
-!MESSAGE Boot LS startup time from start to initialized: 4289ms
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:32:05.127
+!MESSAGE Boot LS startup time from start to initialized: 6449ms
 
-!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-22 15:05:07.293
-!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.OPUwQRYfisBatched = true
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:32:06.797
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.DGCqmXCsisBatched = true
 
-!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-22 15:05:07.297
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:32:06.801
 !MESSAGE Setting up ClasspathListenerManager
 
-!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-22 15:05:07.299
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:32:06.804
 !MESSAGE Scheduling initial event for all projects ...
 
-!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-22 15:05:07.300
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:32:06.805
 !MESSAGE Scheduling initial event for all projects DONE
 
-!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-22 15:05:07.300
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:32:06.806
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.DGCqmXCs => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:32:06.808
 !MESSAGE exists = true open = true => deleted = false
 
-!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-22 15:05:07.301
-!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.OPUwQRYf => OK
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:32:06.817
+!MESSAGE classpath=96 entries
 
-!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-22 15:05:07.392
-!MESSAGE classpath=83 entries
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:32:06.821
+!MESSAGE buffering callback sts4.classpath.DGCqmXCs Testing_Assignment_8.4 false 96
 
-!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-22 15:05:07.395
-!MESSAGE buffering callback sts4.classpath.OPUwQRYf Testing_Assignment_7 false 83
-
-!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-22 15:05:07.404
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:32:06.822
 !MESSAGE exists = true open = true => deleted = false
 
-!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-22 15:05:07.406
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:32:06.822
 !MESSAGE classpath=2 entries
 
-!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-22 15:05:07.407
-!MESSAGE buffering callback sts4.classpath.OPUwQRYf Testing_Assignment_1 false 2
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:32:06.823
+!MESSAGE buffering callback sts4.classpath.DGCqmXCs DemoDI&IoC false 2
 
-!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-22 15:05:07.408
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:32:06.824
 !MESSAGE exists = true open = true => deleted = false
 
-!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-22 15:05:07.412
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:32:06.826
+!MESSAGE classpath=27 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:32:06.827
+!MESSAGE buffering callback sts4.classpath.DGCqmXCs Testing_Assignment_4 false 27
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:32:06.828
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:32:06.842
 !MESSAGE classpath=24 entries
 
-!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-22 15:05:07.415
-!MESSAGE buffering callback sts4.classpath.OPUwQRYf Testing_Assignment_4 false 24
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:32:06.843
+!MESSAGE buffering callback sts4.classpath.DGCqmXCs Testing_Assignment_5 false 24
 
-!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-22 15:05:07.416
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:32:06.843
 !MESSAGE exists = true open = true => deleted = false
 
-!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-22 15:05:07.419
-!MESSAGE classpath=24 entries
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:32:06.849
+!MESSAGE classpath=84 entries
 
-!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-22 15:05:07.420
-!MESSAGE buffering callback sts4.classpath.OPUwQRYf Testing_Assignment_5 false 24
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:32:06.852
+!MESSAGE buffering callback sts4.classpath.DGCqmXCs Testing_Assignment_6 false 84
 
-!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-22 15:05:07.421
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:32:06.853
 !MESSAGE exists = true open = true => deleted = false
 
-!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-22 15:05:07.426
-!MESSAGE classpath=83 entries
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:32:06.858
+!MESSAGE classpath=84 entries
 
-!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-22 15:05:07.433
-!MESSAGE buffering callback sts4.classpath.OPUwQRYf Testing_Assignment_6 false 83
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:32:06.861
+!MESSAGE buffering callback sts4.classpath.DGCqmXCs Testing_Assignment_7 false 84
 
-!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-22 15:05:07.434
-!MESSAGE executing callback sts4.classpath.OPUwQRYf 5 batched events
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:32:06.862
+!MESSAGE exists = true open = true => deleted = false
 
-!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-22 15:05:08.050
-!MESSAGE executing callback sts4.classpath.OPUwQRYf SUCCESS [done]
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:32:06.867
+!MESSAGE classpath=95 entries
 
-!ENTRY org.eclipse.ui 2 2 2021-08-22 15:06:43.445
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:32:06.871
+!MESSAGE buffering callback sts4.classpath.DGCqmXCs Testing_Assignment_8.1 false 95
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:32:06.871
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:32:06.877
+!MESSAGE classpath=96 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:32:06.881
+!MESSAGE buffering callback sts4.classpath.DGCqmXCs Testing_Assignment_8.2 false 96
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:32:06.881
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:32:06.887
+!MESSAGE classpath=96 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:32:06.891
+!MESSAGE buffering callback sts4.classpath.DGCqmXCs Testing_Assignment_8.3 false 96
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:32:06.891
+!MESSAGE executing callback sts4.classpath.DGCqmXCs 9 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:32:08.913
+!MESSAGE executing callback sts4.classpath.DGCqmXCs FAILED
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 4 0 2021-08-24 23:32:08.913
+!MESSAGE 
+!STACK 0
+java.util.concurrent.TimeoutException
+	at java.base/java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1956)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2091)
+	at org.springframework.tooling.ls.eclipse.commons.LSP4ECommandExecutor.executeClientCommand(LSP4ECommandExecutor.java:37)
+	at org.springframework.tooling.jdt.ls.commons.classpath.SendClasspathNotificationsJob.flush(SendClasspathNotificationsJob.java:178)
+	at org.springframework.tooling.jdt.ls.commons.classpath.SendClasspathNotificationsJob.run(SendClasspathNotificationsJob.java:149)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:32:08.915
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:32:08.917
+!MESSAGE classpath=27 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:32:08.920
+!MESSAGE buffering callback sts4.classpath.DGCqmXCs Testing_Assignment_4 false 27
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:32:08.921
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:32:08.927
+!MESSAGE classpath=96 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:32:08.931
+!MESSAGE buffering callback sts4.classpath.DGCqmXCs Testing_Assignment_8.4 false 96
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:32:08.932
+!MESSAGE executing callback sts4.classpath.DGCqmXCs 2 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:32:09.004
+!MESSAGE executing callback sts4.classpath.DGCqmXCs SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:32:09.459
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:32:09.461
+!MESSAGE classpath=27 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:32:09.462
+!MESSAGE buffering callback sts4.classpath.DGCqmXCs Testing_Assignment_4 false 27
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:32:09.463
+!MESSAGE executing callback sts4.classpath.DGCqmXCs 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:32:09.527
+!MESSAGE executing callback sts4.classpath.DGCqmXCs SUCCESS [done]
+
+!ENTRY org.eclipse.ui 2 2 2021-08-24 23:33:40.466
 !MESSAGE Invalid property category path: org.springframework.ide.eclipse.beans.ui.properties.ProjectPropertyPage (bundle: org.springframework.ide.eclipse.xml.namespaces, propertyPage: org.springframework.ide.eclipse.beans.ui.namespaces.projectPropertyPage)
 
-!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-22 15:07:00.616
-!MESSAGE exists = true open = true => deleted = false
+!ENTRY org.eclipse.lsp4e 2 0 2021-08-24 23:40:22.323
+!MESSAGE Javadoc unavailable. Failed to obtain it.
+!STACK 0
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:385)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2092)
+	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:70)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
 
-!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-22 15:07:00.620
-!MESSAGE classpath=83 entries
+!ENTRY org.eclipse.lsp4e 2 0 2021-08-24 23:48:13.667
+!MESSAGE Javadoc unavailable. Failed to obtain it.
+!STACK 0
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:385)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2092)
+	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:70)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
 
-!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-22 15:07:00.624
-!MESSAGE buffering callback sts4.classpath.OPUwQRYf Testing_Assignment_7 false 83
+!ENTRY org.eclipse.lsp4e 2 0 2021-08-24 23:52:57.785
+!MESSAGE Javadoc unavailable. Failed to obtain it.
+!STACK 0
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:385)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2092)
+	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:70)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
 
-!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-22 15:07:00.624
-!MESSAGE executing callback sts4.classpath.OPUwQRYf 1 batched events
+!ENTRY org.eclipse.jface 2 0 2021-08-24 23:54:32.484
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2021-08-24 23:54:32.484
+!MESSAGE A conflict occurred for CTRL+SHIFT+C:
+Binding(CTRL+SHIFT+C,
+	ParameterizedCommand(Command(org.eclipse.tm4e.languageconfiguration.togglelinecommentcommand,Toggle Line Comment,
+		,
+		Category(org.eclipse.tm4e.languageconfiguration.category,TM4E Language Configuration,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@3ac4f33c,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+Binding(CTRL+SHIFT+C,
+	ParameterizedCommand(Command(org.springframework.tooling.boot.ls.ToggleComment,Toggle Comment,
+		,
+		Category(org.springframework.ide.eclipse.commands,Spring Generic Text Editor,Spring Language Server Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@362a009,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
 
-!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-22 15:07:00.651
-!MESSAGE executing callback sts4.classpath.OPUwQRYf SUCCESS [done]
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:56:21.088
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.DGCqmXCs
 
-!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-22 15:07:32.154
-!MESSAGE exists = true open = true => deleted = false
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:56:21.089
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.DGCqmXCs
 
-!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-22 15:07:32.157
-!MESSAGE classpath=83 entries
-
-!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-22 15:07:32.160
-!MESSAGE buffering callback sts4.classpath.OPUwQRYf Testing_Assignment_7 false 83
-
-!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-22 15:07:32.160
-!MESSAGE executing callback sts4.classpath.OPUwQRYf 1 batched events
-
-!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-22 15:07:32.175
-!MESSAGE executing callback sts4.classpath.OPUwQRYf SUCCESS [done]
-
-!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-22 15:08:03.031
-!MESSAGE exists = true open = true => deleted = false
-
-!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-22 15:08:03.044
-!MESSAGE classpath=83 entries
-
-!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-22 15:08:03.046
-!MESSAGE buffering callback sts4.classpath.OPUwQRYf Testing_Assignment_7 false 83
-
-!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-22 15:08:03.048
-!MESSAGE executing callback sts4.classpath.OPUwQRYf 1 batched events
-
-!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-22 15:08:03.067
-!MESSAGE executing callback sts4.classpath.OPUwQRYf SUCCESS [done]
-
-!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-22 15:09:11.134
-!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.OPUwQRYf
-
-!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-22 15:09:11.135
-!MESSAGE unsubscribing from classpath changes: sts4.classpath.OPUwQRYf
-
-!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-22 15:09:11.135
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:56:21.089
 !MESSAGE subsribers = {}
 
-!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-22 15:09:11.135
-!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.OPUwQRYf => OK
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:56:21.090
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.DGCqmXCs => OK
 
-!ENTRY org.eclipse.m2e.core 4 -1 2021-08-22 15:09:12.939
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:56:23.378
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:56:23.378
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@60bb563b[org.springframework.tooling.boot.ls:1.27.0.202108151936(id=559)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:56:23.379
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:56:25.163
+!MESSAGE Boot LS startup time from start to initialized: 1783ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:56:25.235
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.eQoIsrrwisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:56:25.236
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:56:25.236
+!MESSAGE Scheduling initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:56:25.237
+!MESSAGE Scheduling initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:56:25.237
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:56:25.237
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.eQoIsrrw => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:56:25.240
+!MESSAGE classpath=96 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:56:25.243
+!MESSAGE buffering callback sts4.classpath.eQoIsrrw Testing_Assignment_8.4 false 96
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:56:25.243
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:56:25.244
+!MESSAGE classpath=2 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:56:25.244
+!MESSAGE buffering callback sts4.classpath.eQoIsrrw DemoDI&IoC false 2
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:56:25.244
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:56:25.246
+!MESSAGE classpath=27 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:56:25.247
+!MESSAGE buffering callback sts4.classpath.eQoIsrrw Testing_Assignment_4 false 27
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:56:25.247
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:56:25.248
+!MESSAGE classpath=24 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:56:25.249
+!MESSAGE buffering callback sts4.classpath.eQoIsrrw Testing_Assignment_5 false 24
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:56:25.249
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:56:25.251
+!MESSAGE classpath=84 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:56:25.253
+!MESSAGE buffering callback sts4.classpath.eQoIsrrw Testing_Assignment_6 false 84
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:56:25.253
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:56:25.255
+!MESSAGE classpath=84 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:56:25.257
+!MESSAGE buffering callback sts4.classpath.eQoIsrrw Testing_Assignment_7 false 84
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:56:25.257
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:56:25.260
+!MESSAGE classpath=95 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:56:25.261
+!MESSAGE buffering callback sts4.classpath.eQoIsrrw Testing_Assignment_8.1 false 95
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:56:25.262
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:56:25.264
+!MESSAGE classpath=96 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:56:25.266
+!MESSAGE buffering callback sts4.classpath.eQoIsrrw Testing_Assignment_8.2 false 96
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:56:25.266
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:56:25.269
+!MESSAGE classpath=96 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:56:25.271
+!MESSAGE buffering callback sts4.classpath.eQoIsrrw Testing_Assignment_8.3 false 96
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:56:25.271
+!MESSAGE executing callback sts4.classpath.eQoIsrrw 9 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-24 23:56:25.670
+!MESSAGE executing callback sts4.classpath.eQoIsrrw SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-25 00:00:40.472
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-25 00:00:40.477
+!MESSAGE classpath=92 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-25 00:00:40.490
+!MESSAGE buffering callback sts4.classpath.eQoIsrrw Testing_Assignment_8.4 false 92
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-25 00:00:40.491
+!MESSAGE executing callback sts4.classpath.eQoIsrrw 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-25 00:00:40.558
+!MESSAGE executing callback sts4.classpath.eQoIsrrw SUCCESS [done]
+
+!ENTRY org.eclipse.lsp4e 2 0 2021-08-25 00:01:10.965
+!MESSAGE Javadoc unavailable. Failed to obtain it.
+!STACK 0
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:385)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2092)
+	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:70)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-25 00:11:09.784
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.eQoIsrrw
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-25 00:11:09.787
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.eQoIsrrw
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-25 00:11:09.787
+!MESSAGE subsribers = {}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-25 00:11:09.787
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.eQoIsrrw => OK
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2021-08-25 00:11:10.762
+!MESSAGE Could not lookup required component
+!STACK 1
+org.eclipse.core.runtime.CoreException: Could not lookup required component
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.lookup(MavenImpl.java:1294)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.isUnavailable(MavenImpl.java:856)
+	at org.eclipse.m2e.jdt.internal.BuildPathManager.isUnavailable(BuildPathManager.java:353)
+	at org.eclipse.m2e.jdt.internal.BuildPathManager.getAttachedSourcesAndJavadoc(BuildPathManager.java:937)
+	at org.eclipse.m2e.jdt.internal.BuildPathManager.scheduleDownload(BuildPathManager.java:915)
+	at org.eclipse.m2e.jdt.internal.BuildPathManager.configureAttachedSourcesAndJavadoc(BuildPathManager.java:343)
+	at org.eclipse.m2e.jdt.internal.BuildPathManager.getClasspath(BuildPathManager.java:270)
+	at org.eclipse.m2e.jdt.internal.BuildPathManager.getClasspath(BuildPathManager.java:413)
+	at org.eclipse.m2e.jdt.internal.BuildPathManager.getClasspath(BuildPathManager.java:393)
+	at org.eclipse.m2e.jdt.internal.BuildPathManager.getClasspath(BuildPathManager.java:421)
+	at org.eclipse.m2e.jdt.internal.BuildPathManager.updateClasspath(BuildPathManager.java:206)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.updateClasspath(DownloadSourcesJob.java:207)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.run(DownloadSourcesJob.java:185)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: org.codehaus.plexus.component.repository.exception.ComponentLookupException: java.util.NoSuchElementException
+      role: org.apache.maven.repository.RepositorySystem
+  roleHint: 
+	at org.codehaus.plexus.DefaultPlexusContainer.lookup(DefaultPlexusContainer.java:267)
+	at org.codehaus.plexus.DefaultPlexusContainer.lookup(DefaultPlexusContainer.java:255)
+	at org.codehaus.plexus.DefaultPlexusContainer.lookup(DefaultPlexusContainer.java:249)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.lookup(MavenImpl.java:1292)
+	... 13 more
+Caused by: java.util.NoSuchElementException
+	at java.base/java.util.Collections$EmptyIterator.next(Collections.java:4277)
+	at org.codehaus.plexus.DefaultPlexusContainer.lookup(DefaultPlexusContainer.java:263)
+	... 16 more
+!SUBENTRY 1 org.eclipse.m2e.core 4 -1 2021-08-25 00:11:10.762
+!MESSAGE Could not lookup required component
+!STACK 0
+org.codehaus.plexus.component.repository.exception.ComponentLookupException: java.util.NoSuchElementException
+      role: org.apache.maven.repository.RepositorySystem
+  roleHint: 
+	at org.codehaus.plexus.DefaultPlexusContainer.lookup(DefaultPlexusContainer.java:267)
+	at org.codehaus.plexus.DefaultPlexusContainer.lookup(DefaultPlexusContainer.java:255)
+	at org.codehaus.plexus.DefaultPlexusContainer.lookup(DefaultPlexusContainer.java:249)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.lookup(MavenImpl.java:1292)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.isUnavailable(MavenImpl.java:856)
+	at org.eclipse.m2e.jdt.internal.BuildPathManager.isUnavailable(BuildPathManager.java:353)
+	at org.eclipse.m2e.jdt.internal.BuildPathManager.getAttachedSourcesAndJavadoc(BuildPathManager.java:937)
+	at org.eclipse.m2e.jdt.internal.BuildPathManager.scheduleDownload(BuildPathManager.java:915)
+	at org.eclipse.m2e.jdt.internal.BuildPathManager.configureAttachedSourcesAndJavadoc(BuildPathManager.java:343)
+	at org.eclipse.m2e.jdt.internal.BuildPathManager.getClasspath(BuildPathManager.java:270)
+	at org.eclipse.m2e.jdt.internal.BuildPathManager.getClasspath(BuildPathManager.java:413)
+	at org.eclipse.m2e.jdt.internal.BuildPathManager.getClasspath(BuildPathManager.java:393)
+	at org.eclipse.m2e.jdt.internal.BuildPathManager.getClasspath(BuildPathManager.java:421)
+	at org.eclipse.m2e.jdt.internal.BuildPathManager.updateClasspath(BuildPathManager.java:206)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.updateClasspath(DownloadSourcesJob.java:207)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.run(DownloadSourcesJob.java:185)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.util.NoSuchElementException
+	at java.base/java.util.Collections$EmptyIterator.next(Collections.java:4277)
+	at org.codehaus.plexus.DefaultPlexusContainer.lookup(DefaultPlexusContainer.java:263)
+	... 16 more
+
+!ENTRY org.eclipse.core.jobs 4 2 2021-08-25 00:11:10.764
+!MESSAGE An internal error occurred during: "Download sources and javadoc".
+!STACK 0
+java.lang.NullPointerException: Cannot invoke "org.eclipse.m2e.core.internal.MavenPluginActivator.getMavenProjectManager()" because the return value of "org.eclipse.m2e.core.internal.MavenPluginActivator.getDefault()" is null
+	at org.eclipse.m2e.core.MavenPlugin.getMavenProjectRegistry(MavenPlugin.java:50)
+	at org.eclipse.m2e.jdt.internal.ModuleSupport.getModuleInfo(ModuleSupport.java:205)
+	at org.eclipse.m2e.jdt.internal.ModuleSupport.configureClasspath(ModuleSupport.java:108)
+	at org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator.configureClasspath(AbstractJavaProjectConfigurator.java:800)
+	at org.eclipse.m2e.jdt.internal.DefaultClasspathManagerDelegate.populateClasspath(DefaultClasspathManagerDelegate.java:67)
+	at org.eclipse.m2e.jdt.internal.BuildPathManager.getClasspath(BuildPathManager.java:268)
+	at org.eclipse.m2e.jdt.internal.BuildPathManager.getClasspath(BuildPathManager.java:413)
+	at org.eclipse.m2e.jdt.internal.BuildPathManager.getClasspath(BuildPathManager.java:393)
+	at org.eclipse.m2e.jdt.internal.BuildPathManager.getClasspath(BuildPathManager.java:421)
+	at org.eclipse.m2e.jdt.internal.BuildPathManager.updateClasspath(BuildPathManager.java:206)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.updateClasspath(DownloadSourcesJob.java:207)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.run(DownloadSourcesJob.java:185)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.m2e.core 4 -1 2021-08-25 00:11:11.765
 !MESSAGE Could not lookup required component
 !STACK 0
 org.codehaus.plexus.component.repository.exception.ComponentLookupException: java.util.NoSuchElementException
@@ -355,29 +505,23 @@ Caused by: java.util.NoSuchElementException
 	at java.base/java.util.Collections$EmptyIterator.next(Collections.java:4277)
 	at org.codehaus.plexus.DefaultPlexusContainer.lookup(DefaultPlexusContainer.java:263)
 	... 10 more
-
-!ENTRY org.eclipse.core.resources 2 10035 2021-08-22 15:09:13.514
-!MESSAGE The workspace will exit with unsaved changes in this session.
-!SESSION 2021-08-22 15:09:13.708 -----------------------------------------------
+!SESSION 2021-08-25 08:49:10.266 -----------------------------------------------
 eclipse.buildId=4.11.1.202108151956
 java.version=16.0.2
 java.vendor=Oracle Corporation
 BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
-Framework arguments:  -product org.springframework.boot.ide.branding.sts4 -product org.springframework.boot.ide.branding.sts4 -product org.springframework.boot.ide.branding.sts4
-Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.springframework.boot.ide.branding.sts4 -product org.springframework.boot.ide.branding.sts4 -data file:/D:/Rocket_16/Java_Advanced/ -product org.springframework.boot.ide.branding.sts4
+Framework arguments:  -product org.springframework.boot.ide.branding.sts4
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.springframework.boot.ide.branding.sts4
 
-!ENTRY org.eclipse.core.resources 2 10035 2021-08-22 15:09:14.896
-!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
-
-!ENTRY org.eclipse.jface 2 0 2021-08-22 15:09:16.271
+!ENTRY org.eclipse.jface 2 0 2021-08-25 08:49:23.177
 !MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
-!SUBENTRY 1 org.eclipse.jface 2 0 2021-08-22 15:09:16.271
+!SUBENTRY 1 org.eclipse.jface 2 0 2021-08-25 08:49:23.177
 !MESSAGE A conflict occurred for CTRL+SHIFT+T:
 Binding(CTRL+SHIFT+T,
 	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
 		Open a type in a Java editor,
 		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@6ba08a09,
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@402feb85,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.contexts.window,,,system)
@@ -385,12 +529,12 @@ Binding(CTRL+SHIFT+T,
 	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
 		,
 		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@568c9ee1,
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@14d53884,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.contexts.window,,,system)
 
-!ENTRY org.eclipse.core.runtime 4 0 2021-08-22 15:09:16.802
+!ENTRY org.eclipse.core.runtime 4 0 2021-08-25 08:49:24.009
 !MESSAGE Invalid input url:platform:/plugin/org.eclipse.jst.j2ee.ui/icons/full/cview16/j2ee_perspective.gif
 !STACK 0
 java.io.IOException: Unable to resolve plug-in "org.eclipse.jst.j2ee.ui".
@@ -516,6 +660,13 @@ java.io.IOException: Unable to resolve plug-in "org.eclipse.jst.j2ee.ui".
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
 	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:714)
 	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:71)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SashRenderer.processContents(SashRenderer.java:150)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:673)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:765)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:730)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:714)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:71)
 	at org.eclipse.e4.ui.workbench.renderers.swt.PerspectiveRenderer.processContents(PerspectiveRenderer.java:51)
 	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:673)
 	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:765)
@@ -566,7 +717,7 @@ java.io.IOException: Unable to resolve plug-in "org.eclipse.jst.j2ee.ui".
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:591)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1462)
 
-!ENTRY org.eclipse.jface 4 0 2021-08-22 15:09:16.802
+!ENTRY org.eclipse.jface 4 0 2021-08-25 08:49:24.016
 !MESSAGE Unable to resolve plug-in "org.eclipse.jst.j2ee.ui".
 !STACK 0
 java.io.IOException: Unable to resolve plug-in "org.eclipse.jst.j2ee.ui".
@@ -696,6 +847,13 @@ java.io.IOException: Unable to resolve plug-in "org.eclipse.jst.j2ee.ui".
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
 	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:714)
 	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:71)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SashRenderer.processContents(SashRenderer.java:150)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:673)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:765)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:730)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:714)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:71)
 	at org.eclipse.e4.ui.workbench.renderers.swt.PerspectiveRenderer.processContents(PerspectiveRenderer.java:51)
 	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:673)
 	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:765)
@@ -746,7 +904,7 @@ java.io.IOException: Unable to resolve plug-in "org.eclipse.jst.j2ee.ui".
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:591)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1462)
 
-!ENTRY org.eclipse.core.runtime 4 0 2021-08-22 15:09:16.802
+!ENTRY org.eclipse.core.runtime 4 0 2021-08-25 08:49:24.016
 !MESSAGE Invalid input url:platform:/plugin/org.eclipse.jst.j2ee.ui/icons/full/cview16/j2ee_perspective.gif
 !STACK 0
 java.io.IOException: Unable to resolve plug-in "org.eclipse.jst.j2ee.ui".
@@ -873,6 +1031,13 @@ java.io.IOException: Unable to resolve plug-in "org.eclipse.jst.j2ee.ui".
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
 	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:714)
 	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:71)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SashRenderer.processContents(SashRenderer.java:150)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:673)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:765)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:730)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:714)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:71)
 	at org.eclipse.e4.ui.workbench.renderers.swt.PerspectiveRenderer.processContents(PerspectiveRenderer.java:51)
 	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:673)
 	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:765)
@@ -923,7 +1088,7 @@ java.io.IOException: Unable to resolve plug-in "org.eclipse.jst.j2ee.ui".
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:591)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1462)
 
-!ENTRY org.eclipse.core.runtime 4 0 2021-08-22 15:09:16.818
+!ENTRY org.eclipse.core.runtime 4 0 2021-08-25 08:49:24.026
 !MESSAGE Invalid input url:platform:/plugin/org.eclipse.jpt.jpa.ui/$nl$/images/views/jpa-perspective.gif
 !STACK 0
 java.io.IOException: Unable to resolve plug-in "org.eclipse.jpt.jpa.ui".
@@ -1049,6 +1214,13 @@ java.io.IOException: Unable to resolve plug-in "org.eclipse.jpt.jpa.ui".
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
 	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:714)
 	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:71)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SashRenderer.processContents(SashRenderer.java:150)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:673)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:765)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:730)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:714)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:71)
 	at org.eclipse.e4.ui.workbench.renderers.swt.PerspectiveRenderer.processContents(PerspectiveRenderer.java:51)
 	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:673)
 	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:765)
@@ -1099,7 +1271,7 @@ java.io.IOException: Unable to resolve plug-in "org.eclipse.jpt.jpa.ui".
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:591)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1462)
 
-!ENTRY org.eclipse.jface 4 0 2021-08-22 15:09:16.820
+!ENTRY org.eclipse.jface 4 0 2021-08-25 08:49:24.026
 !MESSAGE Unable to resolve plug-in "org.eclipse.jpt.jpa.ui".
 !STACK 0
 java.io.IOException: Unable to resolve plug-in "org.eclipse.jpt.jpa.ui".
@@ -1229,6 +1401,13 @@ java.io.IOException: Unable to resolve plug-in "org.eclipse.jpt.jpa.ui".
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
 	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:714)
 	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:71)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SashRenderer.processContents(SashRenderer.java:150)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:673)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:765)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:730)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:714)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:71)
 	at org.eclipse.e4.ui.workbench.renderers.swt.PerspectiveRenderer.processContents(PerspectiveRenderer.java:51)
 	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:673)
 	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:765)
@@ -1279,7 +1458,7 @@ java.io.IOException: Unable to resolve plug-in "org.eclipse.jpt.jpa.ui".
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:591)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1462)
 
-!ENTRY org.eclipse.core.runtime 4 0 2021-08-22 15:09:16.821
+!ENTRY org.eclipse.core.runtime 4 0 2021-08-25 08:49:24.026
 !MESSAGE Invalid input url:platform:/plugin/org.eclipse.jpt.jpa.ui/$nl$/images/views/jpa-perspective.gif
 !STACK 0
 java.io.IOException: Unable to resolve plug-in "org.eclipse.jpt.jpa.ui".
@@ -1406,6 +1585,13 @@ java.io.IOException: Unable to resolve plug-in "org.eclipse.jpt.jpa.ui".
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
 	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:714)
 	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:71)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SashRenderer.processContents(SashRenderer.java:150)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:673)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:765)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:730)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:714)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:71)
 	at org.eclipse.e4.ui.workbench.renderers.swt.PerspectiveRenderer.processContents(PerspectiveRenderer.java:51)
 	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:673)
 	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:765)
@@ -1456,93 +1642,211 @@ java.io.IOException: Unable to resolve plug-in "org.eclipse.jpt.jpa.ui".
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:591)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1462)
 
-!ENTRY org.eclipse.egit.ui 2 0 2021-08-22 15:09:19.638
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-25 08:49:31.521
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-25 08:49:31.521
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@42fe2a6[org.springframework.tooling.boot.ls:1.27.0.202108151936(id=559)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-25 08:49:31.528
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-25 08:49:31.697
+!MESSAGE Instantiating ReusableClasspathListenerHandler
+
+!ENTRY org.eclipse.egit.ui 2 0 2021-08-25 08:49:34.129
 !MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
 user global configuration and to define the default location to store repositories: 'C:\Users\Admin'. If this is
 not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
 EGit might behave differently since they see different configuration options.
 This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
 
-!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-22 15:09:32.042
-!MESSAGE Entering DelegatingStreamConnectionProvider()
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-25 08:49:34.889
+!MESSAGE Boot LS startup time from start to initialized: 3352ms
 
-!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-22 15:09:32.043
-!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@2d492d46[org.springframework.tooling.boot.ls:1.27.0.202108151936(id=559)]
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-25 08:49:36.078
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.vYWLHsaNisBatched = true
 
-!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-22 15:09:32.045
-!MESSAGE SpringBootLanguageServer exists!
-
-!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-22 15:09:32.067
-!MESSAGE Instantiating ReusableClasspathListenerHandler
-
-!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-22 15:09:33.709
-!MESSAGE Boot LS startup time from start to initialized: 1655ms
-
-!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-22 15:09:33.836
-!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.dRJEdNBZisBatched = true
-
-!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-22 15:09:33.838
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-25 08:49:36.082
 !MESSAGE Setting up ClasspathListenerManager
 
-!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-22 15:09:33.840
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-25 08:49:36.087
 !MESSAGE Scheduling initial event for all projects ...
 
-!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-22 15:09:33.841
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-25 08:49:36.088
 !MESSAGE Scheduling initial event for all projects DONE
 
-!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-22 15:09:33.841
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-25 08:49:36.089
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.vYWLHsaN => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-25 08:49:36.089
 !MESSAGE exists = true open = true => deleted = false
 
-!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-22 15:09:33.841
-!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.dRJEdNBZ => OK
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-25 08:49:36.124
+!MESSAGE classpath=92 entries
 
-!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-22 15:09:33.847
-!MESSAGE classpath=83 entries
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-25 08:49:36.128
+!MESSAGE buffering callback sts4.classpath.vYWLHsaN Testing_Assignment_8.4 false 92
 
-!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-22 15:09:33.850
-!MESSAGE buffering callback sts4.classpath.dRJEdNBZ Testing_Assignment_7 false 83
-
-!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-22 15:09:33.851
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-25 08:49:36.129
 !MESSAGE exists = true open = true => deleted = false
 
-!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-22 15:09:33.852
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-25 08:49:36.130
 !MESSAGE classpath=2 entries
 
-!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-22 15:09:33.853
-!MESSAGE buffering callback sts4.classpath.dRJEdNBZ Testing_Assignment_1 false 2
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-25 08:49:36.130
+!MESSAGE buffering callback sts4.classpath.vYWLHsaN DemoDI&IoC false 2
 
-!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-22 15:09:33.853
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-25 08:49:36.131
 !MESSAGE exists = true open = true => deleted = false
 
-!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-22 15:09:33.855
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-25 08:49:36.136
+!MESSAGE classpath=27 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-25 08:49:36.137
+!MESSAGE buffering callback sts4.classpath.vYWLHsaN Testing_Assignment_4 false 27
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-25 08:49:36.138
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-25 08:49:36.140
 !MESSAGE classpath=24 entries
 
-!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-22 15:09:33.856
-!MESSAGE buffering callback sts4.classpath.dRJEdNBZ Testing_Assignment_4 false 24
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-25 08:49:36.141
+!MESSAGE buffering callback sts4.classpath.vYWLHsaN Testing_Assignment_5 false 24
 
-!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-22 15:09:33.857
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-25 08:49:36.141
 !MESSAGE exists = true open = true => deleted = false
 
-!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-22 15:09:33.859
-!MESSAGE classpath=24 entries
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-25 08:49:36.154
+!MESSAGE classpath=84 entries
 
-!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-22 15:09:33.861
-!MESSAGE buffering callback sts4.classpath.dRJEdNBZ Testing_Assignment_5 false 24
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-25 08:49:36.161
+!MESSAGE buffering callback sts4.classpath.vYWLHsaN Testing_Assignment_6 false 84
 
-!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-22 15:09:33.861
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-25 08:49:36.162
 !MESSAGE exists = true open = true => deleted = false
 
-!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-22 15:09:33.865
-!MESSAGE classpath=83 entries
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-25 08:49:36.168
+!MESSAGE classpath=84 entries
 
-!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-22 15:09:33.868
-!MESSAGE buffering callback sts4.classpath.dRJEdNBZ Testing_Assignment_6 false 83
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-25 08:49:36.171
+!MESSAGE buffering callback sts4.classpath.vYWLHsaN Testing_Assignment_7 false 84
 
-!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-22 15:09:33.869
-!MESSAGE executing callback sts4.classpath.dRJEdNBZ 5 batched events
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-25 08:49:36.171
+!MESSAGE exists = true open = true => deleted = false
 
-!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-22 15:09:34.172
-!MESSAGE executing callback sts4.classpath.dRJEdNBZ SUCCESS [done]
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-25 08:49:36.176
+!MESSAGE classpath=95 entries
 
-!ENTRY org.eclipse.ui 2 2 2021-08-22 15:10:01.579
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-25 08:49:36.180
+!MESSAGE buffering callback sts4.classpath.vYWLHsaN Testing_Assignment_8.1 false 95
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-25 08:49:36.181
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-25 08:49:36.185
+!MESSAGE classpath=96 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-25 08:49:36.189
+!MESSAGE buffering callback sts4.classpath.vYWLHsaN Testing_Assignment_8.2 false 96
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-25 08:49:36.190
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-25 08:49:36.203
+!MESSAGE classpath=96 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-25 08:49:36.207
+!MESSAGE buffering callback sts4.classpath.vYWLHsaN Testing_Assignment_8.3 false 96
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-25 08:49:36.207
+!MESSAGE executing callback sts4.classpath.vYWLHsaN 9 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-25 08:49:36.954
+!MESSAGE executing callback sts4.classpath.vYWLHsaN SUCCESS [done]
+
+!ENTRY org.eclipse.ui 2 2 2021-08-25 08:50:08.995
 !MESSAGE Invalid property category path: org.springframework.ide.eclipse.beans.ui.properties.ProjectPropertyPage (bundle: org.springframework.ide.eclipse.xml.namespaces, propertyPage: org.springframework.ide.eclipse.beans.ui.namespaces.projectPropertyPage)
+
+!ENTRY org.eclipse.lsp4e 2 0 2021-08-25 08:56:06.253
+!MESSAGE Timeout waiting for data to generate LS hover
+!STACK 0
+java.util.concurrent.TimeoutException
+	at java.base/java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1956)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2091)
+	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:70)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-25 10:04:05.646
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.vYWLHsaN
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-25 10:04:05.648
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.vYWLHsaN
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-25 10:04:05.649
+!MESSAGE subsribers = {}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-25 10:04:05.650
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.vYWLHsaN => OK
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2021-08-25 10:04:06.765
+!MESSAGE Could not lookup required component
+!STACK 1
+org.eclipse.core.runtime.CoreException: Could not lookup required component
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.lookup(MavenImpl.java:1294)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.isUnavailable(MavenImpl.java:856)
+	at org.eclipse.m2e.jdt.internal.BuildPathManager.isUnavailable(BuildPathManager.java:353)
+	at org.eclipse.m2e.jdt.internal.BuildPathManager.getAttachedSourcesAndJavadoc(BuildPathManager.java:937)
+	at org.eclipse.m2e.jdt.internal.BuildPathManager.scheduleDownload(BuildPathManager.java:915)
+	at org.eclipse.m2e.jdt.internal.BuildPathManager.configureAttachedSourcesAndJavadoc(BuildPathManager.java:343)
+	at org.eclipse.m2e.jdt.internal.BuildPathManager.getClasspath(BuildPathManager.java:270)
+	at org.eclipse.m2e.jdt.internal.BuildPathManager.getClasspath(BuildPathManager.java:413)
+	at org.eclipse.m2e.jdt.internal.BuildPathManager.getClasspath(BuildPathManager.java:393)
+	at org.eclipse.m2e.jdt.internal.BuildPathManager.getClasspath(BuildPathManager.java:421)
+	at org.eclipse.m2e.jdt.internal.BuildPathManager.updateClasspath(BuildPathManager.java:206)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.updateClasspath(DownloadSourcesJob.java:207)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.run(DownloadSourcesJob.java:185)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: org.codehaus.plexus.component.repository.exception.ComponentLookupException: java.util.NoSuchElementException
+      role: org.apache.maven.repository.RepositorySystem
+  roleHint: 
+	at org.codehaus.plexus.DefaultPlexusContainer.lookup(DefaultPlexusContainer.java:267)
+	at org.codehaus.plexus.DefaultPlexusContainer.lookup(DefaultPlexusContainer.java:255)
+	at org.codehaus.plexus.DefaultPlexusContainer.lookup(DefaultPlexusContainer.java:249)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.lookup(MavenImpl.java:1292)
+	... 13 more
+Caused by: java.util.NoSuchElementException
+	at java.base/java.util.Collections$EmptyIterator.next(Collections.java:4277)
+	at org.codehaus.plexus.DefaultPlexusContainer.lookup(DefaultPlexusContainer.java:263)
+	... 16 more
+!SUBENTRY 1 org.eclipse.m2e.core 4 -1 2021-08-25 10:04:06.766
+!MESSAGE Could not lookup required component
+!STACK 0
+org.codehaus.plexus.component.repository.exception.ComponentLookupException: java.util.NoSuchElementException
+      role: org.apache.maven.repository.RepositorySystem
+  roleHint: 
+	at org.codehaus.plexus.DefaultPlexusContainer.lookup(DefaultPlexusContainer.java:267)
+	at org.codehaus.plexus.DefaultPlexusContainer.lookup(DefaultPlexusContainer.java:255)
+	at org.codehaus.plexus.DefaultPlexusContainer.lookup(DefaultPlexusContainer.java:249)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.lookup(MavenImpl.java:1292)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.isUnavailable(MavenImpl.java:856)
+	at org.eclipse.m2e.jdt.internal.BuildPathManager.isUnavailable(BuildPathManager.java:353)
+	at org.eclipse.m2e.jdt.internal.BuildPathManager.getAttachedSourcesAndJavadoc(BuildPathManager.java:937)
+	at org.eclipse.m2e.jdt.internal.BuildPathManager.scheduleDownload(BuildPathManager.java:915)
+	at org.eclipse.m2e.jdt.internal.BuildPathManager.configureAttachedSourcesAndJavadoc(BuildPathManager.java:343)
+	at org.eclipse.m2e.jdt.internal.BuildPathManager.getClasspath(BuildPathManager.java:270)
+	at org.eclipse.m2e.jdt.internal.BuildPathManager.getClasspath(BuildPathManager.java:413)
+	at org.eclipse.m2e.jdt.internal.BuildPathManager.getClasspath(BuildPathManager.java:393)
+	at org.eclipse.m2e.jdt.internal.BuildPathManager.getClasspath(BuildPathManager.java:421)
+	at org.eclipse.m2e.jdt.internal.BuildPathManager.updateClasspath(BuildPathManager.java:206)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.updateClasspath(DownloadSourcesJob.java:207)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.run(DownloadSourcesJob.java:185)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.util.NoSuchElementException
+	at java.base/java.util.Collections$EmptyIterator.next(Collections.java:4277)
+	at org.codehaus.plexus.DefaultPlexusContainer.lookup(DefaultPlexusContainer.java:263)
+	... 16 more
