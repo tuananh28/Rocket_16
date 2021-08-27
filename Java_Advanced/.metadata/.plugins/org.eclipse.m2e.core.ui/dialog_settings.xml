@@ -26,6 +26,7 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
+			<item value="com.vti.entity"/>
 			<item value="com.vti"/>
 			<item value="com.vti.Testing_Assignment_4"/>
 		</list>
@@ -33,6 +34,7 @@
 			<item value="com.vti"/>
 		</list>
 		<list key="artifactId">
+			<item value="Testing_Assignment_9"/>
 			<item value="Testing_Assignment_5"/>
 			<item value="Testing_Assignment_4"/>
 		</list>
@@ -78,5 +80,18 @@
 		</list>
 	</section>
 	<section name="org.eclipse.m2e.core.pom.dependencies">
+	</section>
+	<section name="wizardPage">
+		<list key="groupId">
+			<item value="Testing_Assignment_9"/>
+		</list>
+		<list key="name">
+		</list>
+		<list key="artifactId">
+			<item value="Testing_Assignment_9"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
 	</section>
 </section>

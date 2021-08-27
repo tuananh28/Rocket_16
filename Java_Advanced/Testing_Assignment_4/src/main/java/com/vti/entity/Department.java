@@ -9,45 +9,29 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
 @Table(name = "Department", catalog = "Testing_System_4")
+
 public class Department implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
+	@Getter
+	@Setter
 	@Column(name = "DepartmentID")
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private short id;
 
+	@Getter
+	@Setter
 	@Column(name = "DepartmentName", length = 30, nullable = false, unique = true)
 	private String name;
 
 	public Department() {
-	}
-
-	public short getId() {
-		return id;
-	}
-
-	public void setId(short id) {
-		this.id = id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	/*
-	 * @see java.lang.Object#toString()
-	 */
-	@Override
-	public String toString() {
-		return "Department { " + "ID = " + id + ", Name = '" + name + '\'' + '}';
 	}
 
 }

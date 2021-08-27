@@ -15,8 +15,17 @@ import javax.persistence.TemporalType;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.Formula;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
 @Entity
 @Table(name = "Account", catalog = "Testing_System_4")
+@Getter
+@Setter
+@ToString
+@NoArgsConstructor
 public class Account implements Serializable {
 
 	/**
@@ -47,71 +56,5 @@ public class Account implements Serializable {
 	@Temporal(TemporalType.TIMESTAMP)
 	@CreationTimestamp
 	private Date createDate;
-
-	public Account() {
-		// TODO Auto-generated constructor stub
-	}
-
-	public short getId() {
-		return id;
-	}
-
-	public void setId(short id) {
-		this.id = id;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public String getUserName() {
-		return userName;
-	}
-
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
-
-	public String getFirstName() {
-		return firstName;
-	}
-
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-
-	public String getLastName() {
-		return lastName;
-	}
-
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
-
-	public String getFullName() {
-		return fullName;
-	}
-
-	public void setFullName(String fullName) {
-		this.fullName = fullName;
-	}
-
-	public Date getCreateDate() {
-		return createDate;
-	}
-
-	public void setCreateDate(Date createDate) {
-		this.createDate = createDate;
-	}
-
-	@Override
-	public String toString() {
-		return "Account [id=" + id + ", email=" + email + ", userName=" + userName + ", firstName=" + firstName
-				+ ", lastName=" + lastName + ", fullName=" + fullName + ", createDate=" + createDate + "]";
-	}
-
+	
 }

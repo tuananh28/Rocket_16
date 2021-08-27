@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý nhân viên With AJAX </title>
+
+     <!-- import JQuery -->
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+     <!-- import bootstrap -->
+   <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> 
+    
+     <!-- import css -->
+     <link rel="stylesheet" href="/Source/QLNV.css">
+    
+</head>
+<body>
+    <div class="container">
+        <div class="form">
+            <h3>Quản lý nhân viên</h3>  
+            <form method="POST" id="Main_Form_ID">
+            <div class="form-group">
+               
+                <input type="number" required= "true" class="form-control" id="ID_ID" value="" placeholder=" ">
+                <label class="form-label" >ID</label>
+            </div>
+            <div class="form-group">
+              
+                <input type="email" required= "true" class="form-control" id="Email_ID" value="" placeholder=" ">
+                <label class="form-label">Email </label>
+            </div>
+            <div class="form-group">
+                
+                <input type="text" required= "true" class="form-control" id="Username_ID" value="" placeholder=" ">
+                <label class="form-label">Username </label>
+            </div>
+            <div class="form-group">
+              
+                <input type="text" required= "true" class="form-control" id="Fullname_ID" value="" placeholder=" ">
+                <label class="form-label">Fullname </label>
+            </div>
+            <div class="form-group">
+                <label for="">Select a Department</label>
+                <select class="form-control" id="Department_ID">
+                  <option>--Select a Department--</option>
+                  <option>Accounting</option>
+                  <option>Business Development</option>
+                  <option>Engineering</option>
+                  <option>Human Resources</option>
+                  <option>Research and Development</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="">Select a Position</label>
+                <select class="form-control" id="Position_ID">
+                  <option>--Select a Position--</option>
+                  <option>Developer</option>
+                  <option>Tester</option>
+                  <option>Scrum Master</option>
+                  <option>PM</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="">Cretate Date </label>
+                <input type="date" required= "true" class="form-control" id="Cretate_Date_ID" value="">
+            </div>
+             <div class="form-group">
+                <input type="submit" class="btn btn-success" value="Save">
+                <input type="button" class="btn btn-success" id="update_btn" value="Update">
+                <input type="button" class="btn btn-success" id="reset_btn" value="Reset">
+            </div>
+        </form>
+        </div>
+
+        <div class="container">
+            <div class="form">
+            <h3>Thông tin nhân viên trên hệ thống</h3>       
+            <table class="table table-hover" id="Detail_Staff_ID">
+              <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Email</th>
+                    <th>Username</th>
+                    <th>Fullname</th>
+                    <th>Department</th>
+                    <th>Position</th>   
+                    <th>Cretate Date</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+              </thead>
+              <tbody id="Result_TB">
+                
+              </tbody>
+            </table>
+            </div>
+            </div>
+    </div>
+    <script type="text/javascript" src="QLNV_DNQ_Script.js"></script>
+</body>
+</html>

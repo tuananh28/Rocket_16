@@ -17,6 +17,11 @@ CREATE TABLE `Position` (
     PositionName			ENUM('Dev','Test','ScrumMaster','PM') NOT NULL UNIQUE KEY
 );
 
+DROP TABLE IF EXISTS Category;
+CREATE TABLE Category(
+    CategoryID              TINYINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    CategoryName            VARCHAR(30) NOT NULL UNIQUE KEY
+);
 -- create table 2: Salary
 DROP TABLE IF EXISTS Salary;
 CREATE TABLE `Salary` (
@@ -105,6 +110,14 @@ VALUES 					('Dev'			),
 						('Test'			),
 						('ScrumMaster'	);
 
+-- Add data position
+INSERT INTO Category	(CategoryName	)
+VALUES 					('Category1'    ),
+						('Category2'	),
+						('Category3'	),
+						('Category4'	),
+						('Category5'	),
+						('Category6'  	);
 -- Add data salary
 INSERT INTO Salary		(SalaryName	)
 VALUES 					('600'		),

@@ -19,6 +19,7 @@ import com.vti.repository.ExamRepository;
 
 @Entity
 @Table(name = "Exam", catalog = "TestingSystem")
+
 public class Exam implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -47,6 +48,15 @@ public class Exam implements Serializable {
 	@Temporal(TemporalType.TIMESTAMP)
 	@CreationTimestamp
 	private Date createDate;
+
+	
+	public short getId() {
+		return id;
+	}
+
+	public void setId(short id) {
+		this.id = id;
+	}
 
 	@PrePersist
 	public void beforeSaveToDatabase() {

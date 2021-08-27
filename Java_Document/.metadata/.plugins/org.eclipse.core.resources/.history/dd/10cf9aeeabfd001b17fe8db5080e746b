@@ -1,7 +1,0 @@
-public class OuterClass {
-public static class InnerClass {
-public static void foo() {
-// TODO
-}
-}
-}

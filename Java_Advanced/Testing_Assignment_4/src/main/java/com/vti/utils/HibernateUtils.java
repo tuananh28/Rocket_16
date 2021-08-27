@@ -7,6 +7,7 @@ import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 
 import com.vti.entity.Account;
+import com.vti.entity.Category;
 import com.vti.entity.Department;
 import com.vti.entity.Exam;
 import com.vti.entity.Position;
@@ -40,6 +41,7 @@ public class HibernateUtils {
 		configuration.addAnnotatedClass(Salary.class);
 		configuration.addAnnotatedClass(Position.class);
 		configuration.addAnnotatedClass(Exam.class);
+		configuration.addAnnotatedClass(Category.class);
 	}
 
 	private SessionFactory buildSessionFactory() {

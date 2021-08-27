@@ -1,0 +1,15 @@
+.form-control{
+
+  border: 1px solid #eee;
+  border-radius: 4px;
+  width: 100%;
+  Height: 50px;
+  padding:0 20px;
+  transition:0.25s ease;
+}
+.form-control:focus{
+border-color: #6a5af9;
+}
+.form-group{
+  position: relative;
+}

@@ -1,0 +1,18 @@
+package com.vti.test;
+
+
+import java.util.List;
+
+import com.vti.entity.Category;
+import com.vti.repository.CategoryReponsitory;
+
+public class CategoryProgram {
+	public static void main(String[] args) {
+		CategoryReponsitory reponsitory = new CategoryReponsitory();
+		System.out.println("GET ALL CATEGORY");
+		List<Category> list = reponsitory.getAllCategories();
+		for (Category category : list) {
+			System.out.println(category);
+		}
+	}
+}
