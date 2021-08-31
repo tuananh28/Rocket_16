@@ -3,7 +3,6 @@
 	<list key="installedFeatures">
 		<item value="com.ianbrandt.tools.m2e.mdp.feature:0.0.4.201409291703"/>
 		<item value="net.mihai-nita.ansicon:1.4.4.202102080044"/>
-		<item value="org.eclipse.buildship:3.1.5.v20210113-0929"/>
 		<item value="org.eclipse.egit.gitflow.feature:5.12.0.202106070339-r"/>
 		<item value="org.eclipse.egit:5.12.0.202106070339-r"/>
 		<item value="org.eclipse.emf.common:2.22.0.v20210319-0732"/>
@@ -32,7 +31,6 @@
 		<item value="org.eclipse.userstorage:1.2.0.v20210517-0327"/>
 		<item value="org.eclipse.wst.common.fproj:3.7.3.v202007142017"/>
 		<item value="org.jboss.tools.m2e.wro4j.feature:1.1.0.201406251020"/>
-		<item value="org.jboss.tools.maven.apt.feature:1.5.2.201812241535"/>
 		<item value="org.sonatype.m2e.buildhelper.feature:0.15.0.201207090124"/>
 		<item value="org.sonatype.m2e.egit.feature:0.15.1.201806191431"/>
 		<item value="org.sonatype.m2e.mavenarchiver.feature:0.17.5.202002191804"/>

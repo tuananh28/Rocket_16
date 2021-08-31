@@ -26,17 +26,10 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
-			<item value="com.vti.entity"/>
-			<item value="com.vti"/>
-			<item value="com.vti.Testing_Assignment_4"/>
 		</list>
 		<list key="groupId">
-			<item value="com.vti"/>
 		</list>
 		<list key="artifactId">
-			<item value="Testing_Assignment_9"/>
-			<item value="Testing_Assignment_5"/>
-			<item value="Testing_Assignment_4"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
