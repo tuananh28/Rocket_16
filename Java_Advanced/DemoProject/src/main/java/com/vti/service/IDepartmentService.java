@@ -6,12 +6,13 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
 import com.vti.entity.Department;
+import com.vti.form.DepartmentFilterForm;
 import com.vti.form.DepartmentFormForCreating;
 import com.vti.form.DepartmentFormForUpdating;
 
 public interface IDepartmentService {
 
-	public Page<Department> getAllDepartments(Pageable pageable);
+	public Page<Department> getAllDepartments(Pageable pageable,String search, DepartmentFilterForm filter);
 
 	public Department getDepartmentByID(short id);
 

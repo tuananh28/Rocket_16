@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.vti.dto.AccountDto;
 import com.vti.dto.DepartmentDto;
 import com.vti.entity.Department;
+import com.vti.form.DepartmentFilterForm;
 import com.vti.form.DepartmentFormForCreating;
 import com.vti.form.DepartmentFormForUpdating;
 import com.vti.service.IDepartmentService;
@@ -35,8 +36,11 @@ public class DepartmentController {
 	private IDepartmentService service;
 
 	@GetMapping()
-	public ResponseEntity<?> getAllDepartments(Pageable pageable) {
-		Page<Department> entitiesPage = service.getAllDepartments(pageable);
+	public ResponseEntity<?> getAllDepartments(
+			Pageable pageable,
+			@RequestParam(required = false) String search,
+			DepartmentFilterForm filter) {
+		Page<Department> entitiesPage = service.getAllDepartments(pageable, search, filter);
 
 		// convert entities --> dtos
 		// https://stackoverflow.com/questions/39036771/how-to-map-pageobjectentity-to-pageobjectdto-in-spring-data-rest

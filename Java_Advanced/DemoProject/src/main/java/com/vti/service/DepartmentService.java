@@ -6,11 +6,14 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.StringUtils;
 
 import com.vti.entity.Account;
 import com.vti.entity.Department;
+import com.vti.form.DepartmentFilterForm;
 import com.vti.form.DepartmentFormForCreating;
 import com.vti.form.DepartmentFormForUpdating;
 import com.vti.repository.IAccountRepository;
@@ -27,9 +30,35 @@ public class DepartmentService implements IDepartmentService {
 	@Autowired
 	private IAccountRepository accountRepository;
 
-	public Page<Department> getAllDepartments(Pageable pageable, String search) {
-		DepartmentSpecification specification = new DepartmentSpecification("name","LIKE",search);
-		return departmentRepository.findAll(pageable);
+	@SuppressWarnings("deprecation")
+	public Page<Department> getAllDepartments(Pageable pageable, String search, DepartmentFilterForm filter) {
+
+		Specification<Department> where = null;
+
+		if (!StringUtils.isEmpty(search)) {
+			DepartmentSpecification nameSpecification = new DepartmentSpecification("name", "LIKE", search);
+			DepartmentSpecification authorSpecification = new DepartmentSpecification("author.fullName", "LIKE", search);
+			where = Specification.where(nameSpecification).or(authorSpecification);
+		}
+		if (filter != null && filter.getMinDate() != null) {
+			DepartmentSpecification minDateSpecification = new DepartmentSpecification("createDate", ">=", filter.getMinDate());
+			if (where ==  null) {
+				where = Specification.where(minDateSpecification);
+			}else {
+				where = where.and(minDateSpecification);
+			}
+		}
+		if (filter != null && filter.getMaxDate() != null) {
+			DepartmentSpecification maxDateSpecification = new DepartmentSpecification("createDate", "<=", filter.getMaxDate());
+			if (where ==  null) {
+				where = Specification.where(maxDateSpecification);
+			}else {
+				where = where.and(maxDateSpecification);
+			}
+		}
+		
+
+		return departmentRepository.findAll(where, pageable);
 	}
 
 	public Department getDepartmentByID(short id) {

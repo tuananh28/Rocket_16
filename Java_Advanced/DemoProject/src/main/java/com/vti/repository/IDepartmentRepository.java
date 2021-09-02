@@ -21,4 +21,5 @@ public interface IDepartmentRepository extends JpaRepository<Department, Short>,
 	@Transactional
 	@Query("DELETE FROM Department WHERE id IN(:ids)")
 	public void deleteByIds(@Param("ids") List<Short> ids);
+
 }
