@@ -1,13 +1,13 @@
 eclipse.preferences.version=1
 org.springframework.ide.eclipse.boot.wizard.PopularityTracker.data-jpa=8
-org.springframework.ide.eclipse.boot.wizard.PopularityTracker.lombok=7
+org.springframework.ide.eclipse.boot.wizard.PopularityTracker.lombok=8
 org.springframework.ide.eclipse.boot.wizard.PopularityTracker.mysql=8
 org.springframework.ide.eclipse.boot.wizard.PopularityTracker.web=16
 org.springframework.ide.eclipse.boot.wizard.PreferredSelections.artifactId=Testing_BeanValidation_Custom
 org.springframework.ide.eclipse.boot.wizard.PreferredSelections.bootVersion=2.5.4
 org.springframework.ide.eclipse.boot.wizard.PreferredSelections.description=Demo project for Spring Boot
 org.springframework.ide.eclipse.boot.wizard.PreferredSelections.groupId=com.example
-org.springframework.ide.eclipse.boot.wizard.PreferredSelections.javaVersion=16
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.javaVersion=1.8
 org.springframework.ide.eclipse.boot.wizard.PreferredSelections.language=java
 org.springframework.ide.eclipse.boot.wizard.PreferredSelections.name=Testing_BeanValidation_Custom
 org.springframework.ide.eclipse.boot.wizard.PreferredSelections.packageName=com.vti

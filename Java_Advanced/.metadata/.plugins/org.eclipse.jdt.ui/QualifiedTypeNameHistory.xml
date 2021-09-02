@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestParam"/>
     <fullyQualifiedTypeName name="org.springframework.util.StringUtils"/>
     <fullyQualifiedTypeName name="com.vti.entity.Department"/>
     <fullyQualifiedTypeName name="org.springframework.data.jpa.domain.Specification"/>
@@ -24,8 +23,6 @@
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="com.vti.dto.AccountDto"/>
     <fullyQualifiedTypeName name="com.fasterxml.jackson.annotation.JsonFormat"/>
-    <fullyQualifiedTypeName name="javax.validation.ValidatorFactory"/>
-    <fullyQualifiedTypeName name="javax.validation.Validation"/>
     <fullyQualifiedTypeName name="javax.validation.Validator"/>
     <fullyQualifiedTypeName name="java.util.Set"/>
     <fullyQualifiedTypeName name="T"/>
@@ -55,9 +52,12 @@
     <fullyQualifiedTypeName name="com.vti.utils.ValidationUtils"/>
     <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="java.util.List"/>
-    <fullyQualifiedTypeName name="com.vti.utils.ScannerUltis"/>
     <fullyQualifiedTypeName name="lombok.Getter"/>
     <fullyQualifiedTypeName name="lombok.Setter"/>
     <fullyQualifiedTypeName name="lombok.AllArgsConstructor"/>
     <fullyQualifiedTypeName name="lombok.NoArgsConstructor"/>
+    <fullyQualifiedTypeName name="javax.xml.validation.Validator"/>
+    <fullyQualifiedTypeName name="com.vti.utils.ScannerUltis"/>
+    <fullyQualifiedTypeName name="javax.validation.ValidatorFactory"/>
+    <fullyQualifiedTypeName name="javax.validation.Validation"/>
 </qualifiedTypeNameHistroy>
