@@ -27,7 +27,6 @@ import lombok.Setter;
 public class Department implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-
 	@Column(name = "DepartmentID")
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -37,11 +36,6 @@ public class Department implements Serializable {
 	private String name;
 
 	@OneToMany(mappedBy = "department", fetch = FetchType.EAGER)
-	@Cascade(value = { CascadeType.REMOVE, CascadeType.SAVE_UPDATE })
 	private List<Account> account;
 
-	public Department(String name) {
-		super();
-		this.name = name;
-	}
 }

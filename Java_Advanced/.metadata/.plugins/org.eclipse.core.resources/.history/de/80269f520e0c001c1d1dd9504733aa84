@@ -1,0 +1,18 @@
+package com.vti.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.vti.entity.Position;
+
+public class PositionService implements IPositionService{
+	@Autowired
+	private IPositionService positionService;
+
+	@Override
+	public List<Position> getAllPosition() {
+		// TODO Auto-generated method stub
+		return positionService.getAllPosition();
+	}
+}

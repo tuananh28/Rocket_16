@@ -51,17 +51,15 @@ public class Account implements Serializable {
 
 	@ManyToOne
 	@JoinColumn(name = "DepartmentID", nullable = false)
-	@Cascade(value = { CascadeType.REMOVE, CascadeType.SAVE_UPDATE })
 	private Department department;
-
 
 	@ManyToOne
 	@JoinColumn(name = "PositionID", nullable = false)
 	private Position position;
-
+	
 	@Column(name = "CreateDate")
 	@Temporal(TemporalType.TIMESTAMP)
 	@CreationTimestamp
 	private Date createDate;
-	
+
 }

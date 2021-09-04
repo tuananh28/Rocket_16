@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy package &apos;com.vti&apos; to &apos;DemoProject/src/main/java&apos;&#x0D;&#x0A;- Original project: &apos;Testing_Assignment_8.4&apos;&#x0D;&#x0A;- Destination element: &apos;DemoProject/src/main/java&apos;&#x0D;&#x0A;- Original element: &apos;Testing_Assignment_8.4/src/main/java/com.vti&apos;" description="Copy package" destination="=DemoProject/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/" element1="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.vti" flags="589830" fragments="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1630382418728" version="1.0"/>
+</session>

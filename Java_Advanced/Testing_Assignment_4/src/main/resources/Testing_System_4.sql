@@ -32,8 +32,8 @@ CREATE TABLE `Account`(
     DepartmentID 			TINYINT UNSIGNED NOT NULL,
     PositionID				TINYINT UNSIGNED,
     CreateDate				DATETIME DEFAULT NOW(),
-    FOREIGN KEY(DepartmentID) REFERENCES Department(DepartmentID),
-    FOREIGN KEY(PositionID) REFERENCES `Position`(PositionID)
+    CONSTRAINT `kp_department` FOREIGN KEY(DepartmentID) REFERENCES Department(DepartmentID),
+    CONSTRAINT `kp_position` FOREIGN KEY(PositionID) REFERENCES `Position`(PositionID)
 );
 
 /*============================== INSERT DATABASE =======================================*/
@@ -70,5 +70,7 @@ VALUES 				('Email1@gmail.com'				, 'Username1'		,'Fullname1'				,   '5'			,   '
                     ('Email6@gmail.com'				, 'Username6'		,'Fullname6'				,   '6'			,   '3'		,'2021-06-05'),
                     ('Email7@gmail.com'				, 'Username7'		,'Fullname7'				,   '2'			,   '2'		, NULL		),
                     ('Email8@gmail.com'				, 'Username8'		,'Fullname8'				,   '8'			,   '1'		,'2021-06-07'),
-                    ('Email9@gmail.com'				, 'Username9'		,'Fullname9'				,   '2'			,   '2'		,'2021-07-07'),
+                    ('Email9@gmail.com'			    , 'Username9'		,'Fullname9'				,   '10'		,   '1'		,'2021-04-09'),
                     ('Email10@gmail.com'			, 'Username10'		,'Fullname10'				,   '10'		,   '1'		,'2021-04-09');
+
+Select* from Account;

@@ -35,15 +35,11 @@ public class Position implements Serializable {
 	@Enumerated(EnumType.STRING)
 	private PositionName name;
 
-	@OneToMany(mappedBy = "position")
-	List<Account> accounts;
-
 	public enum PositionName {
 		Dev, Test, Scrum_Master, PM
 	}
-	public Position(PositionName name) {
-		super();
-		this.name = name;
-	}
+
+	@OneToMany(mappedBy = "position")
+	List<Account> accounts;
 
 }
