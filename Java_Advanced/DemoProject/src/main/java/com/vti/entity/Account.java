@@ -19,6 +19,13 @@ import javax.persistence.TemporalType;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.Formula;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@NoArgsConstructor
 @Entity
 @Table(name = "`Account`")
 public class Account implements Serializable {
@@ -35,6 +42,9 @@ public class Account implements Serializable {
 
 	@Column(name = "Username", length = 50, nullable = false, unique = true, updatable = false)
 	private String username;
+
+	@Column(name = "password", length = 800, nullable = false)
+	private String password;
 
 	@Column(name = "FirstName", length = 50, nullable = false)
 	private String firstName;
@@ -56,80 +66,5 @@ public class Account implements Serializable {
 	@Temporal(TemporalType.TIMESTAMP)
 	@CreationTimestamp
 	private Date createDate;
-
-	public Account() {
-	}
-
-	public short getId() {
-		return id;
-	}
-
-	public void setId(short id) {
-		this.id = id;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public String getUsername() {
-		return username;
-	}
-
-	public void setUsername(String username) {
-		this.username = username;
-	}
-
-	public String getFirstName() {
-		return firstName;
-	}
-
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-
-	public String getLastName() {
-		return lastName;
-	}
-
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
-
-	public String getFullName() {
-		return fullName;
-	}
-
-	public void setFullName(String fullName) {
-		this.fullName = fullName;
-	}
-
-	public Date getCreateDate() {
-		return createDate;
-	}
-
-	public void setCreateDate(Date createDate) {
-		this.createDate = createDate;
-	}
-
-	public Department getDepartment() {
-		return department;
-	}
-
-	public void setDepartment(Department department) {
-		this.department = department;
-	}
-
-	public List<Department> getCreatedDepartment() {
-		return createdDepartment;
-	}
-
-	public void setCreatedDepartment(List<Department> createdDepartment) {
-		this.createdDepartment = createdDepartment;
-	}
 
 }
