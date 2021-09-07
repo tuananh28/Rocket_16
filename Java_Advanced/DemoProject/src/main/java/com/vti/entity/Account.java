@@ -55,6 +55,9 @@ public class Account implements Serializable {
 	@Formula(" concat(FirstName, ' ', LastName) ")
 	private String fullName;
 
+	@Column(name = "Role", nullable = false)
+	private String role;
+
 	@ManyToOne
 	@JoinColumn(name = "DepartmentID")
 	private Department department;

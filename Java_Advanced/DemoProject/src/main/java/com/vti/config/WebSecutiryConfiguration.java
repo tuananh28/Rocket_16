@@ -14,6 +14,7 @@ import com.vti.service.IAccountService;
 @EnableWebSecurity
 public class WebSecutiryConfiguration extends WebSecurityConfigurerAdapter {
 
+
 	@Autowired
 	private IAccountService accountService;
 
@@ -28,6 +29,7 @@ public class WebSecutiryConfiguration extends WebSecurityConfigurerAdapter {
 		.cors()
 		.and()
 		.authorizeRequests()
+			.antMatchers("/api/v1/departments", "/api/v1/departments/*").hasAnyAuthority("Admin", "Manager")
 			.anyRequest().authenticated()
 			.and()
 			.httpBasic()

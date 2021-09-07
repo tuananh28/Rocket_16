@@ -21,9 +21,10 @@ CREATE TABLE `Account`(
     Username				VARCHAR(50) NOT NULL UNIQUE KEY,
     `password` 				VARCHAR(800) NOT NULL,
     FirstName				NVARCHAR(50) NOT NULL,
-    LastName				NVARCHAR(50) NOT NULL,
-    DepartmentID 			TINYINT UNSIGNED,
+    LastName				NVARCHAR(50) NOT NULL,	
+    DepartmentID 			TINYINT UNSIGNED,	
     CreateDate				DATETIME DEFAULT NOW(),
+    `Role` 					ENUM('Admin','User','Manager') NOT NULL DEFAULT 'User',
     FOREIGN KEY(DepartmentID) REFERENCES Department(DepartmentID) ON DELETE SET NULL
 );
 /*============================== INSERT DATABASE =======================================*/
@@ -44,17 +45,17 @@ VALUES                  (N'Marketing'	,	5		,	'2020-03-05' ,	'2020-03-05'),
 
 -- Add data Account
 -- password: 123456
-INSERT INTO `Account`(Email								, Username			,	`password`,															FirstName,		LastName,		 DepartmentID	,	CreateDate)
-VALUES 				('haidang29productions@gmail.com'	, 'dangblack'		,	'$2a$10$W2neF9.6Agi6kAKVq8q3fec5dHW8KUA.b0VSIGdIZyUravfLpyIFi',		'Dang'	,		'Nguyen Hai'	,   '1'			,	'2020-03-05'),
-					('account1@gmail.com'				, 'quanganh'		,	'$2a$10$W2neF9.6Agi6kAKVq8q3fec5dHW8KUA.b0VSIGdIZyUravfLpyIFi',		'Anh'	,		'Tong Quang'	,   '1'			,	'2020-03-05'),
-                    ('account2@gmail.com'				, 'vanchien'		,	'$2a$10$W2neF9.6Agi6kAKVq8q3fec5dHW8KUA.b0VSIGdIZyUravfLpyIFi',		'Chien',		'Nguyen Van'	,   '2'			,	'2020-03-07'),
-                    ('account3@gmail.com'				, 'cocoduongqua'	,	'$2a$10$W2neF9.6Agi6kAKVq8q3fec5dHW8KUA.b0VSIGdIZyUravfLpyIFi',		'Do'	,		'Duong'			,   '3'			,	'2020-03-08'),
-                    ('account4@gmail.com'				, 'doccocaubai'		,	'$2a$10$W2neF9.6Agi6kAKVq8q3fec5dHW8KUA.b0VSIGdIZyUravfLpyIFi',		'Thang',		'Nguyen Chien'  ,   '4'			,	'2020-03-10'),
-                    ('dapphatchetngay@gmail.com'		, 'khabanh'			,	'$2a$10$W2neF9.6Agi6kAKVq8q3fec5dHW8KUA.b0VSIGdIZyUravfLpyIFi',		'Kha'	,		'Ngo Ba'		,   '1'			,	NOW()		),
-                    ('songcodaoly@gmail.com'			, 'huanhoahong'		,	'$2a$10$W2neF9.6Agi6kAKVq8q3fec5dHW8KUA.b0VSIGdIZyUravfLpyIFi',		'Huan'	,		'Bui Xuan'		,   '7'			,	NOW()		),
-                    ('sontungmtp@gmail.com'				, 'tungnui'			,	'$2a$10$W2neF9.6Agi6kAKVq8q3fec5dHW8KUA.b0VSIGdIZyUravfLpyIFi',		'Tung'	,		'Nguyen Thanh'	,   '8'			,	'2020-04-07'),
-                    ('duongghuu@gmail.com'				, 'duongghuu'		,	'$2a$10$W2neF9.6Agi6kAKVq8q3fec5dHW8KUA.b0VSIGdIZyUravfLpyIFi',		'Huu'	,		'Duong Van'		,   '9'			,	'2020-04-07'),
-                    ('vtiaccademy@gmail.com'			, 'vtiaccademy'		,	'$2a$10$W2neF9.6Agi6kAKVq8q3fec5dHW8KUA.b0VSIGdIZyUravfLpyIFi',		'Ai'	,		'Vi Ti'			,   '10'		,	'2020-04-09');
+INSERT INTO `Account`(Email								, Username			,	`password`,															FirstName,		LastName,		 DepartmentID	,	CreateDate		,	`Role`		)
+VALUES 				('haidang29productions@gmail.com'	, 'dangblack'		,	'$2a$10$W2neF9.6Agi6kAKVq8q3fec5dHW8KUA.b0VSIGdIZyUravfLpyIFi',		'Dang'	,		'Nguyen Hai'	,   '1'			,	'2020-03-05'	,	'Admin'		),
+					('account1@gmail.com'				, 'quanganh'		,	'$2a$10$W2neF9.6Agi6kAKVq8q3fec5dHW8KUA.b0VSIGdIZyUravfLpyIFi',		'Anh'	,		'Tong Quang'	,   '1'			,	'2020-03-05'	,	'Admin'		),
+                    ('account2@gmail.com'				, 'vanchien'		,	'$2a$10$W2neF9.6Agi6kAKVq8q3fec5dHW8KUA.b0VSIGdIZyUravfLpyIFi',		'Chien',		'Nguyen Van'	,   '2'			,	'2020-03-07'	,	'User'		),
+                    ('account3@gmail.com'				, 'cocoduongqua'	,	'$2a$10$W2neF9.6Agi6kAKVq8q3fec5dHW8KUA.b0VSIGdIZyUravfLpyIFi',		'Do'	,		'Duong'			,   '3'			,	'2020-03-08'	,	'User'		),
+                    ('account4@gmail.com'				, 'doccocaubai'		,	'$2a$10$W2neF9.6Agi6kAKVq8q3fec5dHW8KUA.b0VSIGdIZyUravfLpyIFi',		'Thang',		'Nguyen Chien'  ,   '4'			,	'2020-03-10'	,	'User'		),
+                    ('dapphatchetngay@gmail.com'		, 'khabanh'			,	'$2a$10$W2neF9.6Agi6kAKVq8q3fec5dHW8KUA.b0VSIGdIZyUravfLpyIFi',		'Kha'	,		'Ngo Ba'		,   '1'			,	NOW()			,	'Admin'		),
+                    ('songcodaoly@gmail.com'			, 'huanhoahong'		,	'$2a$10$W2neF9.6Agi6kAKVq8q3fec5dHW8KUA.b0VSIGdIZyUravfLpyIFi',		'Huan'	,		'Bui Xuan'		,   '7'			,	NOW()			,	'Admin'		),
+                    ('sontungmtp@gmail.com'				, 'tungnui'			,	'$2a$10$W2neF9.6Agi6kAKVq8q3fec5dHW8KUA.b0VSIGdIZyUravfLpyIFi',		'Tung'	,		'Nguyen Thanh'	,   '8'			,	'2020-04-07'	,	'Manager'	),
+                    ('duongghuu@gmail.com'				, 'duongghuu'		,	'$2a$10$W2neF9.6Agi6kAKVq8q3fec5dHW8KUA.b0VSIGdIZyUravfLpyIFi',		'Huu'	,		'Duong Van'		,   '9'			,	'2020-04-07'	,	'Manager'	),
+                    ('vtiaccademy@gmail.com'			, 'vtiaccademy'		,	'$2a$10$W2neF9.6Agi6kAKVq8q3fec5dHW8KUA.b0VSIGdIZyUravfLpyIFi',		'Ai'	,		'Vi Ti'			,   '10'		,	'2020-04-09'	,	'Manager'	);
 
 ALTER TABLE Department
 ADD FOREIGN KEY (author_id) REFERENCES `Account`(AccountID);

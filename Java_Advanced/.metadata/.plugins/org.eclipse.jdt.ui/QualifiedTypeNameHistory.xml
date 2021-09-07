@@ -1,13 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="org.hibernate.Session"/>
-    <fullyQualifiedTypeName name="java.lang.annotation.Target"/>
-    <fullyQualifiedTypeName name="java.lang.annotation.Retention"/>
-    <fullyQualifiedTypeName name="java.lang.annotation.Documented"/>
-    <fullyQualifiedTypeName name="javax.validation.Constraint"/>
-    <fullyQualifiedTypeName name="javax.validation.ConstraintValidator"/>
-    <fullyQualifiedTypeName name="java.lang.Integer"/>
-    <fullyQualifiedTypeName name="java.lang.Class"/>
     <fullyQualifiedTypeName name="javax.validation.Payload"/>
     <fullyQualifiedTypeName name="com.vti.validation.CheckDepartmentExistsValidator"/>
     <fullyQualifiedTypeName name="com.vti.repository.DepartmentRepository"/>
@@ -22,19 +14,14 @@
     <fullyQualifiedTypeName name="com.vti.service.IDepartmentService"/>
     <fullyQualifiedTypeName name="com.vti.repository.IDepartmentRepository"/>
     <fullyQualifiedTypeName name="com.vti.repository.IPositionRepository"/>
-    <fullyQualifiedTypeName name="com.vti.entity.Department"/>
     <fullyQualifiedTypeName name="com.vti.service.IPositionService"/>
     <fullyQualifiedTypeName name="com.vti.entity.Position"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
-    <fullyQualifiedTypeName name="com.vti.dto.PositionDTO"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
-    <fullyQualifiedTypeName name="com.vti.dto.AccountDTO"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PostMapping"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PutMapping"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestBody"/>
     <fullyQualifiedTypeName name="com.vti.form.AccountFormForCreating"/>
     <fullyQualifiedTypeName name="com.vti.form.AccountFormForUpdating"/>
-    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.DeleteMapping"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
     <fullyQualifiedTypeName name="javax.persistence.CascadeType"/>
     <fullyQualifiedTypeName name="org.hibernate.annotations.Cascade"/>
@@ -52,12 +39,25 @@
     <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
     <fullyQualifiedTypeName name="java.security.Principal"/>
-    <fullyQualifiedTypeName name="java.lang.String"/>
     <fullyQualifiedTypeName name="com.vti.entity.Account"/>
-    <fullyQualifiedTypeName name="lombok.Setter"/>
     <fullyQualifiedTypeName name="lombok.AllArgsConstructor"/>
-    <fullyQualifiedTypeName name="lombok.Getter"/>
     <fullyQualifiedTypeName name="com.vti.dto.LoginInfoDTO"/>
     <fullyQualifiedTypeName name="org.springframework.http.ResponseEntity"/>
     <fullyQualifiedTypeName name="org.springframework.http.HttpStatus"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="com.vti.dto.AccountDTO"/>
+    <fullyQualifiedTypeName name="lombok.Setter"/>
+    <fullyQualifiedTypeName name="lombok.Getter"/>
+    <fullyQualifiedTypeName name="com.vti.form.AccountFilter"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.DeleteMapping"/>
+    <fullyQualifiedTypeName name="com.vti.dto.DepartmentDTO"/>
+    <fullyQualifiedTypeName name="com.vti.specification.DepartmentSpecification"/>
+    <fullyQualifiedTypeName name="org.springframework.data.domain.Page"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="org.springframework.data.jpa.domain.Specification"/>
+    <fullyQualifiedTypeName name="org.springframework.util.StringUtils"/>
+    <fullyQualifiedTypeName name="org.springframework.data.jpa.repository.JpaSpecificationExecutor"/>
+    <fullyQualifiedTypeName name="com.vti.entity.Department"/>
+    <fullyQualifiedTypeName name="com.vti.specification.AccountSpecification"/>
+    <fullyQualifiedTypeName name="com.vti.dto.PositionDTO"/>
 </qualifiedTypeNameHistroy>

@@ -11,20 +11,22 @@ import com.vti.entity.Account;
 import com.vti.repository.IAccountRepository;
 
 @Service
-public class AccountService implements IAccountService{
+public class AccountService implements IAccountService {
 
 	@Autowired
 	private IAccountRepository repository;
+
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+
 		Account account = repository.findByUsername(username);
+
 		if (account == null) {
 			throw new UsernameNotFoundException(username);
 		}
-		return new User(
-				account.getUsername(),
-				account.getPassword(),
-				AuthorityUtils.createAuthorityList("user"));
+
+		return new User(account.getUsername(), account.getPassword(),
+				AuthorityUtils.createAuthorityList(account.getRole()));
 	}
 
 	@Override
