@@ -1,0 +1,71 @@
+@import url("http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin");
+
+body {
+  align-items: center;
+  background-position: 50% 50%;
+  background-size: cover;
+  color: #212529;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  line-height: 24px;
+  padding: 15px;
+}
+.login-form{
+  background-color: #ffffff;
+  border-radius: 10px;
+  color: #212529;
+  line-height:24px;
+  padding:50px 0px 90px;
+}
+.login{
+  color: #403866;
+  font-size:30px;
+  line-height:36px;
+  padding:0px 0px 51px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.form-group{
+  background-position: 0px 0px;
+  color: #403866;
+  font-family: Ubuntu-Bold;
+  font-size: 18px;
+  line-height:21.6px;
+  padding:0px 20px 
+
+}.form-control{
+
+  border: 1px solid #eee;
+  border-radius: 4px;
+  width: 100%;
+  Height: 50px;
+  padding:0 20px;
+  transition:0.25s ease;
+}
+.form-control:focus{
+border-color: #6a5af9;
+}
+.form-group{
+  position: relative;
+}
+.form-label{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 21px;
+  user-select: none;
+  color: #999;
+  pointer-events: none;
+  transition: 0.25 ease;
+}
+.form-control:not(:placeholder-shown)+.form-label,
+
+.form-control:focus + .form-label{
+  top: 0;
+  left:11px;
+  padding:0 10px;
+  display: inline-block;
+  background-color: white;
+  color: #6a5af9
+}

@@ -17,4 +17,5 @@ public class AccountFilter {
 
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date maxDate;
+
 }

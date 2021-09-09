@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/Source/css/demo.css" </head> <body>
+  <div class="container">
+    <div class="login-form">
+      <div class="login">
+        <span>LOGIN</span>
+      </div>
+      <div class="form-group">
+        <input type="text" required="true" class="form-control" id="username" value="" placeholder=" ">
+        <label class="form-label">Username</label>
+      </div>
+      <div class="form-group">
+        <input type="text" required="true" class="form-control" id="password" value="" placeholder=" ">
+        <label class="form-label">Password</label>
+      </div>
+      <div class="error">
+        <p id="error-message" style="color: red;">Sai mật khẩu</p>
+      </div>
+      <div class="">
+        <label>
+          <input id="rememberMe" type="checkbox" checked="checked" name="remember"> Remember me
+        </label>
+      </div>
+      <div>
+        <button onclick="login()">Login</button>
+      </div>
+    </div>
+  </div>
+  </body>
+
+</html>
