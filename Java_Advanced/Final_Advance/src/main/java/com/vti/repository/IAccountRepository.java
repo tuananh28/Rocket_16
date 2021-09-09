@@ -12,7 +12,8 @@ import org.springframework.transaction.annotation.Transactional;
 import com.vti.entity.Account;
 
 public interface IAccountRepository extends JpaRepository<Account, Short> ,JpaSpecificationExecutor<Account>{
-
+	public Account findByUsername(String username);
+	
 	@Modifying
 	@Transactional
 	@Query("DELETE FROM Account WHERE id IN(:ids)")

@@ -5,6 +5,8 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -47,6 +49,17 @@ public class Account implements Serializable {
 	@Column(name = "FullName", length = 50, nullable = false)
 	private String fullname;
 
+	@Column(name = "password", length = 100, nullable = false)
+	private String password;
+	
+	@Column(name = "Role", nullable = false)
+	@Enumerated(EnumType.STRING)
+	private roleName role;
+	
+	public enum roleName {
+		Admin,User,Manager
+	}
+	
 	@ManyToOne
 	@JoinColumn(name = "DepartmentID", nullable = false)
 	private Department department;

@@ -6,6 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;
+import org.springframework.security.core.authority.AuthorityUtils;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
@@ -35,7 +39,8 @@ public class AccountService implements IAccountService {
 		Specification<Account> where = null;
 		if (!StringUtils.isEmpty(search)) {
 			AccountSpecification usernameSpecification = new AccountSpecification("username", "LIKE", search);
-			where = Specification.where(usernameSpecification);
+			AccountSpecification departmentSpecification = new AccountSpecification("department", "LIKE", search);
+			where = Specification.where(usernameSpecification).or(departmentSpecification);
 		}
 		if (filter != null && filter.getMinDate() != null) {
 			AccountSpecification minDateSpecification = new AccountSpecification("createDate", ">=", filter.getMinDate());
@@ -96,5 +101,18 @@ public class AccountService implements IAccountService {
 	@Override
 	public void deleteAccounts(List<Short> ids) {
 		accountRepository.deleteByIds(ids);
+	}
+	public UserDetails loadUserByUsername(String username) {
+		Account account = accountRepository.findByUsername(username);
+		if (account == null) {
+			throw new UsernameNotFoundException(username); 
+		}
+		return new User(account.getUsername(), account.getPassword(), AuthorityUtils.createAuthorityList(account.getRole().toString()));
+	}
+
+	@Override
+	public Account getAccountByUsername(String username) {
+		// TODO Auto-generated method stub
+		return accountRepository.findByUsername(username);
 	}
 }

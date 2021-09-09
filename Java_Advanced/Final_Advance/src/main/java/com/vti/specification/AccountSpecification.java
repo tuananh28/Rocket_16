@@ -30,8 +30,8 @@ public class AccountSpecification implements Specification<Account> {
 	@Override
 	public Predicate toPredicate(Root<Account> root, CriteriaQuery<?> query, CriteriaBuilder criteriaBuilder) {
 		if (operator.equalsIgnoreCase("LIKE")) {
-			if (key.equalsIgnoreCase("username")) {
-				return criteriaBuilder.like(root.get("username"), "%" + value.toString() + "%");
+			if (key.equalsIgnoreCase("department")) {
+				return criteriaBuilder.like(root.get(key).get("name"), "%" + value.toString() + "%");
 			} else {
 				return criteriaBuilder.like(root.get(key), "%" + value.toString() + "%");
 			}
