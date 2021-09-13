@@ -12246,3 +12246,171 @@ org.eclipse.jgit.errors.TransportException: https://github.com/tuananhbuii/Rocke
 
 !ENTRY org.eclipse.m2e.logback.appender 2 0 2021-09-13 16:07:59.764
 !MESSAGE The artifact org.hibernate:hibernate-validator-annotation-processor:jar:6.1.5.Final has been relocated to org.hibernate.validator:hibernate-validator-annotation-processor:jar:6.1.5.Final
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-09-13 16:08:02.457
+!MESSAGE The artifact org.hibernate:hibernate-validator:jar:6.1.5.Final has been relocated to org.hibernate.validator:hibernate-validator:jar:6.1.5.Final
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-09-13 16:08:02.458
+!MESSAGE The artifact org.hibernate:hibernate-validator-annotation-processor:jar:6.1.5.Final has been relocated to org.hibernate.validator:hibernate-validator-annotation-processor:jar:6.1.5.Final
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-09-13 16:08:02.832
+!MESSAGE The artifact org.hibernate:hibernate-validator:jar:6.1.5.Final has been relocated to org.hibernate.validator:hibernate-validator:jar:6.1.5.Final
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-09-13 16:08:02.832
+!MESSAGE The artifact org.hibernate:hibernate-validator-annotation-processor:jar:6.1.5.Final has been relocated to org.hibernate.validator:hibernate-validator-annotation-processor:jar:6.1.5.Final
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-09-13 16:08:06.588
+!MESSAGE The artifact org.hibernate:hibernate-validator:jar:6.1.5.Final has been relocated to org.hibernate.validator:hibernate-validator:jar:6.1.5.Final
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-09-13 16:08:06.589
+!MESSAGE The artifact org.hibernate:hibernate-validator-annotation-processor:jar:6.1.5.Final has been relocated to org.hibernate.validator:hibernate-validator-annotation-processor:jar:6.1.5.Final
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-09-13 16:08:06.888
+!MESSAGE The artifact org.hibernate:hibernate-validator:jar:6.1.5.Final has been relocated to org.hibernate.validator:hibernate-validator:jar:6.1.5.Final
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-09-13 16:08:06.889
+!MESSAGE The artifact org.hibernate:hibernate-validator-annotation-processor:jar:6.1.5.Final has been relocated to org.hibernate.validator:hibernate-validator-annotation-processor:jar:6.1.5.Final
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-09-13 16:08:10.702
+!MESSAGE The artifact org.hibernate:hibernate-validator:jar:6.1.5.Final has been relocated to org.hibernate.validator:hibernate-validator:jar:6.1.5.Final
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-09-13 16:08:10.702
+!MESSAGE The artifact org.hibernate:hibernate-validator-annotation-processor:jar:6.1.5.Final has been relocated to org.hibernate.validator:hibernate-validator-annotation-processor:jar:6.1.5.Final
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-09-13 16:08:11.163
+!MESSAGE The artifact org.hibernate:hibernate-validator:jar:6.1.5.Final has been relocated to org.hibernate.validator:hibernate-validator:jar:6.1.5.Final
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-09-13 16:08:11.163
+!MESSAGE The artifact org.hibernate:hibernate-validator-annotation-processor:jar:6.1.5.Final has been relocated to org.hibernate.validator:hibernate-validator-annotation-processor:jar:6.1.5.Final
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-09-13 16:08:16.060
+!MESSAGE The artifact org.hibernate:hibernate-validator:jar:6.1.5.Final has been relocated to org.hibernate.validator:hibernate-validator:jar:6.1.5.Final
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-09-13 16:08:16.060
+!MESSAGE The artifact org.hibernate:hibernate-validator-annotation-processor:jar:6.1.5.Final has been relocated to org.hibernate.validator:hibernate-validator-annotation-processor:jar:6.1.5.Final
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-09-13 16:08:16.586
+!MESSAGE The artifact org.hibernate:hibernate-validator:jar:6.1.5.Final has been relocated to org.hibernate.validator:hibernate-validator:jar:6.1.5.Final
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-09-13 16:08:16.586
+!MESSAGE The artifact org.hibernate:hibernate-validator-annotation-processor:jar:6.1.5.Final has been relocated to org.hibernate.validator:hibernate-validator-annotation-processor:jar:6.1.5.Final
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-09-13 16:08:20.335
+!MESSAGE The artifact org.hibernate:hibernate-validator:jar:6.1.5.Final has been relocated to org.hibernate.validator:hibernate-validator:jar:6.1.5.Final
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-09-13 16:08:20.335
+!MESSAGE The artifact org.hibernate:hibernate-validator-annotation-processor:jar:6.1.5.Final has been relocated to org.hibernate.validator:hibernate-validator-annotation-processor:jar:6.1.5.Final
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-09-13 16:08:20.839
+!MESSAGE The artifact org.hibernate:hibernate-validator:jar:6.1.5.Final has been relocated to org.hibernate.validator:hibernate-validator:jar:6.1.5.Final
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-09-13 16:08:20.840
+!MESSAGE The artifact org.hibernate:hibernate-validator-annotation-processor:jar:6.1.5.Final has been relocated to org.hibernate.validator:hibernate-validator-annotation-processor:jar:6.1.5.Final
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-09-13 16:08:24.182
+!MESSAGE The artifact org.hibernate:hibernate-validator:jar:6.1.5.Final has been relocated to org.hibernate.validator:hibernate-validator:jar:6.1.5.Final
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-09-13 16:08:24.182
+!MESSAGE The artifact org.hibernate:hibernate-validator-annotation-processor:jar:6.1.5.Final has been relocated to org.hibernate.validator:hibernate-validator-annotation-processor:jar:6.1.5.Final
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-09-13 16:08:24.429
+!MESSAGE The artifact org.hibernate:hibernate-validator:jar:6.1.5.Final has been relocated to org.hibernate.validator:hibernate-validator:jar:6.1.5.Final
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-09-13 16:08:24.429
+!MESSAGE The artifact org.hibernate:hibernate-validator-annotation-processor:jar:6.1.5.Final has been relocated to org.hibernate.validator:hibernate-validator-annotation-processor:jar:6.1.5.Final
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-09-13 16:08:26.883
+!MESSAGE The artifact org.hibernate:hibernate-validator:jar:6.1.5.Final has been relocated to org.hibernate.validator:hibernate-validator:jar:6.1.5.Final
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-09-13 16:08:26.884
+!MESSAGE The artifact org.hibernate:hibernate-validator-annotation-processor:jar:6.1.5.Final has been relocated to org.hibernate.validator:hibernate-validator-annotation-processor:jar:6.1.5.Final
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-09-13 16:08:27.195
+!MESSAGE The artifact org.hibernate:hibernate-validator:jar:6.1.5.Final has been relocated to org.hibernate.validator:hibernate-validator:jar:6.1.5.Final
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-09-13 16:08:27.195
+!MESSAGE The artifact org.hibernate:hibernate-validator-annotation-processor:jar:6.1.5.Final has been relocated to org.hibernate.validator:hibernate-validator-annotation-processor:jar:6.1.5.Final
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-09-13 16:08:30.378
+!MESSAGE The artifact org.hibernate:hibernate-validator:jar:6.1.5.Final has been relocated to org.hibernate.validator:hibernate-validator:jar:6.1.5.Final
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-09-13 16:08:30.378
+!MESSAGE The artifact org.hibernate:hibernate-validator-annotation-processor:jar:6.1.5.Final has been relocated to org.hibernate.validator:hibernate-validator-annotation-processor:jar:6.1.5.Final
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-09-13 16:08:30.633
+!MESSAGE The artifact org.hibernate:hibernate-validator:jar:6.1.5.Final has been relocated to org.hibernate.validator:hibernate-validator:jar:6.1.5.Final
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-09-13 16:08:30.634
+!MESSAGE The artifact org.hibernate:hibernate-validator-annotation-processor:jar:6.1.5.Final has been relocated to org.hibernate.validator:hibernate-validator-annotation-processor:jar:6.1.5.Final
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-09-13 16:08:33.067
+!MESSAGE The artifact org.hibernate:hibernate-validator:jar:6.1.5.Final has been relocated to org.hibernate.validator:hibernate-validator:jar:6.1.5.Final
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-09-13 16:08:33.068
+!MESSAGE The artifact org.hibernate:hibernate-validator-annotation-processor:jar:6.1.5.Final has been relocated to org.hibernate.validator:hibernate-validator-annotation-processor:jar:6.1.5.Final
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-09-13 16:08:33.387
+!MESSAGE The artifact org.hibernate:hibernate-validator:jar:6.1.5.Final has been relocated to org.hibernate.validator:hibernate-validator:jar:6.1.5.Final
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-09-13 16:08:33.387
+!MESSAGE The artifact org.hibernate:hibernate-validator-annotation-processor:jar:6.1.5.Final has been relocated to org.hibernate.validator:hibernate-validator-annotation-processor:jar:6.1.5.Final
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-09-13 16:08:36.511
+!MESSAGE The artifact org.hibernate:hibernate-validator:jar:6.1.5.Final has been relocated to org.hibernate.validator:hibernate-validator:jar:6.1.5.Final
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-09-13 16:08:36.511
+!MESSAGE The artifact org.hibernate:hibernate-validator-annotation-processor:jar:6.1.5.Final has been relocated to org.hibernate.validator:hibernate-validator-annotation-processor:jar:6.1.5.Final
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-09-13 16:08:36.767
+!MESSAGE The artifact org.hibernate:hibernate-validator:jar:6.1.5.Final has been relocated to org.hibernate.validator:hibernate-validator:jar:6.1.5.Final
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-09-13 16:08:36.768
+!MESSAGE The artifact org.hibernate:hibernate-validator-annotation-processor:jar:6.1.5.Final has been relocated to org.hibernate.validator:hibernate-validator-annotation-processor:jar:6.1.5.Final
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-09-13 16:08:39.206
+!MESSAGE The artifact org.hibernate:hibernate-validator:jar:6.1.5.Final has been relocated to org.hibernate.validator:hibernate-validator:jar:6.1.5.Final
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-09-13 16:08:39.206
+!MESSAGE The artifact org.hibernate:hibernate-validator-annotation-processor:jar:6.1.5.Final has been relocated to org.hibernate.validator:hibernate-validator-annotation-processor:jar:6.1.5.Final
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-09-13 16:08:39.535
+!MESSAGE The artifact org.hibernate:hibernate-validator:jar:6.1.5.Final has been relocated to org.hibernate.validator:hibernate-validator:jar:6.1.5.Final
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-09-13 16:08:39.535
+!MESSAGE The artifact org.hibernate:hibernate-validator-annotation-processor:jar:6.1.5.Final has been relocated to org.hibernate.validator:hibernate-validator-annotation-processor:jar:6.1.5.Final
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-09-13 16:08:42.650
+!MESSAGE The artifact org.hibernate:hibernate-validator:jar:6.1.5.Final has been relocated to org.hibernate.validator:hibernate-validator:jar:6.1.5.Final
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-09-13 16:08:42.650
+!MESSAGE The artifact org.hibernate:hibernate-validator-annotation-processor:jar:6.1.5.Final has been relocated to org.hibernate.validator:hibernate-validator-annotation-processor:jar:6.1.5.Final
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-09-13 16:08:42.894
+!MESSAGE The artifact org.hibernate:hibernate-validator:jar:6.1.5.Final has been relocated to org.hibernate.validator:hibernate-validator:jar:6.1.5.Final
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-09-13 16:08:42.895
+!MESSAGE The artifact org.hibernate:hibernate-validator-annotation-processor:jar:6.1.5.Final has been relocated to org.hibernate.validator:hibernate-validator-annotation-processor:jar:6.1.5.Final
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-09-13 16:08:45.339
+!MESSAGE The artifact org.hibernate:hibernate-validator:jar:6.1.5.Final has been relocated to org.hibernate.validator:hibernate-validator:jar:6.1.5.Final
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-09-13 16:08:45.339
+!MESSAGE The artifact org.hibernate:hibernate-validator-annotation-processor:jar:6.1.5.Final has been relocated to org.hibernate.validator:hibernate-validator-annotation-processor:jar:6.1.5.Final
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-09-13 16:08:45.744
+!MESSAGE The artifact org.hibernate:hibernate-validator:jar:6.1.5.Final has been relocated to org.hibernate.validator:hibernate-validator:jar:6.1.5.Final
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-09-13 16:08:45.744
+!MESSAGE The artifact org.hibernate:hibernate-validator-annotation-processor:jar:6.1.5.Final has been relocated to org.hibernate.validator:hibernate-validator-annotation-processor:jar:6.1.5.Final
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-09-13 16:08:49.248
+!MESSAGE The artifact org.hibernate:hibernate-validator:jar:6.1.5.Final has been relocated to org.hibernate.validator:hibernate-validator:jar:6.1.5.Final
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-09-13 16:08:49.248
+!MESSAGE The artifact org.hibernate:hibernate-validator-annotation-processor:jar:6.1.5.Final has been relocated to org.hibernate.validator:hibernate-validator-annotation-processor:jar:6.1.5.Final
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-09-13 16:08:49.574
+!MESSAGE The artifact org.hibernate:hibernate-validator:jar:6.1.5.Final has been relocated to org.hibernate.validator:hibernate-validator:jar:6.1.5.Final
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-09-13 16:08:49.574
+!MESSAGE The artifact org.hibernate:hibernate-validator-annotation-processor:jar:6.1.5.Final has been relocated to org.hibernate.validator:hibernate-validator-annotation-processor:jar:6.1.5.Final
