@@ -12,7 +12,7 @@ import com.vti.repository.RegistrationUserTokenRepository;
 public class EmailService implements IEmailService {
 
 	@Autowired
-	private IUserService userService;
+	private IAccountService accountService;
 
 	@Autowired
 	private RegistrationUserTokenRepository registrationUserTokenRepository;
@@ -27,10 +27,10 @@ public class EmailService implements IEmailService {
 	@Override
 	public void sendRegistrationUserConfirm(String email) {
 
-		Account user = userService.findUserByEmail(email);
-		String token = registrationUserTokenRepository.findByUserId(user.getId());
+		Account account = accountService.findUserByEmail(email);
+		String token = registrationUserTokenRepository.findByUserId(account.getId());
 
-		String confirmationUrl = "http://localhost:8080/api/v1/users/activeUser?token=" + token;
+		String confirmationUrl = "http://localhost:8080/api/v1/registration/activeUser?token=" + token;
 
 		String subject = "Xác Nhận Đăng Ký Account";
 		String content = "Bạn đã đăng ký thành công. Click vào link dưới đây để kích hoạt tài khoản \n"

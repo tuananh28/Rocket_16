@@ -17,14 +17,14 @@ public interface RegistrationUserTokenRepository extends JpaRepository<Registrat
 	
 	@Query("	SELECT 	token	"
 			+ "	FROM 	RegistrationUserToken "
-			+ " WHERE 	user.id = :userId")
-	public String findByUserId(@Param("userId") int userId);
+			+ " WHERE 	user_id = :acccountID")
+	public String findByUserId(int acccountID);
 
 	@Transactional
 	@Modifying
 	@Query("	DELETE 							"
 			+ "	FROM 	RegistrationUserToken 	"
-			+ " WHERE 	user.id = :userId")
-	public void deleteByUserId(@Param("userId") int userId);
+			+ " WHERE 	user_id = :userId")
+	public void deleteByUserId( int userId);
 
 }

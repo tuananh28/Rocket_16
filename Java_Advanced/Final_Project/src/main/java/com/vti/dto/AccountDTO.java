@@ -18,9 +18,7 @@ public class AccountDTO {
 	private String fullname;
 	private String department;
 	private String position;
-	@JsonFormat(pattern="yyyy-MM-dd")
+	@JsonFormat(pattern = "yyyy-MM-dd")
 	private Date createDate;
-
-
 
 }

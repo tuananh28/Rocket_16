@@ -62,7 +62,7 @@ public class Account implements Serializable {
 	
 	@Enumerated(EnumType.ORDINAL)
 	@Column(name = "Status", nullable = false)
-	private UserStatus status = UserStatus.NOT_ACTIVE;
+	private AccountStatus status = AccountStatus.NOT_ACTIVE;
 	
 	@ManyToOne
 	@JoinColumn(name = "DepartmentID", nullable = false)

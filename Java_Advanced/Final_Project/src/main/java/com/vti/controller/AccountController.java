@@ -8,6 +8,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -29,12 +30,14 @@ import com.vti.service.IAccountService;
 @RestController
 @RequestMapping(value = "api/v1/accounts")
 @CrossOrigin("*")
+@Validated
 public class AccountController {
 	@Autowired
 	private IAccountService accountService;
 
 	@GetMapping()
-	public ResponseEntity<?> getAllAccount(Pageable pageable, @RequestParam(required = false) String search, AccountFilter filter) {
+	public ResponseEntity<?> getAllAccount(Pageable pageable, @RequestParam(required = false) String search,
+			AccountFilter filter) {
 		Page<Account> entities = accountService.getAllAccounts(pageable, search, filter);
 
 		Page<AccountDTO> dtos = entities.map(new Function<Account, AccountDTO>() {
@@ -77,11 +80,28 @@ public class AccountController {
 		accountService.deleteAccount(id);
 		return new ResponseEntity<String>("Delete Successfully !", HttpStatus.OK);
 	}
-	
+
 	@DeleteMapping
 	public ResponseEntity<?> deleteAccounts(@RequestParam(name = "ids") List<Short> ids) {
 		accountService.deleteAccounts(ids);
 		return new ResponseEntity<String>("Delete successfully!", HttpStatus.OK);
 	}
 
+	@GetMapping(value = "/email/{email}")
+	public ResponseEntity<?> existsUserByEmail(@PathVariable(name = "email") String email) {
+		// get entity
+		boolean result = accountService.existsUserByEmail(email);
+
+		// return result
+		return new ResponseEntity<>(result, HttpStatus.OK);
+	}
+
+	@GetMapping(value = "/username/{username}")
+	public ResponseEntity<?> existsUserByUsername(@PathVariable(name = "username") String username) {
+		// get entity
+		boolean result = accountService.existsUserByUsername(username);
+
+		// return result
+		return new ResponseEntity<>(result, HttpStatus.OK);
+	}
 }

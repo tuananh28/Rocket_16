@@ -37,16 +37,16 @@ public class RegistrationUserToken implements Serializable {
 
 	@OneToOne(targetEntity = Account.class, fetch = FetchType.EAGER)
 	@JoinColumn(nullable = false, name = "user_id")
-	private Account user;
+	private Account account;
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "`expiryDate`", nullable = false)
 	private Date expiryDate;
 
 
-	public RegistrationUserToken(String token, Account user) {
+	public RegistrationUserToken(String token, Account account) {
 		this.token = token;
-		this.user = user;
+		this.account = account;
 
 		// 1h
 		expiryDate = new Date(System.currentTimeMillis() + 360000);
