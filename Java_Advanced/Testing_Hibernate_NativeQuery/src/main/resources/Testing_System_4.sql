@@ -29,9 +29,10 @@ CREATE TABLE `Account`(
     Email					VARCHAR(50) NOT NULL UNIQUE KEY,
     Username				VARCHAR(50) NOT NULL UNIQUE KEY,
     FullName				NVARCHAR(50) NOT NULL,
-    DepartmentID 			TINYINT UNSIGNED NOT NULL,
+    DepartmentID 			TINYINT UNSIGNED,
     PositionID				TINYINT UNSIGNED,
     CreateDate				DATETIME DEFAULT NOW(),
+    
     FOREIGN KEY(DepartmentID) REFERENCES Department(DepartmentID),
     FOREIGN KEY(PositionID) REFERENCES `Position`(PositionID)
 );
