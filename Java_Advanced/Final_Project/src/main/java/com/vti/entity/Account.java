@@ -54,7 +54,7 @@ public class Account implements Serializable {
 	
 	@Column(name = "Role", nullable = false)
 	@Enumerated(EnumType.STRING)
-	private roleName role;
+	private roleName role= roleName.User;
 	
 	public enum roleName {
 		Admin,User,Manager
