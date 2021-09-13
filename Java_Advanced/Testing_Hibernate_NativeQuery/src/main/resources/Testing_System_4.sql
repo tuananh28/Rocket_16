@@ -32,7 +32,6 @@ CREATE TABLE `Account`(
     DepartmentID 			TINYINT UNSIGNED,
     PositionID				TINYINT UNSIGNED,
     CreateDate				DATETIME DEFAULT NOW(),
-    
     FOREIGN KEY(DepartmentID) REFERENCES Department(DepartmentID),
     FOREIGN KEY(PositionID) REFERENCES `Position`(PositionID)
 );
