@@ -49,6 +49,11 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="false"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="false"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="D:\Rocket_16\Java_Advanced\Testing_System_6"/>
+			<item value="D:\Rocket_16\Java_Advanced\Testing_Hibernate_NativeQuery"/>
+			<item value="D:\Rocket_16\Java_Advanced\Testing_Hibernate_HQLQuery"/>
+			<item value="D:\Rocket_16\Java_Advanced\Testing_Hibernate_CriteriaQuery"/>
+			<item value="D:\Rocket_16\Java_Advanced\Testing_BeanValidation"/>
 			<item value="C:\Users\Admin\Downloads\DemoSpringDataJPA"/>
 			<item value="C:\Users\Admin\OneDrive\Desktop\Backend\DepartmentManagement"/>
 			<item value="C:\Users\Admin\OneDrive\Desktop\DemoSpringDataJPA"/>

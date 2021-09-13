@@ -2,6 +2,7 @@
 <section name="Workbench">
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="D:\Rocket_16\Java_Advanced\Testing_BeanValidation"/>
 			<item value="D:\Rocket_16\Java_Advanced"/>
 		</list>
 		<list key="projectNameTemplate">
