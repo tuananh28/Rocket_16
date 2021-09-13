@@ -49,7 +49,7 @@ public class Account implements Serializable {
 	@Column(name = "FullName", length = 50, nullable = false)
 	private String fullname;
 
-	@Column(name = "password", length = 100, nullable = false)
+	@Column(name = "Password", length = 100, nullable = false)
 	private String password;
 	
 	@Column(name = "Role", nullable = false)
@@ -59,6 +59,10 @@ public class Account implements Serializable {
 	public enum roleName {
 		Admin,User,Manager
 	}
+	
+	@Enumerated(EnumType.ORDINAL)
+	@Column(name = "Status", nullable = false)
+	private UserStatus status = UserStatus.NOT_ACTIVE;
 	
 	@ManyToOne
 	@JoinColumn(name = "DepartmentID", nullable = false)
@@ -73,4 +77,10 @@ public class Account implements Serializable {
 	@CreationTimestamp
 	private Date createDate;
 
+	public Account(String username, String email, String password, String fullname) {
+		this.username = username;
+		this.email = email;
+		this.password = password;
+		this.fullname = fullname;
+	}
 }
