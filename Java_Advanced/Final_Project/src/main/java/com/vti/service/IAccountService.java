@@ -39,4 +39,5 @@ public interface IAccountService extends UserDetailsService{
 	public boolean existsUserByEmail(String email);
 
 	public boolean existsUserByUsername(String username);
+
 }
