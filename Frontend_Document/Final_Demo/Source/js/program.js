@@ -61,7 +61,6 @@ $(function () {
 
   // Xử lý sự kiện khi nhấn nút Save
   // Xử lý sự kiện khi nhấn nút Submit của Form(Save), ở đây phải sử dụng Return False ở cuối sự kiện này để không redirect sang trang mới.
-
   $("#Main_Form_ID").submit(function () {
     // Lấy các giá trị người dùng nhập vào
     // var v_ID_ID = $("#ID_ID").val();
@@ -70,6 +69,56 @@ $(function () {
     var v_Fullname_ID = $("#Fullname_ID").val();
     var v_Department_ID = $("#Department_ID").val();
     var v_Position_ID = $("#Position_ID").val();
+
+    //Validate Email
+    if (!v_Email_ID || v_Email_ID.length < 6 || v_Email_ID.length > 50) {
+      // show error message
+      document.getElementById("error-email").innerHTML =
+        "Email name must be from 6 to 50 characters!";
+      return false;
+    }
+    document.getElementById("error-email").style.display = "none";
+
+    //Validate Username
+    if (
+      !v_Username_ID ||
+      v_Username_ID.length < 6 ||
+      v_Username_ID.length > 50
+    ) {
+      // show error message
+      document.getElementById("error-username").innerHTML =
+        "Username name must be from 6 to 50 characters!";
+      return false;
+    }
+    document.getElementById("error-username").style.display = "none";
+    //Validate Fullname
+    if (
+      !v_Fullname_ID | (v_Fullname_ID.length < 6) ||
+      v_Fullname_ID.length > 50
+    ) {
+      // show error message
+      document.getElementById("error-fullname").innerHTML =
+        "Fullname name must be from 6 to 50 characters!";
+      return false;
+    }
+    document.getElementById("error-fullname").style.display = "none";
+    //Validate Department
+    if (!v_Department_ID || v_Department_ID == "--Select a Department--") {
+      // show error message
+      document.getElementById("error-department").innerHTML =
+        "Pls choose Department!";
+      return false;
+    }
+    document.getElementById("error-department").style.display = "none";
+    //Validate Position
+    if (!v_Position_ID || v_Position_ID == "--Select a Position--") {
+      // show error message
+      document.getElementById("error-position").innerHTML =
+        "Pls choose Possition!";
+      return false;
+    }
+    document.getElementById("error-position").style.display = "none";
+
     // Lấy ra ID của Department khi người dùng lựa chọn phòng ban
     for (let index = 0; index < listDepartment.length; index++) {
       if (listDepartment[index].name == v_Department_ID) {
@@ -92,29 +141,61 @@ $(function () {
     };
 
     // Add account tới MOCK API
+    // Check Username đã có trên hệ thống hay chưa?
     $.ajax({
-      url: "http://localhost:8080/api/v1/accounts",
-      type: "POST",
-      data: JSON.stringify(account), // body
-      contentType: "application/json", // type of body (json, xml, text)
-      // dataType: 'json', // datatype return
+      url:
+        "http://localhost:8080/api/v1/accounts/username/" + v_Username_ID,
+      type: "GET",
+      contentType: "application/json",
+      dataType: "json", // datatype return
       beforeSend: function (xhr) {
         xhr.setRequestHeader(
           "Authorization",
           "Basic " +
             btoa(
-              storage.getItem("USERNAME") + ":" + storage.getItem("PASSWORD")
+              localStorage.getItem("USERNAME") +
+                ":" +
+                localStorage.getItem("PASSWORD")
             )
         );
       },
       success: function (data, textStatus, xhr) {
-        console.log(data);
-        // success
-        alert("Create Successful");
-        getListEmployees();
+        if (data) {
+          alert("Username đã tồn tại trên hệ thống");
+          return false;
+        } else {
+          // Add account tới MOCK API
+          $.ajax({
+            url: "http://localhost:8080/api/v1/accounts/",
+            type: "POST",
+            data: JSON.stringify(account), // body
+            contentType: "application/json", // type of body (json, xml, text)
+            // dataType: 'json', // datatype return
+            beforeSend: function (xhr) {
+              xhr.setRequestHeader(
+                "Authorization",
+                "Basic " +
+                  btoa(
+                    localStorage.getItem("USERNAME") +
+                      ":" +
+                      localStorage.getItem("PASSWORD")
+                  )
+              );
+            },
+            success: function (data, textStatus, xhr) {
+              currentPage = totalPages;
+              getListEmployees();
+            },
+            error(jqXHR, textStatus, errorThrown) {
+              alert("Error when loading data");
+              console.log(jqXHR);
+              console.log(textStatus);
+              console.log(errorThrown);
+            },
+          });
+        }
       },
       error(jqXHR, textStatus, errorThrown) {
-        alert("Error when loading data");
         console.log(jqXHR);
         console.log(textStatus);
         console.log(errorThrown);
@@ -331,6 +412,34 @@ function editAccount(Index) {
     var v_Fullname_ID = $("#Fullname_ID").val();
     var v_Department_ID = $("#Department_ID").val();
     var v_Position_ID = $("#Position_ID").val();
+     //Validate Fullname
+     if (
+      !v_Fullname_ID | (v_Fullname_ID.length < 6) ||
+      v_Fullname_ID.length > 50
+    ) {
+      // show error message
+      document.getElementById("error-fullname").innerHTML =
+        "Fullname name must be from 6 to 50 characters!";
+      return false;
+    }
+    document.getElementById("error-fullname").style.display = "none";
+    //Validate Department
+    if (!v_Department_ID || v_Department_ID == "--Select a Department--") {
+      // show error message
+      document.getElementById("error-department").innerHTML =
+        "Pls choose Department!";
+      return false;
+    }
+    document.getElementById("error-department").style.display = "none";
+    //Validate Position
+    if (!v_Position_ID || v_Position_ID == "--Select a Position--") {
+      // show error message
+      document.getElementById("error-position").innerHTML =
+        "Pls choose Possition!";
+      return false;
+    }
+    document.getElementById("error-position").style.display = "none";
+
     // Lấy ra ID của Department khi người dùng lựa chọn phòng ban
     for (let index = 0; index < listDepartment.length; index++) {
       if (listDepartment[index].name == v_Department_ID) {
