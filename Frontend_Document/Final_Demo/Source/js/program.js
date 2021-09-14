@@ -16,17 +16,17 @@ function isLogin() {
 }
 $(function () {
   if (!isLogin()) {
-    window.location.replace("http://127.0.0.1:5501/Source/html/login.html");
+    window.location.replace("login.html");
   }
-  // window.location.replace("http://127.0.0.1:5501/Source/html/index.html");
+  window.location.replace("index.html");
   document.getElementById("fullName").innerHTML = storage.getItem("FULLNAME");
-  if (storage.getItem("ROLE") == "User") {
-    window.location.replace("http://127.0.0.1:5501/Source/html/403.html");
-  }
+  // if (storage.getItem("ROLE") == "User") {
+  //   window.location.replace("403.html");
+  // }
 });
 
 function logout() {
-  window.location.href = "http://127.0.0.1:5501/Source/html/login.html";
+  window.location.href = "login.html";
   // remove storage
   storage.removeItem("ID");
   storage.removeItem("EMAIL");
@@ -109,6 +109,9 @@ $(function () {
         );
       },
       success: function (data, textStatus, xhr) {
+        if (storage.getItem("ROLE") == "User") {
+          window.location.replace("403.html");
+        }
         console.log(data);
         // success
         alert("Create Successful");
@@ -140,6 +143,9 @@ function getListDepartment() {
       );
     },
     success: function (data, textStatus, xhr) {
+      if (storage.getItem("ROLE") == "User") {
+        window.location.replace("403.html");
+      }
       data.forEach(function (item) {
         var department = {
           id: item.id,
@@ -176,6 +182,9 @@ function getListPosition() {
       );
     },
     success: function (data, textStatus, xhr) {
+      if (storage.getItem("ROLE") == "User") {
+        window.location.replace("403.html");
+      }
       data.forEach(function (item) {
         var position = {
           id: item.id,
@@ -195,7 +204,7 @@ function getListPosition() {
       console.log(errorThrown);
     },
   });
-    // success thì sẽ đổ dữ liệu vào listPossition và lấy dữ liệu trong List này fill vào phần thẻ Selecr để chọn Possition, chú ý phần này phải để trong nội dung xử lý của Ajax
+  // success thì sẽ đổ dữ liệu vào listPossition và lấy dữ liệu trong List này fill vào phần thẻ Selecr để chọn Possition, chú ý phần này phải để trong nội dung xử lý của Ajax
 }
 
 // Viết hàm showAccount()
@@ -207,20 +216,22 @@ function showAccount() {
   // Lặp trong listAccount để in thông tin từng phần tử
   // Hiển thị thêm 2 nút để sửa và xóa các Account
   for (var index = 0; index < listAccount.length; index++) {
-    $("#Result_TB").append(`
-                <tr>
-                <td><input id="checkbox-"+ type="checkbox" onClick="CheckboxItem(${index})"></td>
-                <td>${listAccount[index].AccountID}</td>
-                <td>${listAccount[index].Email}</td>
-                <td>${listAccount[index].Username}</td>
-                <td>${listAccount[index].FullName}</td>
-                <td>${listAccount[index].Department}</td>
-                <td>${listAccount[index].Position}</td>   
-                <td>${listAccount[index].CreateDate}</td>
-                <td><button class="btn btn-warning" onclick="editAccount(${index})">Edit</button></td>
-                <td><button class="btn btn-warning" onclick="deleteAccount(${index})">Delete</button></td>
-                </tr>
-                `);
+    if (storage.getItem("ROLE") == "User") {
+      $("#Result_TB").append(`
+        <tr>
+          <td><input id="checkbox-"+ type="checkbox" onClick="CheckboxItem(${index})"></td>
+          <td>${listAccount[index].AccountID}</td>
+          <td>${listAccount[index].Email}</td>
+          <td>${listAccount[index].Username}</td>
+          <td>${listAccount[index].FullName}</td>
+          <td>${listAccount[index].Department}</td>
+          <td>${listAccount[index].Position}</td>   
+          <td>${listAccount[index].CreateDate}</td>
+          <td><button class="btn btn-warning" onclick="editAccount(${index})">Edit</button></td>
+          <td><button class="btn btn-warning" onclick="deleteAccount(${index})">Delete</button></td>
+        </tr>
+      `);
+    }
   }
 }
 
@@ -243,6 +254,9 @@ function deleteAccount(Index) {
         );
       },
       success: function (result) {
+        if (storage.getItem("ROLE") == "User") {
+          window.location.replace("403.html");
+        }
         // error
         if (result == undefined || result == null) {
           alert("Error when loading data");
@@ -260,54 +274,59 @@ function DeleteAll() {
   // get id cua nhung o duoc tich
   var ids = [];
   for (let index = 0; index < size; index++) {
-      var checkboxInput = document.getElementById("checkbox-" + index);
-      if (checkboxInput != null && checkboxInput != undefined) {
-          if (checkboxInput.checked) {
-              ids.push(checkboxInput.value);
-          }
-      } else {
-          break;
+    var checkboxInput = document.getElementById("checkbox-" + index);
+    if (checkboxInput != null && checkboxInput != undefined) {
+      if (checkboxInput.checked) {
+        ids.push(checkboxInput.value);
       }
+    } else {
+      break;
+    }
   }
 
   if (ids.length == 0) {
-      alert("Bạn phải chọn ít nhất 1 bản ghi mới xóa được...");
+    alert("Bạn phải chọn ít nhất 1 bản ghi mới xóa được...");
   }
 
   // goi api
   $.ajax({
-      url: 'http://localhost:8080/api/v1/accounts?ids=' + ids.toString(),
-      type: 'DELETE',
-      beforeSend: function (xhr) {
-          xhr.setRequestHeader("Authorization", "Basic " + btoa(
-              storage.getItem("USERNAME") + ":" + storage.getItem("PASSWORD")));
-      },
-      success: function (result) {
-          // success
-         getListEmployees();
-      },
-      error(jqXHR, textStatus, errorThrown) {
-          if (jqXHR.status == 403) {
-              window.location.href = "http://127.0.0.1:5501/Source/html/403.html";
-          } else {
-              console.log();
-              console.log(textStatus);
-              console.log(errorThrown);
-          }
+    url: "http://localhost:8080/api/v1/accounts?ids=" + ids.toString(),
+    type: "DELETE",
+    beforeSend: function (xhr) {
+      xhr.setRequestHeader(
+        "Authorization",
+        "Basic " +
+          btoa(storage.getItem("USERNAME") + ":" + storage.getItem("PASSWORD"))
+      );
+    },
+    success: function (result) {
+      if (storage.getItem("ROLE") == "User") {
+        window.location.replace("403.html");
       }
+      // success
+      getListEmployees();
+    },
+    error(jqXHR, textStatus, errorThrown) {
+      if (jqXHR.status == 403) {
+        window.location.href = "403.html";
+      } else {
+        console.log();
+        console.log(textStatus);
+        console.log(errorThrown);
+      }
+    },
   });
 }
 function CheckboxAll() {
   var checkboxTotal = document.getElementById("checkbox-all");
 
   for (let index = 0; index < size; index++) {
-      var checkboxInput = document.getElementById("checkbox-" + index);
-      if (checkboxInput != null && checkboxInput != undefined) {
-          checkboxInput.checked = checkboxTotal.checked;
-      } else {
-          break;
-      }
-
+    var checkboxInput = document.getElementById("checkbox-" + index);
+    if (checkboxInput != null && checkboxInput != undefined) {
+      checkboxInput.checked = checkboxTotal.checked;
+    } else {
+      break;
+    }
   }
 }
 // Viết hàm để Edit các account
@@ -362,6 +381,9 @@ function editAccount(Index) {
       },
       // dataType: 'json', // datatype return
       success: function (data, textStatus, xhr) {
+        if (storage.getItem("ROLE") == "User") {
+          window.location.replace("403.html");
+        }
         console.log(data);
         // success
         alert("Update Successful");

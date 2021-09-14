@@ -19,10 +19,10 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 
 import com.vti.entity.Account;
+import com.vti.entity.AccountStatus;
 import com.vti.entity.Department;
 import com.vti.entity.Position;
 import com.vti.entity.RegistrationUserToken;
-import com.vti.entity.AccountStatus;
 import com.vti.event.OnSendRegistrationUserConfirmViaEmailEvent;
 import com.vti.form.AccountFilter;
 import com.vti.form.AccountFormForCreating;
@@ -57,8 +57,9 @@ public class AccountService implements IAccountService {
 	@Autowired
 	private PasswordEncoder passwordEncoder;
 
-	@SuppressWarnings("deprecation")
 	@Override
+	@SuppressWarnings("deprecation")
+	
 	public Page<Account> getAllAccounts(Pageable pageable, String search, AccountFilter filter) {
 		Specification<Account> where = null;
 		if (!StringUtils.isEmpty(search)) {
@@ -147,13 +148,13 @@ public class AccountService implements IAccountService {
 	@Override
 	public void createAccountRegister(AccountFormForCreatingRegister form) {
 		Account account = new Account();
-		Department department = departmentRepository.getById(form.getDepartmentId());
-		Position position = positionRepository.getById(form.getPositionId());
+//		Department department = departmentRepository.getById(form.getDepartmentId());
+//		Position position = positionRepository.getById(form.getPositionId());
 		account.setEmail(form.getEmail());
 		account.setUsername(form.getUsername());
 		account.setFullname(form.getFullname());
-		account.setDepartment(department);
-		account.setPosition(position);
+//		account.setDepartment(department);
+//		account.setPosition(position);
 		account.setPassword(passwordEncoder.encode(form.getPassword()));
 		accountRepository.save(account);
 
@@ -176,7 +177,7 @@ public class AccountService implements IAccountService {
 	}
 
 	@Override
-	public Account findUserByEmail(String email) {
+	public Account getAccountByEmail(String email) {
 		// TODO Auto-generated method stub
 		return accountRepository.findByEmail(email);
 	}

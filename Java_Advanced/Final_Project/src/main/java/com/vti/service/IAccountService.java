@@ -1,9 +1,9 @@
 package com.vti.service;
 
-import java.awt.print.Pageable;
 import java.util.List;
 
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.security.core.userdetails.UserDetailsService;
 
 import com.vti.entity.Account;
@@ -30,7 +30,7 @@ public interface IAccountService extends UserDetailsService{
 	
 	public Account getAccountByUsername(String username);
 	
-	public Account findUserByEmail(String email);
+	public Account getAccountByEmail(String email);
 
 	public void activeUser(String token);
 

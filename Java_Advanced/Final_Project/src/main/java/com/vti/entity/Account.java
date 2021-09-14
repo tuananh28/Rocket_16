@@ -65,11 +65,11 @@ public class Account implements Serializable {
 	private AccountStatus status = AccountStatus.NOT_ACTIVE;
 	
 	@ManyToOne
-	@JoinColumn(name = "DepartmentID", nullable = false)
+	@JoinColumn(name = "DepartmentID", nullable = true)
 	private Department department;
 
 	@ManyToOne
-	@JoinColumn(name = "PositionID", nullable = false)
+	@JoinColumn(name = "PositionID", nullable = true)
 	private Position position;
 	
 	@Column(name = "CreateDate")

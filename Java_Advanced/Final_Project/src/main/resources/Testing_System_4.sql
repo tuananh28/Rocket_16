@@ -60,7 +60,7 @@ VALUES
 						(N'Phó giám đốc'),
 						(N'Giám đốc'	),
 						(N'Thư kí'		),
-						(N'Bán hàng'	);
+						(N'Waitting'	);
 
 -- Add data position
 INSERT INTO Position	(PositionName	)
