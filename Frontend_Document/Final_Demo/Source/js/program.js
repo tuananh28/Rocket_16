@@ -18,7 +18,6 @@ $(function () {
   if (!isLogin()) {
     window.location.replace("login.html");
   }
-  window.location.replace("index.html");
   document.getElementById("fullName").innerHTML = storage.getItem("FULLNAME");
   // if (storage.getItem("ROLE") == "User") {
   //   window.location.replace("403.html");
@@ -109,9 +108,6 @@ $(function () {
         );
       },
       success: function (data, textStatus, xhr) {
-        if (storage.getItem("ROLE") == "User") {
-          window.location.replace("403.html");
-        }
         console.log(data);
         // success
         alert("Create Successful");
@@ -143,9 +139,6 @@ function getListDepartment() {
       );
     },
     success: function (data, textStatus, xhr) {
-      if (storage.getItem("ROLE") == "User") {
-        window.location.replace("403.html");
-      }
       data.forEach(function (item) {
         var department = {
           id: item.id,
@@ -182,9 +175,6 @@ function getListPosition() {
       );
     },
     success: function (data, textStatus, xhr) {
-      if (storage.getItem("ROLE") == "User") {
-        window.location.replace("403.html");
-      }
       data.forEach(function (item) {
         var position = {
           id: item.id,
@@ -216,7 +206,7 @@ function showAccount() {
   // Lặp trong listAccount để in thông tin từng phần tử
   // Hiển thị thêm 2 nút để sửa và xóa các Account
   for (var index = 0; index < listAccount.length; index++) {
-    if (storage.getItem("ROLE") == "User") {
+    if (storage.getItem("ROLE") != "User") {
       $("#Result_TB").append(`
         <tr>
           <td><input id="checkbox-"+ type="checkbox" onClick="CheckboxItem(${index})"></td>
@@ -254,9 +244,6 @@ function deleteAccount(Index) {
         );
       },
       success: function (result) {
-        if (storage.getItem("ROLE") == "User") {
-          window.location.replace("403.html");
-        }
         // error
         if (result == undefined || result == null) {
           alert("Error when loading data");
@@ -300,9 +287,6 @@ function DeleteAll() {
       );
     },
     success: function (result) {
-      if (storage.getItem("ROLE") == "User") {
-        window.location.replace("403.html");
-      }
       // success
       getListEmployees();
     },
@@ -381,15 +365,15 @@ function editAccount(Index) {
       },
       // dataType: 'json', // datatype return
       success: function (data, textStatus, xhr) {
-        if (storage.getItem("ROLE") == "User") {
-          window.location.replace("403.html");
-        }
         console.log(data);
         // success
         alert("Update Successful");
         getListEmployees();
       },
       error(jqXHR, textStatus, errorThrown) {
+        if (jqXHR.status == 403) {
+          window.location.href = "403.html";
+        }
         alert("Error when loading data");
         console.log(jqXHR);
         console.log(textStatus);
@@ -435,6 +419,9 @@ function getListEmployees() {
       pagingTable(data.totalPages);
     },
     error(jqXHR, textStatus, errorThrown) {
+      if (jqXHR.status == 403) {
+        window.location.href = "403.html";
+      }
       console.log(jqXHR);
       console.log(textStatus);
       console.log(errorThrown);

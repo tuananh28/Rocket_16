@@ -2,8 +2,13 @@ $(function () {
   hideMessageErrorValidate();
   document.getElementById("check").unchecked = storage.isLocal();
 });
-
+$(".input").on('keypress',function(e) {
+  if(e.which == 13) {
+     login();
+  }
+});
 function login() {
+  
   // get username & password
   var username = document.getElementById("username").value;
   var password = document.getElementById("password").value;
@@ -45,7 +50,6 @@ function login() {
     },
   });
 }
-
 function showMessageErrorValidate(message) {
   document.getElementById("error-message").style.display = "block";
   document.getElementById("error-message").innerHTML = message;
@@ -68,7 +72,7 @@ $("#RegisterForm").submit(function () {
     username: v_Username_ID,
     fullname: v_Fullname_ID,
     password: v_Password_ID,
-  }
+  };
   $.ajax({
     url: "http://localhost:8080/api/v1/registration",
     type: "POST",
@@ -78,7 +82,7 @@ $("#RegisterForm").submit(function () {
     success: function (data, textStatus, xhr) {
       console.log(data);
       // success
-      alert("Create Successful");
+      showSuccessAlert();
     },
     error(jqXHR, textStatus, errorThrown) {
       alert("Error when loading data");
@@ -89,3 +93,5 @@ $("#RegisterForm").submit(function () {
   });
   return false;
 });
+
+
