@@ -19,7 +19,7 @@ import com.vti.service.IAccountService;
 @RestController
 @RequestMapping(value = "/api/v1/registration")
 @Validated
-public class AccountRegisterController {
+public class RegisterController {
 
 	@Autowired
 	private IAccountService accountService;
