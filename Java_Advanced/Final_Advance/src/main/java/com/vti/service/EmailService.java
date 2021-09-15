@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 
 import com.vti.entity.Account;
 import com.vti.repository.RegistrationUserTokenRepository;
+import com.vti.repository.ResetPasswordTokenRepository;
 
 @Component
 public class EmailService implements IEmailService {
@@ -16,6 +17,9 @@ public class EmailService implements IEmailService {
 
 	@Autowired
 	private RegistrationUserTokenRepository registrationUserTokenRepository;
+
+	@Autowired
+	private ResetPasswordTokenRepository resetPasswordTokenRepository;
 
 	@Autowired
 	private JavaMailSender mailSender;
@@ -38,6 +42,20 @@ public class EmailService implements IEmailService {
 
 		sendEmail(email, subject, content);
 
+	}
+
+	@Override
+	public void sendResetPassword(String email) {
+		Account account = accountService.getAccountByEmail(email);
+
+		String token = resetPasswordTokenRepository.findByUserId(account.getId());
+
+		String confirmationUrl = "" + token;
+
+		String subject = "Thiết lập lại mật khẩu";
+		String content = "Click vào link dưới đây để thiết lập lại mật khẩu (nếu không phải bạn xin vui lòng bỏ qua).\n"
+				+ confirmationUrl;
+		sendEmail(email, subject, content);
 	}
 
 	private void sendEmail(final String recipientEmail, final String subject, final String content) {

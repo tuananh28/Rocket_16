@@ -9,10 +9,11 @@ import com.vti.entity.Department;
 import com.vti.repository.IDepartmentRepository;
 
 @Service
-public class DepartmentService implements IDepartmentService{
+public class DepartmentService implements IDepartmentService {
 
 	@Autowired
 	private IDepartmentRepository departmentRepository;
+
 	@Override
 	public List<Department> getAllDepartments() {
 		// TODO Auto-generated method stub

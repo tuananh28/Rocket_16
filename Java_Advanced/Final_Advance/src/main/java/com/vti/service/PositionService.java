@@ -9,7 +9,7 @@ import com.vti.entity.Position;
 import com.vti.repository.IPositionRepository;
 
 @Service
-public class PositionService implements IPositionService{
+public class PositionService implements IPositionService {
 	@Autowired
 	private IPositionRepository positionRepository;
 

@@ -46,6 +46,14 @@ CREATE TABLE IF NOT EXISTS `Registration_User_Token` (
 	`user_id` 		SMALLINT UNSIGNED NOT NULL,
 	`expiryDate` 	DATETIME NOT NULL
 );
+-- Create table Reset_Password_Token
+DROP TABLE IF EXISTS 	`Reset_Password_Token`;
+CREATE TABLE IF NOT EXISTS `Reset_Password_Token` (
+	id 				INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	`token`	 		CHAR(36) NOT NULL UNIQUE,
+	`user_id` 		SMALLINT UNSIGNED NOT NULL,
+	`expiryDate` 	DATETIME NOT NULL
+);
 /*============================== INSERT DATABASE =======================================*/
 /*======================================================================================*/
 -- Add data Department

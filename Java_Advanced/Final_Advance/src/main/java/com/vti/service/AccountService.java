@@ -23,6 +23,8 @@ import com.vti.entity.AccountStatus;
 import com.vti.entity.Department;
 import com.vti.entity.Position;
 import com.vti.entity.RegistrationUserToken;
+import com.vti.entity.ResetPasswordToken;
+import com.vti.event.OnResetPasswordViaEmailEvent;
 import com.vti.event.OnSendRegistrationUserConfirmViaEmailEvent;
 import com.vti.form.AccountFilter;
 import com.vti.form.AccountFormForCreating;
@@ -32,25 +34,28 @@ import com.vti.repository.IAccountRepository;
 import com.vti.repository.IDepartmentRepository;
 import com.vti.repository.IPositionRepository;
 import com.vti.repository.RegistrationUserTokenRepository;
+import com.vti.repository.ResetPasswordTokenRepository;
 import com.vti.specification.AccountSpecification;
 
 @Service
 @Component
 @Transactional
 public class AccountService implements IAccountService {
-	
+
 	@Autowired
 	private IAccountRepository accountRepository;
-	
+
 	@Autowired
 	private IDepartmentRepository departmentRepository;
-	
+
 	@Autowired
 	private IPositionRepository positionRepository;
 
 	@Autowired
 	private RegistrationUserTokenRepository registrationUserTokenRepository;
 
+	@Autowired
+	private ResetPasswordTokenRepository resetPasswordTokenRepository;
 	@Autowired
 	private ApplicationEventPublisher eventPublisher;
 
@@ -59,7 +64,7 @@ public class AccountService implements IAccountService {
 
 	@Override
 	@SuppressWarnings("deprecation")
-	
+
 	public Page<Account> getAllAccounts(Pageable pageable, String search, AccountFilter filter) {
 		Specification<Account> where = null;
 		if (!StringUtils.isEmpty(search)) {
@@ -173,7 +178,7 @@ public class AccountService implements IAccountService {
 		RegistrationUserToken token = new RegistrationUserToken(newToken, account);
 
 		registrationUserTokenRepository.save(token);
-		
+
 	}
 
 	@Override
@@ -212,5 +217,44 @@ public class AccountService implements IAccountService {
 	public boolean existsUserByUsername(String username) {
 		// TODO Auto-generated method stub
 		return accountRepository.existsByUsername(username);
+	}
+
+	@Override
+	public void resetPasswordViaEmail(String email) {
+		// find account by email
+		Account account = getAccountByEmail(email);
+		// remove token token if exists
+		registrationUserTokenRepository.deleteByUserId(account.getId());
+		// create new reset password token
+		createNewResetPasswordToken(account);
+		// send email
+		sendResetPasswordViaEmail(email);
+
+	}
+
+	private void createNewResetPasswordToken(Account account) {
+		// create new token for Reseting password
+		final String newToken = UUID.randomUUID().toString();
+		ResetPasswordToken token = new ResetPasswordToken(newToken, account);
+		resetPasswordTokenRepository.save(token);
+
+	}
+
+	@Override
+	public void resetPassword(String token, String newPassword) {
+		// get token
+		ResetPasswordToken resetPasswordToken = resetPasswordTokenRepository.findByToken(token);
+		// chage password
+		Account account = resetPasswordToken.getAccount();
+		account.setPassword(passwordEncoder.encode(newPassword));
+		accountRepository.save(account);
+		// remove Reset Password
+		resetPasswordTokenRepository.deleteById(resetPasswordToken.getId());
+	}
+
+	@Override
+	public void sendResetPasswordViaEmail(String email) {
+		eventPublisher.publishEvent(new OnResetPasswordViaEmailEvent(email));
+
 	}
 }

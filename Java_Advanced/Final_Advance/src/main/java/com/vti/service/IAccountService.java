@@ -12,8 +12,8 @@ import com.vti.form.AccountFormForCreating;
 import com.vti.form.AccountFormForCreatingRegister;
 import com.vti.form.AccountFormForUpdating;
 
-public interface IAccountService extends UserDetailsService{
-	
+public interface IAccountService extends UserDetailsService {
+
 	public Page<Account> getAllAccounts(Pageable pageable, String search, AccountFilter filter);
 
 	public Account getAccountByID(short id);
@@ -21,15 +21,15 @@ public interface IAccountService extends UserDetailsService{
 	public void createAccount(AccountFormForCreating form);
 
 	public void updateAccount(short id, AccountFormForUpdating form);
-	
+
 	public void createAccountRegister(AccountFormForCreatingRegister form);
 
 	public void deleteAccount(short id);
 
 	public void deleteAccounts(List<Short> ids);
-	
+
 	public Account getAccountByUsername(String username);
-	
+
 	public Account getAccountByEmail(String email);
 
 	public void activeUser(String token);
@@ -39,5 +39,11 @@ public interface IAccountService extends UserDetailsService{
 	public boolean existsUserByEmail(String email);
 
 	public boolean existsUserByUsername(String username);
+
+	public void resetPasswordViaEmail(String email);
+
+	public void resetPassword(String token, String newPassword);
+
+	public void sendResetPasswordViaEmail(String email);
 
 }

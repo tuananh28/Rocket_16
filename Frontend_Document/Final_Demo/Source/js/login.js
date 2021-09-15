@@ -56,8 +56,8 @@ function showMessageErrorValidate(message) {
 
 function hideMessageErrorValidate() {
   document.getElementById("error-message").style.display = "none";
-  document.getElementById("error-repassword").style.display = "none";
-  document.getElementById("error-email").style.display = "none";
+  
+  
 }
 
 function SignUp() {
@@ -75,9 +75,10 @@ function SignUp() {
     fullname: v_Fullname_ID,
     password: v_Password_ID,
   };
+
   if (v_RePassword_ID != v_Password_ID) {
-    document.getElementById("error-repassword").innerHTML= "Password not match !";
-    return;
+    document.getElementById("error-repassword").innerHTML= " Password not match ! ";
+    return false;
   }
   $.ajax({
     url: "http://localhost:8080/api/v1/registration",
@@ -88,8 +89,8 @@ function SignUp() {
     success: function (data, textStatus, xhr) {
       console.log(data);
       // success
+      document.getElementById("error-repassword").style.display = "none";
       ShowSuccessAlert();
-      hideMessageErrorValidate();
       resetForm();
     },
     error(jqXHR, textStatus, errorThrown) {
@@ -149,7 +150,7 @@ function Resend() {
           // datatype return
           success: function (data, textStatus, xhr) {
             console.log(data);
-            hideMessageErrorValidate();
+            document.getElementById("error-email").style.display = "none";
             resetForm();
             HideModal();
             ShowSuccessAlert();

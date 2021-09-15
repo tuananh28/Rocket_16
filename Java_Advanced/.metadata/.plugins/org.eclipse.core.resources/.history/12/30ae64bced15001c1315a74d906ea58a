@@ -1,0 +1,18 @@
+package com.vti.event;
+
+import org.springframework.context.ApplicationEvent;
+
+public class OnResetPasswordViaEmailEvent extends ApplicationEvent{
+
+	public OnResetPasswordViaEmailEvent(String email) {
+		super(email);
+		this.email = email;
+	}
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	private String email;
+}

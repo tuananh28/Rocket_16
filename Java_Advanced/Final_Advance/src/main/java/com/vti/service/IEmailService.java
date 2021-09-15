@@ -2,6 +2,8 @@ package com.vti.service;
 
 public interface IEmailService {
 
-	void sendRegistrationUserConfirm(String email);
+	public void sendRegistrationUserConfirm(String email);
+
+	public void sendResetPassword(String email);
 
 }
