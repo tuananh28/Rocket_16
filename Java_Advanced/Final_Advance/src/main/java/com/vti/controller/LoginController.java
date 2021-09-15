@@ -27,7 +27,7 @@ public class LoginController {
 		Account entity = accountService.getAccountByUsername(username);
 
 		LoginInfoDTO dto = new LoginInfoDTO(entity.getId(), entity.getEmail(), entity.getFullname(),
-				entity.getRole().toString());
+				entity.getRole().toString(),entity.getStatus().toString());
 		return new ResponseEntity<>(dto, HttpStatus.OK);
 	}
 }

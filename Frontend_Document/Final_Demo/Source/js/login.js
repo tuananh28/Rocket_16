@@ -27,6 +27,11 @@ function login() {
     success: function (data, textStatus, xhr) {
       console.log(data);
       storage.setLocal(document.getElementById("check").checked);
+      if(data.status == "NOT_ACTIVE") {
+        alert("Tài khoản của bạn chưa được active !");
+        return false;
+
+      }
       // save data to cookie
       storage.setItem("ID", data.id);
       storage.setItem("EMAIL", data.email);

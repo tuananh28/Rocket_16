@@ -46,7 +46,6 @@
     <fullyQualifiedTypeName name="com.sun.org.apache.bcel.internal.generic.NEW"/>
     <fullyQualifiedTypeName name="com.vti.entity.ResetPasswordToken"/>
     <fullyQualifiedTypeName name="org.springframework.context.ApplicationEvent"/>
-    <fullyQualifiedTypeName name="java.lang.String"/>
     <fullyQualifiedTypeName name="com.vti.event.OnResetPasswordViaEmailEvent"/>
     <fullyQualifiedTypeName name="java.io.Serializable"/>
     <fullyQualifiedTypeName name="javax.persistence.JoinColumn"/>
@@ -60,4 +59,5 @@
     <fullyQualifiedTypeName name="com.vti.repository.IAccountRepository"/>
     <fullyQualifiedTypeName name="com.vti.service.IAccountService"/>
     <fullyQualifiedTypeName name="java.util.UUID"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
 </qualifiedTypeNameHistroy>

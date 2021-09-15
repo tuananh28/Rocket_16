@@ -16,5 +16,7 @@ public class LoginInfoDTO {
 	private String fullname;
 
 	private String role;
+	
+	private String status;
 
 }
