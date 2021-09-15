@@ -2,7 +2,7 @@ package com.vti.event;
 
 import org.springframework.context.ApplicationEvent;
 
-public class OnResetPasswordViaEmailEvent extends ApplicationEvent{
+public class OnResetPasswordViaEmailEvent extends ApplicationEvent {
 
 	/**
 	 * 
@@ -10,7 +10,7 @@ public class OnResetPasswordViaEmailEvent extends ApplicationEvent{
 	private static final long serialVersionUID = 1L;
 
 	private String email;
-	
+
 	public OnResetPasswordViaEmailEvent(String email) {
 		super(email);
 		this.email = email;
@@ -23,5 +23,5 @@ public class OnResetPasswordViaEmailEvent extends ApplicationEvent{
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
+
 }

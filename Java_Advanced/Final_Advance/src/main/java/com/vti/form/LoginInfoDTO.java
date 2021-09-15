@@ -12,9 +12,9 @@ public class LoginInfoDTO {
 	private short id;
 
 	private String email;
-	
+
 	private String fullname;
-	
+
 	private String role;
-	
+
 }

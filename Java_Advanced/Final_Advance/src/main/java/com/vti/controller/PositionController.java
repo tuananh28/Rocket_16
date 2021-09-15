@@ -21,13 +21,13 @@ import com.vti.service.IPositionService;
 public class PositionController {
 	@Autowired
 	private IPositionService positionService;
-	
+
 	@GetMapping
-	public ResponseEntity<?>getAllPositions(){
+	public ResponseEntity<?> getAllPositions() {
 		List<Position> entities = positionService.getAllPosition();
-		
+
 		List<PositionDTO> dtos = new ArrayList<>();
-		
+
 		for (Position entity : entities) {
 			PositionDTO dto = new PositionDTO(entity.getId(), entity.getName().toString());
 			dtos.add(dto);

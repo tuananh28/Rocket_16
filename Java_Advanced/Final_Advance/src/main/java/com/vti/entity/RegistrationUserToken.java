@@ -43,7 +43,6 @@ public class RegistrationUserToken implements Serializable {
 	@Column(name = "`expiryDate`", nullable = false)
 	private Date expiryDate;
 
-
 	public RegistrationUserToken(String token, Account account) {
 		this.token = token;
 		this.account = account;

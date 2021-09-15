@@ -51,19 +51,19 @@ public class Account implements Serializable {
 
 	@Column(name = "Password", length = 100, nullable = false)
 	private String password;
-	
+
 	@Column(name = "Role", nullable = false)
 	@Enumerated(EnumType.STRING)
-	private roleName role= roleName.User;
-	
+	private roleName role = roleName.User;
+
 	public enum roleName {
-		Admin,User,Manager
+		Admin, User, Manager
 	}
-	
+
 	@Enumerated(EnumType.ORDINAL)
 	@Column(name = "Status", nullable = false)
 	private AccountStatus status = AccountStatus.NOT_ACTIVE;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "DepartmentID", nullable = true)
 	private Department department;
@@ -71,7 +71,7 @@ public class Account implements Serializable {
 	@ManyToOne
 	@JoinColumn(name = "PositionID", nullable = true)
 	private Position position;
-	
+
 	@Column(name = "CreateDate")
 	@Temporal(TemporalType.TIMESTAMP)
 	@CreationTimestamp

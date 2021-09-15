@@ -1,0 +1,48 @@
+package com.vti.entity;
+
+import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Entity
+@Table(name = "`Registration_User_Token`")
+@Getter
+@Setter
+@NoArgsConstructor
+public class ResetPasswordToken {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id", unique = true, nullable = false)
+	private int id;
+
+	@Column(name = "token", nullable = false, unique = true)
+	private String token;
+
+	@OneToOne(targetEntity = Account.class, fetch = FetchType.EAGER)
+	@Column(name = "user_id", nullable = false)
+	private Account account;
+
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name = "expiryDate", nullable = false)
+	private Date expiryDate;
+
+	public ResetPasswordToken(String token, Account account) {
+		this.token = token;
+		this.account = account;
+
+		expiryDate = new Date(System.currentTimeMillis() + 60000);
+	}
+}

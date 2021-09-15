@@ -80,6 +80,7 @@ function SignUp() {
     document.getElementById("error-repassword").innerHTML= " Password not match ! ";
     return false;
   }
+  document.getElementById("error-repassword").style.display = "none";
   $.ajax({
     url: "http://localhost:8080/api/v1/registration",
     type: "POST",
@@ -89,7 +90,6 @@ function SignUp() {
     success: function (data, textStatus, xhr) {
       console.log(data);
       // success
-      document.getElementById("error-repassword").style.display = "none";
       ShowSuccessAlert();
       resetForm();
     },
@@ -127,7 +127,7 @@ function Resend() {
       "Email không đúng định dạng!";
     return false;
   }
-
+  document.getElementById("error-email").style.display = "none";
   $.ajax({
     url: "http://localhost:8080/api/v1/accounts/email/" + v_Email_ID,
     type: "GET",
@@ -150,7 +150,6 @@ function Resend() {
           // datatype return
           success: function (data, textStatus, xhr) {
             console.log(data);
-            document.getElementById("error-email").style.display = "none";
             resetForm();
             HideModal();
             ShowSuccessAlert();

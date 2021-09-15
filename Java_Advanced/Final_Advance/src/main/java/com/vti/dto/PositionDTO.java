@@ -12,5 +12,4 @@ public class PositionDTO {
 
 	private String name;
 
-
 }

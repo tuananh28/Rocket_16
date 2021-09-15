@@ -20,13 +20,14 @@ import com.vti.service.IAccountService;
 public class LoginController {
 	@Autowired
 	private IAccountService accountService;
-	
+
 	@GetMapping
-	public ResponseEntity<?>Login(Principal principal){
+	public ResponseEntity<?> Login(Principal principal) {
 		String username = principal.getName();
 		Account entity = accountService.getAccountByUsername(username);
-		
-		LoginInfoDTO dto = new LoginInfoDTO(entity.getId(),entity.getEmail(),entity.getFullname(),entity.getRole().toString());
-		return new ResponseEntity<>(dto,HttpStatus.OK);
+
+		LoginInfoDTO dto = new LoginInfoDTO(entity.getId(), entity.getEmail(), entity.getFullname(),
+				entity.getRole().toString());
+		return new ResponseEntity<>(dto, HttpStatus.OK);
 	}
 }
