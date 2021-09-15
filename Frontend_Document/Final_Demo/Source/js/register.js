@@ -1,3 +1,4 @@
+var listAccount = [];
 function SignUp() {
   // Lấy các giá trị người dùng nhập vào
   // var v_ID_ID = $("#ID_ID").val();
@@ -6,16 +7,22 @@ function SignUp() {
   var v_Fullname_ID = $("#Fullname_ID").val();
   var v_Password_ID = $("#Password_ID").val();
   var v_RePassword_ID = $("#RePassword_ID").val();
+  var V_Department_ID = "10";
+  var v_Position_ID = "1";
 
   var registration = {
     email: v_Email_ID,
     username: v_Username_ID,
     fullname: v_Fullname_ID,
     password: v_Password_ID,
+    departmentId: V_Department_ID,
+    positionId: v_Position_ID,
+
   };
 
   if (v_RePassword_ID != v_Password_ID) {
-    document.getElementById("error-repassword").innerHTML= " Password not match ! ";
+    document.getElementById("error-repassword").innerHTML =
+      " Password not match ! ";
     return false;
   }
   document.getElementById("error-repassword").style.display = "none";
@@ -65,7 +72,7 @@ function Send_Token() {
       "Email không đúng định dạng!";
     return false;
   }
-  // 
+  //
   $.ajax({
     url: "http://localhost:8080/api/v1/accounts/email/" + v_Email_ID,
     type: "GET",

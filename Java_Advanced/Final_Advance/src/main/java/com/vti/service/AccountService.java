@@ -153,13 +153,13 @@ public class AccountService implements IAccountService {
 	@Override
 	public void createAccountRegister(AccountFormForCreatingRegister form) {
 		Account account = new Account();
-//		Department department = departmentRepository.getById(form.getDepartmentId());
-//		Position position = positionRepository.getById(form.getPositionId());
+		Department department = departmentRepository.getById(form.getDepartmentId());
+		Position position = positionRepository.getById(form.getPositionId());
 		account.setEmail(form.getEmail());
 		account.setUsername(form.getUsername());
 		account.setFullname(form.getFullname());
-//		account.setDepartment(department);
-//		account.setPosition(position);
+		account.setDepartment(department);
+		account.setPosition(position);
 		account.setPassword(passwordEncoder.encode(form.getPassword()));
 		accountRepository.save(account);
 

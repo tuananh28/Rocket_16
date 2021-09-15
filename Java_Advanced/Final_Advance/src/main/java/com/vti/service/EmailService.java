@@ -50,7 +50,7 @@ public class EmailService implements IEmailService {
 
 		String token = resetPasswordTokenRepository.findByUserId(account.getId());
 
-		String confirmationUrl = "http://localhost:8080/api/v1/registration/activeUser?token=" + token;
+		String confirmationUrl = token;
 
 		String subject = "Thiết lập lại mật khẩu";
 		String content = "Click vào link dưới đây để thiết lập lại mật khẩu (nếu không phải bạn xin vui lòng bỏ qua).\n"
