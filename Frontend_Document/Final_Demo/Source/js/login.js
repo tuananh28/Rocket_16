@@ -2,7 +2,7 @@ $(function () {
   hideMessageErrorValidate();
   document.getElementById("check").unchecked = storage.isLocal();
 });
-$(".input").on("keypress", function (e) {
+$("#password").on("keypress", function (e) {
   if (e.which == 13) {
     login();
   }
@@ -40,12 +40,13 @@ function login() {
     },
     error(jqXHR, textStatus, errorThrown) {
       if (jqXHR.status == 401) {
-        showMessageErrorValidate("Wrong Account or Password!"); 
+        showMessageErrorValidate("Wrong Account or Password!");
       }
-        console.log(jqXHR);
-        console.log(textStatus);
-        console.log(errorThrown);
-      }
+      resetForm();
+      console.log(jqXHR);
+      console.log(textStatus);
+      console.log(errorThrown);
+    },
   });
 }
 function showMessageErrorValidate(message) {
@@ -55,6 +56,8 @@ function showMessageErrorValidate(message) {
 
 function hideMessageErrorValidate() {
   document.getElementById("error-message").style.display = "none";
+  document.getElementById("error-repassword").style.display = "none";
+  document.getElementById("error-email").style.display = "none";
 }
 
 function SignUp() {
@@ -64,6 +67,7 @@ function SignUp() {
   var v_Username_ID = $("#Username_ID").val();
   var v_Fullname_ID = $("#Fullname_ID").val();
   var v_Password_ID = $("#Password_ID").val();
+  var v_RePassword_ID = $("#RePassword_ID").val();
 
   var registration = {
     email: v_Email_ID,
@@ -71,6 +75,10 @@ function SignUp() {
     fullname: v_Fullname_ID,
     password: v_Password_ID,
   };
+  if (v_RePassword_ID != v_Password_ID) {
+    document.getElementById("error-repassword").innerHTML= "Password not match !";
+    return;
+  }
   $.ajax({
     url: "http://localhost:8080/api/v1/registration",
     type: "POST",
@@ -80,7 +88,8 @@ function SignUp() {
     success: function (data, textStatus, xhr) {
       console.log(data);
       // success
-      $("#myModal").modal("show");
+      ShowSuccessAlert();
+      hideMessageErrorValidate();
       resetForm();
     },
     error(jqXHR, textStatus, errorThrown) {
@@ -98,6 +107,10 @@ function resetForm() {
   $("#Username_ID").val("");
   $("#Fullname_ID").val("");
   $("#Password_ID").val("");
+  $("#RePassword_ID").val("");
+  $("#email_token").val("");
+  $("#username").val("");
+  $("#password").val("");
 }
 function ResendToken() {
   $("#email_token").val("");
@@ -136,10 +149,10 @@ function Resend() {
           // datatype return
           success: function (data, textStatus, xhr) {
             console.log(data);
-            document.getElementById("error-email").style.display = "none";
-            $("#email_token").val("");
-            $("#resend_form").modal("hide");
-            $("#myModal").modal("show");
+            hideMessageErrorValidate();
+            resetForm();
+            HideModal();
+            ShowSuccessAlert();
           },
           error(jqXHR, textStatus, errorThrown) {
             alert("Error when loading data");
@@ -157,4 +170,11 @@ function Resend() {
     },
   });
   return false;
+}
+function ShowSuccessAlert() {
+  $("#myModal").modal("show");
+}
+
+function HideModal() {
+  $("#resend_form").modal("hide");
 }
