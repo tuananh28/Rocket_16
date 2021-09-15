@@ -679,3 +679,345 @@ java.lang.IllegalArgumentException: Malformed \uxxxx encoding.
 	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1374)
 	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.run(DownloadSourcesJob.java:161)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.core.jobs 4 2 2021-09-15 15:29:57.282
+!MESSAGE An internal error occurred during: "Download sources and javadoc".
+!STACK 0
+java.lang.IllegalArgumentException: Malformed \uxxxx encoding.
+	at java.base/java.util.Properties.loadConvert(Properties.java:672)
+	at java.base/java.util.Properties.load0(Properties.java:455)
+	at java.base/java.util.Properties.load(Properties.java:408)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.loadLastUpdated(MavenImpl.java:910)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.setLastUpdated(MavenImpl.java:828)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.lambda$4(MavenImpl.java:786)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:179)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:114)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:101)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.resolve(MavenImpl.java:772)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.resolve(MavenImpl.java:749)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.download(DownloadSourcesJob.java:330)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadAttachments(DownloadSourcesJob.java:304)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadMaven(DownloadSourcesJob.java:269)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadFilesAndPopulateToUpdate(DownloadSourcesJob.java:233)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.lambda$0(DownloadSourcesJob.java:161)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:179)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:153)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:101)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1374)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.run(DownloadSourcesJob.java:161)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.core.jobs 4 2 2021-09-15 15:29:58.693
+!MESSAGE An internal error occurred during: "Download sources and javadoc".
+!STACK 0
+java.lang.IllegalArgumentException: Malformed \uxxxx encoding.
+	at java.base/java.util.Properties.loadConvert(Properties.java:672)
+	at java.base/java.util.Properties.load0(Properties.java:455)
+	at java.base/java.util.Properties.load(Properties.java:408)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.loadLastUpdated(MavenImpl.java:910)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.setLastUpdated(MavenImpl.java:828)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.lambda$4(MavenImpl.java:786)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:179)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:114)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:101)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.resolve(MavenImpl.java:772)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.resolve(MavenImpl.java:749)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.download(DownloadSourcesJob.java:330)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadAttachments(DownloadSourcesJob.java:304)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadMaven(DownloadSourcesJob.java:269)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadFilesAndPopulateToUpdate(DownloadSourcesJob.java:233)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.lambda$0(DownloadSourcesJob.java:161)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:179)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:153)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:101)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1374)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.run(DownloadSourcesJob.java:161)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.core.jobs 4 2 2021-09-15 15:48:57.272
+!MESSAGE An internal error occurred during: "Download sources and javadoc".
+!STACK 0
+java.lang.IllegalArgumentException: Malformed \uxxxx encoding.
+	at java.base/java.util.Properties.loadConvert(Properties.java:672)
+	at java.base/java.util.Properties.load0(Properties.java:455)
+	at java.base/java.util.Properties.load(Properties.java:408)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.loadLastUpdated(MavenImpl.java:910)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.setLastUpdated(MavenImpl.java:828)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.lambda$4(MavenImpl.java:786)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:179)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:114)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:101)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.resolve(MavenImpl.java:772)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.resolve(MavenImpl.java:749)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.download(DownloadSourcesJob.java:330)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadAttachments(DownloadSourcesJob.java:304)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadMaven(DownloadSourcesJob.java:269)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadFilesAndPopulateToUpdate(DownloadSourcesJob.java:233)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.lambda$0(DownloadSourcesJob.java:161)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:179)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:153)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:101)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1374)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.run(DownloadSourcesJob.java:161)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.core.jobs 4 2 2021-09-15 15:48:58.563
+!MESSAGE An internal error occurred during: "Download sources and javadoc".
+!STACK 0
+java.lang.IllegalArgumentException: Malformed \uxxxx encoding.
+	at java.base/java.util.Properties.loadConvert(Properties.java:672)
+	at java.base/java.util.Properties.load0(Properties.java:455)
+	at java.base/java.util.Properties.load(Properties.java:408)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.loadLastUpdated(MavenImpl.java:910)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.setLastUpdated(MavenImpl.java:828)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.lambda$4(MavenImpl.java:786)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:179)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:114)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:101)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.resolve(MavenImpl.java:772)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.resolve(MavenImpl.java:749)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.download(DownloadSourcesJob.java:330)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadAttachments(DownloadSourcesJob.java:304)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadMaven(DownloadSourcesJob.java:269)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadFilesAndPopulateToUpdate(DownloadSourcesJob.java:233)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.lambda$0(DownloadSourcesJob.java:161)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:179)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:153)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:101)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1374)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.run(DownloadSourcesJob.java:161)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.core.jobs 4 2 2021-09-15 16:09:04.983
+!MESSAGE An internal error occurred during: "Download sources and javadoc".
+!STACK 0
+java.lang.IllegalArgumentException: Malformed \uxxxx encoding.
+	at java.base/java.util.Properties.loadConvert(Properties.java:672)
+	at java.base/java.util.Properties.load0(Properties.java:455)
+	at java.base/java.util.Properties.load(Properties.java:408)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.loadLastUpdated(MavenImpl.java:910)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.setLastUpdated(MavenImpl.java:828)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.lambda$4(MavenImpl.java:786)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:179)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:114)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:101)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.resolve(MavenImpl.java:772)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.resolve(MavenImpl.java:749)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.download(DownloadSourcesJob.java:330)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadAttachments(DownloadSourcesJob.java:304)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadMaven(DownloadSourcesJob.java:269)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadFilesAndPopulateToUpdate(DownloadSourcesJob.java:233)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.lambda$0(DownloadSourcesJob.java:161)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:179)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:153)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:101)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1374)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.run(DownloadSourcesJob.java:161)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.core.jobs 4 2 2021-09-15 16:09:07.107
+!MESSAGE An internal error occurred during: "Download sources and javadoc".
+!STACK 0
+java.lang.IllegalArgumentException: Malformed \uxxxx encoding.
+	at java.base/java.util.Properties.loadConvert(Properties.java:672)
+	at java.base/java.util.Properties.load0(Properties.java:455)
+	at java.base/java.util.Properties.load(Properties.java:408)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.loadLastUpdated(MavenImpl.java:910)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.setLastUpdated(MavenImpl.java:828)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.lambda$4(MavenImpl.java:786)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:179)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:114)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:101)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.resolve(MavenImpl.java:772)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.resolve(MavenImpl.java:749)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.download(DownloadSourcesJob.java:330)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadAttachments(DownloadSourcesJob.java:304)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadMaven(DownloadSourcesJob.java:269)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadFilesAndPopulateToUpdate(DownloadSourcesJob.java:233)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.lambda$0(DownloadSourcesJob.java:161)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:179)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:153)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:101)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1374)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.run(DownloadSourcesJob.java:161)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.core.jobs 4 2 2021-09-15 16:13:42.971
+!MESSAGE An internal error occurred during: "Download sources and javadoc".
+!STACK 0
+java.lang.IllegalArgumentException: Malformed \uxxxx encoding.
+	at java.base/java.util.Properties.loadConvert(Properties.java:672)
+	at java.base/java.util.Properties.load0(Properties.java:455)
+	at java.base/java.util.Properties.load(Properties.java:408)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.loadLastUpdated(MavenImpl.java:910)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.setLastUpdated(MavenImpl.java:828)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.lambda$4(MavenImpl.java:786)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:179)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:114)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:101)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.resolve(MavenImpl.java:772)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.resolve(MavenImpl.java:749)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.download(DownloadSourcesJob.java:330)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadAttachments(DownloadSourcesJob.java:304)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadMaven(DownloadSourcesJob.java:269)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadFilesAndPopulateToUpdate(DownloadSourcesJob.java:233)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.lambda$0(DownloadSourcesJob.java:161)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:179)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:153)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:101)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1374)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.run(DownloadSourcesJob.java:161)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-15 16:17:39.368
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-15 16:17:39.369
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@2057b73[org.springframework.tooling.boot.ls:1.27.0.202108151936(id=559)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-15 16:17:39.369
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-15 16:17:41.253
+!MESSAGE Boot LS startup time from start to initialized: 1881ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-15 16:17:41.332
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.OzXePBpQisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-15 16:17:41.332
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-15 16:17:41.333
+!MESSAGE Scheduling initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-15 16:17:41.333
+!MESSAGE Scheduling initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-15 16:17:41.333
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-15 16:17:41.334
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.OzXePBpQ => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-15 16:17:41.341
+!MESSAGE classpath=103 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-15 16:17:41.344
+!MESSAGE buffering callback sts4.classpath.OzXePBpQ Final_Advance false 103
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-15 16:17:41.344
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-15 16:17:41.345
+!MESSAGE classpath=2 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-15 16:17:41.345
+!MESSAGE buffering callback sts4.classpath.OzXePBpQ DemoDI&IoC false 2
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-15 16:17:41.345
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-15 16:17:41.356
+!MESSAGE classpath=100 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-15 16:17:41.398
+!MESSAGE buffering callback sts4.classpath.OzXePBpQ GroupManagement false 100
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-15 16:17:41.398
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-15 16:17:41.399
+!MESSAGE classpath=4 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-15 16:17:41.399
+!MESSAGE buffering callback sts4.classpath.OzXePBpQ Testing_BeanValidation false 4
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-15 16:17:41.399
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-15 16:17:41.403
+!MESSAGE classpath=75 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-15 16:17:41.405
+!MESSAGE buffering callback sts4.classpath.OzXePBpQ Testing_BeanValidation_Custom false 75
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-15 16:17:41.405
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-15 16:17:41.407
+!MESSAGE classpath=28 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-15 16:17:41.409
+!MESSAGE buffering callback sts4.classpath.OzXePBpQ Testing_Hibernate false 28
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-15 16:17:41.409
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-15 16:17:41.409
+!MESSAGE classpath=4 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-15 16:17:41.409
+!MESSAGE buffering callback sts4.classpath.OzXePBpQ Testing_Hibernate_CriteriaQuery false 4
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-15 16:17:41.410
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-15 16:17:41.410
+!MESSAGE classpath=4 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-15 16:17:41.410
+!MESSAGE buffering callback sts4.classpath.OzXePBpQ Testing_Hibernate_FKey_Inheritance false 4
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-15 16:17:41.410
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-15 16:17:41.411
+!MESSAGE classpath=4 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-15 16:17:41.411
+!MESSAGE buffering callback sts4.classpath.OzXePBpQ Testing_Hibernate_HQLQuery false 4
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-15 16:17:41.411
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-15 16:17:41.411
+!MESSAGE classpath=3 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-15 16:17:41.412
+!MESSAGE buffering callback sts4.classpath.OzXePBpQ Testing_Hibernate_NativeQuery false 3
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-15 16:17:41.412
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-15 16:17:41.412
+!MESSAGE classpath=4 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-15 16:17:41.412
+!MESSAGE buffering callback sts4.classpath.OzXePBpQ Testing_SpringDataJPA false 4
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-15 16:17:41.413
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-15 16:17:41.413
+!MESSAGE classpath=6 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-15 16:17:41.413
+!MESSAGE buffering callback sts4.classpath.OzXePBpQ Testing_SpringDataJPA2 false 6
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-15 16:17:41.413
+!MESSAGE executing callback sts4.classpath.OzXePBpQ 12 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-15 16:17:41.893
+!MESSAGE executing callback sts4.classpath.OzXePBpQ SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-15 16:21:45.632
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.OzXePBpQ
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-15 16:21:45.632
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.OzXePBpQ
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-15 16:21:45.632
+!MESSAGE subsribers = {}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-15 16:21:45.632
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.OzXePBpQ => OK
