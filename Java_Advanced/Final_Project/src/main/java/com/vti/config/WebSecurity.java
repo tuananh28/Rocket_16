@@ -16,6 +16,7 @@ public class WebSecurity extends WebSecurityConfigurerAdapter{
 	@Autowired
 	IAccountService accountService;
 	
+	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth.userDetailsService(accountService).passwordEncoder(new BCryptPasswordEncoder());
 	}
@@ -34,11 +35,24 @@ public class WebSecurity extends WebSecurityConfigurerAdapter{
 //	}
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.authorizeRequests()
-			.anyRequest().permitAll()
-			.and()
-			.httpBasic()
-			.and()
-			.csrf().disable();
+		http
+		.cors()
+		.and()
+		.authorizeRequests()
+		.antMatchers("/api/v1/accounts", "api/v1/departments/*" ,"/api/v1/registratiton")
+		.authenticated()
+		.and()
+		.httpBasic()
+		.and()
+		.csrf().disable();
 	}
+//	@Override
+//	protected void configure(HttpSecurity http) throws Exception {
+//		http.authorizeRequests()
+//			.anyRequest().permitAll()
+//			.and()
+//			.httpBasic()
+//			.and()
+//			.csrf().disable();
+//	}
 }

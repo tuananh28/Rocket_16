@@ -18,6 +18,7 @@
 
   <!-- import css -->
   <link rel="stylesheet" href="/Source/css/login.css">
+  <link rel="stylesheet" href="/Source/css/modal.css">
 </head>
 
 <body>
@@ -36,7 +37,7 @@
             <input id="password" type="password" class="input" required>
           </div>
           <div class="group">
-            <p id="error-message" style="color: red;">Sai mật khẩu</p>
+            <p id="error-message" style="color: red;"></p>
           </div>
           <div class="group">
             <input type="checkbox" id="check" class="check">
@@ -50,33 +51,75 @@
             <a href="#forgot">Forgot Password?</a>
           </div>
         </div>
-        <form method="POST" id="RegisterForm">
-          <div class="sign-up-htm">
-            <div class="group">
-              <label class="label">Username</label>
-              <input id="Username_ID" type="text" class="input" required>
-            </div>
-            <div class="group">
-              <label class="label">Password</label>
-              <input id="Password_ID" type="password" class="input" required>
-            </div>
-            <div class="group">
-              <label class="label">Fullname</label>
-              <input id="Fullname_ID" type="text" class="input" required>
-            </div>
-            <div class="group">
-              <label class="label">Email Address</label>
-              <input id="Email_ID" type="email" class="input" required>
-            </div>
-            <div class="group">
-              <input type="submit" class="button" value="Sign Up" id="success-message">
-            </div>
-            <div class="hr"></div>
-            <div class="foot-lnk">
-              <label for="tab-1">Already Member?</a>
-            </div>
+        <div class="sign-up-htm">
+          <div class="group">
+            <label class="label">Username</label>
+            <input id="Username_ID" type="text" class="input" required>
           </div>
-        </form>
+          <div class="group">
+            <label class="label">Password</label>
+            <input id="Password_ID" type="password" class="input" required>
+          </div>
+          <div class="group">
+            <label class="label">Fullname</label>
+            <input id="Fullname_ID" type="text" class="input" required>
+          </div>
+          <div class="group">
+            <label class="label">Email Address</label>
+            <input id="Email_ID" type="email" class="input" required>
+          </div>
+          <div class="group">
+            <button class="button" onclick="SignUp('success-message')" data-toggle="modal">Sign up</button>
+          </div>
+          <div class="group">
+            <button class="button" onclick="ResendToken('success-message')" data-toggle="modal">Resend token</button>
+          </div>
+          <div class="hr"></div>
+          <div class="foot-lnk">
+            <label for="tab-1">Already Member?</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal HTML -->
+  <div id="myModal" class="modal fade">
+    <div class="modal-dialog modal-confirm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="icon-box">
+            <i class="material-icons">&#xE876;</i>
+          </div>
+          <h4 class="modal-title w-100">Awesome!</h4>
+        </div>
+        <div class="modal-body">
+          <p class="text-center">We have sent an email. Please check email to active account!</p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-success btn-block" data-dismiss="modal">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal HTML -->
+  <div id="resend_form" class="modal fade" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- body -->
+        <div class="modal-body">
+          <div class="modal-container">
+            <label for="email"><b>Email</b></label>
+            <input type="email" placeholder="Enter Email" name="email_token" id="email_token" required>
+          </div>
+          <div>
+            <p id="error-email" style="color: red;"></p>
+          </div>
+        </div>
+        <!-- footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-primary" onclick="Resend()">Send</button>
+        </div>
       </div>
     </div>
   </div>
