@@ -35,4 +35,5 @@ public class Department implements Serializable {
 	@OneToMany(mappedBy = "department", fetch = FetchType.EAGER)
 	private List<Account> account;
 
+
 }

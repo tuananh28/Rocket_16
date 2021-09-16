@@ -13,4 +13,5 @@ public class AccountFormForCreating {
 	private String fullname;
 	private short departmentId;
 	private short positionId;
+
 }

@@ -51,4 +51,5 @@ public class ResetPasswordToken implements Serializable {
 		// 1h
 		expiryDate = new Date(System.currentTimeMillis() + 360000);
 	}
+
 }

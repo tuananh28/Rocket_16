@@ -173,6 +173,7 @@ public class Ex5_Input_from_console {
 		}
 	}
 
+	@SuppressWarnings("unlikely-arg-type")
 	private static void Question9() {
 		// Viết method cho phép người dùng thêm group vào account theo flow sau:
 		/*

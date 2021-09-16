@@ -83,4 +83,5 @@ public class Account implements Serializable {
 		this.password = password;
 		this.fullname = fullname;
 	}
+	
 }

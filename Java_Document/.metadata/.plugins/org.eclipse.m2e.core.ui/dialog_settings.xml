@@ -32,7 +32,7 @@
 		</list>
 	</section>
 	<section name="MavenProjectWizardArchetypePage">
-		<item value="internal" key="catalog"/>
+		<item key="catalog" value="internal"/>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
 			<item value="[artifactId]-TRUNK"/>
@@ -57,25 +57,10 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
-			<item value="com.vti.Final_Exem"/>
-			<item value="com.vti.BuiTuanAnh_Java_Exam"/>
-			<item value="com.vti.entity"/>
-			<item value="com.vti.Final_Example_3"/>
-			<item value="com.vti.Final_Example_2"/>
-			<item value="com.vti.Final_Example_1"/>
-			<item value="com.vti.Testing_System_11"/>
 		</list>
 		<list key="groupId">
-			<item value="com.vti"/>
 		</list>
 		<list key="artifactId">
-			<item value="Final_Exem"/>
-			<item value="BuiTuanAnh_Java_Exam"/>
-			<item value="Final_Example_4"/>
-			<item value="Final_Example_3"/>
-			<item value="Final_Example_2"/>
-			<item value="Final_Example_1"/>
-			<item value="Testing_System_11"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>

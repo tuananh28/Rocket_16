@@ -7964,3 +7964,4 @@ java.io.InvalidClassException: org.eclipse.m2e.core.internal.project.registry.Ba
 2021-09-16 19:12:20,638 [Worker-19: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\Rocket_16\Java_Document\Testing_System_11\src\main\resources
 2021-09-16 19:12:20,639 [Worker-19: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2021-09-16 19:12:20,639 [Worker-19: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\Rocket_16\Java_Document\Testing_System_11\src\test\resources
+2021-09-16 19:30:27,814 [Worker-3: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
