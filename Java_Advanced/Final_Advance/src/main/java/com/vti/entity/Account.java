@@ -49,7 +49,7 @@ public class Account implements Serializable {
 	@Column(name = "FullName", length = 50, nullable = false)
 	private String fullname;
 
-	@Column(name = "Password", length = 100, nullable = false)
+	@Column(name = "Password", length = 100, nullable = true)
 	private String password;
 
 	@Column(name = "Role", nullable = false)

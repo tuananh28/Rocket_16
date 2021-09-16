@@ -138,6 +138,7 @@ $(function () {
       fullname: v_Fullname_ID,
       departmentId: depID,
       positionId: posID,
+      password: null,
     };
 
     // Add account tới MOCK API
@@ -153,9 +154,9 @@ $(function () {
           "Authorization",
           "Basic " +
             btoa(
-              localStorage.getItem("USERNAME") +
+              storage.getItem("USERNAME") +
                 ":" +
-                localStorage.getItem("PASSWORD")
+                storage.getItem("PASSWORD")
             )
         );
       },
@@ -176,9 +177,9 @@ $(function () {
                 "Authorization",
                 "Basic " +
                   btoa(
-                    localStorage.getItem("USERNAME") +
+                    storage.getItem("USERNAME") +
                       ":" +
-                      localStorage.getItem("PASSWORD")
+                      storage.getItem("PASSWORD")
                   )
               );
             },
