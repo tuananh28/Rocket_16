@@ -1,5 +1,5 @@
 var listAccount = [];
-function SignUp() {
+$("#signupForm").submit(function(){
   // Lấy các giá trị người dùng nhập vào
   // var v_ID_ID = $("#ID_ID").val();
   var v_Email_ID = $("#Email_ID").val();
@@ -46,7 +46,7 @@ function SignUp() {
     },
   });
   return false;
-}
+});
 
 function resetForm() {
   $("#Email_ID").val("");

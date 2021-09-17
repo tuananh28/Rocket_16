@@ -144,8 +144,7 @@ $(function () {
     // Add account tới MOCK API
     // Check Username đã có trên hệ thống hay chưa?
     $.ajax({
-      url:
-        "http://localhost:8080/api/v1/accounts/username/" + v_Username_ID,
+      url: "http://localhost:8080/api/v1/accounts/username/" + v_Username_ID,
       type: "GET",
       contentType: "application/json",
       dataType: "json", // datatype return
@@ -154,9 +153,7 @@ $(function () {
           "Authorization",
           "Basic " +
             btoa(
-              storage.getItem("USERNAME") +
-                ":" +
-                storage.getItem("PASSWORD")
+              storage.getItem("USERNAME") + ":" + storage.getItem("PASSWORD")
             )
         );
       },
@@ -184,7 +181,8 @@ $(function () {
               );
             },
             success: function (data, textStatus, xhr) {
-              currentPage = totalPages;
+              console.log(data);
+              currentPage = data.totalPages;
               getListEmployees();
             },
             error(jqXHR, textStatus, errorThrown) {
@@ -410,11 +408,10 @@ function editAccount(Index) {
   $("#update_btn").click(function () {
     var v_ID_ID = $("#ID_ID").val();
     var v_Fullname_ID = $("#Fullname_ID").val();
-    var v_Fullname_ID = $("#Fullname_ID").val();
     var v_Department_ID = $("#Department_ID").val();
     var v_Position_ID = $("#Position_ID").val();
-     //Validate Fullname
-     if (
+    //Validate Fullname
+    if (
       !v_Fullname_ID | (v_Fullname_ID.length < 6) ||
       v_Fullname_ID.length > 50
     ) {

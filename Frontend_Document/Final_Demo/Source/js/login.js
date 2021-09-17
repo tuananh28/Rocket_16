@@ -7,7 +7,7 @@ $("#password").on("keypress", function (e) {
     login();
   }
 });
-function login() {
+$("#signinForm").submit(function () {
   // get username & password
   var username = document.getElementById("username").value;
   var password = document.getElementById("password").value;
@@ -53,7 +53,8 @@ function login() {
       console.log(errorThrown);
     },
   });
-}
+  return false;
+});
 
 function showMessageErrorValidate(message) {
   document.getElementById("error-message").style.display = "block";
@@ -98,7 +99,7 @@ function Send_Password() {
       } else {
         $.ajax({
           url:
-            "http://localhost:8080/api/v1/resetpassword/resetPasswordRequest?email=" +
+            "http://localhost:8080/api/v1/newPassword/resetPasswordRequest?email=" +
             v_Email_ID,
           type: "GET",
           // data: JSON.stringify(account), // body

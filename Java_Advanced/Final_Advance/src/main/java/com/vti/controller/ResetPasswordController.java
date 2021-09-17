@@ -13,7 +13,7 @@ import com.vti.service.IAccountService;
 
 @RestController
 @CrossOrigin("*")
-@RequestMapping(value = "/api/v1/resetpassword")
+@RequestMapping(value = "/api/v1/newPassword")
 public class ResetPasswordController {
 
 	@Autowired
@@ -41,12 +41,12 @@ public class ResetPasswordController {
 
 	@GetMapping("/resetPassword")
 	// validate: check exists, check not expired
-	public ResponseEntity<?> resetPasswordViaEmail(@RequestParam String token, @RequestParam String newPassword) {
+	public ResponseEntity<?> resetPasswordViaEmail(@RequestParam String token) {
 
 		// reset password
-		accountService.resetPassword(token, newPassword);
+		accountService.resetPassword(token);
 
-		return new ResponseEntity<>("Reset Password success!", HttpStatus.OK);
+		return new ResponseEntity<>("Mật khẩu mới của bạn là : 111111", HttpStatus.OK);
 	}
 
 }

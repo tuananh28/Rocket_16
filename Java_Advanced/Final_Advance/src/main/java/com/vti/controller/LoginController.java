@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.vti.dto.LoginInfoDTO;
 import com.vti.entity.Account;
-import com.vti.form.LoginInfoDTO;
 import com.vti.service.IAccountService;
 
 @RestController

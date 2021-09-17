@@ -225,7 +225,7 @@ public class AccountService implements IAccountService {
 		Account account = getAccountByEmail(email);
 		// remove token token if exists
 		registrationUserTokenRepository.deleteByUserId(account.getId());
-		// create new reset password token
+		// create new token  reset password 
 		createNewResetPasswordToken(account);
 		// send email
 		sendResetPasswordViaEmail(email);
@@ -241,12 +241,12 @@ public class AccountService implements IAccountService {
 	}
 
 	@Override
-	public void resetPassword(String token, String newPassword) {
+	public void resetPassword(String token) {
 		// get token
 		ResetPasswordToken resetPasswordToken = resetPasswordTokenRepository.findByToken(token);
 		// chage password
 		Account account = resetPasswordToken.getAccount();
-		account.setPassword(passwordEncoder.encode(newPassword));
+		account.setPassword(passwordEncoder.encode("111111"));
 		accountRepository.save(account);
 		// remove Reset Password
 		resetPasswordTokenRepository.deleteById(resetPasswordToken.getId());

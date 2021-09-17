@@ -39,20 +39,12 @@ public class WebSecurity extends WebSecurityConfigurerAdapter{
 		.cors()
 		.and()
 		.authorizeRequests()
-		.antMatchers("/api/v1/accounts", "api/v1/departments/*" ,"/api/v1/registratiton","/api/v1/resetpassword")
+		.antMatchers("/api/v1/accounts", "api/v1/departments/*" ,"/api/v1/registration/","/api/v1/newPassword/")
 		.authenticated()
 		.and()
 		.httpBasic()
 		.and()
 		.csrf().disable();
 	}
-//	@Override
-//	protected void configure(HttpSecurity http) throws Exception {
-//		http.authorizeRequests()
-//			.anyRequest().permitAll()
-//			.and()
-//			.httpBasic()
-//			.and()
-//			.csrf().disable();
-//	}
+
 }
