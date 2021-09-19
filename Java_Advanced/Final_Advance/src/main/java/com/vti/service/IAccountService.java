@@ -43,6 +43,8 @@ public interface IAccountService extends UserDetailsService {
 	public void resetPasswordViaEmail(String email);
 
 	public void resetPassword(String token);
+	
+	public void changePassword(String username,String newPassword);
 
 	public void sendResetPasswordViaEmail(String email);
 

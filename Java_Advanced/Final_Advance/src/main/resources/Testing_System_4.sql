@@ -35,6 +35,7 @@ CREATE TABLE `Account`(
     Password 		        VARCHAR(100),
     Role			        ENUM('Admin','User','Manager') DEFAULT 'User',
     Status		            TINYINT DEFAULT 0, -- 0: Not Active, 1: Active
+    PathImage               VARCHAR(50),
     FOREIGN KEY(DepartmentID) REFERENCES Department(DepartmentID),
     FOREIGN KEY(PositionID) REFERENCES `Position`(PositionID)
 );

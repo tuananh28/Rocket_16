@@ -1,0 +1,100 @@
+
+    <!-- <div class="form">
+      <h5><a style="float: right; margin: 5px" onclick="logout()">| Logout</a></h5>
+      <h5><a id="fullName" style="float: right; margin: 5px;"></a></h4>
+        <h3>Quản lý nhân viên</h3>
+        <form method="POST" id="Main_Form_ID">
+          <div class="form-group">
+            <input type="hidden" required="true" class="form-control" id="ID_ID" value="" placeholder=" ">
+          </div>
+          <div class="form-group">
+            <input type="email" required="true" class="form-control" id="Email_ID" value="" placeholder=" ">
+            <label class="form-label">Email </label>
+          </div>
+          <div>
+            <p id="error-email" style="color: red;"></p>
+          </div>
+          <div class="form-group">
+            <input type="text" required="true" class="form-control" id="Username_ID" value="" placeholder=" ">
+            <label class="form-label">Username </label>
+          </div>
+          <div>
+            <p id="error-username" style="color: red;"></p>
+          </div>
+          <div class="form-group">
+            <input type="text" required="true" class="form-control" id="Fullname_ID" value="" placeholder=" ">
+            <label class="form-label">Fullname </label>
+          </div>
+          <div>
+            <p id="error-fullname" style="color: red;"></p>
+          </div>
+          <div class="form-group">
+            <label for="sel1">Select a Department:</label>
+            <select class="form-control" id="Department_ID">
+              <option>--Select a Department--</option>
+            </select>
+          </div>
+          <div>
+            <p id="error-department" style="color: red;"></p>
+          </div>
+          <div class="form-group">
+            <label for="sel1">Select a Position:</label>
+            <select class="form-control" id="Position_ID">
+              <option>--Select a Position--</option>
+            </select>
+          </div>
+          <div>
+            <p id="error-position" style="color: red;"></p>
+          </div>
+          <div class="form-group">
+            <label for="sel1">Cretate Date </label>
+            <input type="date" required="true" class="form-control" id="Cretate_Date_ID" value="">
+          </div>
+          <div class="form-group">
+            <input type="submit" class="btn btn-success" value="Save">
+            <input type="button" class="btn btn-success" id="update_btn" value="Update">
+            <input type="button" class="btn btn-success" id="reset_btn" value="Reset">
+            <input type="button" class="btn btn-success" onclick="DeleteAll()" value="Delete All">
+          </div>
+        </form>
+    </div> -->
+    <div class="input-group">
+      <div class="form-group">
+        <input type="search" onkeyup="KeyUpForSearch(event)" required="true" class="form-control" id="search"
+          placeholder=" ">
+        <label class="form-label">Search</label>
+      </div>
+      <button type="button" class="btn btn-primary" onclick="Search()">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+
+    <div class="container">
+      <div class="form">
+        <h3>Thông tin nhân viên trên hệ thống</h3>
+        <table class="table table-striped" id="Detail_Staff_ID" data-toggle="table">
+          <thead>
+            <tr>
+              <th><input type="checkbox" id="checkbox-all" name="checkbox-all" onclick="CheckboxAll()"></th>
+              <th>ID<i class="fa fa-fw fa-sort" onclick="Sort('id')" id="sort_id"></i></th>
+              <th>Email<i class="fa fa-fw fa-sort" onclick="Sort('email')" id="sort_email"></i></th>
+              <th>Username<i class="fa fa-fw fa-sort" onclick="Sort('username')" id="sort_username"></i></th>
+              <th>Fullname<i class="fa fa-fw fa-sort" onclick="Sort('fullname')" id="sort_fullname"></i></th>
+              <th>Department<i class="fa fa-fw fa-sort" onclick="Sort('department')" id="sort_department"></i></th>
+              <th>Position<i class="fa fa-fw fa-sort" onclick="Sort('position')" id="sort_position"></i></th>
+              <th>Cretate Date<i class="fa fa-fw fa-sort" onclick="Sort('createDate')" id="sort_createDate"></i></th>
+              <th>Edit</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody id="Result_TB">
+            <!--BODY-->
+          </tbody>
+        </table>
+        <div aria-label="Page navigation example" style="margin-top: 10px;">
+          <ul class="pagination" id="pagination">
+            <!--PAGING -->
+          </ul>
+        </div>
+      </div>
+    </div>

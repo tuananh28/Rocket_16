@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <!-- import JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- import bootstrap -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+
+    <!-- import css -->
+    <link rel="stylesheet" href="/css/index.css" />
+    <link rel="stylesheet" href="/css/account.css">
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="navbar">
+        <div class="logo">
+          <img style="width: 40px" src="recycling.png" alt="" />
+          <span class="logoname">Web Logo</span>
+        </div>
+
+        <div class="searchbox">
+          <form action="">
+            <input type="text" placeholder="Search" />
+            <i class="fa fa-search"></i>
+          </form>
+        </div>
+
+        <div class="navitem">
+          <!-- <div class="lang">
+                    <select name="language" id="">
+                        <option value="">English</option>
+                        <option value="">Hindi</option>
+                    </select>
+                </div> -->
+
+          <div class="icons">
+            <ul>
+              <li><i class="fa fa-envelope"></i></li>
+              <li><i class="fa fa-bell"></i></li>
+            </ul>
+          </div>
+
+          <div class="account">
+            <img width="25px" height="25px" src="images/profile.jpg" alt="" />
+            <span class="name">robert downey</span>
+            <span class="username">@robert564</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-body">
+        <div class="sidebar">
+          <ul>
+            <li class="dashboard">
+              <i class="fa fa-dashcube"></i>
+              <a href="#">Dashboard</a>
+            </li>
+            <li>
+              <i class="fa fa-users"></i>
+              <a onclick="Team()">Team</a>
+            </li>
+            <li>
+              <i class="fa fa-briefcase"></i>
+              <a href="#">Department</a>
+            </li>
+            <li>
+              <i class="fa fa-key"></i>
+              <a href="#">Change Password</a>
+            </li>
+            <li>
+              <i class="fa fa-sign-out"></i>
+              <a href="#">Log Out</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="main-body">
+          <!-- <div class="headtittle">
+                    <span class="greeeting">Hii Robert,</span>
+                    <h2>Overview</h2>
+                </div> -->
+
+          <div class="cards">
+            <div class="row row-1">
+              <div class="col"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script type="text/javascript" src="/js/program.js"></script>
+  <script type="text/javascript" src="/js/storage.js"></script>
+</html>

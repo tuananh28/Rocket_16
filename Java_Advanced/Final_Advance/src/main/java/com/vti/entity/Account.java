@@ -64,6 +64,9 @@ public class Account implements Serializable {
 	@Column(name = "Status", nullable = false)
 	private AccountStatus status = AccountStatus.NOT_ACTIVE;
 
+	@Column(name = "PathImage", length = 50, unique = true, updatable = true)
+	private String PathImage;
+
 	@ManyToOne
 	@JoinColumn(name = "DepartmentID", nullable = true)
 	private Department department;

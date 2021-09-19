@@ -10,6 +10,7 @@ var search = "";
 var sortField = "id";
 var isAsc = true;
 
+
 function isLogin() {
   var username = storage.getItem("USERNAME");
   return username ? true : false;
@@ -37,6 +38,8 @@ function logout() {
 
 // Hàm thực thi khi load đầy đủ các thành phần html
 $(function () {
+  showAvatar();
+  $('#btn_changeAvatar').hide();
   // Gọi hàm load dữ liệu cho bảng Account từ Server API khi load trang
   getListEmployees();
   // Gọi hàm load dữ liệu cho bảng Department từ Server API khi load trang, sẽ đổ dữ liệu vào thẻ Select id="Department_ID" để chọn phòng ban
@@ -618,3 +621,87 @@ function resetSort() {
   sortField = "id";
   isAsc = true;
 }
+function showAvatar() {
+  // Get ImgName
+  var url = "http://localhost:8080/api/v1/files/image/";
+  url += storage.getItem("ID"); // Gửi kèm id của User đăng nhập cho Backend
+  $.ajax({
+      url: url,
+      type: 'GET',
+      // Kiểu dữ liệu trả về là String nên khi chuyển sang bên Frontend sẽ gọi là text.html
+      contentType: "text/html", // Đổi kiểu dữ liệu text cho phù hợp với kiểu trả về là tên ảnh trong Backend
+      dataType: 'html', // datatype return
+      beforeSend: function(xhr) {
+          xhr.setRequestHeader("Authorization", "Basic " + btoa(storage.getItem("USERNAME") + ":" + storage.getItem("PASSWORD")));
+      },
+      success: function(data, textStatus, xhr) {
+          // Đoạn lệnh này copy từ phần gọi Ajax theo cách không xác thực commemt bên trên xuống.
+          // Show Avatar, thêm thể img vào thẻ div tương ứng trong html
+          $('.imgAvatar').append(`
+          <img src="/Source/img/${data}"  id="photo">`)
+      },
+      error(jqXHR, textStatus, errorThrown) {
+          console.log(jqXHR);
+          console.log(textStatus);
+          console.log(errorThrown);
+      }
+  });
+}
+
+//Nhóm hàm Upload ảnh
+$('#btn_changeAvatar').click(function() {
+  // Test sự kiện onclick
+  console.log('btn_changeAvatar clicked!')
+      // Tạo đối tượng Form Data để lưu thông tin gửi đi 
+  var myform = $('#form_avatar');
+  var fomrData = new FormData(myform[0]);
+  // Set file input vào Form data trước khi gửi đi
+  fomrData.append('image', $('#file')[0].files[0]);
+  // Set id của User đăng nhập vào Form data trước khi gửi đi
+  var id = storage.getItem("ID")
+  fomrData.append('id', id);
+
+  // fomrData.append('id', '4');
+
+  $.ajax({
+      url: 'http://localhost:8080/api/v1/files/image',
+      type: 'POST',
+      data: fomrData, // body
+      processData: false,
+      contentType: false, // Không để kiểu Content do đang gửi dữ liệu Formdata
+      // dataType: 'json', // datatype return
+      beforeSend: function(xhr) {
+          xhr.setRequestHeader("Authorization", "Basic " + btoa(storage.getItem("USERNAME") + ":" + storage.getItem("PASSWORD")));
+      },
+      success: function(data, textStatus, xhr) {
+          showAvatar() // Sau khi thay đổi avatar thành công gọi lại hàm này để show lại ảnh.
+      },
+      error(jqXHR, textStatus, errorThrown) {
+          alert("Error when loading data");
+          console.log(jqXHR);
+          console.log(textStatus);
+          console.log(errorThrown);
+      }
+  });
+})
+
+$('#uploadBtn').click(function(){
+  $('#btn_changeAvatar').show();
+});
+
+var imgDiv = document.querySelector('.profile-pic-div');
+var img = document.querySelector('#photo');
+var file = document.querySelector('#file');
+var uploadBtn = document.querySelector('#uploadBtn');
+
+//if user hover on img div 
+
+imgDiv.addEventListener('mouseenter', function(){
+    uploadBtn.style.display = "block";
+});
+
+//if we hover out from img div
+
+imgDiv.addEventListener('mouseleave', function(){
+    uploadBtn.style.display = "none";
+});

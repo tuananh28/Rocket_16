@@ -75,6 +75,7 @@ public class AccountController {
 		return new ResponseEntity<String>("Update successfully!", HttpStatus.OK);
 	}
 
+
 	@DeleteMapping(value = "/{id}")
 	public ResponseEntity<?> deleteAccount(@PathVariable(name = "id") short id) {
 		accountService.deleteAccount(id);
