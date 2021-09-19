@@ -35,11 +35,11 @@ $("#signupForm").submit(function(){
     success: function (data, textStatus, xhr) {
       console.log(data);
       // success
-      ShowSuccessAlert();
+      swal ( "Success", "We have sent an email. Please check email to active account!" , "success" );
       resetForm();
     },
     error(jqXHR, textStatus, errorThrown) {
-      alert("Error when loading data");
+      swal ( "Error!", "Error when loading data" , "error" );
       console.log(jqXHR);
       console.log(textStatus);
       console.log(errorThrown);
@@ -97,10 +97,10 @@ function Send_Token() {
             console.log(data);
             resetForm();
             HideModal();
-            ShowSuccessAlert();
+            swal ( "Success", "We have sent an email. Please check email to active account!" , "success" );
           },
           error(jqXHR, textStatus, errorThrown) {
-            alert("Error when loading data");
+            swal ( "Error!", "Error when loading data" , "error" );
             console.log(jqXHR);
             console.log(textStatus);
             console.log(errorThrown);
@@ -110,6 +110,7 @@ function Send_Token() {
       document.getElementById("error-email-token").style.display = "none";
     },
     error(jqXHR, textStatus, errorThrown) {
+      swal ( "Error!", "Error when loading data" , "error" );
       console.log(jqXHR);
       console.log(textStatus);
       console.log(errorThrown);
@@ -117,10 +118,6 @@ function Send_Token() {
   });
   return false;
 }
-function ShowSuccessAlert() {
-  $("#myModal").modal("show");
-}
-
 function HideModal() {
   $("#send_token_form").modal("hide");
 }

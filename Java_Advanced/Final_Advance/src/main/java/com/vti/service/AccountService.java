@@ -124,11 +124,7 @@ public class AccountService implements IAccountService {
 		accountRepository.save(account);
 
 	}
-	public void changePassword(String username ,String newPassword) {
-		Account account = accountRepository.findByUsername(username);
-		account.setPassword(passwordEncoder.encode(newPassword));
-		accountRepository.save(account);
-	}
+	
 	
 
 	@Override
@@ -262,6 +258,11 @@ public class AccountService implements IAccountService {
 	public void sendResetPasswordViaEmail(String email) {
 		eventPublisher.publishEvent(new OnResetPasswordViaEmailEvent(email));
 
+	}
+	public void changePassword(String username, String newPassword) {
+		Account account = accountRepository.findByUsername(username);
+		account.setPassword(passwordEncoder.encode(newPassword));
+		accountRepository.save(account);
 	}
 
 	

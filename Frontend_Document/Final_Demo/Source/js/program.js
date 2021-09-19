@@ -10,7 +10,6 @@ var search = "";
 var sortField = "id";
 var isAsc = true;
 
-
 function isLogin() {
   var username = storage.getItem("USERNAME");
   return username ? true : false;
@@ -39,7 +38,7 @@ function logout() {
 // Hàm thực thi khi load đầy đủ các thành phần html
 $(function () {
   showAvatar();
-  $('#btn_changeAvatar').hide();
+  $("#btn_changeAvatar").hide();
   // Gọi hàm load dữ liệu cho bảng Account từ Server API khi load trang
   getListEmployees();
   // Gọi hàm load dữ liệu cho bảng Department từ Server API khi load trang, sẽ đổ dữ liệu vào thẻ Select id="Department_ID" để chọn phòng ban
@@ -185,11 +184,12 @@ $(function () {
             },
             success: function (data, textStatus, xhr) {
               console.log(data);
+              swal("Success", "Create Successful !!", "success");
               currentPage = data.totalPages;
               getListEmployees();
             },
             error(jqXHR, textStatus, errorThrown) {
-              alert("Error when loading data");
+              swal("Error!", "Error when loading data", "error");
               console.log(jqXHR);
               console.log(textStatus);
               console.log(errorThrown);
@@ -198,6 +198,7 @@ $(function () {
         }
       },
       error(jqXHR, textStatus, errorThrown) {
+        swal("Error!", "Error when loading data", "error");
         console.log(jqXHR);
         console.log(textStatus);
         console.log(errorThrown);
@@ -236,6 +237,7 @@ function getListDepartment() {
       }
     },
     error(jqXHR, textStatus, errorThrown) {
+      swal("Error!", "Error when loading data", "error");
       console.log(jqXHR);
       console.log(textStatus);
       console.log(errorThrown);
@@ -272,6 +274,7 @@ function getListPosition() {
       }
     },
     error(jqXHR, textStatus, errorThrown) {
+      swal("Error!", "Error when loading data", "error");
       console.log(jqXHR);
       console.log(textStatus);
       console.log(errorThrown);
@@ -312,33 +315,41 @@ function showAccount() {
 function deleteAccount(Index) {
   var v_del_ID = listAccount[Index].AccountID;
   // Hiển thị 1 Confim Popup, chọn Có = True
-  var confirm_del = confirm("Bạn có chắc chắn muốn xóa Account này không");
-  if (confirm_del) {
-    $.ajax({
-      url: "http://localhost:8080/api/v1/accounts/" + v_del_ID,
-      type: "DELETE",
-      beforeSend: function (xhr) {
-        xhr.setRequestHeader(
-          "Authorization",
-          "Basic " +
-            btoa(
-              storage.getItem("USERNAME") + ":" + storage.getItem("PASSWORD")
-            )
-        );
-      },
-      success: function (result) {
-        // error
-        if (result == undefined || result == null) {
-          alert("Error when loading data");
-          return;
-        }
-        // success
-        getListEmployees();
-      },
-    });
-  } else {
-    return;
-  }
+  // var confirm_del = confirm("Bạn có chắc chắn muốn xóa Account này không");
+  swal({
+    title: "Are you sure?",
+    text: "Bạn có chắc chắn muốn xóa Account này không ",
+    type: "warning",
+    confirmButtonText: "Yes, Delete!",
+    showCancelButton: true,
+  }).then((result) => {
+    if (result.value) {
+      $.ajax({
+        url: "http://localhost:8080/api/v1/accounts/" + v_del_ID,
+        type: "DELETE",
+        beforeSend: function (xhr) {
+          xhr.setRequestHeader(
+            "Authorization",
+            "Basic " +
+              btoa(
+                storage.getItem("USERNAME") + ":" + storage.getItem("PASSWORD")
+              )
+          );
+        },
+        success: function (result) {
+          // error
+          if (result == undefined || result == null) {
+            swal("Error!", "Error when loading data", "error");
+            return;
+          }
+          // success
+          getListEmployees();
+        },
+      });
+    } else {
+      return;
+    }
+  });
 }
 function DeleteAll() {
   // get id cua nhung o duoc tich
@@ -377,6 +388,7 @@ function DeleteAll() {
       if (jqXHR.status == 403) {
         window.location.href = "403.html";
       } else {
+        swal("Error!", "Error when loading data", "error");
         console.log();
         console.log(textStatus);
         console.log(errorThrown);
@@ -477,14 +489,14 @@ function editAccount(Index) {
       success: function (data, textStatus, xhr) {
         console.log(data);
         // success
-        alert("Update Successful");
+        swal("Success", "Update Successful !", "success");
         getListEmployees();
       },
       error(jqXHR, textStatus, errorThrown) {
         if (jqXHR.status == 403) {
           window.location.href = "403.html";
         }
-        alert("Error when loading data");
+        swal("Error!", "Error when loading data", "error");
         console.log(jqXHR);
         console.log(textStatus);
         console.log(errorThrown);
@@ -532,6 +544,7 @@ function getListEmployees() {
       if (jqXHR.status == 403) {
         window.location.href = "403.html";
       }
+      swal("Error!", "Error when loading data", "error");
       console.log(jqXHR);
       console.log(textStatus);
       console.log(errorThrown);
@@ -626,82 +639,140 @@ function showAvatar() {
   var url = "http://localhost:8080/api/v1/files/image/";
   url += storage.getItem("ID"); // Gửi kèm id của User đăng nhập cho Backend
   $.ajax({
-      url: url,
-      type: 'GET',
-      // Kiểu dữ liệu trả về là String nên khi chuyển sang bên Frontend sẽ gọi là text.html
-      contentType: "text/html", // Đổi kiểu dữ liệu text cho phù hợp với kiểu trả về là tên ảnh trong Backend
-      dataType: 'html', // datatype return
-      beforeSend: function(xhr) {
-          xhr.setRequestHeader("Authorization", "Basic " + btoa(storage.getItem("USERNAME") + ":" + storage.getItem("PASSWORD")));
-      },
-      success: function(data, textStatus, xhr) {
-          // Đoạn lệnh này copy từ phần gọi Ajax theo cách không xác thực commemt bên trên xuống.
-          // Show Avatar, thêm thể img vào thẻ div tương ứng trong html
-          $('.imgAvatar').append(`
-          <img src="/Source/img/${data}"  id="photo">`)
-      },
-      error(jqXHR, textStatus, errorThrown) {
-          console.log(jqXHR);
-          console.log(textStatus);
-          console.log(errorThrown);
-      }
+    url: url,
+    type: "GET",
+    // Kiểu dữ liệu trả về là String nên khi chuyển sang bên Frontend sẽ gọi là text.html
+    contentType: "text/html", // Đổi kiểu dữ liệu text cho phù hợp với kiểu trả về là tên ảnh trong Backend
+    dataType: "html", // datatype return
+    beforeSend: function (xhr) {
+      xhr.setRequestHeader(
+        "Authorization",
+        "Basic " +
+          btoa(storage.getItem("USERNAME") + ":" + storage.getItem("PASSWORD"))
+      );
+    },
+    success: function (data, textStatus, xhr) {
+      // Đoạn lệnh này copy từ phần gọi Ajax theo cách không xác thực commemt bên trên xuống.
+      // Show Avatar, thêm thể img vào thẻ div tương ứng trong html
+      $(".imgAvatar").append(`
+          <img src="/Source/img/${data}"  id="photo">`);
+    },
+    error(jqXHR, textStatus, errorThrown) {
+      swal("Error!", "Error when loading data", "error");
+      console.log(jqXHR);
+      console.log(textStatus);
+      console.log(errorThrown);
+    },
   });
 }
 
 //Nhóm hàm Upload ảnh
-$('#btn_changeAvatar').click(function() {
+$("#btn_changeAvatar").click(function () {
   // Test sự kiện onclick
-  console.log('btn_changeAvatar clicked!')
-      // Tạo đối tượng Form Data để lưu thông tin gửi đi 
-  var myform = $('#form_avatar');
+  console.log("btn_changeAvatar clicked!");
+  // Tạo đối tượng Form Data để lưu thông tin gửi đi
+  var myform = $("#form_avatar");
   var fomrData = new FormData(myform[0]);
   // Set file input vào Form data trước khi gửi đi
-  fomrData.append('image', $('#file')[0].files[0]);
+  fomrData.append("image", $("#file")[0].files[0]);
   // Set id của User đăng nhập vào Form data trước khi gửi đi
-  var id = storage.getItem("ID")
-  fomrData.append('id', id);
+  var id = storage.getItem("ID");
+  fomrData.append("id", id);
 
   // fomrData.append('id', '4');
 
   $.ajax({
-      url: 'http://localhost:8080/api/v1/files/image',
-      type: 'POST',
-      data: fomrData, // body
-      processData: false,
-      contentType: false, // Không để kiểu Content do đang gửi dữ liệu Formdata
-      // dataType: 'json', // datatype return
-      beforeSend: function(xhr) {
-          xhr.setRequestHeader("Authorization", "Basic " + btoa(storage.getItem("USERNAME") + ":" + storage.getItem("PASSWORD")));
-      },
-      success: function(data, textStatus, xhr) {
-          showAvatar() // Sau khi thay đổi avatar thành công gọi lại hàm này để show lại ảnh.
-      },
-      error(jqXHR, textStatus, errorThrown) {
-          alert("Error when loading data");
-          console.log(jqXHR);
-          console.log(textStatus);
-          console.log(errorThrown);
-      }
+    url: "http://localhost:8080/api/v1/files/image",
+    type: "POST",
+    data: fomrData, // body
+    processData: false,
+    contentType: false, // Không để kiểu Content do đang gửi dữ liệu Formdata
+    // dataType: 'json', // datatype return
+    beforeSend: function (xhr) {
+      xhr.setRequestHeader(
+        "Authorization",
+        "Basic " +
+          btoa(storage.getItem("USERNAME") + ":" + storage.getItem("PASSWORD"))
+      );
+    },
+    success: function (data, textStatus, xhr) {
+      showAvatar(); // Sau khi thay đổi avatar thành công gọi lại hàm này để show lại ảnh.
+    },
+    error(jqXHR, textStatus, errorThrown) {
+      swal("Error!", "Error when loading data", "error");
+      console.log(jqXHR);
+      console.log(textStatus);
+      console.log(errorThrown);
+    },
   });
-})
-
-$('#uploadBtn').click(function(){
-  $('#btn_changeAvatar').show();
 });
 
-var imgDiv = document.querySelector('.profile-pic-div');
-var img = document.querySelector('#photo');
-var file = document.querySelector('#file');
-var uploadBtn = document.querySelector('#uploadBtn');
+$("#uploadBtn").click(function () {
+  $("#btn_changeAvatar").show();
+});
 
-//if user hover on img div 
+var imgDiv = document.querySelector(".profile-pic-div");
+var img = document.querySelector("#photo");
+var file = document.querySelector("#file");
+var uploadBtn = document.querySelector("#uploadBtn");
 
-imgDiv.addEventListener('mouseenter', function(){
-    uploadBtn.style.display = "block";
+//if user hover on img div
+
+imgDiv.addEventListener("mouseenter", function () {
+  uploadBtn.style.display = "block";
 });
 
 //if we hover out from img div
 
-imgDiv.addEventListener('mouseleave', function(){
-    uploadBtn.style.display = "none";
+imgDiv.addEventListener("mouseleave", function () {
+  uploadBtn.style.display = "none";
+});
+function ChangePassword() {
+  $("#change_password_form").modal("show");
+}
+
+$("#ChangePassword").submit(function () {
+  var oldPassword = document.getElementById("old_password").value;
+  var newPassword = document.getElementById("new_password").value;
+  var comfirmPassword = document.getElementById("comfirm_password").value;
+  if (oldPassword != storage.getItem("PASSWORD")) {
+    document.getElementById("error-old-password").innerHTML = "Wrong Password!";
+    return false;
+  }
+  if (comfirmPassword != newPassword) {
+    document.getElementById("error-comfirm-password").innerHTML =
+      " Password not match ! ";
+    return false;
+  }
+  document.getElementById("error-comfirm-password").style.display = "none";
+  var url = "http://localhost:8080/api/v1/newPassword/changePassword/";
+  url += "?username=" + storage.getItem("USERNAME");
+  if (newPassword) {
+    url += "&newPassword=" + newPassword;
+  }
+  $.ajax({
+    url: url,
+    type: "GET",
+    contentType: "application/json", // type of body (json, xml, text)
+    dataType: "json", // datatype return
+    beforeSend: function (xhr) {
+      xhr.setRequestHeader(
+        "Authorization",
+        "Basic " +
+          btoa(storage.getItem("USERNAME") + ":" + storage.getItem("PASSWORD"))
+      );
+    },
+    success: function (data, textStatus, xhr) {
+      console.log(data);
+      $("#change_password_form").modal("hide");
+      swal("Success", "Your data was saved!", "success");
+      // logout();
+    },
+    error(jqXHR, textStatus, errorThrown) {
+      swal("Error!", "Error when loading data", "error");
+      console.log(jqXHR);
+      console.log(textStatus);
+      console.log(errorThrown);
+    },
+  });
 });

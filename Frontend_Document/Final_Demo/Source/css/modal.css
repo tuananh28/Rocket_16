@@ -98,8 +98,6 @@ modal-container {
 
 
 /* Full-width input fields */
-
-input[type=email],
 input[type=password] {
   width: 100%;
   padding: 15px;
@@ -109,7 +107,6 @@ input[type=password] {
   background: #f1f1f1;
 }
 
-input[type=email]:focus,
 input[type=password]:focus {
   background-color: #ddd;
   outline: none;
