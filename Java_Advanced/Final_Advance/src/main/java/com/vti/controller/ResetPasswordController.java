@@ -5,6 +5,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,7 +15,7 @@ import com.vti.service.IAccountService;
 
 @RestController
 @CrossOrigin("*")
-@RequestMapping(value = "/api/v1/newPassword")
+@RequestMapping(value = "/api/v1/Password")
 public class ResetPasswordController {
 
 	@Autowired
@@ -48,8 +50,8 @@ public class ResetPasswordController {
 
 		return new ResponseEntity<>("Mật khẩu mới của bạn là : 111111", HttpStatus.OK);
 	}
-	@GetMapping("/changePassword")
-	public ResponseEntity<?> changePassword (@RequestParam String username, @RequestParam String newPassword) {
+	@PutMapping("/changePassword")
+	public ResponseEntity<?> changePassword (@RequestParam String username, @RequestBody String newPassword) {
 		accountService.changePassword(username, newPassword);
 		return new ResponseEntity<String>("Change Password successfully!", HttpStatus.OK);
 	}

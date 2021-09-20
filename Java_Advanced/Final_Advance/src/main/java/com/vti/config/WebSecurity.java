@@ -39,7 +39,7 @@ public class WebSecurity extends WebSecurityConfigurerAdapter{
 		.cors()
 		.and()
 		.authorizeRequests()
-		.antMatchers("/api/v1/accounts", "api/v1/departments/*" ,"/api/v1/registration/","/api/v1/newPassword/","/api/v1/files/")
+		.antMatchers("/api/v1/accounts", "api/v1/departments/*" ,"/api/v1/registration/","/api/v1/Password/","/api/v1/files/")
 		.authenticated()
 		.and()
 		.httpBasic()

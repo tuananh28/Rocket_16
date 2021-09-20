@@ -17,8 +17,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.min.js"></script>
+
   <!-- SweetAlert2 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.all.min.js"></script>
 
   <!-- import css -->
@@ -27,6 +29,13 @@
 </head>
 
 <body>
+  <nav class="navbar sticky-top navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand" onclick="ChangePassword()"><i class="fa fa-key">Change Password</i></a>
+      <a class="navbar-brand" id="fullName"></a>
+      <a class="navbar-brand" onclick="logout()"><i class="fa fa-sign-out">Logout</i></a>
+    </div>
+  </nav>
   <div class="container">
     <div class="profile-pic-div">
       <div class="imgAvatar">
@@ -43,16 +52,6 @@
       </button>
     </div>
     <div class="form-crud">
-      <h5>
-        <a style="margin-left: 85%; position: relative" onclick="ChangePassword()"><i class="fa fa-key">Change
-            Password</i></a>
-      </h5>
-      <h5>
-        <a style="float: right; margin-left: 5px" onclick="logout()">|<i class="fa fa-sign-out">Logout</i></a>
-      </h5>
-      <h5>
-        <a id="fullName" style="float: right; margin-left: 5px"></a>
-      </h5>
       <h3>Quản lý nhân viên</h3>
       <form method="POST" id="Main_Form_ID">
         <div class="form-group">

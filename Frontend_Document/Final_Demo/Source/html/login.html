@@ -30,91 +30,72 @@
       <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
       <div class="login-form">
         <form method="POST" id="signinForm">
-        <div class="sign-in-htm">
-          <div class="group">
-            <label>Username</label>
-            <input id="username" type="text" class="input" required>
+          <div class="sign-in-htm">
+            <div class="group">
+              <label>Username</label>
+              <input id="username" type="text" class="input" required>
+            </div>
+            <div class="group">
+              <label>Password</label>
+              <input id="password" type="password" class="input" required>
+            </div>
+            <div class="group">
+              <p id="error-message" style="color: red;"></p>
+            </div>
+            <div class="group">
+              <input type="checkbox" id="check" class="check">
+              <label for="check"><span class="icon"></span> Keep me Signed in</label>
+            </div>
+            <div class="group">
+              <button onclick="login()" class="button">Login</button>
+            </div>
+            <div class="hr"></div>
+            <div class="foot-lnk">
+              <a onclick="forgotPassword()">Forgot Password?</a>
+            </div>
           </div>
-          <div class="group">
-            <label>Password</label>
-            <input id="password" type="password" class="input" required>
-          </div>
-          <div class="group">
-            <p id="error-message" style="color: red;"></p>
-          </div>
-          <div class="group">
-            <input type="checkbox" id="check" class="check">
-            <label for="check"><span class="icon"></span> Keep me Signed in</label>
-          </div>
-          <div class="group">
-            <button onclick="login()" class="button">Login</button>
-          </div>
-          <div class="hr"></div>
-          <div class="foot-lnk">
-            <a onclick="forgotPassword()">Forgot Password?</a>
-          </div>
-        </div>
         </form>
         <!--FORM SIGN UP-->
         <form method="POST" id="signupForm">
-        <div class="sign-up-htm">
-          <div class="group">
-            <label class="label">Username</label>
-            <input id="Username_ID" type="text" class="input" required>
+          <div class="sign-up-htm">
+            <div class="group">
+              <label class="label">Username</label>
+              <input id="Username_ID" type="text" class="input" required>
+            </div>
+            <div class="group">
+              <label class="label">Fullname</label>
+              <input id="Fullname_ID" type="text" class="input" required>
+            </div>
+            <div class="group">
+              <label class="label">Email Address</label>
+              <input id="Email_ID" type="email" class="input" required>
+            </div>
+            <div class="group">
+              <label class="label">Password</label>
+              <input id="Password_ID" type="password" class="input" required>
+            </div>
+            <div class="group">
+              <label class="label">Confirm Password</label>
+              <input id="RePassword_ID" type="password" class="input" required>
+            </div>
+            <div class="group">
+              <p id="error-repassword" style="color: red;"></p>
+            </div>
+            <div class="group">
+              <input type="submit" class="button" value="Sign Up" data-toggle="modal"></input>
+            </div>
+            <div class="group">
+              <button class="button" onclick="ResendToken()" data-toggle="modal">Resend token</button>
+            </div>
+            <div class="hr"></div>
+            <div class="foot-lnk">
+              <a><label for="tab-1">Already Member?</label></a>
+            </div>
           </div>
-          <div class="group">
-            <label class="label">Fullname</label>
-            <input id="Fullname_ID" type="text" class="input" required>
-          </div>
-          <div class="group">
-            <label class="label">Email Address</label>
-            <input id="Email_ID" type="email" class="input" required>
-          </div>
-          <div class="group">
-            <label class="label">Password</label>
-            <input id="Password_ID" type="password" class="input" required>
-          </div>
-          <div class="group">
-            <label class="label">Confirm Password</label>
-            <input id="RePassword_ID" type="password" class="input" required>
-          </div>
-          <div class="group">
-            <p id="error-repassword" style="color: red;"></p>
-          </div>
-          <div class="group">
-            <input type="submit" class="button" value="Sign Up" data-toggle="modal"></input>
-          </div>
-          <div class="group">
-            <button class="button" onclick="ResendToken()" data-toggle="modal">Resend token</button>
-          </div>
-          <div class="hr"></div>
-          <div class="foot-lnk">
-            <label for="tab-1">Already Member?</a>
-          </div>
-        </div>
         </form>
       </div>
     </div>
   </div>
-  <!-- Modal Success
-  <div id="myModal" class="modal fade">
-    <div class="modal-dialog modal-confirm">
-      <div class="modal-content">
-        <div class="modal-header">
-          <div class="icon-box">
-            <i class="material-icons">&#xE876;</i>
-          </div>
-          <h4 class="modal-title w-100">Awesome!</h4>
-        </div>
-        <div class="modal-body">
-          <p class="text-center">We have sent an email. Please check email to make sure you !</p>
-        </div>
-        <div class="modal-footer">
-          <button class="btn btn-success btn-block" data-dismiss="modal">OK</button>
-        </div>
-      </div>
-    </div>
-  </div> -->
   <!-- Modal Resend Token -->
   <div id="send_token_form" class="modal fade" tabindex="-1">
     <div class="modal-dialog">

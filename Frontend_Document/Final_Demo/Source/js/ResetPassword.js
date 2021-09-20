@@ -58,8 +58,7 @@ function onSignup() {
       setTimeout(function(){
         enableSubmitButton();
       }, 1000);
-    }
-    
+    } 
   };
   
   xhttp.open("GET", "ajax_info.txt", true);

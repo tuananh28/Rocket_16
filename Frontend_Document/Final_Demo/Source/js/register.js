@@ -97,7 +97,15 @@ function Send_Token() {
             console.log(data);
             resetForm();
             HideModal();
-            swal ( "Success", "We have sent an email. Please check email to active account!" , "success" );
+            Swal({
+              title: 'We have sent an email. Please check email to active account!',
+              showClass: {
+                popup: 'animate__animated animate__fadeInDown'
+              },
+              hideClass: {
+                popup: 'animate__animated animate__fadeOutUp'
+              }
+            })
           },
           error(jqXHR, textStatus, errorThrown) {
             swal ( "Error!", "Error when loading data" , "error" );

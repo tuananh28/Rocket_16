@@ -154,9 +154,9 @@ $(function () {
         xhr.setRequestHeader(
           "Authorization",
           "Basic " +
-            btoa(
-              storage.getItem("USERNAME") + ":" + storage.getItem("PASSWORD")
-            )
+          btoa(
+            storage.getItem("USERNAME") + ":" + storage.getItem("PASSWORD")
+          )
         );
       },
       success: function (data, textStatus, xhr) {
@@ -175,11 +175,11 @@ $(function () {
               xhr.setRequestHeader(
                 "Authorization",
                 "Basic " +
-                  btoa(
-                    storage.getItem("USERNAME") +
-                      ":" +
-                      storage.getItem("PASSWORD")
-                  )
+                btoa(
+                  storage.getItem("USERNAME") +
+                  ":" +
+                  storage.getItem("PASSWORD")
+                )
               );
             },
             success: function (data, textStatus, xhr) {
@@ -219,7 +219,7 @@ function getListDepartment() {
       xhr.setRequestHeader(
         "Authorization",
         "Basic " +
-          btoa(storage.getItem("USERNAME") + ":" + storage.getItem("PASSWORD"))
+        btoa(storage.getItem("USERNAME") + ":" + storage.getItem("PASSWORD"))
       );
     },
     success: function (data, textStatus, xhr) {
@@ -256,7 +256,7 @@ function getListPosition() {
       xhr.setRequestHeader(
         "Authorization",
         "Basic " +
-          btoa(storage.getItem("USERNAME") + ":" + storage.getItem("PASSWORD"))
+        btoa(storage.getItem("USERNAME") + ":" + storage.getItem("PASSWORD"))
       );
     },
     success: function (data, textStatus, xhr) {
@@ -331,9 +331,9 @@ function deleteAccount(Index) {
           xhr.setRequestHeader(
             "Authorization",
             "Basic " +
-              btoa(
-                storage.getItem("USERNAME") + ":" + storage.getItem("PASSWORD")
-              )
+            btoa(
+              storage.getItem("USERNAME") + ":" + storage.getItem("PASSWORD")
+            )
           );
         },
         success: function (result) {
@@ -351,6 +351,7 @@ function deleteAccount(Index) {
     }
   });
 }
+
 function DeleteAll() {
   // get id cua nhung o duoc tich
   var ids = [];
@@ -377,7 +378,7 @@ function DeleteAll() {
       xhr.setRequestHeader(
         "Authorization",
         "Basic " +
-          btoa(storage.getItem("USERNAME") + ":" + storage.getItem("PASSWORD"))
+        btoa(storage.getItem("USERNAME") + ":" + storage.getItem("PASSWORD"))
       );
     },
     success: function (result) {
@@ -388,7 +389,7 @@ function DeleteAll() {
       if (jqXHR.status == 403) {
         window.location.href = "403.html";
       } else {
-        swal("Error!", "Error when loading data", "error");
+        swal.fire("Error!", "Error when loading data", "error");
         console.log();
         console.log(textStatus);
         console.log(errorThrown);
@@ -396,6 +397,7 @@ function DeleteAll() {
     },
   });
 }
+
 function CheckboxAll() {
   var checkboxTotal = document.getElementById("checkbox-all");
 
@@ -480,9 +482,9 @@ function editAccount(Index) {
         xhr.setRequestHeader(
           "Authorization",
           "Basic " +
-            btoa(
-              storage.getItem("USERNAME") + ":" + storage.getItem("PASSWORD")
-            )
+          btoa(
+            storage.getItem("USERNAME") + ":" + storage.getItem("PASSWORD")
+          )
         );
       },
       // dataType: 'json', // datatype return
@@ -529,7 +531,7 @@ function getListEmployees() {
       xhr.setRequestHeader(
         "Authorization",
         "Basic " +
-          btoa(storage.getItem("USERNAME") + ":" + storage.getItem("PASSWORD"))
+        btoa(storage.getItem("USERNAME") + ":" + storage.getItem("PASSWORD"))
       );
     },
     success: function (data, textStatus, xhr) {
@@ -594,12 +596,15 @@ function pagingTable(pageAmount) {
   $(".pagination").empty();
   $(".pagination").append(pagingStr);
 }
+
 function prevPaging() {
   changePage(currentPage - 1);
 }
+
 function nextPaging() {
   changePage(currentPage + 1);
 }
+
 function changePage(page) {
   if (page == currentPage) {
     return;
@@ -607,20 +612,24 @@ function changePage(page) {
   currentPage = page;
   getListEmployees();
 }
+
 function resetPaging() {
   currentPage = 1;
   size = 5;
 }
+
 function Search() {
   resetPaging;
   getListEmployees();
 }
+
 function KeyUpForSearch(event) {
   if (event.keyCode === 13) {
     event.preventDefault();
     Search();
   }
 }
+
 function Sort(field) {
   if (field == sortField) {
     isAsc = !isAsc;
@@ -630,10 +639,12 @@ function Sort(field) {
   }
   getListEmployees();
 }
+
 function resetSort() {
   sortField = "id";
   isAsc = true;
 }
+
 function showAvatar() {
   // Get ImgName
   var url = "http://localhost:8080/api/v1/files/image/";
@@ -648,7 +659,7 @@ function showAvatar() {
       xhr.setRequestHeader(
         "Authorization",
         "Basic " +
-          btoa(storage.getItem("USERNAME") + ":" + storage.getItem("PASSWORD"))
+        btoa(storage.getItem("USERNAME") + ":" + storage.getItem("PASSWORD"))
       );
     },
     success: function (data, textStatus, xhr) {
@@ -692,7 +703,7 @@ $("#btn_changeAvatar").click(function () {
       xhr.setRequestHeader(
         "Authorization",
         "Basic " +
-          btoa(storage.getItem("USERNAME") + ":" + storage.getItem("PASSWORD"))
+        btoa(storage.getItem("USERNAME") + ":" + storage.getItem("PASSWORD"))
       );
     },
     success: function (data, textStatus, xhr) {
@@ -727,6 +738,7 @@ imgDiv.addEventListener("mouseenter", function () {
 imgDiv.addEventListener("mouseleave", function () {
   uploadBtn.style.display = "none";
 });
+
 function ChangePassword() {
   $("#change_password_form").modal("show");
 }
@@ -745,28 +757,30 @@ $("#ChangePassword").submit(function () {
     return false;
   }
   document.getElementById("error-comfirm-password").style.display = "none";
-  var url = "http://localhost:8080/api/v1/newPassword/changePassword/";
+  var url = "http://localhost:8080/api/v1/Password/changePassword";
   url += "?username=" + storage.getItem("USERNAME");
-  if (newPassword) {
-    url += "&newPassword=" + newPassword;
+  // if (newPassword) {
+  // url += "&newPassword=" + newPassword;
+  // }
+  var account = {
+    newPassword:newPassword,
   }
   $.ajax({
-    url: url,
-    type: "GET",
+    url: url + "&newPassword=" + newPassword,
+    type: "PUT",
+    data: JSON.stringify(account),
     contentType: "application/json", // type of body (json, xml, text)
-    dataType: "json", // datatype return
+    // dataType: "json", // datatype return
     beforeSend: function (xhr) {
       xhr.setRequestHeader(
         "Authorization",
         "Basic " +
-          btoa(storage.getItem("USERNAME") + ":" + storage.getItem("PASSWORD"))
+        btoa(storage.getItem("USERNAME") + ":" + storage.getItem("PASSWORD"))
       );
     },
     success: function (data, textStatus, xhr) {
       console.log(data);
-      $("#change_password_form").modal("hide");
-      swal("Success", "Your data was saved!", "success");
-      // logout();
+      logout();
     },
     error(jqXHR, textStatus, errorThrown) {
       swal("Error!", "Error when loading data", "error");

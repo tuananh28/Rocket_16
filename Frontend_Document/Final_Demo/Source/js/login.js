@@ -7,6 +7,7 @@ $("#password").on("keypress", function (e) {
     login();
   }
 });
+
 $("#signinForm").submit(function () {
   // get username & password
   var username = document.getElementById("username").value;
@@ -47,7 +48,6 @@ $("#signinForm").submit(function () {
         showMessageErrorValidate("Wrong Account or Password!");
       }
       resetForm();
-      swal ( "Error!", "Error when loading data" , "error" );
       console.log(jqXHR);
       console.log(textStatus);
       console.log(errorThrown);

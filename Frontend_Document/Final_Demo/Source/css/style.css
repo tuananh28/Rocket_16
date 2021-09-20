@@ -69,8 +69,8 @@ a {
   height: 120px;
   width: 120px;
   position: absolute;
-  top: 10%;
-  left: 50%;
+  top: 17%;
+  left: 52.5%;
   transform: translate(-50%, -50%);
   border-radius: 50%;
   overflow: hidden;
@@ -104,5 +104,9 @@ a {
 }
 #btn_changeAvatar{
   position: absolute;
-  margin-left: 45%;
+  margin-left: 47.8%;
+}
+.modal-body i{
+	margin-left: 430px;
+    cursor: pointer;
 }
