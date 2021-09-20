@@ -170,32 +170,28 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <!-- body -->
-        <form method="GET" id="ChangePassword">
-          <div class="modal-body">
-            <div class="modal-container">
-              <label><b>Change Password</b></label>
-              <input type="password" placeholder="Enter password" name="old_password" id="old_password" required />
-              <div>
-                <p id="error-old-password" style="color: red"></p>
-              </div>
-              <input type="password" placeholder="New Password" name="new_password" id="new_password" required />
-              <input type="password" placeholder="Comfirm Password" name="comfirm_password" id="comfirm_password"
-                required />
-              <div>
-                <p id="error-comfirm-password" style="color: red"></p>
-              </div>
+        <div class="modal-body">
+          <div class="modal-container">
+            <label><b>Change Password</b></label>
+            <input type="password" placeholder="Enter password" name="old_password" id="old_password" required />
+            <div>
+              <p id="error-old-password" style="color: red"></p>
+            </div>
+            <input type="password" placeholder="New Password" name="new_password" id="new_password" required />
+            <div>
+              <p id="error-new-password" style="color: red"></p>
+            </div>
+            <input type="password" placeholder="Comfirm Password" name="comfirm_password" id="comfirm_password" required />
+            <div>
+              <p id="error-comfirm-password" style="color: red"></p>
             </div>
           </div>
-
-          <!-- footer -->
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">
-              Cancel
-            </button>
-            <input type="submit" class="btn btn-success" value="Change" id="success" />
-            </input>
-          </div>
-        </form>
+        </div>
+        <!-- footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal"> Cancel</button>
+          <button type="button" class="btn btn-success" onclick="Change()">Change</button>
+        </div>
       </div>
     </div>
   </div>

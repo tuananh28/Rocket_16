@@ -259,6 +259,7 @@ public class AccountService implements IAccountService {
 		eventPublisher.publishEvent(new OnResetPasswordViaEmailEvent(email));
 
 	}
+	@Override
 	public void changePassword(String username, String newPassword) {
 		Account account = accountRepository.findByUsername(username);
 		account.setPassword(passwordEncoder.encode(newPassword));

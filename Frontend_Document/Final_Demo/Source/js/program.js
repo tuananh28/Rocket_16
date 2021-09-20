@@ -95,7 +95,7 @@ $(function () {
     document.getElementById("error-username").style.display = "none";
     //Validate Fullname
     if (
-      !v_Fullname_ID | (v_Fullname_ID.length < 6) ||
+      !v_Fullname_ID || (v_Fullname_ID.length < 6) ||
       v_Fullname_ID.length > 50
     ) {
       // show error message
@@ -743,7 +743,8 @@ function ChangePassword() {
   $("#change_password_form").modal("show");
 }
 
-$("#ChangePassword").submit(function () {
+// $("#ChangePassword").submit(function () {
+function Change() {
   var oldPassword = document.getElementById("old_password").value;
   var newPassword = document.getElementById("new_password").value;
   var comfirmPassword = document.getElementById("comfirm_password").value;
@@ -757,16 +758,19 @@ $("#ChangePassword").submit(function () {
     return false;
   }
   document.getElementById("error-comfirm-password").style.display = "none";
-  var url = "http://localhost:8080/api/v1/Password/changePassword";
-  url += "?username=" + storage.getItem("USERNAME");
-  // if (newPassword) {
-  // url += "&newPassword=" + newPassword;
-  // }
+
+  if (!newPassword ||newPassword.length < 6 ||newPassword.length > 50) {
+    // show error message
+    document.getElementById("error-new-password").innerHTML =
+      "Password name must be from 6 to 50 characters!";
+    return false;
+  }
+  document.getElementById("error-new-password").style.display = "none";
   var account = {
-    newPassword:newPassword,
+    newPassword: newPassword,
   }
   $.ajax({
-    url: url + "&newPassword=" + newPassword,
+    url: "http://localhost:8080/api/v1/Password/changePassword/" + storage.getItem("USERNAME") + "?newPassword=" + newPassword,
     type: "PUT",
     data: JSON.stringify(account),
     contentType: "application/json", // type of body (json, xml, text)
@@ -780,7 +784,18 @@ $("#ChangePassword").submit(function () {
     },
     success: function (data, textStatus, xhr) {
       console.log(data);
-      logout();
+      // swal("Success!", "Please log in again !!", "success");
+      swal({
+          title: "Success!",
+          text: "Please log in again !!",
+          type: "success",
+          confirmButtonText: "OK",
+        })
+        .then((result) => {
+          if (result.value) {
+            logout();
+          }
+        });
     },
     error(jqXHR, textStatus, errorThrown) {
       swal("Error!", "Error when loading data", "error");
@@ -789,4 +804,4 @@ $("#ChangePassword").submit(function () {
       console.log(errorThrown);
     },
   });
-});
+}

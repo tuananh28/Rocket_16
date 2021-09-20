@@ -1,5 +1,5 @@
 var listAccount = [];
-$("#signupForm").submit(function(){
+$("#signupForm").submit(function () {
   // Lấy các giá trị người dùng nhập vào
   // var v_ID_ID = $("#ID_ID").val();
   var v_Email_ID = $("#Email_ID").val();
@@ -35,11 +35,11 @@ $("#signupForm").submit(function(){
     success: function (data, textStatus, xhr) {
       console.log(data);
       // success
-      swal ( "Success", "We have sent an email. Please check email to active account!" , "success" );
+      swal("Success", "We have sent an email. Please check email to active account!", "success");
       resetForm();
     },
     error(jqXHR, textStatus, errorThrown) {
-      swal ( "Error!", "Error when loading data" , "error" );
+      swal("Error!", "Error when loading data", "error");
       console.log(jqXHR);
       console.log(textStatus);
       console.log(errorThrown);
@@ -58,10 +58,12 @@ function resetForm() {
   $("#username").val("");
   $("#password").val("");
 }
+
 function ResendToken() {
   $("#email_token").val("");
   $("#send_token_form").modal("show");
 }
+
 function Send_Token() {
   // get data
   var v_Email_ID = $("#email_token").val();
@@ -85,30 +87,17 @@ function Send_Token() {
         return false;
       } else {
         $.ajax({
-          url:
-            "http://localhost:8080/api/v1/registration/userRegistrationConfirmRequest?email=" +
+          url: "http://localhost:8080/api/v1/registration/userRegistrationConfirmRequest?email=" +
             v_Email_ID,
           type: "GET",
-          // data: JSON.stringify(account), // body
-          // contentType: "application/json",
-          // dataType: "json", // type of body (json, xml, text)
-          // datatype return
           success: function (data, textStatus, xhr) {
             console.log(data);
             resetForm();
             HideModal();
-            Swal({
-              title: 'We have sent an email. Please check email to active account!',
-              showClass: {
-                popup: 'animate__animated animate__fadeInDown'
-              },
-              hideClass: {
-                popup: 'animate__animated animate__fadeOutUp'
-              }
-            })
+            swal("Success", "We have sent an email. Please check email to active account!", "success");
           },
           error(jqXHR, textStatus, errorThrown) {
-            swal ( "Error!", "Error when loading data" , "error" );
+            swal("Error!", "Error when loading data", "error");
             console.log(jqXHR);
             console.log(textStatus);
             console.log(errorThrown);
@@ -118,7 +107,7 @@ function Send_Token() {
       document.getElementById("error-email-token").style.display = "none";
     },
     error(jqXHR, textStatus, errorThrown) {
-      swal ( "Error!", "Error when loading data" , "error" );
+      swal("Error!", "Error when loading data", "error");
       console.log(jqXHR);
       console.log(textStatus);
       console.log(errorThrown);
@@ -126,6 +115,7 @@ function Send_Token() {
   });
   return false;
 }
+
 function HideModal() {
   $("#send_token_form").modal("hide");
 }
