@@ -8,7 +8,7 @@ export class CongNhan extends CanBo {
     }
 
     public printInforCongNhan() {
-        console.log("Thông tin Công Nhân");
+        console.log("\nThông tin Công Nhân");
         super.printInforCanBo();
         console.log("Ranking: " + this.rank);
     }

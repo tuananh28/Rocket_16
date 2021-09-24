@@ -25,7 +25,7 @@ var CongNhan = /** @class */ (function (_super) {
         return _this;
     }
     CongNhan.prototype.printInforCongNhan = function () {
-        console.log("Thông tin Công Nhân");
+        console.log("\nThông tin Công Nhân");
         _super.prototype.printInforCanBo.call(this);
         console.log("Ranking: " + this.rank);
     };
