@@ -1,4 +1,4 @@
-import { CongNhan } from './CongNhan';
+import { CongNhan } from '../Lab 1.3_Inheritance/CongNhan';
 //  Thử tạo ra các worker bằng cách gán các giá trị từ biến khai báo với Var
 // Tạo worker1:
 // Khai báo ra các biến lưu thông tin worker dùng var, ở đây thấy cấu trúc của Var khai báo khá cởi mở, không yêu cầu về kểu dữ liệu
