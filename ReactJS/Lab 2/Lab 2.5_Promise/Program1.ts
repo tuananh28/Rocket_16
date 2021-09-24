@@ -2,7 +2,7 @@
 // Khai báo 1 Promise có đầu vào là 2 hàm dạng HOF là resolve và reject
 let promise = new Promise(function (resolve, reject) {
     resolve("Call API Success!"); 
-    // reject("error when load API!! Check Again!!");
+     reject("error when load API!! Check Again!!");
   });
   
   promise.then(
