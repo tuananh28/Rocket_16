@@ -20,26 +20,15 @@ public class WebSecurity extends WebSecurityConfigurerAdapter{
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth.userDetailsService(accountService).passwordEncoder(new BCryptPasswordEncoder());
 	}
-	
-//	protected void configure(HttpSecurity http) throws Exception {
-//		http
-//		.cors()
-//		.and()
-//		.authorizeRequests()
-//		.antMatchers("/api/v1/accounts", "api/v1/departments/*" ,"/api/v1/registratiton").hasAnyAuthority("Admin", "Manager")
-//		.anyRequest().authenticated()
-//		.and()
-//		.httpBasic()
-//		.and()
-//		.csrf().disable();
-//	}
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http
 		.cors()
 		.and()
 		.authorizeRequests()
-		.antMatchers("/api/v1/accounts", "api/v1/departments/*" ,"/api/v1/registration/","/api/v1/Password/","/api/v1/files/")
+		.antMatchers("/api/v1/accounts","/api/v1/departments", "/api/v1/departments/*" ,"/api/v1/registration/","/api/v1/Password/","/api/v1/files/")
+		.hasAnyAuthority("Admin", "Manager")
+		.anyRequest()
 		.authenticated()
 		.and()
 		.httpBasic()

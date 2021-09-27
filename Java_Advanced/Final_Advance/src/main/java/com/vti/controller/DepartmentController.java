@@ -19,21 +19,20 @@ import com.vti.service.IDepartmentService;
 @RequestMapping(value = "api/v1/departments")
 @CrossOrigin("*")
 public class DepartmentController {
+
 	@Autowired
 	private IDepartmentService departmentService;
 
-	@GetMapping()
+	@GetMapping
 	public ResponseEntity<?> getAllDepartments() {
 		List<Department> entities = departmentService.getAllDepartments();
 
 		List<DepartmentDTO> dtos = new ArrayList<>();
 
-		// convert entities --> dtos
 		for (Department entity : entities) {
-			DepartmentDTO dto = new DepartmentDTO(entity.getId(), entity.getName());
+			DepartmentDTO dto = new DepartmentDTO(entity.getId(), entity.getName().toString());
 			dtos.add(dto);
 		}
-
 		return new ResponseEntity<>(dtos, HttpStatus.OK);
 	}
 

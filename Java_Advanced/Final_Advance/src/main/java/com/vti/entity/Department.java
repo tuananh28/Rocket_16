@@ -12,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -21,6 +22,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
+@AllArgsConstructor
 public class Department implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -34,6 +36,5 @@ public class Department implements Serializable {
 
 	@OneToMany(mappedBy = "department", fetch = FetchType.EAGER)
 	private List<Account> account;
-
 
 }

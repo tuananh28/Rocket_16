@@ -62,6 +62,15 @@ public class AccountService implements IAccountService {
 	@Autowired
 	private PasswordEncoder passwordEncoder;
 
+	public UserDetails loadUserByUsername(String username) {
+		Account account = accountRepository.findByUsername(username);
+		if (account == null) {
+			throw new UsernameNotFoundException(username);
+		}
+		return new User(account.getUsername(), account.getPassword(),
+				AuthorityUtils.createAuthorityList(account.getRole().toString()));
+	}
+
 	@Override
 	@SuppressWarnings("deprecation")
 
@@ -124,8 +133,6 @@ public class AccountService implements IAccountService {
 		accountRepository.save(account);
 
 	}
-	
-	
 
 	@Override
 	public void deleteAccount(short id) {
@@ -135,15 +142,6 @@ public class AccountService implements IAccountService {
 	@Override
 	public void deleteAccounts(List<Short> ids) {
 		accountRepository.deleteByIds(ids);
-	}
-
-	public UserDetails loadUserByUsername(String username) {
-		Account account = accountRepository.findByUsername(username);
-		if (account == null) {
-			throw new UsernameNotFoundException(username);
-		}
-		return new User(account.getUsername(), account.getPassword(),
-				AuthorityUtils.createAuthorityList(account.getRole().toString()));
 	}
 
 	@Override
@@ -227,7 +225,7 @@ public class AccountService implements IAccountService {
 		Account account = getAccountByEmail(email);
 		// remove token token if exists
 		registrationUserTokenRepository.deleteByUserId(account.getId());
-		// create new token  reset password 
+		// create new token reset password
 		createNewResetPasswordToken(account);
 		// send email
 		sendResetPasswordViaEmail(email);
@@ -259,6 +257,7 @@ public class AccountService implements IAccountService {
 		eventPublisher.publishEvent(new OnResetPasswordViaEmailEvent(email));
 
 	}
+
 	@Override
 	public void changePassword(String username, String newPassword) {
 		Account account = accountRepository.findByUsername(username);
@@ -266,5 +265,4 @@ public class AccountService implements IAccountService {
 		accountRepository.save(account);
 	}
 
-	
 }

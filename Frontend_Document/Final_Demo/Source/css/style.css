@@ -110,3 +110,10 @@ a {
 	margin-left: 430px;
     cursor: pointer;
 }
+table.table td a.edit {
+  color: #FFC107;
+}
+
+table.table td a.delete {
+  color: #E34724;
+}

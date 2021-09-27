@@ -291,31 +291,48 @@ function showAccount() {
   $("#Result_TB").empty();
   // Lặp trong listAccount để in thông tin từng phần tử
   // Hiển thị thêm 2 nút để sửa và xóa các Account
-  for (var index = 0; index < listAccount.length; index++) {
-    if (storage.getItem("ROLE") != "User") {
-      $("#Result_TB").append(`
-        <tr>
-          <td><input id="checkbox-"+ type="checkbox" onClick="CheckboxItem(${index})"></td>
-          <td>${listAccount[index].AccountID}</td>
-          <td>${listAccount[index].Email}</td>
-          <td>${listAccount[index].Username}</td>
-          <td>${listAccount[index].FullName}</td>
-          <td>${listAccount[index].Department}</td>
-          <td>${listAccount[index].Position}</td>   
-          <td>${listAccount[index].CreateDate}</td>
-          <td><button class="btn btn-warning" onclick="editAccount(${index})">Edit</button></td>
-          <td><button class="btn btn-warning" onclick="deleteAccount(${index})">Delete</button></td>
-        </tr>
-      `);
-    }
+  if (storage.getItem("ROLE") != "User") {
+    listAccount.forEach(function (item, index) {
+      $("#Result_TB").append(
+        '<tr>' +
+        '<td><input id="checkbox-' + index + '" type="checkbox" onclick="onChangeCheckboxItem()"></td>' +
+        '<td>' + item.AccountID + '</td>' +
+        '<td>' + item.Email + '</td>' +
+        '<td>' + item.Username + '</td>' +
+        '<td>' + item.FullName + '</td>' +
+        '<td>' + item.Department + '</td>' +
+        '<td>' + item.Position + '</td>' +
+        '<td>' + item.CreateDate + '</td>' +
+        '<td>' +
+        '<a class="edit" title="Edit" data-toggle="tooltip"  onclick="editAccount(' + item.AccountID + ')"><i class="material-icons">&#xE254;</i></a>' +
+        '</td>' +
+        '<td>' +
+        '<a class="delete" onclick="deleteAccount(' + item.AccountID + ')"><i class="material-icons">&#xE872;</i></a>' +
+        '</td>' +
+        '</tr>'
+      );
+    });
+    // for (var index = 0; index < listAccount.length; index++) {
+    //   $('#Result_TB').append(`
+    //         <tr>
+    //         <td><input id="checkbox-" type="checkbox" onclick="onChangeCheckboxItem(${index})"></td>
+    //         <th>${listAccount[index].AccountID}</th>
+    //         <th>${listAccount[index].Email}</th>
+    //         <th>${listAccount[index].Username}</th>
+    //         <th>${listAccount[index].FullName}</th>
+    //         <th>${listAccount[index].Department}</th>
+    //         <th>${listAccount[index].Position}</th>   
+    //         <th>${listAccount[index].CreateDate}</th>
+    //         <td><a class="edit" title="Edit" data-toggle="tooltip" onclick="editAccount(${index})"><i class="material-icons">&#xE254;</i></a></td>
+    //         <td><a class="delete" onclick="deleteAccount(${index})"><i class="material-icons">&#xE872;</i></a></td>
+    //         </tr>
+    //         `)
+    // }
   }
 }
 
 // Viết hàm xóa account
-function deleteAccount(Index) {
-  var v_del_ID = listAccount[Index].AccountID;
-  // Hiển thị 1 Confim Popup, chọn Có = True
-  // var confirm_del = confirm("Bạn có chắc chắn muốn xóa Account này không");
+function deleteAccount(AccountID) {
   swal({
     title: "Are you sure?",
     text: "Bạn có chắc chắn muốn xóa Account này không ",
@@ -325,7 +342,7 @@ function deleteAccount(Index) {
   }).then((result) => {
     if (result.value) {
       $.ajax({
-        url: "http://localhost:8080/api/v1/accounts/" + v_del_ID,
+        url: "http://localhost:8080/api/v1/accounts/" + AccountID,
         type: "DELETE",
         beforeSend: function (xhr) {
           xhr.setRequestHeader(
@@ -352,71 +369,105 @@ function deleteAccount(Index) {
   });
 }
 
-function DeleteAll() {
-  // get id cua nhung o duoc tich
-  var ids = [];
-  for (let index = 0; index < size; index++) {
-    var checkboxInput = document.getElementById("checkbox-" + index);
-    if (checkboxInput != null && checkboxInput != undefined) {
-      if (checkboxInput.checked) {
-        ids.push(checkboxInput.value);
+function onChangeCheckboxItem() {
+  var i = 0;
+  while (true) {
+    var checkboxItem = document.getElementById("checkbox-" + i);
+    if (checkboxItem !== undefined && checkboxItem !== null) {
+      if (!checkboxItem.checked) {
+        document.getElementById("checkbox-all").checked = false;
+        return;
       }
+      i++;
     } else {
       break;
     }
   }
+  document.getElementById("checkbox-all").checked = true;
 
-  if (ids.length == 0) {
-    alert("Bạn phải chọn ít nhất 1 bản ghi mới xóa được...");
-  }
-
-  // goi api
-  $.ajax({
-    url: "http://localhost:8080/api/v1/accounts?ids=" + ids.toString(),
-    type: "DELETE",
-    beforeSend: function (xhr) {
-      xhr.setRequestHeader(
-        "Authorization",
-        "Basic " +
-        btoa(storage.getItem("USERNAME") + ":" + storage.getItem("PASSWORD"))
-      );
-    },
-    success: function (result) {
-      // success
-      getListEmployees();
-    },
-    error(jqXHR, textStatus, errorThrown) {
-      if (jqXHR.status == 403) {
-        window.location.href = "403.html";
-      } else {
-        swal.fire("Error!", "Error when loading data", "error");
-        console.log();
-        console.log(textStatus);
-        console.log(errorThrown);
-      }
-    },
-  });
 }
 
-function CheckboxAll() {
-  var checkboxTotal = document.getElementById("checkbox-all");
-
-  for (let index = 0; index < size; index++) {
-    var checkboxInput = document.getElementById("checkbox-" + index);
-    if (checkboxInput != null && checkboxInput != undefined) {
-      checkboxInput.checked = checkboxTotal.checked;
+function onChangeCheckboxAll() {
+  var i = 0;
+  while (true) {
+    var checkboxItem = document.getElementById("checkbox-" + i);
+    if (checkboxItem !== undefined && checkboxItem !== null) {
+      checkboxItem.checked = document.getElementById("checkbox-all").checked;
+      i++;
     } else {
       break;
     }
+  }
+}
+
+
+function onChangeCheckboxItem() {
+  var i = 0;
+  while (true) {
+    var checkboxItem = document.getElementById("checkbox-" + i);
+    if (checkboxItem !== undefined && checkboxItem !== null) {
+      if (!checkboxItem.checked) {
+        document.getElementById("checkbox-all").checked = false;
+        return;
+      }
+      i++;
+    } else {
+      break;
+    }
+  }
+  document.getElementById("checkbox-all").checked = true;
+
+}
+
+function DeleteAllAccounts() {
+  // // get checked
+  var ids = [];
+  var i = 0;
+  while (true) {
+    var checkboxItem = document.getElementById("checkbox-" + i);
+    if (checkboxItem !== undefined && checkboxItem !== null) {
+      if (checkboxItem.checked) {
+        ids.push(listAccount[i].AccountID);
+      }
+      i++;
+    } else {
+      break;
+    }
+  }
+
+  // open confirm ==> bạn có muốn xóa bản ghi ...
+
+  var result = confirm("Want to delete ?");
+  if (result) {
+    // call API
+    $.ajax({
+      url: 'http://localhost:8080/api/v1/accounts?ids=' + ids,
+      type: 'DELETE',
+      beforeSend: function (xhr) {
+        xhr.setRequestHeader("Authorization", "Basic " + btoa(storage.getItem("USERNAME") + ":" + storage.getItem("PASSWORD")));
+      },
+      success: function (result) {
+        // error
+        if (result == undefined || result == null) {
+          alert("Error when loading data");
+          return;
+        }
+
+        // success
+        getListEmployees();
+      }
+    });
   }
 }
 // Viết hàm để Edit các account
-function editAccount(Index) {
-  // Lấy giá trị các trường ID, Fullname, Department, Possition Fill vào Form
-  $("#ID_ID").val(listAccount[Index].AccountID);
-  $("#Fullname_ID").val(listAccount[Index].FullName);
-  $("#Department_ID").val(listAccount[Index].Department);
-  $("#Position_ID").val(listAccount[Index].Position);
+function editAccount(id) {
+  var index = listAccount.findIndex(x => x.AccountID == id);
+
+  // fill data
+  document.getElementById("ID_ID").value = listAccount[index].AccountID;
+  document.getElementById("Fullname_ID").value = listAccount[index].FullName;
+  document.getElementById("Department_ID").value = listAccount[index].Department;
+  document.getElementById("Position_ID").value = listAccount[index].Position;
   // Disable các trường Email, Username, CreateDate khi nhấn vào nút Edit do không cho cập nhật các trường này
   $("#Email_ID").attr("disabled", "disabled");
   $("#Username_ID").attr("disabled", "disabled");
@@ -759,7 +810,7 @@ function Change() {
   }
   document.getElementById("error-comfirm-password").style.display = "none";
 
-  if (!newPassword ||newPassword.length < 6 ||newPassword.length > 50) {
+  if (!newPassword || newPassword.length < 6 || newPassword.length > 50) {
     // show error message
     document.getElementById("error-new-password").innerHTML =
       "Password name must be from 6 to 50 characters!";

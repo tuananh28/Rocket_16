@@ -51,6 +51,7 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="false"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="false"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\qnanh\Downloads\Backend\DepartmentManagement"/>
 			<item value="D:\Rocket_16\Java_Advanced\Testing_System_6"/>
 			<item value="D:\Rocket_16\Java_Advanced\Testing_Hibernate_NativeQuery"/>
 			<item value="D:\Rocket_16\Java_Advanced\Testing_Hibernate_HQLQuery"/>

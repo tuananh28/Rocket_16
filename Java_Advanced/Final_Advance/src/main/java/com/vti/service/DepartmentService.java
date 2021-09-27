@@ -19,5 +19,7 @@ public class DepartmentService implements IDepartmentService {
 		// TODO Auto-generated method stub
 		return departmentRepository.findAll();
 	}
+	
+	
 
 }

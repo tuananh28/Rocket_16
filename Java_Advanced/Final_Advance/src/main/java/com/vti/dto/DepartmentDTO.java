@@ -8,6 +8,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 public class DepartmentDTO {
+	
 	private short id;
 
 	private String name;

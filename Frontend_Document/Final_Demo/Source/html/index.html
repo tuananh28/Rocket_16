@@ -14,9 +14,11 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css" />
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.min.css" />
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.min.js"></script>
+  
 
   <!-- SweetAlert2 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.min.css">
@@ -104,7 +106,7 @@
           <input type="submit" class="btn btn-success" value="Save" />
           <input type="button" class="btn btn-success" id="update_btn" value="Update" />
           <input type="button" class="btn btn-success" id="reset_btn" value="Reset" />
-          <input type="button" class="btn btn-success" onclick="DeleteAll()" value="Delete All" />
+          <input type="button" class="btn btn-success" onclick="DeleteAllAccounts()" value="Delete All" />
         </div>
       </form>
     </div>
@@ -129,9 +131,7 @@
         <table class="table table-striped" id="Detail_Staff_ID" data-toggle="table">
           <thead>
             <tr>
-              <th>
-                <input type="checkbox" id="checkbox-all" name="checkbox-all" onclick="CheckboxAll()" />
-              </th>
+              <th><input type="checkbox" id="checkbox-all" name="checkbox-all" onclick="onChangeCheckboxAll()"></th>
               <th>
                 ID<i class="fa fa-fw fa-sort" onclick="Sort('id')" id="sort_id"></i>
               </th>
