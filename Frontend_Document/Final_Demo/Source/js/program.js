@@ -144,9 +144,9 @@ $(function () {
     };
 
     // Add account tới MOCK API
-    // Check Username đã có trên hệ thống hay chưa?
+    // Check Email đã có trên hệ thống hay chưa?
     $.ajax({
-      url: "http://localhost:8080/api/v1/accounts/username/" + v_Username_ID,
+      url: "http://localhost:8080/api/v1/accounts/email/" + v_Email_ID,
       type: "GET",
       contentType: "application/json",
       dataType: "json", // datatype return
@@ -161,32 +161,61 @@ $(function () {
       },
       success: function (data, textStatus, xhr) {
         if (data) {
-          alert("Username đã tồn tại trên hệ thống");
+          swal("Cancel!", "Email đã tồn tại trên hệ thống", "error");
           return false;
         } else {
-          // Add account tới MOCK API
+          // Check Username đã có trên hệ thống hay chưa?
           $.ajax({
-            url: "http://localhost:8080/api/v1/accounts/",
-            type: "POST",
-            data: JSON.stringify(account), // body
-            contentType: "application/json", // type of body (json, xml, text)
-            // dataType: 'json', // datatype return
+            url: "http://localhost:8080/api/v1/accounts/username/" + v_Username_ID,
+            type: "GET",
+            contentType: "application/json",
+            dataType: "json", // datatype return
             beforeSend: function (xhr) {
               xhr.setRequestHeader(
                 "Authorization",
                 "Basic " +
                 btoa(
-                  storage.getItem("USERNAME") +
-                  ":" +
-                  storage.getItem("PASSWORD")
+                  storage.getItem("USERNAME") + ":" + storage.getItem("PASSWORD")
                 )
               );
             },
             success: function (data, textStatus, xhr) {
-              console.log(data);
-              swal("Success", "Create Successful !!", "success");
-              currentPage = data.totalPages;
-              getListEmployees();
+              if (data) {
+                swal("Cancel!", "Username đã tồn tại trên hệ thống", "error");
+                return false;
+              } else {
+                // Add account tới MOCK API
+                $.ajax({
+                  url: "http://localhost:8080/api/v1/accounts/",
+                  type: "POST",
+                  data: JSON.stringify(account), // body
+                  contentType: "application/json", // type of body (json, xml, text)
+                  // dataType: 'json', // datatype return
+                  beforeSend: function (xhr) {
+                    xhr.setRequestHeader(
+                      "Authorization",
+                      "Basic " +
+                      btoa(
+                        storage.getItem("USERNAME") +
+                        ":" +
+                        storage.getItem("PASSWORD")
+                      )
+                    );
+                  },
+                  success: function (data, textStatus, xhr) {
+                    console.log(data);
+                    swal("Success", "Create Successful !!", "success");
+                    currentPage = data.totalPages;
+                    getListEmployees();
+                  },
+                  error(jqXHR, textStatus, errorThrown) {
+                    swal("Error!", "Error when loading data", "error");
+                    console.log(jqXHR);
+                    console.log(textStatus);
+                    console.log(errorThrown);
+                  },
+                });
+              }
             },
             error(jqXHR, textStatus, errorThrown) {
               swal("Error!", "Error when loading data", "error");
@@ -353,14 +382,20 @@ function deleteAccount(AccountID) {
             )
           );
         },
-        success: function (result) {
-          // error
-          if (result == undefined || result == null) {
-            swal("Error!", "Error when loading data", "error");
-            return;
-          }
+        success: function (data, textStatus, xhr) {
+          console.log(data);
           // success
+          swal("Success", "Account was deleted successfully ", "success");
           getListEmployees();
+        },
+        error(jqXHR, textStatus, errorThrown) {
+          if (jqXHR.status == 403) {
+            window.location.href = "403.html";
+          }
+          swal("Error!", "Error when loading data", "error");
+          console.log(jqXHR);
+          console.log(textStatus);
+          console.log(errorThrown);
         },
       });
     } else {
@@ -420,7 +455,7 @@ function onChangeCheckboxItem() {
 }
 
 function DeleteAllAccounts() {
-  // // get checked
+  // get checked
   var ids = [];
   var i = 0;
   while (true) {
@@ -434,31 +469,45 @@ function DeleteAllAccounts() {
       break;
     }
   }
-
   // open confirm ==> bạn có muốn xóa bản ghi ...
-
-  var result = confirm("Want to delete ?");
-  if (result) {
-    // call API
-    $.ajax({
-      url: 'http://localhost:8080/api/v1/accounts?ids=' + ids,
-      type: 'DELETE',
-      beforeSend: function (xhr) {
-        xhr.setRequestHeader("Authorization", "Basic " + btoa(storage.getItem("USERNAME") + ":" + storage.getItem("PASSWORD")));
-      },
-      success: function (result) {
-        // error
-        if (result == undefined || result == null) {
-          alert("Error when loading data");
-          return;
-        }
-
-        // success
-        getListEmployees();
+  if (ids.length == 0) {
+    swal("Error!", "Bạn phải chọn ít nhất 1 bản ghi mới xóa được...", "error");
+  } else {
+    swal({
+      title: "Are you sure?",
+      text: "Bạn có chắc chắn muốn xóa Account này không ",
+      type: "warning",
+      confirmButtonText: "Yes, Delete!",
+      showCancelButton: true,
+    }).then((result) => {
+      if (result.value) {
+        // call API
+        $.ajax({
+          url: 'http://localhost:8080/api/v1/accounts?ids=' + ids,
+          type: 'DELETE',
+          beforeSend: function (xhr) {
+            xhr.setRequestHeader("Authorization", "Basic " + btoa(storage.getItem("USERNAME") + ":" + storage.getItem("PASSWORD")));
+          },
+          success: function (data, textStatus, xhr) {
+            console.log(data);
+            // success
+            swal("Success", "Account was deleted successfully ", "success");
+            getListEmployees();
+          },
+          error(jqXHR, textStatus, errorThrown) {
+            if (jqXHR.status == 403) {
+              window.location.href = "403.html";
+            }
+            swal("Error!", "Error when loading data", "error");
+            console.log(jqXHR);
+            console.log(textStatus);
+            console.log(errorThrown);
+          },
+        });
       }
     });
   }
-}
+};
 // Viết hàm để Edit các account
 function editAccount(id) {
   var index = listAccount.findIndex(x => x.AccountID == id);
@@ -856,3 +905,11 @@ function Change() {
     },
   });
 }
+
+const swalWithBootstrapButtons = Swal.mixin({
+  customClass: {
+    confirmButton: 'btn btn-success',
+    cancelButton: 'btn btn-danger'
+  },
+  buttonsStyling: false
+})

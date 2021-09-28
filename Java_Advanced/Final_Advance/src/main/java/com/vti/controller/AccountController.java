@@ -3,8 +3,6 @@ package com.vti.controller;
 import java.util.List;
 import java.util.function.Function;
 
-import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -65,7 +63,7 @@ public class AccountController {
 	}
 
 	@PostMapping()
-	public ResponseEntity<?> createAccount(@Valid @RequestBody AccountFormForCreating form) {
+	public ResponseEntity<?> createAccount( @RequestBody AccountFormForCreating form) {
 		accountService.createAccount(form);
 		return new ResponseEntity<String>("Create Successfully !", HttpStatus.CREATED);
 	}
