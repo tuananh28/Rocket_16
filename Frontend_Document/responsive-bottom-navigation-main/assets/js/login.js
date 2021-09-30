@@ -29,7 +29,7 @@ $("#signinForm").submit(function () {
       console.log(data);
       storage.setLocal(document.getElementById("check").checked);
       if (data.status == "NOT_ACTIVE") {
-        swal("Info!", "Your account has not been activated ", "info");
+        swal ( "Info!", "Your account has not been activated " , "info" );
         return false;
       }
       // save data to cookie
@@ -104,14 +104,10 @@ function Send_Password() {
           success: function (data, textStatus, xhr) {
             console.log(data);
             HideModalReset();
-            swal(
-              "Success",
-              "We have sent an email. Please check email to reset password!",
-              "success"
-            );
+            swal ( "Success", "We have sent an email. Please check email to reset password!" , "success" );
           },
           error(jqXHR, textStatus, errorThrown) {
-            swal("Error!", "Error when loading data", "error");
+            swal ( "Error!", "Error when loading data" , "error" );
             console.log(jqXHR);
             console.log(textStatus);
             console.log(errorThrown);
@@ -121,7 +117,7 @@ function Send_Password() {
       document.getElementById("error-email-password").style.display = "none";
     },
     error(jqXHR, textStatus, errorThrown) {
-      swal("Error!", "Error when loading data", "error");
+      swal ( "Error!", "Error when loading data" , "error" );
       console.log(jqXHR);
       console.log(textStatus);
       console.log(errorThrown);

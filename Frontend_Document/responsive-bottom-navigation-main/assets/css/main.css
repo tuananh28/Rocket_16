@@ -2,10 +2,12 @@
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-.form-crud {
+/* .form-crud {
   margin-top: 150px;
+} */
+.form{
+  margin-top: 15PX;
 }
-
 .form-control {
 
   border: 1px solid #eee;
@@ -109,4 +111,11 @@ a {
 .modal-body i{
 	margin-left: 430px;
     cursor: pointer;
+}
+table.table td a.edit {
+  color: #FFC107;
+}
+
+table.table td a.delete {
+  color: #E34724;
 }

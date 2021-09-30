@@ -10,6 +10,12 @@ $("#signupForm").submit(function () {
   var V_Department_ID = "10";
   var v_Position_ID = "1";
 
+  if (v_RePassword_ID != v_Password_ID) {
+    document.getElementById("error-repassword").innerHTML =
+      " Password not match ! ";
+    return false;
+  }
+  document.getElementById("error-repassword").style.display = "none";
   var registration = {
     email: v_Email_ID,
     username: v_Username_ID,
@@ -20,23 +26,57 @@ $("#signupForm").submit(function () {
 
   };
 
-  if (v_RePassword_ID != v_Password_ID) {
-    document.getElementById("error-repassword").innerHTML =
-      " Password not match ! ";
-    return false;
-  }
-  document.getElementById("error-repassword").style.display = "none";
+  // Check Email đã có trên hệ thống hay chưa?
   $.ajax({
-    url: "http://localhost:8080/api/v1/registration",
-    type: "POST",
-    data: JSON.stringify(registration), // body
-    contentType: "application/json", // type of body (json, xml, text)
-    // dataType: 'json', // datatype return
+    url: "http://localhost:8080/api/v1/accounts/email/" + v_Email_ID,
+    type: "GET",
+    contentType: "application/json",
+    dataType: "json", // datatype return
     success: function (data, textStatus, xhr) {
-      console.log(data);
-      // success
-      swal("Success", "We have sent an email. Please check email to active account!", "success");
-      resetForm();
+      if (data) {
+        swal("Cancel!", "Email đã tồn tại trên hệ thống", "error");
+        return false;
+      } else {
+        // Check Username đã có trên hệ thống hay chưa?
+        $.ajax({
+          url: "http://localhost:8080/api/v1/accounts/username/" + v_Username_ID,
+          type: "GET",
+          contentType: "application/json",
+          dataType: "json", // datatype return
+          success: function (data, textStatus, xhr) {
+            if (data) {
+              swal("Cancel!", "Username đã tồn tại trên hệ thống", "error");
+              return false;
+            } else {
+              $.ajax({
+                url: "http://localhost:8080/api/v1/registration",
+                type: "POST",
+                data: JSON.stringify(registration), // body
+                contentType: "application/json", // type of body (json, xml, text)
+                // dataType: 'json', // datatype return
+                success: function (data, textStatus, xhr) {
+                  console.log(data);
+                  // success
+                  swal("Success", "We have sent an email. Please check email to active account!", "success");
+                  resetForm();
+                },
+                error(jqXHR, textStatus, errorThrown) {
+                  swal("Error!", "Error when loading data", "error");
+                  console.log(jqXHR);
+                  console.log(textStatus);
+                  console.log(errorThrown);
+                },
+              });
+            }
+          },
+          error(jqXHR, textStatus, errorThrown) {
+            swal("Error!", "Error when loading data", "error");
+            console.log(jqXHR);
+            console.log(textStatus);
+            console.log(errorThrown);
+          },
+        });
+      }
     },
     error(jqXHR, textStatus, errorThrown) {
       swal("Error!", "Error when loading data", "error");
@@ -47,6 +87,7 @@ $("#signupForm").submit(function () {
   });
   return false;
 });
+
 
 function resetForm() {
   $("#Email_ID").val("");
