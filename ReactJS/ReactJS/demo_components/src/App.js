@@ -1,9 +1,10 @@
-
 import "./App.css";
-import ComponentsBottom from "./ComponentsBottom";
-import ComponentsTop from "./ComponentsTop";
+import ComponentsBottom from "./Components/ComponentsBottom";
+import ComponentsTop from "./Components/ComponentsTop";
 import React, { Component } from "react";
-import DataContext from "./DataContext";
+// Tạo ra 1 đối tượng dataContext để sử dụng
+import DataContext from "./Context/DataContext";
+
 
 class App extends Component {
   constructor(props) {

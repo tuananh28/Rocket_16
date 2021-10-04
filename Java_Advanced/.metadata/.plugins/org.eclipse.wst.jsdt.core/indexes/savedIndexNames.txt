@@ -1,2 +1,0 @@
-INDEX VERSION 1.4+D:\Rocket_16\Java_Advanced\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-2655741172.index

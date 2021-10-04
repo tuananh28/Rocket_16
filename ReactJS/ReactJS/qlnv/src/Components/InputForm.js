@@ -4,6 +4,7 @@ export default class InputForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      // Khai báo thêm các State để lưu trữ ở đây
       ID: "",
       Email: "",
       Username: "",
@@ -16,24 +17,33 @@ export default class InputForm extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   handleChange(event) {
+    // name và value lấy theo các thuộc tính ở input
     let name = event.target.name;
     let value = event.target.value;
-    console.log(name);
-    console.log(value);
+    // Thực hiện setState theo name và value lấy được
     this.setState({
-      [name]: value
+      [name]: value,
     });
   }
   handleSubmit(event) {
-    alert("ID: " + this.state.ID);
-    alert("Email: " + this.state.Email);
-    alert("Username: " + this.state.Username);
-    alert("Fullname: " + this.state.Fullname);
-    alert("Department: " + this.state.Department);
-    alert("Position: " + this.state.Position);
-    alert("Create_Date: " + this.state.Create_Date);
-    event.preventDefault();
+    let account = {
+      ID: this.state.ID,
+      Email: this.state.Email,
+      Username: this.state.Username,
+      Fullname: this.state.Fullname,
+      Department: this.state.Department,
+      Position: this.state.Position,
+      Cretate_Date: this.state.Create_Date,
+    };
+    this.props.onSaveForm(account);
+
+    event.preventDefault(); // Hàm này để ngăn reddicrect đến trang khác
   }
+
+  // Hàm xử lý sự kiện onShowForm.
+  onShowForm = () => {
+    this.props.onShowForm();
+  };
   render() {
     return (
       <div className="form">
@@ -154,6 +164,13 @@ export default class InputForm extends Component {
               className="btn btn-success"
               id="reset_btn"
               value="Reset"
+            ></input>
+            {/* Bổ xung thêm nút Close khi render, và sự kiện onClick, hàm xử lý sự kiên onShowForm */}
+            <input
+              type="button"
+              class="btn btn-danger"
+              value="Close"
+              onClick={this.onShowForm}
             ></input>
           </div>
         </form>

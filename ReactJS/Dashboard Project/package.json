@@ -40,6 +40,7 @@
     "chart.js": "2.9.3",
     "chokidar-cli": "2.1.0",
     "classnames": "2.2.6",
+    "formik": "^2.2.9",
     "google-map-react": "1.1.7",
     "jquery": "3.5.1",
     "jvectormap-next": "3.1.1",
@@ -71,8 +72,10 @@
     "react-syntax-highlighter": "13.5.3",
     "react-transition-group": "4.4.1",
     "reactstrap": "8.6.0",
+    "reactstrap-formik": "^1.0.9",
     "redux": "4.0.5",
-    "smartwizard": "5.1.1"
+    "smartwizard": "5.1.1",
+    "yup": "^0.32.9"
   },
   "devDependencies": {}
 }
