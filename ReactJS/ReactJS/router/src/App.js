@@ -12,6 +12,7 @@ import Error from "./Components/Error";
 function App() {
   return (
     <div className="App">
+
       <div className="row">
         {/* Thay đổi lại menu thành font đen để nhìn rõ hơn */}
         <nav
