@@ -24,6 +24,7 @@ import com.vti.dto.AccountDTO;
 import com.vti.entity.Account;
 import com.vti.form.AccountFilter;
 import com.vti.form.AccountFormForCreating;
+import com.vti.form.AccountFormForCreatingRegister;
 import com.vti.form.AccountFormForUpdating;
 import com.vti.service.IAccountService;
 
@@ -63,7 +64,7 @@ public class AccountController {
 	}
 
 	@PostMapping()
-	public ResponseEntity<?> createAccount( @RequestBody AccountFormForCreating form) {
+	public ResponseEntity<?> createAccount(@RequestBody AccountFormForCreating form) {
 		accountService.createAccount(form);
 		return new ResponseEntity<String>("Create Successfully !", HttpStatus.CREATED);
 	}
@@ -74,7 +75,6 @@ public class AccountController {
 		accountService.updateAccount(id, form);
 		return new ResponseEntity<String>("Update successfully!", HttpStatus.OK);
 	}
-
 
 	@DeleteMapping(value = "/{id}")
 	public ResponseEntity<?> deleteAccount(@PathVariable(name = "id") short id) {
@@ -104,6 +104,72 @@ public class AccountController {
 
 		// return result
 		return new ResponseEntity<>(result, HttpStatus.OK);
+	}
+
+	@PostMapping()
+	public ResponseEntity<?> createUser(@RequestBody AccountFormForCreatingRegister form) {
+
+		// create User
+		accountService.createAccountRegister(form);
+
+		return new ResponseEntity<>("We have sent an email. Please check email to active account!", HttpStatus.CREATED);
+	}
+
+	@GetMapping("/activeUser")
+	// validate: check exists, check not expired
+	public ResponseEntity<?> activeUserViaEmail(@RequestParam String token) {
+
+		// active user
+		accountService.activeUser(token);
+
+		return new ResponseEntity<>("Active success!", HttpStatus.OK);
+	}
+
+	// resend confirm
+	@GetMapping("/userRegistrationConfirmRequest")
+	// validate: email exists, email not active
+	public ResponseEntity<?> sendConfirmRegistrationViaEmail(@RequestParam String email) {
+
+		accountService.sendConfirmUserRegistrationViaEmail(email);
+
+		return new ResponseEntity<>("We have sent an email. Please check email to active account!", HttpStatus.OK);
+	}
+
+	// reset password confirm
+	@GetMapping("/resetPasswordRequest")
+	// validate: email exists, email not active
+	public ResponseEntity<?> sendResetPasswordViaEmail(@RequestParam String email) {
+
+		accountService.resetPasswordViaEmail(email);
+
+		return new ResponseEntity<>("We have sent an email. Please check email to reset password!", HttpStatus.OK);
+	}
+
+	// resend reset password
+	@GetMapping("/resendResetPassword")
+	// validate: email exists, email not active
+	public ResponseEntity<?> resendResetPasswordViaEmail(@RequestParam String email) {
+
+		accountService.sendResetPasswordViaEmail(email);
+
+		return new ResponseEntity<>("We have sent an email. Please check email to reset password!", HttpStatus.OK);
+	}
+
+	@GetMapping("/resetPassword")
+	// validate: check exists, check not expired
+	public ResponseEntity<?> resetPasswordViaEmail(@RequestParam String token, @RequestParam String newPassword) {
+
+		// reset password
+		accountService.resetPassword(token, newPassword);
+
+		return new ResponseEntity<>("Reset Password success!", HttpStatus.OK);
+	}
+
+	@PutMapping("/changePassword/{username}")
+	public ResponseEntity<?> changePassword(@PathVariable(name = "username") String username,
+			@RequestParam String newPassword) {
+		accountService.changePassword(username, newPassword);
+		return new ResponseEntity<String>("Change Password successfully!", HttpStatus.OK);
 	}
 
 }

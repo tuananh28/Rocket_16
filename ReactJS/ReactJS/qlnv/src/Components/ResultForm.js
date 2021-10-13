@@ -1,10 +1,9 @@
-/* eslint-disable react/jsx-pascal-case */
 import React, { Component } from "react";
-import ResultForm_Item from "./ResultForm_item";
-
-export default class ResultForm extends Component {
+import ResultForm_Item from "./ResultForm_Item"
+class ResultForm extends Component {
   render() {
     const { listAccounts } = this.props;
+    // {console.log(listAccounts)}
     return (
       <div className="container">
         <div className="form">
@@ -18,34 +17,17 @@ export default class ResultForm extends Component {
                 <th>Fullname</th>
                 <th>Department</th>
                 <th>Position</th>
-                <th>Cretate Date</th>
+                <th>Create Date</th>
                 <th>Edit</th>
                 <th>Delete</th>
               </tr>
             </thead>
             <tbody id="Result_TB">
-              {/* <ResultForm_Item /> */}
-
-              <ResultForm_Item listAccounts={listAccounts} />
-              
-              {/* <ResultForm_Item
-                ID="1"
-                Email="tuananh@gmail.com"
-                Username="tuananh"
-                Fullname="Bùi Tuấn Anh"
-                Department="Accounting"
-                Position="Scrum Master"
-                Create_Date="01/10/2021"
-              />
               <ResultForm_Item
-                ID="2"
-                Email="hoamai@gmail.com"
-                Username="hoamai"
-                Fullname="Bùi Thị Hoa Mai"
-                Department="Engineering"
-                Position="Developer"
-                Create_Date="03/06/2021"
-              />    */}
+                listAccounts={listAccounts}
+                onDeleteForm={this.props.onDeleteForm} // Nhận Props từ App và truyền tiếp xuống cho ResultForm_Item
+                onDUpdateForm={this.props.onDUpdateForm} // Nhận Props từ App và truyền tiếp xuống cho ResultForm_Item
+              />  
             </tbody>
           </table>
         </div>
@@ -53,3 +35,5 @@ export default class ResultForm extends Component {
     );
   }
 }
+
+export default ResultForm;

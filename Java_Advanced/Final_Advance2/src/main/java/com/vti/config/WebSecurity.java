@@ -1,12 +1,17 @@
 package com.vti.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.stereotype.Component;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.CorsConfigurationSource;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 import com.vti.service.IAccountService;
 
@@ -23,17 +28,29 @@ public class WebSecurity extends WebSecurityConfigurerAdapter{
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http
-		.cors()
-		.and()
 		.authorizeRequests()
-		.antMatchers("/api/v1/accounts","/api/v1/departments", "/api/v1/departments/*" ,"/api/v1/registration/","/api/v1/Password/","/api/v1/files/")
+		.antMatchers("/api/v1/login").anonymous()
+		.antMatchers("/api/v1/accounts/**").permitAll()
 //		.hasAnyAuthority("Admin", "Manager")
 //		.anyRequest()
-		.authenticated()
+		.anyRequest().authenticated()
 		.and()
 		.httpBasic()
 		.and()
-		.csrf().disable();
+		.cors()
+		.and()
+		.csrf().disable().addFilterBefore(
+				new JWTAuthenticationFilter("/api/v1/login", authenticationManager(), accountService), 
+				UsernamePasswordAuthenticationFilter.class) 
+		.addFilterBefore(
+				new JWTAuthorizationFilter(), 
+				UsernamePasswordAuthenticationFilter.class);;
 	}
-
+	
+	@Bean
+    CorsConfigurationSource corsConfigurationSource() {
+        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        source.registerCorsConfiguration("/**", new CorsConfiguration().applyPermitDefaultValues());
+        return source;
+    }
 }

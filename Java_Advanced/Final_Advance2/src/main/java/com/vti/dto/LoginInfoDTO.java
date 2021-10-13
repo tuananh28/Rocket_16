@@ -8,14 +8,16 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 public class LoginInfoDTO {
-	private short id;
-	
+	private String token;
+
 	private String email;
+
+	private String username;
 
 	private String fullname;
 
 	private String role;
 
 	private String status;
-	
+
 }

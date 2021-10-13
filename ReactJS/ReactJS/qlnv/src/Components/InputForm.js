@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-export default class InputForm extends Component {
+class InputForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -16,6 +16,7 @@ export default class InputForm extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
+
   handleChange(event) {
     // name và value lấy theo các thuộc tính ở input
     let name = event.target.name;
@@ -24,25 +25,58 @@ export default class InputForm extends Component {
     this.setState({
       [name]: value,
     });
+    // console.log(this.state.ID)
+    // console.log(this.state.Email)
+    // console.log(this.state.Username)
+    // console.log(this.state.Fullname)
+    // console.log(this.state.Department)
+    // console.log(this.state.Position)
+    // console.log(this.state.Cretate_Date)
   }
+  // Xử lý sự kiện khi nhấn nút Save
   handleSubmit(event) {
-    let account = {
-      ID: this.state.ID,
-      Email: this.state.Email,
-      Username: this.state.Username,
-      Fullname: this.state.Fullname,
-      Department: this.state.Department,
-      Position: this.state.Position,
-      Cretate_Date: this.state.Create_Date,
-    };
-    this.props.onSaveForm(account);
+    this.props.onSaveForm(this.state);
 
     event.preventDefault(); // Hàm này để ngăn reddicrect đến trang khác
   }
-
   // Hàm xử lý sự kiện onShowForm.
   onShowForm = () => {
-    this.props.onShowForm();
+    this.props.onshowForm();
+  };
+  // Component được gọi khi click vào nút update, chỉ được gọi 1 lần.
+  componentWillMount() {
+    console.log("componentWillMount For update");
+    console.log(this.props.accountUpdate);
+    if (this.props.accountUpdate) {
+      this.setState({
+        ID: this.props.accountUpdate.ID,
+        Email: this.props.accountUpdate.Email,
+        Username: this.props.accountUpdate.Username,
+        Fullname: this.props.accountUpdate.Fullname,
+        Department: this.props.accountUpdate.Department,
+        Position: this.props.accountUpdate.Position,
+        Create_Date: this.props.accountUpdate.Create_Date,
+      });
+    }
+  }
+  // Cập nhật thêm chức năng khi nhấn nút update sau lần đầu tiên
+  componentWillReceiveProps(nextProps) {
+    console.log(nextProps);
+    if (nextProps) {
+      this.setState({
+        ID: nextProps.accountUpdate.ID,
+        Email: nextProps.accountUpdate.Email,
+        Username: nextProps.accountUpdate.Username,
+        Fullname: nextProps.accountUpdate.Fullname,
+        Department: nextProps.accountUpdate.Department,
+        Position: nextProps.accountUpdate.Position,
+        Create_Date: nextProps.accountUpdate.Create_Date,
+      });
+    }
+  }
+  // Hàm xư lý khi onClick vào nút Update Button
+  update_Account_Button = () => {
+    this.props.update_Account_Button(this.state);
   };
   render() {
     return (
@@ -135,12 +169,12 @@ export default class InputForm extends Component {
             </select>
           </div>
           <div className="form-group">
-            <label htmlFor="">Cretate Date: </label>
+            <label htmlFor="">Create Date: </label>
             <input
               type="date"
               required="true"
               className="form-control"
-              id="Cretate_Date_ID"
+              id="Create_Date_ID"
               name="Create_Date"
               value={this.state.Create_Date}
               onChange={this.handleChange}
@@ -158,6 +192,7 @@ export default class InputForm extends Component {
               className="btn btn-success"
               id="update_btn"
               value="Update"
+              onClick={this.update_Account_Button}
             ></input>
             <input
               type="button"
@@ -178,3 +213,5 @@ export default class InputForm extends Component {
     );
   }
 }
+
+export default InputForm;
