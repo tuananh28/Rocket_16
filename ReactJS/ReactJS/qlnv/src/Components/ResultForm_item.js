@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { connect } from "react-redux"; // Import để thực hiện kết nối lên Store Redux
 class ResultForm_Item extends Component {
   constructor(props) {
     super(props);
@@ -16,6 +17,9 @@ class ResultForm_Item extends Component {
     this.props.onDUpdateForm(id);
   };
   render() {
+    {
+      console.log(this.props.listAccounts);
+    }
     let listAccounts = this.props.listAccounts;
     const rows = listAccounts.map((row, index) => {
       return (
@@ -56,5 +60,9 @@ class ResultForm_Item extends Component {
     return rows;
   }
 }
-
-export default ResultForm_Item;
+const mapStateToProps = (state) => {
+  return {
+    listAccounts: state.listAccounts, // Lấy dữ liệu từ Store Redux thông qua key, chú ý chọn đúng key trả ra state.listAccounts
+  };
+};
+export default connect(mapStateToProps, null)(ResultForm_Item);

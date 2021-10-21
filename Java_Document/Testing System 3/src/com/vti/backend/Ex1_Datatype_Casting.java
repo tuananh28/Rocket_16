@@ -1,5 +1,7 @@
 package com.vti.backend;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -12,18 +14,40 @@ public class Ex1_Datatype_Casting {
 		// Question3();
 		// Question4();
 		Question5();
+		Question6();
 	}
 
 	private static int Question5() {
-		int counter = 1;
-		while (counter <= 10) {
-			System.out.println("Hello");
-			counter++;
-		}
+		int num1 = 5;
+		int num2 = 3;
+		int num3 = 2;
+		num1 = num2++;
+		num2 = num3++;
+		System.out.printf("%d %d %d", num1, num2, num3);
 		return 0;
 
 	}
+	
+	private static void Question6() {
+		String st="I am am not the one who is thinking I one thing at time";
+		String []array = st.split("\\s");
+		Map<String, Integer> map= new HashMap<String, Integer>();
+		int count=0;
 
+		for(int i=0;i<array.length;i++){
+		    count=0;
+
+		    for(int j=0;j<array.length;j++){
+		        if(array[i].equals(array[j])){
+		        count++;                
+		        }
+		    }
+
+		    map.put(array[i], count);
+		}
+
+		System.out.println(map);
+	}
 	public static void Question1() {
 		/*
 		 * Khai bÃ¡o 2 sá»‘ lÆ°Æ¡ng cÃ³ kiá»ƒu dá»¯ liá»‡u lÃ  float. Khá»Ÿi táº¡o
