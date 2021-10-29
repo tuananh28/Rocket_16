@@ -1,0 +1,34 @@
+git clone link.git
+
+git checkout -b newBranchName
+
+// coding
+
+git status		  		 // check changes
+git add . 		  		 // git add folder/file.java
+git commit -m "message"  //version on local
+git push 		  //git push -u origin master    create & push branch
+
+// merging
+git checkout develop
+git pull
+git checkout yourBranchName
+git merge develop
+// fix conflict if exists
+git status
+git add .
+git commit -m ""
+git push
+
+// create merge request in git UI
+
+
+// other statement
+ git checkout HEAD -- file.java		// rollback file
+ git checkout commit_code			// rollback by commit
+ git reset --hard					// rollback to previous commit
+ 
+git config --global user.name "Tên người dùng"
+git config --global user.email "Địa chỉ mail"
+ 
+Tutorial: https://backlog.com/git-tutorial/vn/contents/

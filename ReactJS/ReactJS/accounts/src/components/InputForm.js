@@ -44,6 +44,10 @@ class InputForm extends Component {
     this.props.onshowForm();
   };
 
+  onResetForm = () => {
+    this.props.onresetForm();
+  }
+
   // Hiển thị thông tin Account cần update
   componentDidMount() {
     if (this.props.accountUpdate) {
@@ -236,6 +240,7 @@ class InputForm extends Component {
               className="btn btn-success"
               id="reset_btn"
               defaultValue="Reset"
+              onClick={this.onResetForm}
             />
             {/* Nút Close */}
             <input

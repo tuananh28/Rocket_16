@@ -6,7 +6,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Ex1_Datatype_Casting {
-	private static Scanner scanner;
+	public static Scanner scanner;
 
 	public static void main(String[] args) {
 		// Question1();
@@ -15,6 +15,30 @@ public class Ex1_Datatype_Casting {
 		// Question4();
 		Question5();
 		Question6();
+		Question7();
+		Question8();
+	}
+
+	private static int Question8() {
+		int num1 = 5;
+		int num2 = 3;
+		int num3 = 2;
+		num1 = num2++;
+		num2 = --num3;
+		System.out.printf("%d %d %d", num1, num2, num3);
+		return 0;
+
+	}
+
+	private static int Question7() {
+		int count = 0;
+		for (;;) {
+			if (count == 10)
+				break;
+			System.out.printf("%d ", ++count);
+		}
+		return 0;
+
 	}
 
 	private static int Question5() {
@@ -27,27 +51,28 @@ public class Ex1_Datatype_Casting {
 		return 0;
 
 	}
-	
+
 	private static void Question6() {
-		String st="I am am not the one who is thinking I one thing at time";
-		String []array = st.split("\\s");
-		Map<String, Integer> map= new HashMap<String, Integer>();
-		int count=0;
+		String st = "I am am not the one who is thinking I one thing at time";
+		String[] array = st.split("\\s");
+		Map<String, Integer> map = new HashMap<String, Integer>();
+		int count = 0;
 
-		for(int i=0;i<array.length;i++){
-		    count=0;
+		for (int i = 0; i < array.length; i++) {
+			count = 0;
 
-		    for(int j=0;j<array.length;j++){
-		        if(array[i].equals(array[j])){
-		        count++;                
-		        }
-		    }
+			for (int j = 0; j < array.length; j++) {
+				if (array[i].equals(array[j])) {
+					count++;
+				}
+			}
 
-		    map.put(array[i], count);
+			map.put(array[i], count);
 		}
 
 		System.out.println(map);
 	}
+
 	public static void Question1() {
 		/*
 		 * Khai bÃ¡o 2 sá»‘ lÆ°Æ¡ng cÃ³ kiá»ƒu dá»¯ liá»‡u lÃ  float. Khá»Ÿi táº¡o

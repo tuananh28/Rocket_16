@@ -70,6 +70,17 @@ class App extends Component {
     });
   };
 
+  onResetForm = () => {
+    this.setState({
+      ID : " ",
+      Email : " ",
+      Username : " ",
+      Fullname : " ",
+      Department : " ",
+      Position : " ",
+      Create_Date : " ",
+    })
+  }
   onSaveForm = async (data) => {
     try {
       const body = {
@@ -154,7 +165,8 @@ class App extends Component {
     if (isShowInputForm) {
       inputForm_Element = 
         <InputForm
-          onshowForm={this.onshowForm}
+          onshowForm={this.onShowForm}
+          onresetForm={this.onResetForm}
           onSaveForm={this.onSaveForm}
           accountUpdate={accountUpdate}
           update_Account_Button={this.update_Account_Button}
