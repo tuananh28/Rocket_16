@@ -32,6 +32,7 @@ import com.vti.service.IAccountService;
 @CrossOrigin("*")
 @Validated
 public class AccountController {
+	
 	@Autowired
 	private IAccountService accountService;
 
