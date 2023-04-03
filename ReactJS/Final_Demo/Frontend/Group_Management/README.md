@@ -1,3 +1,21 @@
+# Cach build project
+rm -rf node_modules
+rm -f package-lock.json
+
+# 👇️ clean npm cache
+npm cache clean --force
+
+# 👇️ cache verify
+npm cache verify
+
+# 👇️ install packages
+npm install
+
+# Node versions
+14.x.x
+
+# -------------------------------------------------------------------------------------------------------------------------
+
 # AppStack - ReactJS Admin & Dashboard Template
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,3 +86,5 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+
