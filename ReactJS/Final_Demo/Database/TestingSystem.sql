@@ -72,4 +72,4 @@ VALUES
 						(N'Bán hàng'	, 			10),
                         (N'Bóng chuyền'	, 			10),
                         (N'Bóng đá'		, 			10),
-                        (N'Bóng bàn'	, 			10),
+                        (N'Bóng bàn'	, 			10);
